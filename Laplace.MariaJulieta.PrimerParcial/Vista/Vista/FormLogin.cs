@@ -1,0 +1,69 @@
+using Entidades;
+
+namespace Vista
+{
+    public partial class FormLogin : Form
+    {
+        public FormLogin()
+        {
+            InitializeComponent();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            lblMensajeError.Visible = false;
+            lblMensajeError.Text = "Error. Verifique datos ingresados";
+
+        }
+
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAutoCompletar_Click(object sender, EventArgs e)
+        {
+            this.txtUsuario.Text = "admin@admin.com";
+            this.txtContraseña.Text = "12345678";
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            string usuarioIngresado = this.txtUsuario.Text;
+            string contraseñaIngresada = this.txtContraseña.Text;
+
+            if (ValidarDatosIngresados(usuarioIngresado, contraseñaIngresada))
+            {
+                Usuario unUsuario = Empresa.ValidarUnUsuario(usuarioIngresado, contraseñaIngresada);
+                if (unUsuario is not null)
+                {
+                    FormMenuPrincipal formMenu = new FormMenuPrincipal(unUsuario, this);
+                    formMenu.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    this.lblMensajeError.Visible = true;
+                }
+            }
+            else
+            {
+                lblMensajeError.Visible = true;
+                LimpiarPantalla();
+            }
+        }
+
+
+        private static bool ValidarDatosIngresados(string usuario, string contraseña)
+        {
+            return Validador.ValidarQueEsTexto(usuario) && Validador.ValidarQueEsTexto(contraseña);
+        }
+        public void LimpiarPantalla()
+        {
+            this.txtUsuario.Text = string.Empty;
+            this.txtContraseña.Text = string.Empty;
+        }
+    }
+}
