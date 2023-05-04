@@ -4,7 +4,13 @@
     Supervisor,
     Administrador
 }
+public enum ESexo
+{
+    Femenino,
+    Masculino,
+    NoBinario
 
+}
 public enum ETipoEquipaje
 {
     DeMano,

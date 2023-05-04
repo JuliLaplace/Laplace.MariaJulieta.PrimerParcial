@@ -16,9 +16,9 @@ namespace Entidades
         private string perfil;
 
 
-        public Usuario(string nombre, string apellido, string correo, string clave, int legajo, string perfil){
-            this.apellido = apellido;
-            this.nombre = nombre;
+        public Usuario(string nombre, string apellido, string correo, string clave, int legajo, string perfil):base (nombre, apellido){
+
+            
             this.correo = correo;   
             this.clave = clave; 
             this.legajo = legajo;

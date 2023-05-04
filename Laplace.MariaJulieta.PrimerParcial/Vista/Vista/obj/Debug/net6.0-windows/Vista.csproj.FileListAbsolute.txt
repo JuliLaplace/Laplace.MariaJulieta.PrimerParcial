@@ -20,3 +20,4 @@ C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormLogin.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormMenuPrincipal.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormAgregarCliente.resources

@@ -12,23 +12,25 @@ namespace Entidades
         protected string nombre;
 
 
-        public Persona()
+        public Persona(string nombre, string apellido)
         {
-            
+            this.nombre = nombre;
+            this.apellido = apellido;
         }
 
-        
-        
+
+
 
         public string Apellido
         {
             get { return this.apellido; }
+            //set { this.apellido = value; }
             
         }
         public string Nombre
         {
             get { return this.nombre; }
-
+            //set { this.nombre = value; }
         }
 
 

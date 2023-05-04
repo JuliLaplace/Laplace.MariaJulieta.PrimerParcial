@@ -7,51 +7,48 @@ using static Entidades.Pasajero;
 
 namespace Entidades
 {
-    public class Pasajero : Persona
+    public class Pasajero 
     {
-            private int dni;
-            private int edad;   
-            private Vuelo unVuelo;
-            private Pasaje pasaje;
-            private Equipaje[] equipajePasajero;
-            private bool tieneEquipajeDeMano;
+        private Cliente unCliente;
+        private Pasaje unPasaje;
+        private Vuelo unVuelo;
+        private Equipaje[] equipajePasajero;
+        private bool tieneEquipajeDeMano;
 
 
-        public Pasajero(int dni, int edad, Vuelo unVuelo,Pasaje pasaje, Equipaje[] equipajeACargar, bool tieneEquipajeDeMano):base()
-            {
-                this.dni = dni;
-                this.edad = edad;
-                this.unVuelo = unVuelo;
-                this.pasaje = pasaje;
-                this.equipajePasajero = equipajeACargar;
-                this.tieneEquipajeDeMano = tieneEquipajeDeMano;
-            }
+        public Pasajero(Cliente unCliente, Pasaje unPasaje, Vuelo unVuelo, Equipaje[] equipajeACargar, bool tieneEquipajeDeMano)
+        {
+            this.unCliente = unCliente;
+            this.unPasaje = unPasaje;
+            this.unVuelo = unVuelo;
+            equipajePasajero = equipajeACargar;
+            this.tieneEquipajeDeMano = tieneEquipajeDeMano;
+        }
 
 
-           
-            public Equipaje[] EquipajePasajero
-            {
-                get { return equipajePasajero; }
-            }
+        public Cliente UnCliente
+        {
+            get { return unCliente; }
+        }
+        public Equipaje[] EquipajePasajero
+        {
+            get { return equipajePasajero; }
+        }
 
-            public Vuelo UnVuelo
-            {
-                get { return unVuelo; }
-            }
+        public Vuelo UnVuelo
+        {
+            get { return unVuelo; }
+        }
 
-           
-            public bool TieneEquipajeDeMano
-            {
-                get { return tieneEquipajeDeMano; }
-            }
-            public static bool operator ==(Pasajero pasajero1, Pasajero pasajero2) //cambiar a dni cuando lo agregue como atributo
-            {
-                return pasajero1.nombre == pasajero2.nombre;    
-            }
-            public static bool operator !=(Pasajero pasajero1, Pasajero pasajero2) //uso el operador == de arriba
-            {
-                return !(pasajero1 == pasajero2);
-            }
+        public Pasaje UnPasaje
+        {
+            get { return unPasaje; }
+        }
+        public bool TieneEquipajeDeMano
+        {
+            get { return tieneEquipajeDeMano; }
+        }
+       
 
     }
 }

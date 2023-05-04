@@ -11,6 +11,7 @@ namespace Entidades
         private static List<Usuario> usuarios; // ponerlos en array?
         private static Avion[] aviones;
         private static List<Vuelo> vuelos;
+        private static List<Cliente> clientes;
         private static Dictionary<string, int> destinoMasElegido;
         private static Dictionary<int, int> pasajerosFrecuentes;
         private static double gananciaTotalCabojate;
@@ -25,6 +26,7 @@ namespace Entidades
             usuarios = new List<Usuario>();
             aviones = new Avion[7];
             vuelos = new List<Vuelo>();
+            clientes = new List<Cliente>();
             destinoMasElegido = new Dictionary<string, int>();
             pasajerosFrecuentes = new Dictionary<int, int>();
             HarcodearUsuarios();
@@ -89,6 +91,32 @@ namespace Entidades
                 }
             }
             return null;
+        }
+
+        public static List<Avion> ListarAviones()
+        {
+            List<Avion> mostrarAviones = new List<Avion>();
+            foreach (Avion item in aviones)
+            {
+                mostrarAviones.Add(item);
+            }
+            return mostrarAviones;
+        }
+
+        public static List<Vuelo> ListarVuelos()
+        {
+            List<Vuelo> mostrarVuelos = new List<Vuelo>();
+            foreach (Vuelo item in vuelos)
+            {
+                mostrarVuelos.Add(item);
+            }
+            return mostrarVuelos;
+        }
+        public static void AgregarUnCliente(string apellido, string nombre, ESexo sexo, string edad, string dni)
+        {
+
+            clientes.Add(new Cliente(nombre,apellido, Validador.CadenaStringAInt(dni), sexo, Validador.CadenaStringAInt(edad)));
+
         }
     }
 }
