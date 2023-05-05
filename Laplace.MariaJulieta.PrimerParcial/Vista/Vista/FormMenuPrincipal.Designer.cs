@@ -36,24 +36,24 @@
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
             vuelosToolStripMenuItem = new ToolStripMenuItem();
-            verListadoDeVuelosDisponiblesToolStripMenuItem = new ToolStripMenuItem();
             agregarVueloToolStripMenuItem = new ToolStripMenuItem();
+            modificarVueloToolStripMenuItem = new ToolStripMenuItem();
+            eliminarVueloToolStripMenuItem = new ToolStripMenuItem();
+            verListadoDeVuelosDisponiblesToolStripMenuItem = new ToolStripMenuItem();
             ventaDePasajesToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             agregarUnClienteToolStripMenuItem = new ToolStripMenuItem();
             verListadoDeClientesToolStripMenuItem = new ToolStripMenuItem();
+            eliminarClienteToolStripMenuItem = new ToolStripMenuItem();
             verListadoDeClientesToolStripMenuItem1 = new ToolStripMenuItem();
             estadisticasHistoricasToolStripMenuItem = new ToolStripMenuItem();
-            dtgListar = new DataGridView();
-            lblTitulo = new Label();
             aeronavesToolStripMenuItem = new ToolStripMenuItem();
-            listarAeronavesToolStripMenuItem = new ToolStripMenuItem();
             crearAeronavesToolStripMenuItem = new ToolStripMenuItem();
             eliminarAeronavesToolStripMenuItem = new ToolStripMenuItem();
             modificarAeronavesToolStripMenuItem = new ToolStripMenuItem();
-            eliminarClienteToolStripMenuItem = new ToolStripMenuItem();
-            modificarVueloToolStripMenuItem = new ToolStripMenuItem();
-            eliminarVueloToolStripMenuItem = new ToolStripMenuItem();
+            listarAeronavesToolStripMenuItem = new ToolStripMenuItem();
+            dtgListar = new DataGridView();
+            lblTitulo = new Label();
             panelData.SuspendLayout();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListar).BeginInit();
@@ -120,18 +120,31 @@
             vuelosToolStripMenuItem.Size = new Size(54, 20);
             vuelosToolStripMenuItem.Text = "Vuelos";
             // 
+            // agregarVueloToolStripMenuItem
+            // 
+            agregarVueloToolStripMenuItem.Name = "agregarVueloToolStripMenuItem";
+            agregarVueloToolStripMenuItem.Size = new Size(244, 22);
+            agregarVueloToolStripMenuItem.Text = "Agregar vuelo";
+            agregarVueloToolStripMenuItem.Click += agregarVueloToolStripMenuItem_Click;
+            // 
+            // modificarVueloToolStripMenuItem
+            // 
+            modificarVueloToolStripMenuItem.Name = "modificarVueloToolStripMenuItem";
+            modificarVueloToolStripMenuItem.Size = new Size(244, 22);
+            modificarVueloToolStripMenuItem.Text = "Modificar vuelo";
+            // 
+            // eliminarVueloToolStripMenuItem
+            // 
+            eliminarVueloToolStripMenuItem.Name = "eliminarVueloToolStripMenuItem";
+            eliminarVueloToolStripMenuItem.Size = new Size(244, 22);
+            eliminarVueloToolStripMenuItem.Text = "Eliminar vuelo";
+            // 
             // verListadoDeVuelosDisponiblesToolStripMenuItem
             // 
             verListadoDeVuelosDisponiblesToolStripMenuItem.Name = "verListadoDeVuelosDisponiblesToolStripMenuItem";
             verListadoDeVuelosDisponiblesToolStripMenuItem.Size = new Size(244, 22);
             verListadoDeVuelosDisponiblesToolStripMenuItem.Text = "Ver listado de vuelos disponibles";
             verListadoDeVuelosDisponiblesToolStripMenuItem.Click += verListadoDeVuelosDisponiblesToolStripMenuItem_Click;
-            // 
-            // agregarVueloToolStripMenuItem
-            // 
-            agregarVueloToolStripMenuItem.Name = "agregarVueloToolStripMenuItem";
-            agregarVueloToolStripMenuItem.Size = new Size(244, 22);
-            agregarVueloToolStripMenuItem.Text = "Agregar vuelo";
             // 
             // ventaDePasajesToolStripMenuItem
             // 
@@ -159,6 +172,12 @@
             verListadoDeClientesToolStripMenuItem.Size = new Size(189, 22);
             verListadoDeClientesToolStripMenuItem.Text = "Modificar un Cliente";
             // 
+            // eliminarClienteToolStripMenuItem
+            // 
+            eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
+            eliminarClienteToolStripMenuItem.Size = new Size(189, 22);
+            eliminarClienteToolStripMenuItem.Text = "Eliminar Cliente";
+            // 
             // verListadoDeClientesToolStripMenuItem1
             // 
             verListadoDeClientesToolStripMenuItem1.Name = "verListadoDeClientesToolStripMenuItem1";
@@ -171,36 +190,12 @@
             estadisticasHistoricasToolStripMenuItem.Size = new Size(134, 20);
             estadisticasHistoricasToolStripMenuItem.Text = "Estadisticas Historicas";
             // 
-            // dtgListar
-            // 
-            dtgListar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgListar.Location = new Point(54, 143);
-            dtgListar.Name = "dtgListar";
-            dtgListar.RowTemplate.Height = 25;
-            dtgListar.Size = new Size(968, 472);
-            dtgListar.TabIndex = 2;
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(64, 106);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(45, 17);
-            lblTitulo.TabIndex = 3;
-            lblTitulo.Text = "label1";
-            // 
             // aeronavesToolStripMenuItem
             // 
             aeronavesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearAeronavesToolStripMenuItem, eliminarAeronavesToolStripMenuItem, modificarAeronavesToolStripMenuItem, listarAeronavesToolStripMenuItem });
             aeronavesToolStripMenuItem.Name = "aeronavesToolStripMenuItem";
             aeronavesToolStripMenuItem.Size = new Size(74, 20);
             aeronavesToolStripMenuItem.Text = "Aeronaves";
-            // 
-            // listarAeronavesToolStripMenuItem
-            // 
-            listarAeronavesToolStripMenuItem.Name = "listarAeronavesToolStripMenuItem";
-            listarAeronavesToolStripMenuItem.Size = new Size(176, 22);
-            listarAeronavesToolStripMenuItem.Text = "Listar aeronaves";
             // 
             // crearAeronavesToolStripMenuItem
             // 
@@ -220,23 +215,29 @@
             modificarAeronavesToolStripMenuItem.Size = new Size(176, 22);
             modificarAeronavesToolStripMenuItem.Text = "Modificar aeronave";
             // 
-            // eliminarClienteToolStripMenuItem
+            // listarAeronavesToolStripMenuItem
             // 
-            eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
-            eliminarClienteToolStripMenuItem.Size = new Size(189, 22);
-            eliminarClienteToolStripMenuItem.Text = "Eliminar Cliente";
+            listarAeronavesToolStripMenuItem.Name = "listarAeronavesToolStripMenuItem";
+            listarAeronavesToolStripMenuItem.Size = new Size(176, 22);
+            listarAeronavesToolStripMenuItem.Text = "Listar aeronaves";
             // 
-            // modificarVueloToolStripMenuItem
+            // dtgListar
             // 
-            modificarVueloToolStripMenuItem.Name = "modificarVueloToolStripMenuItem";
-            modificarVueloToolStripMenuItem.Size = new Size(244, 22);
-            modificarVueloToolStripMenuItem.Text = "Modificar vuelo";
+            dtgListar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgListar.Location = new Point(54, 143);
+            dtgListar.Name = "dtgListar";
+            dtgListar.RowTemplate.Height = 25;
+            dtgListar.Size = new Size(968, 472);
+            dtgListar.TabIndex = 2;
             // 
-            // eliminarVueloToolStripMenuItem
+            // lblTitulo
             // 
-            eliminarVueloToolStripMenuItem.Name = "eliminarVueloToolStripMenuItem";
-            eliminarVueloToolStripMenuItem.Size = new Size(244, 22);
-            eliminarVueloToolStripMenuItem.Text = "Eliminar vuelo";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Location = new Point(64, 106);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(39, 17);
+            lblTitulo.TabIndex = 3;
+            lblTitulo.Text = "Titulo";
             // 
             // FormMenuPrincipal
             // 
@@ -293,5 +294,6 @@
         private ToolStripMenuItem eliminarAeronavesToolStripMenuItem;
         private ToolStripMenuItem modificarAeronavesToolStripMenuItem;
         private ToolStripMenuItem listarAeronavesToolStripMenuItem;
+
     }
 }

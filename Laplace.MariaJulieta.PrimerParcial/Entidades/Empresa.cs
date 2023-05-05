@@ -16,8 +16,10 @@ namespace Entidades
         private static Dictionary<int, int> pasajerosFrecuentes;
         private static double gananciaTotalCabojate;
         private static double gananciaTotalInternacional;
+        private static string [] destinosNacionales;
+        private static string[] destinosInternacionales;
         
-        //private static string json;
+        private static string json;
 
 
 
@@ -29,9 +31,14 @@ namespace Entidades
             clientes = new List<Cliente>();
             destinoMasElegido = new Dictionary<string, int>();
             pasajerosFrecuentes = new Dictionary<int, int>();
+            destinosInternacionales = new string[5];
+            destinosNacionales = new string[15];
             HarcodearUsuarios();
             HarcodearAviones();
             HarcodearVuelos();
+            HarcodearDestinosNacionales();
+            HarcodearDestinosInternacionales();
+
            
         }
 
@@ -58,25 +65,34 @@ namespace Entidades
         }
         private static void HarcodearVuelos()
         {
-            vuelos.Add(new Vuelo("Ushuaia", "Jujuy", true, aviones[2], DateTime.Now));
-            vuelos.Add(new Vuelo("Puerto Mardyn", "Tucuman", true, aviones[3], DateTime.Now));
-            vuelos.Add(new Vuelo("Tucuman", "Corrientes", true, aviones[4], DateTime.Now));
-            vuelos.Add(new Vuelo("Salta", "Corrientes", true, aviones[5], DateTime.Now));
-            vuelos.Add(new Vuelo("Salta", "Corrientes", true, aviones[6], DateTime.Today));
-            vuelos.Add(new Vuelo("Puerto Mardyn", "Santa Rosa", true, aviones[4], new DateTime(2022, 10, 5, 12, 30, 0)));
-            vuelos.Add(new Vuelo("Iguazu", "Trelew", true, aviones[4], new DateTime(2022, 10, 5, 12, 30, 0)));
-            vuelos.Add(new Vuelo("Posadas", "Cordoba", true, aviones[4], new DateTime(2022, 10, 6, 10, 00, 0)));
-            vuelos.Add(new Vuelo("Puerto Mardyn", "Mendoza", true, aviones[4], new DateTime(2022, 10, 6, 10, 00, 0)));
-            vuelos.Add(new Vuelo("Cordoba", "Tucuman", true, aviones[4], new DateTime(2022, 10, 7, 15, 30, 0)));
-            vuelos.Add(new Vuelo("Puerto Mardyn", "Posadas", true, aviones[4], new DateTime(2022, 10, 7, 15, 30, 0)));
-            vuelos.Add(new Vuelo("Mendoza", "Iguazu", true, aviones[4], new DateTime(2022, 10, 8, 22, 15, 0)));
-            vuelos.Add(new Vuelo("Tucuman", "Santa Rosa", true, aviones[4], new DateTime(2022, 10, 8, 22, 15, 0)));
-            vuelos.Add(new Vuelo("Cordoba", "Mendoza", true, aviones[4], new DateTime(2022, 10, 9, 17, 30, 0)));
-            vuelos.Add(new Vuelo("Iguazu", "Santa Rosa", true, aviones[4], new DateTime(2022, 10, 9, 17, 30, 0)));
+            vuelos.Add(new Vuelo("Ushuaia", "Jujuy", ETipoViaje.Nacional, aviones[2], DateTime.Now, true));
+            vuelos.Add(new Vuelo("Puerto Mardyn", "Tucuman", ETipoViaje.Nacional, aviones[3], DateTime.Now, false));
+            vuelos.Add(new Vuelo("Tucuman", "Corrientes", ETipoViaje.Nacional, aviones[4], DateTime.Now, false));
+            vuelos.Add(new Vuelo("Salta", "Corrientes", ETipoViaje.Nacional, aviones[5], DateTime.Now, false));
+            vuelos.Add(new Vuelo("Salta", "Corrientes", ETipoViaje.Nacional, aviones[6], DateTime.Today,true));
+            vuelos.Add(new Vuelo("Puerto Mardyn", "Santa Rosa", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 5, 12, 30, 0), false));
+            vuelos.Add(new Vuelo("Iguazu", "Trelew", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 5, 12, 30, 0), false));
+            vuelos.Add(new Vuelo("Posadas", "Cordoba", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 6, 10, 00, 0), true));
+            vuelos.Add(new Vuelo("Puerto Mardyn", "Mendoza", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 6, 10, 00, 0), false));
+            vuelos.Add(new Vuelo("Cordoba", "Tucuman", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 7, 15, 30, 0), false));
+            vuelos.Add(new Vuelo("Puerto Mardyn", "Posadas", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 7, 15, 30, 0), true));
+            vuelos.Add(new Vuelo("Mendoza", "Iguazu", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 8, 22, 15, 0), false));
+            vuelos.Add(new Vuelo("Tucuman", "Santa Rosa", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 8, 22, 15, 0), true));
+            vuelos.Add(new Vuelo("Cordoba", "Mendoza", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 9, 17, 30, 0), true));
+            vuelos.Add(new Vuelo("Iguazu", "Santa Rosa", ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 9, 17, 30, 0), true));
 
         }
 
+        private static void HarcodearDestinosInternacionales() 
+        {
+            destinosNacionales = new string[] { "Santa Rosa", "Bariloche", "Corrientes", "Córdoba", "Jujuy", "Mendoza", "Neuquén", "Posadas", "Iguazú", "Salta", "Santiago del Estero", "Trelew", "Tucumán", "Puerto Madryn", "Ushuaia" };
 
+        }
+        private static void HarcodearDestinosNacionales()
+        {
+            destinosInternacionales = new string[] { "Buenos Aires (Argentina)", "Recife (Brasil)", "Roma (Italia)", "Acapulco (México)", "Miami (EE.UU.)" };
+
+        }
 
 
 
@@ -112,11 +128,19 @@ namespace Entidades
             }
             return mostrarVuelos;
         }
-        public static void AgregarUnCliente(string apellido, string nombre, ESexo sexo, string edad, string dni)
+        public static void AgregarUnCliente(string apellido, string nombre, ESexo sexo, int edad, string dni)
         {
 
-            clientes.Add(new Cliente(nombre,apellido, Validador.CadenaStringAInt(dni), sexo, Validador.CadenaStringAInt(edad)));
+            clientes.Add(new Cliente(nombre,apellido, Validador.CadenaStringAInt(dni), sexo, edad));
 
+        }
+        public static string[] ListarDestinosNacionales()
+        {
+            return Empresa.destinosNacionales;
+        }
+        public static string[] ListarDestinosInternacionales()
+        {
+            return Empresa.destinosInternacionales;
         }
     }
 }

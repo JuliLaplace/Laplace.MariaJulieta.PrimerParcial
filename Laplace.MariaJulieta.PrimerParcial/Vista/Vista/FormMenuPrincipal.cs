@@ -15,6 +15,9 @@ namespace Vista
     {
         Usuario usuarioLogueado;
         FormLogin formularioLogin;
+        string botonAgregarVueloApretado = "";
+
+
         public FormMenuPrincipal(Usuario usuario, FormLogin login)
         {
             InitializeComponent();
@@ -23,14 +26,14 @@ namespace Vista
             this.lblBienvenidaUser.Visible = false;
             this.dtgListar.Visible = false;
             this.lblTitulo.Visible = false;
-            
+
         }
 
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
 
-            
+
             this.lblFechaActual.Text = DateTime.Now.ToShortDateString();
             this.lblBienvenidaUser.Visible = true;
             this.lblBienvenidaUser.Text = "Bienvenido " + usuarioLogueado.Correo;
@@ -92,8 +95,14 @@ namespace Vista
             FormAgregarCliente frmAgregarCliente = new FormAgregarCliente(); //formulario modal
             if (frmAgregarCliente.ShowDialog() == DialogResult.OK)
             {
-
+                //?????????????????
             }
+        }
+
+        private void agregarVueloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAgregarVuelo formAgregarVuelo = new FormAgregarVuelo();
+            formAgregarVuelo.Show();
         }
     }
 }

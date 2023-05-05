@@ -24,13 +24,13 @@ namespace Entidades
         public string Apellido
         {
             get { return this.apellido; }
-            //set { this.apellido = value; }
+            set { this.apellido = value; }
             
         }
         public string Nombre
         {
             get { return this.nombre; }
-            //set { this.nombre = value; }
+            set { this.nombre = value; }
         }
 
 

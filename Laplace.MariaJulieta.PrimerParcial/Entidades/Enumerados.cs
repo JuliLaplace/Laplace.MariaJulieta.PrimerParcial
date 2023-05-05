@@ -27,29 +27,4 @@ public enum ETipoViaje
     Internacional
 }
 
-public enum ECiudades
-{
-    SantaRosa, 
-    Bariloche,
-    Corrientes, 
-    Córdoba, 
-    Jujuy, 
-    Mendoza, 
-    Neuquén, 
-    Posadas, 
-    Iguazú, 
-    Salta,
-    StgoEstero, 
-    Trelew, 
-    Tucumán, 
-    PtoMadryn, 
-    Ushuaia
-}
 
-public enum EPaises
-{
-    Brasil,
-    Italia,
-    México,
-    EEUU
-}

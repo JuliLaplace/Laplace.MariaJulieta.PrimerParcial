@@ -23,15 +23,16 @@ namespace Vista
         }
         private void FormAgregarCliente_Load(object sender, EventArgs e)
         {
-            cmbGenero.DataSource = Enum.GetValues(typeof(ESexo));
-            cmbGenero.SelectedIndex = 0;
+            this.cmbGenero.DataSource = Enum.GetValues(typeof(ESexo));
+            this.cmbGenero.SelectedIndex = 0;
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
+            DateTime fechaNacimiento = dtpickerFechaNacimiento.Value;
+            int edadIngresada = (int)((DateTime.Now - fechaNacimiento).TotalDays / 365.25);
             string nombreIngresado = this.txtNombreCliente.Text;
             string apellidoIngresado = this.txtApellidoCliente.Text;
-            string edadIngresada = this.txtEdadCliente.Text;
             string dniIngresado = this.txtDniCliente.Text;
             ESexo sexoSeleccionado = (ESexo)cmbGenero.SelectedValue;
 
@@ -55,11 +56,16 @@ namespace Vista
             this.DialogResult = DialogResult.Cancel;
         }
 
-        private static bool ValidarDatosIngresados(string nombre, string apellido, string edad, string dni)
+        private static bool ValidarDatosIngresados(string nombre, string apellido, int edad, string dni)
         {
-            return (Validador.ValidarSiCadenaEsSoloLetras(nombre) && Validador.ValidarSiCadenaEsSoloLetras(apellido) && Validador.StringEsNumerico(edad) && Validador.StringEsNumerico(dni));
+            return (Validador.ValidarSiCadenaEsSoloLetras(nombre) && Validador.ValidarSiCadenaEsSoloLetras(apellido) && Validador.ValidarEdadCorrecta(edad) && Validador.StringEsNumerico(dni));
 
         }
 
+        private void dtpickerFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaNacimiento = dtpickerFechaNacimiento.Value;
+            int edad = (int)((DateTime.Now - fechaNacimiento).TotalDays / 365.25);
+        }
     }
 }

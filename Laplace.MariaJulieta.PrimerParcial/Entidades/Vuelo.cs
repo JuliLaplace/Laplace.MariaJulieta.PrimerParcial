@@ -8,27 +8,28 @@ namespace Entidades
 {
     public class Vuelo
     {
-        
+
         private string origen;
         private string destino;
-        private bool esVueloNacional;
+        private ETipoViaje tipoDeViaje;
         private Avion unAvion;
         private DateTime diaDePartida;
         private List<Pasajero> pasajeros;
         private int horasDeViaje;
-        //private bool ofreceComida;
+        private bool ofreceComida;
 
-        public Vuelo(string origen, string destino, bool esVueloNacional, Avion unAvion, DateTime diaDePartida /*bool ofreceComida*/)
+        public Vuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion unAvion, DateTime diaDePartida, bool ofreceComida)
         {
             this.origen = origen;
             this.destino = destino;
-            this.esVueloNacional = esVueloNacional;
+            this.tipoDeViaje = tipoDeViaje;
             this.unAvion = unAvion;
             pasajeros = new List<Pasajero>();
             this.diaDePartida = diaDePartida;
-            //this.ofreceComida = ofreceComida;
+            this.ofreceComida = ofreceComida;
+
             Random random = new Random();
-            if (esVueloNacional)
+            if (tipoDeViaje == ETipoViaje.Nacional)
             {
                 horasDeViaje = random.Next(2, 4);
             }
@@ -36,6 +37,7 @@ namespace Entidades
             {
                 horasDeViaje = random.Next(8, 12);
             }
+
         }
         public string Origen
         {
@@ -46,15 +48,15 @@ namespace Entidades
             get { return destino; }
         }
 
-        public bool EsVueloNacional
+        public ETipoViaje TipoDeViaje
         {
-            get { return esVueloNacional; }
+            get { return tipoDeViaje; }
         }
 
-        /*public bool OfreceComida
+        public bool OfreceComida
         {
             get { return ofreceComida; }
-        }*/
+        }
 
 
         public Avion UnAvion

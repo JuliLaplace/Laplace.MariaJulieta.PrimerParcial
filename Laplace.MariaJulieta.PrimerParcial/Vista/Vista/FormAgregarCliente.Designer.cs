@@ -35,13 +35,13 @@
             lblApellido = new Label();
             lblGenero = new Label();
             lblDni = new Label();
-            lblEdad = new Label();
             txtNombreCliente = new TextBox();
             txtApellidoCliente = new TextBox();
-            txtEdadCliente = new TextBox();
             txtDniCliente = new TextBox();
             cmbGenero = new ComboBox();
             lblError = new Label();
+            dtpickerFechaNacimiento = new DateTimePicker();
+            ldlFechaNacimiento = new Label();
             SuspendLayout();
             // 
             // btnAgregarCliente
@@ -67,7 +67,7 @@
             // lblNombreCliente
             // 
             lblNombreCliente.AutoSize = true;
-            lblNombreCliente.Location = new Point(49, 90);
+            lblNombreCliente.Location = new Point(28, 90);
             lblNombreCliente.Name = "lblNombreCliente";
             lblNombreCliente.Size = new Size(56, 17);
             lblNombreCliente.TabIndex = 2;
@@ -76,7 +76,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(49, 159);
+            lblApellido.Location = new Point(26, 153);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(58, 17);
             lblApellido.TabIndex = 3;
@@ -85,7 +85,7 @@
             // lblGenero
             // 
             lblGenero.AutoSize = true;
-            lblGenero.Location = new Point(49, 382);
+            lblGenero.Location = new Point(26, 379);
             lblGenero.Name = "lblGenero";
             lblGenero.Size = new Size(53, 17);
             lblGenero.TabIndex = 4;
@@ -94,20 +94,11 @@
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(49, 304);
+            lblDni.Location = new Point(26, 300);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(27, 17);
             lblDni.TabIndex = 5;
             lblDni.Text = "Dni";
-            // 
-            // lblEdad
-            // 
-            lblEdad.AutoSize = true;
-            lblEdad.Location = new Point(49, 235);
-            lblEdad.Name = "lblEdad";
-            lblEdad.Size = new Size(38, 17);
-            lblEdad.TabIndex = 6;
-            lblEdad.Text = "Edad";
             // 
             // txtNombreCliente
             // 
@@ -122,13 +113,6 @@
             txtApellidoCliente.Name = "txtApellidoCliente";
             txtApellidoCliente.Size = new Size(198, 22);
             txtApellidoCliente.TabIndex = 8;
-            // 
-            // txtEdadCliente
-            // 
-            txtEdadCliente.Location = new Point(179, 231);
-            txtEdadCliente.Name = "txtEdadCliente";
-            txtEdadCliente.Size = new Size(198, 22);
-            txtEdadCliente.TabIndex = 9;
             // 
             // txtDniCliente
             // 
@@ -155,18 +139,35 @@
             lblError.TabIndex = 12;
             lblError.Text = "Datos incorrectos. Vuelva a intentarlo";
             // 
+            // dtpickerFechaNacimiento
+            // 
+            dtpickerFechaNacimiento.Location = new Point(179, 228);
+            dtpickerFechaNacimiento.Name = "dtpickerFechaNacimiento";
+            dtpickerFechaNacimiento.Size = new Size(249, 22);
+            dtpickerFechaNacimiento.TabIndex = 13;
+            dtpickerFechaNacimiento.ValueChanged += dtpickerFechaNacimiento_ValueChanged;
+            // 
+            // ldlFechaNacimiento
+            // 
+            ldlFechaNacimiento.AutoSize = true;
+            ldlFechaNacimiento.Location = new Point(26, 233);
+            ldlFechaNacimiento.Name = "ldlFechaNacimiento";
+            ldlFechaNacimiento.Size = new Size(135, 17);
+            ldlFechaNacimiento.TabIndex = 14;
+            ldlFechaNacimiento.Text = "Fecha de nacimiento";
+            // 
             // FormAgregarCliente
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(456, 590);
             ControlBox = false;
+            Controls.Add(ldlFechaNacimiento);
+            Controls.Add(dtpickerFechaNacimiento);
             Controls.Add(lblError);
             Controls.Add(cmbGenero);
             Controls.Add(txtDniCliente);
-            Controls.Add(txtEdadCliente);
             Controls.Add(txtApellidoCliente);
             Controls.Add(txtNombreCliente);
-            Controls.Add(lblEdad);
             Controls.Add(lblDni);
             Controls.Add(lblGenero);
             Controls.Add(lblApellido);
@@ -194,12 +195,12 @@
         private Label lblApellido;
         private Label lblGenero;
         private Label lblDni;
-        private Label lblEdad;
         private TextBox txtNombreCliente;
         private TextBox txtApellidoCliente;
-        private TextBox txtEdadCliente;
         private TextBox txtDniCliente;
         private ComboBox cmbGenero;
         private Label lblError;
+        private DateTimePicker dtpickerFechaNacimiento;
+        private Label ldlFechaNacimiento;
     }
 }

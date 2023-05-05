@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Validador
+    public static class Validador
     {
         public static bool ValidarQueEsTexto(string texto)
         {
@@ -36,6 +36,11 @@ namespace Entidades
                 return numero;
             }
             return 0;
+        }
+
+        public static bool ValidarEdadCorrecta(int edad)
+        {
+            return (edad > 0 && edad < 110);
         }
     }
 }
