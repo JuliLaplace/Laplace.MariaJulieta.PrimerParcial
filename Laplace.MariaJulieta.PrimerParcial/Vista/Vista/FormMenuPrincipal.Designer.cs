@@ -183,6 +183,7 @@
             verListadoDeClientesToolStripMenuItem1.Name = "verListadoDeClientesToolStripMenuItem1";
             verListadoDeClientesToolStripMenuItem1.Size = new Size(189, 22);
             verListadoDeClientesToolStripMenuItem1.Text = "Ver listado de Clientes";
+            verListadoDeClientesToolStripMenuItem1.Click += verListadoDeClientesToolStripMenuItem1_Click;
             // 
             // estadisticasHistoricasToolStripMenuItem
             // 
@@ -200,26 +201,27 @@
             // crearAeronavesToolStripMenuItem
             // 
             crearAeronavesToolStripMenuItem.Name = "crearAeronavesToolStripMenuItem";
-            crearAeronavesToolStripMenuItem.Size = new Size(176, 22);
+            crearAeronavesToolStripMenuItem.Size = new Size(180, 22);
             crearAeronavesToolStripMenuItem.Text = "Agregar aeronave";
             // 
             // eliminarAeronavesToolStripMenuItem
             // 
             eliminarAeronavesToolStripMenuItem.Name = "eliminarAeronavesToolStripMenuItem";
-            eliminarAeronavesToolStripMenuItem.Size = new Size(176, 22);
+            eliminarAeronavesToolStripMenuItem.Size = new Size(180, 22);
             eliminarAeronavesToolStripMenuItem.Text = "Eliminar aeronave";
             // 
             // modificarAeronavesToolStripMenuItem
             // 
             modificarAeronavesToolStripMenuItem.Name = "modificarAeronavesToolStripMenuItem";
-            modificarAeronavesToolStripMenuItem.Size = new Size(176, 22);
+            modificarAeronavesToolStripMenuItem.Size = new Size(180, 22);
             modificarAeronavesToolStripMenuItem.Text = "Modificar aeronave";
             // 
             // listarAeronavesToolStripMenuItem
             // 
             listarAeronavesToolStripMenuItem.Name = "listarAeronavesToolStripMenuItem";
-            listarAeronavesToolStripMenuItem.Size = new Size(176, 22);
+            listarAeronavesToolStripMenuItem.Size = new Size(180, 22);
             listarAeronavesToolStripMenuItem.Text = "Listar aeronaves";
+            listarAeronavesToolStripMenuItem.Click += listarAeronavesToolStripMenuItem_Click;
             // 
             // dtgListar
             // 

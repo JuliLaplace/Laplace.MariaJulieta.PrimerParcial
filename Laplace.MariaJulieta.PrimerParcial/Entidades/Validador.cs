@@ -40,7 +40,7 @@ namespace Entidades
 
         public static bool ValidarEdadCorrecta(int edad)
         {
-            return (edad > 0 && edad < 110);
+            return (edad >= 0 && edad < 110);
         }
     }
 }

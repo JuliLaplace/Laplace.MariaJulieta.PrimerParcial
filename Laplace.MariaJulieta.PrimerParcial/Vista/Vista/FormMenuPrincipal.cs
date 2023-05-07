@@ -15,7 +15,7 @@ namespace Vista
     {
         Usuario usuarioLogueado;
         FormLogin formularioLogin;
-        string botonAgregarVueloApretado = "";
+        //string botonAgregarVueloApretado = "";
 
 
         public FormMenuPrincipal(Usuario usuario, FormLogin login)
@@ -82,13 +82,6 @@ namespace Vista
             this.lblTitulo.Visible = false;
         }
 
-        private void aeronavesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.dtgListar.Visible = true;
-            this.lblTitulo.Text = "Listado de Aeronaves";
-            this.lblTitulo.Visible = true;
-            this.dtgListar.DataSource = Empresa.ListarAviones();
-        }
 
         private void agregarUnClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -103,6 +96,22 @@ namespace Vista
         {
             FormAgregarVuelo formAgregarVuelo = new FormAgregarVuelo();
             formAgregarVuelo.Show();
+        }
+
+        private void listarAeronavesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.dtgListar.Visible = true;
+            this.lblTitulo.Text = "Listado de Aeronaves";
+            this.lblTitulo.Visible = true;
+            this.dtgListar.DataSource = Empresa.ListarAviones();
+        }
+
+        private void verListadoDeClientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.dtgListar.Visible = true;
+            this.lblTitulo.Text = "Listado de Clientes";
+            this.lblTitulo.Visible = true;
+            this.dtgListar.DataSource = Empresa.ListarClientes();
         }
     }
 }

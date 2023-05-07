@@ -41,6 +41,8 @@
             cboSeleccionServicioComida = new ComboBox();
             cboSeleccionAvion = new ComboBox();
             calendarSeleccionFechaDeViaje = new MonthCalendar();
+            lblSeleccionWifi = new Label();
+            rdbServicioDeWifi = new RadioButton();
             lblMensajeError = new Label();
             btnAgregarVuelo = new Button();
             btnCancelar = new Button();
@@ -66,13 +68,16 @@
             panelContenedor.Controls.Add(cboSeleccionServicioComida, 3, 2);
             panelContenedor.Controls.Add(cboSeleccionAvion, 3, 0);
             panelContenedor.Controls.Add(calendarSeleccionFechaDeViaje, 3, 1);
-            panelContenedor.Location = new Point(30, 28);
+            panelContenedor.Controls.Add(lblSeleccionWifi, 2, 3);
+            panelContenedor.Controls.Add(rdbServicioDeWifi, 3, 3);
+            panelContenedor.Location = new Point(30, 12);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.RowCount = 3;
-            panelContenedor.RowStyles.Add(new RowStyle(SizeType.Percent, 32.09169F));
-            panelContenedor.RowStyles.Add(new RowStyle(SizeType.Percent, 67.90831F));
-            panelContenedor.RowStyles.Add(new RowStyle(SizeType.Absolute, 102F));
-            panelContenedor.Size = new Size(841, 419);
+            panelContenedor.RowCount = 4;
+            panelContenedor.RowStyles.Add(new RowStyle(SizeType.Percent, 24.6794872F));
+            panelContenedor.RowStyles.Add(new RowStyle(SizeType.Percent, 75.32051F));
+            panelContenedor.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
+            panelContenedor.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
+            panelContenedor.Size = new Size(841, 435);
             panelContenedor.TabIndex = 0;
             // 
             // lblTipoDeVuelo
@@ -80,7 +85,7 @@
             lblTipoDeVuelo.Anchor = AnchorStyles.None;
             lblTipoDeVuelo.AutoSize = true;
             lblTipoDeVuelo.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTipoDeVuelo.Location = new Point(4, 42);
+            lblTipoDeVuelo.Location = new Point(4, 30);
             lblTipoDeVuelo.Name = "lblTipoDeVuelo";
             lblTipoDeVuelo.Size = new Size(88, 17);
             lblTipoDeVuelo.TabIndex = 0;
@@ -91,7 +96,7 @@
             lblOrigen.Anchor = AnchorStyles.None;
             lblOrigen.AutoSize = true;
             lblOrigen.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblOrigen.Location = new Point(24, 200);
+            lblOrigen.Location = new Point(24, 186);
             lblOrigen.Name = "lblOrigen";
             lblOrigen.Size = new Size(48, 17);
             lblOrigen.TabIndex = 1;
@@ -101,7 +106,7 @@
             // 
             lblDestino.Anchor = AnchorStyles.None;
             lblDestino.AutoSize = true;
-            lblDestino.Location = new Point(24, 360);
+            lblDestino.Location = new Point(24, 336);
             lblDestino.Name = "lblDestino";
             lblDestino.Size = new Size(47, 15);
             lblDestino.TabIndex = 2;
@@ -112,7 +117,7 @@
             lvlAvion.Anchor = AnchorStyles.None;
             lvlAvion.AutoSize = true;
             lvlAvion.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lvlAvion.Location = new Point(407, 42);
+            lvlAvion.Location = new Point(407, 30);
             lvlAvion.Name = "lvlAvion";
             lvlAvion.Size = new Size(43, 17);
             lvlAvion.TabIndex = 3;
@@ -123,7 +128,7 @@
             lblFechaSalida.Anchor = AnchorStyles.None;
             lblFechaSalida.AutoSize = true;
             lblFechaSalida.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFechaSalida.Location = new Point(378, 200);
+            lblFechaSalida.Location = new Point(378, 186);
             lblFechaSalida.Name = "lblFechaSalida";
             lblFechaSalida.Size = new Size(102, 17);
             lblFechaSalida.TabIndex = 4;
@@ -134,7 +139,7 @@
             lblServicioDeComida.Anchor = AnchorStyles.None;
             lblServicioDeComida.AutoSize = true;
             lblServicioDeComida.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblServicioDeComida.Location = new Point(389, 350);
+            lblServicioDeComida.Location = new Point(389, 327);
             lblServicioDeComida.Name = "lblServicioDeComida";
             lblServicioDeComida.Size = new Size(79, 34);
             lblServicioDeComida.TabIndex = 5;
@@ -145,17 +150,18 @@
             cboSeleccionTipoDeViaje.Anchor = AnchorStyles.None;
             cboSeleccionTipoDeViaje.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionTipoDeViaje.FormattingEnabled = true;
-            cboSeleccionTipoDeViaje.Location = new Point(120, 38);
+            cboSeleccionTipoDeViaje.Location = new Point(120, 26);
             cboSeleccionTipoDeViaje.Name = "cboSeleccionTipoDeViaje";
             cboSeleccionTipoDeViaje.Size = new Size(228, 25);
             cboSeleccionTipoDeViaje.TabIndex = 6;
+            cboSeleccionTipoDeViaje.SelectedIndexChanged += cboSeleccionTipoDeViaje_SelectedIndexChanged;
             // 
             // cboSeleccionOrigen
             // 
             cboSeleccionOrigen.Anchor = AnchorStyles.None;
             cboSeleccionOrigen.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionOrigen.FormattingEnabled = true;
-            cboSeleccionOrigen.Location = new Point(122, 196);
+            cboSeleccionOrigen.Location = new Point(122, 182);
             cboSeleccionOrigen.Name = "cboSeleccionOrigen";
             cboSeleccionOrigen.Size = new Size(224, 25);
             cboSeleccionOrigen.TabIndex = 7;
@@ -166,7 +172,7 @@
             cboSeleccionDestino.Anchor = AnchorStyles.None;
             cboSeleccionDestino.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionDestino.FormattingEnabled = true;
-            cboSeleccionDestino.Location = new Point(125, 355);
+            cboSeleccionDestino.Location = new Point(125, 331);
             cboSeleccionDestino.Name = "cboSeleccionDestino";
             cboSeleccionDestino.Size = new Size(217, 25);
             cboSeleccionDestino.TabIndex = 8;
@@ -178,7 +184,7 @@
             cboSeleccionServicioComida.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionServicioComida.FormattingEnabled = true;
             cboSeleccionServicioComida.Items.AddRange(new object[] { "Si", "No" });
-            cboSeleccionServicioComida.Location = new Point(529, 355);
+            cboSeleccionServicioComida.Location = new Point(529, 331);
             cboSeleccionServicioComida.Name = "cboSeleccionServicioComida";
             cboSeleccionServicioComida.Size = new Size(268, 25);
             cboSeleccionServicioComida.TabIndex = 9;
@@ -189,7 +195,7 @@
             cboSeleccionAvion.Anchor = AnchorStyles.None;
             cboSeleccionAvion.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionAvion.FormattingEnabled = true;
-            cboSeleccionAvion.Location = new Point(562, 38);
+            cboSeleccionAvion.Location = new Point(562, 26);
             cboSeleccionAvion.Name = "cboSeleccionAvion";
             cboSeleccionAvion.Size = new Size(203, 25);
             cboSeleccionAvion.TabIndex = 10;
@@ -199,12 +205,36 @@
             // 
             calendarSeleccionFechaDeViaje.Anchor = AnchorStyles.None;
             calendarSeleccionFechaDeViaje.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            calendarSeleccionFechaDeViaje.Location = new Point(539, 127);
+            calendarSeleccionFechaDeViaje.Location = new Point(539, 113);
             calendarSeleccionFechaDeViaje.MaxDate = new DateTime(2040, 12, 31, 0, 0, 0, 0);
             calendarSeleccionFechaDeViaje.MinDate = new DateTime(2023, 5, 4, 0, 0, 0, 0);
             calendarSeleccionFechaDeViaje.Name = "calendarSeleccionFechaDeViaje";
             calendarSeleccionFechaDeViaje.ShowTodayCircle = false;
             calendarSeleccionFechaDeViaje.TabIndex = 11;
+            // 
+            // lblSeleccionWifi
+            // 
+            lblSeleccionWifi.Anchor = AnchorStyles.None;
+            lblSeleccionWifi.AutoSize = true;
+            lblSeleccionWifi.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSeleccionWifi.Location = new Point(378, 397);
+            lblSeleccionWifi.Name = "lblSeleccionWifi";
+            lblSeleccionWifi.Size = new Size(102, 17);
+            lblSeleccionWifi.TabIndex = 12;
+            lblSeleccionWifi.Text = "Servicio de Wifi";
+            // 
+            // rdbServicioDeWifi
+            // 
+            rdbServicioDeWifi.Anchor = AnchorStyles.None;
+            rdbServicioDeWifi.AutoSize = true;
+            rdbServicioDeWifi.Location = new Point(595, 396);
+            rdbServicioDeWifi.Name = "rdbServicioDeWifi";
+            rdbServicioDeWifi.Size = new Size(136, 19);
+            rdbServicioDeWifi.TabIndex = 13;
+            rdbServicioDeWifi.TabStop = true;
+            rdbServicioDeWifi.Text = "Tiene servicio de Wifi";
+            rdbServicioDeWifi.UseVisualStyleBackColor = true;
+            rdbServicioDeWifi.CheckedChanged += rdbServicioDeWifi_CheckedChanged;
             // 
             // lblMensajeError
             // 
@@ -225,6 +255,7 @@
             btnAgregarVuelo.TabIndex = 2;
             btnAgregarVuelo.Text = "Agregar ";
             btnAgregarVuelo.UseVisualStyleBackColor = true;
+            btnAgregarVuelo.Click += btnAgregarVuelo_Click;
             // 
             // btnCancelar
             // 
@@ -274,5 +305,7 @@
         private Button btnAgregarVuelo;
         private Button btnCancelar;
         private MonthCalendar calendarSeleccionFechaDeViaje;
+        private Label lblSeleccionWifi;
+        private RadioButton rdbServicioDeWifi;
     }
 }

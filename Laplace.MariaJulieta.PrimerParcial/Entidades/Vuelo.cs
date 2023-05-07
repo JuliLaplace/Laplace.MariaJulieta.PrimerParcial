@@ -17,16 +17,24 @@ namespace Entidades
         private List<Pasajero> pasajeros;
         private int horasDeViaje;
         private bool ofreceComida;
+        private bool tieneWifi;
 
-        public Vuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion unAvion, DateTime diaDePartida, bool ofreceComida)
+        public Vuelo() //sobrecarga de constructores para poder inicializar la lista de pasajeros.
+        {
+            this.pasajeros = new List<Pasajero>();
+            this.origen = "";
+            this.destino = "";
+            this.unAvion = new Avion();
+        }
+        public Vuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion unAvion, DateTime diaDePartida, bool ofreceComida, bool tieneWifi):this()
         {
             this.origen = origen;
             this.destino = destino;
             this.tipoDeViaje = tipoDeViaje;
             this.unAvion = unAvion;
-            pasajeros = new List<Pasajero>();
             this.diaDePartida = diaDePartida;
             this.ofreceComida = ofreceComida;
+            this.tieneWifi = tieneWifi;
 
             Random random = new Random();
             if (tipoDeViaje == ETipoViaje.Nacional)
@@ -78,10 +86,13 @@ namespace Entidades
         {
             get { return horasDeViaje; }
         }
+        public bool TieneWifi
+        {
+            get { return tieneWifi; }
+        }
 
 
 
-    
         public void AgregarPasajero(Pasajero pasajero)
         {
             pasajeros.Add(pasajero);

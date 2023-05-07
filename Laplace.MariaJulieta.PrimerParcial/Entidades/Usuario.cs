@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,26 +27,26 @@ namespace Entidades
 
         
         }
-        
+        [JsonProperty("clave")]
         public string Clave
         {
             
             set { this.clave = value; }
         }
-        
+        [JsonProperty("correo")]
         public string Correo
         {
             get { return this.correo; }
             set { this.correo = value; }
         }
-        
+        [JsonProperty("legajo")]
         public int Legajo
         {
             get { return this.legajo; }
             set { this.legajo = value; }
         }
 
-        
+        [JsonProperty("perfil")]
         public string Perfil
         {
             get { return perfil; }

@@ -52,13 +52,29 @@ namespace Entidades
         }
 
         //Para comparar clientes por dni
-        public static bool operator ==(Cliente cliente1, Cliente cliente2) //cambiar a dni cuando lo agregue como atributo
+        public static bool operator ==(Cliente cliente1, Cliente cliente2) 
         {
             return cliente1.dni == cliente2.dni;
         }
         public static bool operator !=(Cliente cliente1, Cliente cliente2) //uso el operador == de arriba
         {
             return !(cliente1 == cliente2);
+        }
+
+        public override bool Equals(object? obj) //esta bien??
+        {
+            bool retorno =false;
+
+            if(obj is Cliente)
+            {
+                retorno = this == ((Cliente)obj);
+            }
+            return retorno;
+        }
+
+        public override int GetHashCode() //con esto se le dice que se le de hascodes a los objetos en base a su dni y no su direccion de memoria
+        {
+            return (dni).GetHashCode();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Entidades
         private Equipaje[] equipajePasajero;
         private bool tieneEquipajeDeMano;
 
-
+        
         public Pasajero(Cliente unCliente, Pasaje unPasaje, Vuelo unVuelo, Equipaje[] equipajeACargar, bool tieneEquipajeDeMano)
         {
             this.unCliente = unCliente;

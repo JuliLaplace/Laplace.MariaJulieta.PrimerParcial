@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Persona
+    public abstract class Persona // abstracta porque jamas voy a instancias una persona, si voy a instanciar a sus derivadas (cliente - usuario)
     {
         protected string apellido;
         protected string nombre;
@@ -20,13 +21,14 @@ namespace Entidades
 
 
 
-
+        [JsonProperty("apellido")]
         public string Apellido
         {
             get { return this.apellido; }
             set { this.apellido = value; }
-            
+
         }
+        [JsonProperty("nombre")]
         public string Nombre
         {
             get { return this.nombre; }

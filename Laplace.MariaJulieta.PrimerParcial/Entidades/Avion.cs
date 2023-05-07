@@ -8,25 +8,33 @@ namespace Entidades
 {
     public class Avion
     {
+        private string nombre;
         private string matricula;
         private int cantidadDeAsientos;
         private int cantidadDeBanios;
         private float capacidadBodega;
-        private bool tieneWifi;
-        private bool ofreceComida;
         
-
-        public Avion(string matricula, int cantidadDeAsientos, int cantidadDeBaños, float capacidadBodega, bool tieneWifi, bool ofreceComida)
+        
+        public Avion()
         {
+            this.matricula = string.Empty;
+            this.nombre = string.Empty; 
+
+        }
+        public Avion(string nombre, string matricula, int cantidadDeAsientos, int cantidadDeBaños, float capacidadBodega):this() 
+        {
+            this.nombre = nombre;
             this.matricula = matricula;
             this.cantidadDeAsientos = cantidadDeAsientos;
             this.cantidadDeBanios = cantidadDeBaños;
             this.capacidadBodega = capacidadBodega;
-            this.tieneWifi = tieneWifi;
-            this.ofreceComida = ofreceComida;
+            
            
         }
-
+        public string Nombre
+        {
+            get { return nombre; } 
+        }
         public string Matricula
         {
             get { return matricula; }
@@ -45,18 +53,9 @@ namespace Entidades
         {
             get { return capacidadBodega; }
         }
-        public bool TieneWifi
-        {
-            get { return tieneWifi; }
-        }
-        public bool OfreceComida
-        {
-            get { return this.ofreceComida; }
-        }
-      
-
-
-      
+        
+       
+    
         public int CantidadAsientosPremium()
         {
             return (int)Math.Floor(cantidadDeAsientos * 0.2);
@@ -65,6 +64,24 @@ namespace Entidades
         public int CantidadAsientosTurista()
         {
             return cantidadDeAsientos - CantidadAsientosPremium();
+        }
+
+        public string MostrarAvion()
+        {
+            StringBuilder cadena = new StringBuilder();
+            cadena.AppendLine($"{this.Nombre} - {this.Matricula}");
+            //cadena.AppendLine($"Matricula: {this.Matricula}");
+            //cadena.AppendLine($"Cantidad de asientos: {this.CantidadDeAsientos}");
+            //cadena.AppendLine($"Cantidad de asientos premium: {this.CantidadAsientosPremium()}");
+            //cadena.AppendLine($"Cantidad de asientos: {this.CantidadAsientosTurista()}");
+            //cadena.AppendLine($"Cantidad de baños: {this.CantidadDeBanios}");
+            //cadena.AppendLine($"Capacidad en bodega: {this.CapacidadBodega}");
+            return cadena.ToString();
+        }
+
+        public override string ToString() //sobreescribi el tostring asi cuando listo los vuelos, en el marco de Avion, se muestra sun nombre y matricula
+        {
+            return this.MostrarAvion();
         }
     }
 }
