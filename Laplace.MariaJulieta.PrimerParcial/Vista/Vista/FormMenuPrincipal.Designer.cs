@@ -203,6 +203,7 @@
             crearAeronavesToolStripMenuItem.Name = "crearAeronavesToolStripMenuItem";
             crearAeronavesToolStripMenuItem.Size = new Size(180, 22);
             crearAeronavesToolStripMenuItem.Text = "Agregar aeronave";
+            crearAeronavesToolStripMenuItem.Click += crearAeronavesToolStripMenuItem_Click;
             // 
             // eliminarAeronavesToolStripMenuItem
             // 

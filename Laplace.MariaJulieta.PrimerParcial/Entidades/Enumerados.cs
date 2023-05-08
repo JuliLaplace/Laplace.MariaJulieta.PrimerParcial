@@ -11,6 +11,12 @@ public enum ESexo
     NoBinario
 
 }
+
+public enum EAvion
+{
+    Airbus,
+    Boeing
+}
 public enum ETipoEquipaje
 {
     DeMano,

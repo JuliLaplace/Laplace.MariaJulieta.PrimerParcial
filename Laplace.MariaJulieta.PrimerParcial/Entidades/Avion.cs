@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Avion
     {
-        private string nombre;
+        private EAvion nombre;
         private string matricula;
         private int cantidadDeAsientos;
         private int cantidadDeBanios;
@@ -18,10 +18,10 @@ namespace Entidades
         public Avion()
         {
             this.matricula = string.Empty;
-            this.nombre = string.Empty; 
+             
 
         }
-        public Avion(string nombre, string matricula, int cantidadDeAsientos, int cantidadDeBaños, float capacidadBodega):this() 
+        public Avion(EAvion nombre, string matricula, int cantidadDeAsientos, int cantidadDeBaños, float capacidadBodega):this() 
         {
             this.nombre = nombre;
             this.matricula = matricula;
@@ -31,7 +31,7 @@ namespace Entidades
             
            
         }
-        public string Nombre
+        public EAvion     Nombre
         {
             get { return nombre; } 
         }

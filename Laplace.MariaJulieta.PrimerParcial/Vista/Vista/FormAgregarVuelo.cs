@@ -65,6 +65,7 @@ namespace Vista
 
         private void btnAgregarVuelo_Click(object sender, EventArgs e)
         {
+
             string origen = this.cboSeleccionOrigen.SelectedItem.ToString();
             string destino = this.cboSeleccionDestino.SelectedItem.ToString();
             Avion avionSeleccionado = (Avion)cboSeleccionAvion.SelectedItem;//VER

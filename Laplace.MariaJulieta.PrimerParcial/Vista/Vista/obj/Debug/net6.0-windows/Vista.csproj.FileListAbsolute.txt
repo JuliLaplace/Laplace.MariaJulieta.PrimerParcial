@@ -24,3 +24,9 @@ C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormAgregarVuelo.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormAgregarAvion.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormEliminarAvion.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormEliminarCliente.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormEliminarVuelo.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormModificarAvion.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormModificarCliente.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FormModificarVuelo.resources

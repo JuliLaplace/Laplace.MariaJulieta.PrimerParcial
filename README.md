@@ -35,10 +35,10 @@ COMPLETAR
 
 Estos son los temas tratados en la evaluación presentada. 
 1)
-Con respecto al primer tema, se utiliza el lenguaje C#, y se utiliza la plataforma .Net, el cual cito:
+Se utiliza el lenguaje C#, y se utiliza la plataforma .Net, el cual cito:
 > "(...)provee una serie de herramientas y programas para construir fácilmente una gran variedad de software, así como el entorno necesario para ejecutarlo sobre distintos sistemas operativos y tipos de arquitectura".
  
-Con dicha plataforma, utilizando el lenguanje C#, se creo este proyecto. .Net nos permite crear software en variedad, dando diversas herramientas (desde librerias propias con funcionalidades preexistentes, compliadores, e inclusive el IntelliSense que el programa posee) al programador para poder conllevar su cometido.
+Con dicha plataforma, utilizando el lenguanje C#, se creó este proyecto. .Net nos permite crear software en variedad, dando diversas herramientas (desde librerias propias con funcionalidades preexistentes, compliadores, e inclusive el IntelliSense que el programa posee) al programador para poder conllevar su cometido.
 Dentro del proyecto se pueden encontrar fragmentos de código donde se utilizan elementos básicos tales como sentencias de iteración (sentencia for, foreach), operadores lógicos condicionales (if, if else), declaración de variables: Value types (tales como int, float) o Reference Types (Objetos, string). 
 Algunos ejemplos dentro del codigo del uso de los mismos son:
 `public class Vuelo
@@ -51,7 +51,7 @@ Algunos ejemplos dentro del codigo del uso de los mismos son:
         private DateTime diaDePartida;
         private List<Pasajero> pasajeros;
         private int horasDeViaje;
-public Vuelo(string origen, string destino, bool esVueloNacional, Avion unAvion, DateTime diaDePartida)
+	public Vuelo(string origen, string destino, bool esVueloNacional, Avion unAvion, DateTime diaDePartida)
         {
             this.origen = origen;
             this.destino = destino;
@@ -112,6 +112,10 @@ Un ejemplo de ello es:
 `
 La clase estatica Empresa, no busca instanciar objetos de tipo empresa, si no que busca ser la base del programa a ejecutar. Dentro de esta clase se almacenan diversos datos para el funcionamiento de la app (listas de aviones pertenecientes a la empresa, los usuarios que trabajan y utilizan la aplicación, entre otros), contiene funciones especificas que se ejecutan dentro del programa (funciones que validan el ingreso de un usuario, funciones que muestras una lista de Aviones, etc).
 
+En este trabajo, se aplica el paradigma de la programación orientada a objetos, ya que creo que todos los elementos propios de una empresa, la cual se encarga de vender tickets de vuelo a diversas personas (entre otras cosas), púede ser modelada (crear objetos con sus atributos, caracteristicas etc) para ser representada en código C#.
+El ejemplo claro de ello es pensar a los pasajeros, vuelos, pasaje, aviones como objetos que podemos modelar, que tienen sus caracteristicas particulares (atributos), sus funciones (métodos) y demás.
+COMPLETAR
+
 4)
 COMPLETAR CON CODIGO DE SOBRECARGA.
 La sobrecarga se entiende como:
@@ -124,9 +128,7 @@ Para entender la Programación orientada a objetos, citamos:
 >Un paradigma de programación define la forma, metodología o estilo con el que se resolverá un problema utilizando un lenguaje de programación.
 (...)La programación orientada a objetos (Object Oriented Programming - OOP) es un paradigma de programación que propone resolver problemas a través de identificar objetos de la vida real, sus atributos (datos), su comportamiento (acciones) y las relaciones de colaboración entre ellos.
 
-En este trabajo, se aplica el paradigma de la programación orientada a objetos, ya que creo que todos los elementos propios de una empresa, la cual se encarga de vender tickets de vuelo a diversas personas (entre otras cosas), púede ser modelada (crear objetos con sus atributos, caracteristicas etc) para ser representada en código C#.
-El ejemplo claro de ello es pensar a los pasajeros, vuelos, pasaje, aviones como objetos que podemos modelar, que tienen sus caracteristicas particulares (atributos), sus funciones (métodos) y demás.
-COMPLETAR
+
 
 5)
 Para generar una interacción con el usuario que utilizara la aplicación, el cual no solo contendrá la logica del programa, si no también el diseño del mismo, se utilizan los formularios de Windows Forms.
@@ -137,6 +139,8 @@ A partir de diversos formularios creados, se genera la parte logica-visual de la
 COMPLETAR
 
 COLECCIONES
+
+
 ENCAPSULAMIENTO
 HERENCIA
 COMPLETAR.

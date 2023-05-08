@@ -15,7 +15,7 @@ namespace Vista
     {
         Usuario usuarioLogueado;
         FormLogin formularioLogin;
-        //string botonAgregarVueloApretado = "";
+        
 
 
         public FormMenuPrincipal(Usuario usuario, FormLogin login)
@@ -40,21 +40,25 @@ namespace Vista
 
             if (usuarioLogueado.Perfil == "vendedor")
             {
-                this.vuelosToolStripMenuItem.Visible = true;
-                this.ventaDePasajesToolStripMenuItem.Visible = true;
-                this.estadisticasHistoricasToolStripMenuItem.Visible = true;
-                this.clientesToolStripMenuItem.Visible = true;
+                this.vuelosToolStripMenuItem.Enabled = false;
+                this.aeronavesToolStripMenuItem.Enabled = false;
+
 
             }
             else if (usuarioLogueado.Perfil == "supervisor")
             {
-                this.estadisticasHistoricasToolStripMenuItem.Visible = true;
-                this.clientesToolStripMenuItem.Visible = true;
+                this.ventaDePasajesToolStripMenuItem.Enabled = false;
+                this.vuelosToolStripMenuItem.Enabled = false;
+                this.aeronavesToolStripMenuItem.Enabled = false;
+                //si las puede listar. Hacer boton aparte para Listar cosas? va a ser mejor manejado
             }
-            else
+            else if( usuarioLogueado.Perfil == "administrador")
             {
-                this.vuelosToolStripMenuItem.Visible = true;
-                this.aeronavesToolStripMenuItem.Visible = true;
+                this.verListadoDeVuelosDisponiblesToolStripMenuItem.Enabled = false;
+                this.ventaDePasajesToolStripMenuItem.Enabled = false;
+                this.estadisticasHistoricasToolStripMenuItem.Enabled = false;
+                this.clientesToolStripMenuItem.Enabled = false;
+
 
             }
 
@@ -112,6 +116,12 @@ namespace Vista
             this.lblTitulo.Text = "Listado de Clientes";
             this.lblTitulo.Visible = true;
             this.dtgListar.DataSource = Empresa.ListarClientes();
+        }
+
+        private void crearAeronavesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAgregarAvion formAgregarAvion = new FormAgregarAvion();
+            formAgregarAvion.Show();
         }
     }
 }

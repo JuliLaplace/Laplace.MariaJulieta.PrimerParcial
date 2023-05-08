@@ -14,7 +14,7 @@ namespace Entidades
         public static List<Usuario>? LeerUsuario() //esta bien? esto deja que la lista sea null (ELIMINA WARNING)
         {
             List<Usuario>? listaDeUsuariosEnJson = new List<Usuario>();
-            using(StreamReader read = new StreamReader("..\\..\\MOCK_DATA.json"))
+            using(StreamReader read = new StreamReader("MOCK_DATA.json"))
             {
                 string archivoALeer = read.ReadToEnd();
                 listaDeUsuariosEnJson = JsonConvert.DeserializeObject<List<Usuario>>(archivoALeer);
