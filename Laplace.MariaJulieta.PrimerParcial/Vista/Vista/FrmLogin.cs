@@ -2,9 +2,9 @@ using Entidades;
 
 namespace Vista
 {
-    public partial class FormLogin : Form
+    public partial class FrmLogin : Form
     {
-        public FormLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace Vista
                 Usuario unUsuario = Empresa.ValidarUnUsuario(usuarioIngresado, contraseñaIngresada);
                 if (unUsuario is not null)
                 {
-                    FormMenuPrincipal formMenu = new FormMenuPrincipal(unUsuario, this);
+                    FrmMenuPrincipal formMenu = new FrmMenuPrincipal(unUsuario, this);
                     formMenu.Show();
                     this.Hide();
                 }

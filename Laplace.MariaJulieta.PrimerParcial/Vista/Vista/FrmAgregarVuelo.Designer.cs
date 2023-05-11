@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FormAgregarVuelo
+    partial class FrmAgregarVuelo
     {
         /// <summary>
         /// Required designer variable.

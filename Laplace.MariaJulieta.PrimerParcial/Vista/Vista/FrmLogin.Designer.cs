@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FormLogin
+    partial class FrmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             pboxPanelImagen = new PictureBox();
             lblTituloLogin = new Label();
             txtUsuario = new TextBox();

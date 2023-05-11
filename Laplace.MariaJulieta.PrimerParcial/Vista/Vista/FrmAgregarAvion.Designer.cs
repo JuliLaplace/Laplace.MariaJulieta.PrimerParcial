@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FormAgregarAvion
+    partial class FrmAgregarAvion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarAvion));
             lblAvion = new Label();
             cboAviones = new ComboBox();
             pictureBox1 = new PictureBox();
@@ -73,9 +74,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(605, 155);
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(593, 143);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(121, 112);
+            pictureBox1.Size = new Size(184, 154);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -211,7 +214,7 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // FormAgregarAvion
+            // FrmAgregarAvion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -225,7 +228,7 @@
             Controls.Add(panelAvion);
             Controls.Add(pictureBox1);
             MinimizeBox = false;
-            Name = "FormAgregarAvion";
+            Name = "FrmAgregarAvion";
             Text = "Agregar avion";
             Load += FormAgregarAvion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

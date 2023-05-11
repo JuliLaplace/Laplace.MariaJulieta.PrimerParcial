@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FormAgregarVuelo : Form
+    public partial class FrmAgregarVuelo : Form
     {
         ETipoViaje tipoDeViaje;
         bool ofreceWifi;
-        public FormAgregarVuelo()
+        public FrmAgregarVuelo()
         {
             InitializeComponent();
         }
@@ -68,6 +68,7 @@ namespace Vista
 
             string origen = this.cboSeleccionOrigen.SelectedItem.ToString();
             string destino = this.cboSeleccionDestino.SelectedItem.ToString();
+            
             Avion avionSeleccionado = (Avion)cboSeleccionAvion.SelectedItem;//VER
             string matriculaAvionSeleccionado = avionSeleccionado.Matricula;
             DateTime fecha = this.calendarSeleccionFechaDeViaje.SelectionStart;

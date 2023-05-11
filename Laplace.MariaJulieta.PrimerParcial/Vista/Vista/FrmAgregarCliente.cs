@@ -13,9 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Vista
 {
-    public partial class FormAgregarCliente : Form
+    public partial class FrmAgregarCliente : Form
     {
-        public FormAgregarCliente()
+        public FrmAgregarCliente()
         {
             InitializeComponent();
 

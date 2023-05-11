@@ -31,13 +31,13 @@ namespace Entidades
             destinosInternacionales = new string[5];
             destinosNacionales = new string[15];
             HarcodearUsuarios();
-            HarcodearAviones();
-            HarcodearVuelos();
             HarcodearDestinosNacionales();
             HarcodearDestinosInternacionales();
             HarcodearClientes();
+            HarcodearAviones();
+            HarcodearVuelos();
 
-           
+
         }
 
         
@@ -143,6 +143,7 @@ namespace Entidades
             foreach (Vuelo item in vuelos)
             {
                 mostrarVuelos.Add(item);
+                
             }
             return mostrarVuelos;
         }
@@ -159,7 +160,9 @@ namespace Entidades
         }
         public static void AgregarAvion(EAvion avion, string matricula, int cantidadAsientos, int cantidadBanios, float capacidadBodega)
         {
-            aviones.Add(new Avion(avion, matricula, cantidadAsientos,cantidadBanios, capacidadBodega));
+          
+                aviones.Add(new Avion(avion, matricula, cantidadAsientos, cantidadBanios, capacidadBodega));
+            
         }
 
         public static string[] ListarDestinosNacionales()
@@ -170,6 +173,37 @@ namespace Entidades
         {
             return Empresa.destinosInternacionales;
         }
+
+        //public static bool EstaAvionEnViaje(string matricula)
+        //{
+        //    Avion auxAvion = BuscarAvionPorMatricula(matricula);
+        //    if(auxAvion is not null)
+        //    {
+        //        foreach (Avion item in aviones)
+        //        {
+        //            if (item.Matricula == matricula)
+        //            {
+        //                auxAvion = item;
+        //            }
+        //        }
+                
+        //    }
+        //    return auxAvion;
+
+        //}
+
+        //public static Avion BuscarAvionPorMatricula(List<Avion> aviones, string matriculaBuscada)
+        //{
+        //    Avion avion = new Avion();
+        //    foreach (Avion item in aviones)
+        //    {
+        //        if(matriculaBuscada == item.Matricula)
+        //        {
+        //            avion = item;
+        //        }
+        //    }
+        //    return avion;
+        //}
 
         //public static List<Cliente> operator -(List<Cliente> lista, Cliente cliente)
         //{
@@ -190,8 +224,8 @@ namespace Entidades
         //                break;
         //            }
         //        }
-                
-            
+
+
         //    return lista;
         //}
     }

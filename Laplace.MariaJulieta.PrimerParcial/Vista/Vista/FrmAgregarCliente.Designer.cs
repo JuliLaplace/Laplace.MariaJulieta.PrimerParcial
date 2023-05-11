@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class FormAgregarCliente
+    partial class FrmAgregarCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAgregarCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarCliente));
             btnAgregarCliente = new Button();
             btnCancelar = new Button();
             lblNombreCliente = new Label();

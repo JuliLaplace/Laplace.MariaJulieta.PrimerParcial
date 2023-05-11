@@ -70,18 +70,40 @@ namespace Entidades
         {
             StringBuilder cadena = new StringBuilder();
             cadena.AppendLine($"{this.Nombre} - {this.Matricula}");
-            //cadena.AppendLine($"Matricula: {this.Matricula}");
-            //cadena.AppendLine($"Cantidad de asientos: {this.CantidadDeAsientos}");
-            //cadena.AppendLine($"Cantidad de asientos premium: {this.CantidadAsientosPremium()}");
-            //cadena.AppendLine($"Cantidad de asientos: {this.CantidadAsientosTurista()}");
-            //cadena.AppendLine($"Cantidad de baños: {this.CantidadDeBanios}");
-            //cadena.AppendLine($"Capacidad en bodega: {this.CapacidadBodega}");
             return cadena.ToString();
         }
 
         public override string ToString() //sobreescribi el tostring asi cuando listo los vuelos, en el marco de Avion, se muestra sun nombre y matricula
         {
             return this.MostrarAvion();
+        }
+
+        public static bool operator ==(Avion avion1, Avion avion2)
+        {
+            return (avion1.Matricula == avion2.Matricula);
+          
+
+        }
+        public static bool operator !=(Avion avion1, Avion avion2)
+        {
+            return !(avion1 == avion2);
+
+
+        }
+        public static bool operator +(List<Avion> aviones, Avion avion)
+        {
+            bool seCargoAvionNuevo = false;
+            foreach(Avion item in aviones)
+            {
+               if (item != avion)
+                {
+                    aviones.Add(avion);
+                    seCargoAvionNuevo = true;
+                    break;
+                }
+            }
+
+            return seCargoAvionNuevo;
         }
     }
 }

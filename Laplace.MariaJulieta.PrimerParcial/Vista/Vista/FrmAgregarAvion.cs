@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FormAgregarAvion : Form
+    public partial class FrmAgregarAvion : Form
     {
-        public FormAgregarAvion()
+        public FrmAgregarAvion()
         {
             InitializeComponent();
         }

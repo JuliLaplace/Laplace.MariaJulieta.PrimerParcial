@@ -99,7 +99,16 @@ namespace Entidades
         }
 
 
+        public static bool operator ==(Vuelo vuelo, Avion avion)
+        {
+            return (vuelo.UnAvion == avion);
+            
+        }
+        public static bool operator !=(Vuelo vuelo, Avion avion)
+        {
+            return (vuelo == avion);
 
+        }
     }
 
 
