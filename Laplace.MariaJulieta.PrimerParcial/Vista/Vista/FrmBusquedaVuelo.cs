@@ -11,27 +11,23 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FrmAgregarVuelo : Form
+    public partial class FrmBusquedaVuelo : Form
     {
         ETipoViaje tipoDeViaje;
         bool ofreceWifi;
-        bool ofreceServicioComida;
-        public FrmAgregarVuelo()
+        bool servicioDeComida;
+        List<Vuelo> listaDeVuelosDisponibles;
+        public FrmBusquedaVuelo()
         {
             InitializeComponent();
-        }
-
-        private void FormAgregarVuelo_Load(object sender, EventArgs e)
-        {
-            this.lblMensajeError.Visible = false;
             this.calendarSeleccionFechaDeViaje.MinDate = DateTime.Now;
             this.cboSeleccionTipoDeViaje.DataSource = Enum.GetValues(typeof(ETipoViaje));
-            this.cboSeleccionAvion.DataSource = Empresa.ListarAviones();
             this.cboSeleccionTipoDeViaje.SelectedItem = 0;
+            this.lblMensajeError.Visible = false;
             tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
-
+            this.listaDeVuelosDisponibles = new List<Vuelo>();
+            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
         }
-
 
         private void cboSeleccionTipoDeViaje_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -56,19 +52,13 @@ namespace Vista
                 this.cboSeleccionDestino.SelectedIndex = 0;
             }
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnAgregarVuelo_Click(object sender, EventArgs e)
+        private void btnBuscarVuelo_Click(object sender, EventArgs e)
         {
-
             string origen = this.cboSeleccionOrigen.SelectedItem.ToString();
             string destino = this.cboSeleccionDestino.SelectedItem.ToString();
-            Avion avionSeleccionado = (Avion)cboSeleccionAvion.SelectedItem;//VER
-            string matriculaAvionSeleccionado = avionSeleccionado.Matricula;
             DateTime fecha = this.calendarSeleccionFechaDeViaje.SelectionStart;
+
 
 
             if (destino == origen)
@@ -78,17 +68,15 @@ namespace Vista
             }
             else
             {
+                listaDeVuelosDisponibles = Empresa.FiltrarVuelosPorBusqueda(origen, destino, fecha, servicioDeComida,ofreceWifi);
+                this.dtgListaVuelosFiltrados.DataSource = listaDeVuelosDisponibles;
+                //FrmVentaPasaje formularioVentaPasaje = new FrmVentaPasaje();
+                //formularioVentaPasaje.ShowDialog();
+                //USAR SHOWDIALOG PARA VER SI CARGO O NO PASAJEROS
 
-                Empresa.AgregarVuelo(origen, destino, tipoDeViaje, avionSeleccionado, fecha, ofreceServicioComida, ofreceWifi); //COMPLETAR
-                MessageBox.Show("Vuelo agregado con exito");
-                this.Close();
 
             }
-
-
         }
-
-
         private void rdbServicioDeWifi_CheckedChanged(object sender, EventArgs e)
         {
             ofreceWifi = this.rdbServicioDeWifi.Checked;
@@ -96,7 +84,7 @@ namespace Vista
 
         private void rdbSeleccionServicioComida_CheckedChanged(object sender, EventArgs e)
         {
-            ofreceServicioComida= this.rdbSeleccionServicioComida.Checked;
+            servicioDeComida = this.rdbSeleccionServicioComida.Checked;
         }
     }
 }

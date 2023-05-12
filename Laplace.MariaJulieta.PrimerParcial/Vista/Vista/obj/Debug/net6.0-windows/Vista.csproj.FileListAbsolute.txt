@@ -24,3 +24,5 @@ C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmAgregarVuelo.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmLogin.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmMenuPrincipal.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmBusquedaVuelo.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmVentaPasaje.resources

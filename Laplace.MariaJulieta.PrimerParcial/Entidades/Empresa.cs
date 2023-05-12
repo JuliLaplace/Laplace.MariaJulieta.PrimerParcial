@@ -174,6 +174,54 @@ namespace Entidades
             return Empresa.destinosInternacionales;
         }
 
+        public static List<Vuelo> FiltrarVuelosPorBusqueda(string origen, string destino, DateTime fechaIngresada, bool servicioComida, bool servicioWifi)
+        {
+            List<Vuelo> mostrarVuelos = new List<Vuelo>();
+            foreach (Vuelo item in vuelos)
+            {
+                bool cumpleCondicionesCuidades = false;
+                bool cumpleCondicionFecha = false;
+                bool cumpleCondicionComida = false;
+                bool cumpleCondicionWifi = false;
+
+                if (item.Destino == destino && item.Origen == origen)
+                {
+                    cumpleCondicionesCuidades = true;
+                }
+                if (item.DiaDePartida.Date == fechaIngresada.Date)
+                {
+                    cumpleCondicionFecha = true;
+                }
+                if (servicioComida)
+                {
+                    
+                    cumpleCondicionComida = item.OfreceComida;
+                    
+                }
+                else
+                {
+                    cumpleCondicionComida = true;
+                }
+                if (servicioWifi)
+                {
+                    
+                    cumpleCondicionWifi = item.TieneWifi;
+                  
+                }
+                else
+                {
+                    cumpleCondicionWifi = true;
+                }
+
+                if (cumpleCondicionComida && cumpleCondicionesCuidades && cumpleCondicionFecha && cumpleCondicionWifi)
+                {
+                    mostrarVuelos.Add(item);
+                }
+
+            }
+            return mostrarVuelos;
+        }
+
         //public static bool EstaAvionEnViaje(string matricula)
         //{
         //    Avion auxAvion = BuscarAvionPorMatricula(matricula);
@@ -186,7 +234,7 @@ namespace Entidades
         //                auxAvion = item;
         //            }
         //        }
-                
+
         //    }
         //    return auxAvion;
 

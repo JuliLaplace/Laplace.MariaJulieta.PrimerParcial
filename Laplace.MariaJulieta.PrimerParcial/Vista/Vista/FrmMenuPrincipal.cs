@@ -105,7 +105,7 @@ namespace Vista
         private void vuelosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //this.LimpiarDatagrid();
-            this.dtgListar.Visible=false;
+            this.dtgListar.Visible = false;
             this.lblTitulo.Text = "Categoría: Vuelos";
             this.categoriaSeleccionada = "Vuelo";
             this.pctBxImagenPAraMostrar.Visible = true;
@@ -197,7 +197,7 @@ namespace Vista
 
                     break;
                 case "Vuelo":
-                    
+
                     this.dtgListar.Visible = true;
                     this.dtgListar.ClearSelection();
                     this.dtgListar.DataSource = Empresa.ListarVuelos();
@@ -273,5 +273,10 @@ namespace Vista
             dtgListar.Rows.Clear();
         }
 
+        private void ventaDePasajesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBusquedaVuelo formularioBuscarVuelo = new FrmBusquedaVuelo();
+            formularioBuscarVuelo.Show();
+        }
     }
 }

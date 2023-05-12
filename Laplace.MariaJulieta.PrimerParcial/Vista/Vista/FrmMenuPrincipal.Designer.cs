@@ -122,6 +122,7 @@
             ventaDePasajesToolStripMenuItem.Name = "ventaDePasajesToolStripMenuItem";
             ventaDePasajesToolStripMenuItem.Size = new Size(123, 21);
             ventaDePasajesToolStripMenuItem.Text = "Venta de Pasajes";
+            ventaDePasajesToolStripMenuItem.Click += ventaDePasajesToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
@@ -155,7 +156,7 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(204, 55);
+            lblTitulo.Location = new Point(12, 60);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(39, 17);
             lblTitulo.TabIndex = 3;

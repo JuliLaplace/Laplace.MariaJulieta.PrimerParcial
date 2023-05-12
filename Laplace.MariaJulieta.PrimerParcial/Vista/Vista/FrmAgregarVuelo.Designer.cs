@@ -38,11 +38,11 @@
             cboSeleccionTipoDeViaje = new ComboBox();
             cboSeleccionOrigen = new ComboBox();
             cboSeleccionDestino = new ComboBox();
-            cboSeleccionServicioComida = new ComboBox();
             cboSeleccionAvion = new ComboBox();
             calendarSeleccionFechaDeViaje = new MonthCalendar();
             lblSeleccionWifi = new Label();
             rdbServicioDeWifi = new RadioButton();
+            rdbSeleccionServicioComida = new RadioButton();
             lblMensajeError = new Label();
             btnAgregarVuelo = new Button();
             btnCancelar = new Button();
@@ -65,11 +65,11 @@
             panelContenedor.Controls.Add(cboSeleccionTipoDeViaje, 1, 0);
             panelContenedor.Controls.Add(cboSeleccionOrigen, 1, 1);
             panelContenedor.Controls.Add(cboSeleccionDestino, 1, 2);
-            panelContenedor.Controls.Add(cboSeleccionServicioComida, 3, 2);
             panelContenedor.Controls.Add(cboSeleccionAvion, 3, 0);
             panelContenedor.Controls.Add(calendarSeleccionFechaDeViaje, 3, 1);
             panelContenedor.Controls.Add(lblSeleccionWifi, 2, 3);
             panelContenedor.Controls.Add(rdbServicioDeWifi, 3, 3);
+            panelContenedor.Controls.Add(rdbSeleccionServicioComida, 3, 2);
             panelContenedor.Location = new Point(30, 12);
             panelContenedor.Name = "panelContenedor";
             panelContenedor.RowCount = 4;
@@ -178,18 +178,6 @@
             cboSeleccionDestino.TabIndex = 8;
             cboSeleccionDestino.Text = "Seleccione destino";
             // 
-            // cboSeleccionServicioComida
-            // 
-            cboSeleccionServicioComida.Anchor = AnchorStyles.None;
-            cboSeleccionServicioComida.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cboSeleccionServicioComida.FormattingEnabled = true;
-            cboSeleccionServicioComida.Items.AddRange(new object[] { "Si", "No" });
-            cboSeleccionServicioComida.Location = new Point(529, 331);
-            cboSeleccionServicioComida.Name = "cboSeleccionServicioComida";
-            cboSeleccionServicioComida.Size = new Size(268, 25);
-            cboSeleccionServicioComida.TabIndex = 9;
-            cboSeleccionServicioComida.Text = "Seleccione servicio de comida";
-            // 
             // cboSeleccionAvion
             // 
             cboSeleccionAvion.Anchor = AnchorStyles.None;
@@ -236,6 +224,20 @@
             rdbServicioDeWifi.UseVisualStyleBackColor = true;
             rdbServicioDeWifi.CheckedChanged += rdbServicioDeWifi_CheckedChanged;
             // 
+            // rdbSeleccionServicioComida
+            // 
+            rdbSeleccionServicioComida.Anchor = AnchorStyles.None;
+            rdbSeleccionServicioComida.AutoSize = true;
+            rdbSeleccionServicioComida.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rdbSeleccionServicioComida.Location = new Point(576, 333);
+            rdbSeleccionServicioComida.Name = "rdbSeleccionServicioComida";
+            rdbSeleccionServicioComida.Size = new Size(175, 21);
+            rdbSeleccionServicioComida.TabIndex = 14;
+            rdbSeleccionServicioComida.TabStop = true;
+            rdbSeleccionServicioComida.Text = "Tiene servicio de comida";
+            rdbSeleccionServicioComida.UseVisualStyleBackColor = true;
+            rdbSeleccionServicioComida.CheckedChanged += rdbSeleccionServicioComida_CheckedChanged;
+            // 
             // lblMensajeError
             // 
             lblMensajeError.AutoSize = true;
@@ -267,7 +269,7 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // FormAgregarVuelo
+            // FrmAgregarVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -277,7 +279,7 @@
             Controls.Add(btnAgregarVuelo);
             Controls.Add(lblMensajeError);
             Controls.Add(panelContenedor);
-            Name = "FormAgregarVuelo";
+            Name = "FrmAgregarVuelo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Vuelo";
             Load += FormAgregarVuelo_Load;
@@ -299,7 +301,6 @@
         private ComboBox cboSeleccionTipoDeViaje;
         private ComboBox cboSeleccionOrigen;
         private ComboBox cboSeleccionDestino;
-        private ComboBox cboSeleccionServicioComida;
         private ComboBox cboSeleccionAvion;
         private Label lblMensajeError;
         private Button btnAgregarVuelo;
@@ -307,5 +308,6 @@
         private MonthCalendar calendarSeleccionFechaDeViaje;
         private Label lblSeleccionWifi;
         private RadioButton rdbServicioDeWifi;
+        private RadioButton rdbSeleccionServicioComida;
     }
 }
