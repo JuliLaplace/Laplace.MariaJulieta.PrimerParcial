@@ -40,7 +40,7 @@ namespace Vista
             if (tipoDeViaje == ETipoViaje.Internacional)
             {
                 this.cboSeleccionOrigen.Items.Clear();
-                this.cboSeleccionOrigen.Items.AddRange(Empresa.ListarDestinosInternacionales());
+                this.cboSeleccionOrigen.Items.Add("Buenos Aires - Argentina");
                 this.cboSeleccionOrigen.SelectedIndex = 0;
                 this.cboSeleccionDestino.Items.Clear();
                 this.cboSeleccionDestino.Items.AddRange(Empresa.ListarDestinosInternacionales());
@@ -88,15 +88,28 @@ namespace Vista
 
         }
 
-
-        private void rdbServicioDeWifi_CheckedChanged(object sender, EventArgs e)
+        private void chkbOfreceComida_CheckedChanged(object sender, EventArgs e)
         {
-            ofreceWifi = this.rdbServicioDeWifi.Checked;
+            if (this.chkbOfreceComida.Checked)
+            {
+                this.ofreceServicioComida = true;
+            }
+            else
+            {
+                this.ofreceServicioComida = false;
+            }
         }
 
-        private void rdbSeleccionServicioComida_CheckedChanged(object sender, EventArgs e)
+        private void chkbOfreceWifi_CheckedChanged(object sender, EventArgs e)
         {
-            ofreceServicioComida= this.rdbSeleccionServicioComida.Checked;
+            if (this.chkbOfreceWifi.Checked)
+            {
+                this.ofreceWifi = true;
+            }
+            else
+            {
+                this.ofreceWifi = false;
+            }
         }
     }
 }

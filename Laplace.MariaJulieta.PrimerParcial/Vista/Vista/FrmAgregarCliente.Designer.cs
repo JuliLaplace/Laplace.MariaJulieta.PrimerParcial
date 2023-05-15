@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarCliente));
-            btnAgregarCliente = new Button();
+            btnBoton1 = new Button();
             btnCancelar = new Button();
             lblNombreCliente = new Label();
             lblApellido = new Label();
@@ -44,15 +44,15 @@
             ldlFechaNacimiento = new Label();
             SuspendLayout();
             // 
-            // btnAgregarCliente
+            // btnBoton1
             // 
-            btnAgregarCliente.Location = new Point(55, 494);
-            btnAgregarCliente.Name = "btnAgregarCliente";
-            btnAgregarCliente.Size = new Size(75, 26);
-            btnAgregarCliente.TabIndex = 0;
-            btnAgregarCliente.Text = "Agregar";
-            btnAgregarCliente.UseVisualStyleBackColor = true;
-            btnAgregarCliente.Click += btnAgregarCliente_Click;
+            btnBoton1.Location = new Point(55, 494);
+            btnBoton1.Name = "btnBoton1";
+            btnBoton1.Size = new Size(75, 26);
+            btnBoton1.TabIndex = 0;
+            btnBoton1.Text = "Boton1";
+            btnBoton1.UseVisualStyleBackColor = true;
+            btnBoton1.Click += btnBoton1_Click;
             // 
             // btnCancelar
             // 
@@ -67,7 +67,7 @@
             // lblNombreCliente
             // 
             lblNombreCliente.AutoSize = true;
-            lblNombreCliente.Location = new Point(28, 90);
+            lblNombreCliente.Location = new Point(28, 182);
             lblNombreCliente.Name = "lblNombreCliente";
             lblNombreCliente.Size = new Size(56, 17);
             lblNombreCliente.TabIndex = 2;
@@ -76,7 +76,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(26, 153);
+            lblApellido.Location = new Point(26, 245);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(58, 17);
             lblApellido.TabIndex = 3;
@@ -94,7 +94,7 @@
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(26, 300);
+            lblDni.Location = new Point(28, 123);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(27, 17);
             lblDni.TabIndex = 5;
@@ -102,27 +102,28 @@
             // 
             // txtNombreCliente
             // 
-            txtNombreCliente.Location = new Point(179, 90);
+            txtNombreCliente.Location = new Point(179, 182);
             txtNombreCliente.Name = "txtNombreCliente";
             txtNombreCliente.Size = new Size(198, 22);
             txtNombreCliente.TabIndex = 7;
             // 
             // txtApellidoCliente
             // 
-            txtApellidoCliente.Location = new Point(179, 150);
+            txtApellidoCliente.Location = new Point(179, 242);
             txtApellidoCliente.Name = "txtApellidoCliente";
             txtApellidoCliente.Size = new Size(198, 22);
             txtApellidoCliente.TabIndex = 8;
             // 
             // txtDniCliente
             // 
-            txtDniCliente.Location = new Point(179, 295);
+            txtDniCliente.Location = new Point(181, 118);
             txtDniCliente.Name = "txtDniCliente";
             txtDniCliente.Size = new Size(198, 22);
             txtDniCliente.TabIndex = 10;
             // 
             // cmbGenero
             // 
+            cmbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGenero.FormattingEnabled = true;
             cmbGenero.Location = new Point(179, 379);
             cmbGenero.Name = "cmbGenero";
@@ -141,7 +142,7 @@
             // 
             // dtpickerFechaNacimiento
             // 
-            dtpickerFechaNacimiento.Location = new Point(179, 228);
+            dtpickerFechaNacimiento.Location = new Point(179, 315);
             dtpickerFechaNacimiento.Name = "dtpickerFechaNacimiento";
             dtpickerFechaNacimiento.Size = new Size(249, 22);
             dtpickerFechaNacimiento.TabIndex = 13;
@@ -150,17 +151,16 @@
             // ldlFechaNacimiento
             // 
             ldlFechaNacimiento.AutoSize = true;
-            ldlFechaNacimiento.Location = new Point(26, 233);
+            ldlFechaNacimiento.Location = new Point(26, 320);
             ldlFechaNacimiento.Name = "ldlFechaNacimiento";
             ldlFechaNacimiento.Size = new Size(135, 17);
             ldlFechaNacimiento.TabIndex = 14;
             ldlFechaNacimiento.Text = "Fecha de nacimiento";
             // 
-            // FormAgregarCliente
+            // FrmAgregarCliente
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(456, 590);
-            ControlBox = false;
             Controls.Add(ldlFechaNacimiento);
             Controls.Add(dtpickerFechaNacimiento);
             Controls.Add(lblError);
@@ -173,13 +173,11 @@
             Controls.Add(lblApellido);
             Controls.Add(lblNombreCliente);
             Controls.Add(btnCancelar);
-            Controls.Add(btnAgregarCliente);
+            Controls.Add(btnBoton1);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "FormAgregarCliente";
+            Name = "FrmAgregarCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar cliente";
             Load += FormAgregarCliente_Load;
@@ -189,18 +187,18 @@
 
         #endregion
 
-        private Button btnAgregarCliente;
-        private Button btnCancelar;
-        private Label lblNombreCliente;
-        private Label lblApellido;
-        private Label lblGenero;
-        private Label lblDni;
-        private TextBox txtNombreCliente;
-        private TextBox txtApellidoCliente;
-        private TextBox txtDniCliente;
-        private ComboBox cmbGenero;
-        private Label lblError;
-        private DateTimePicker dtpickerFechaNacimiento;
-        private Label ldlFechaNacimiento;
+        protected Button btnBoton1;
+        protected Button btnCancelar;
+        protected Label lblNombreCliente;
+        protected Label lblApellido;
+        protected Label lblGenero;
+        protected Label lblDni;
+        protected TextBox txtNombreCliente;
+        protected TextBox txtApellidoCliente;
+        protected TextBox txtDniCliente;
+        protected ComboBox cmbGenero;
+        protected Label lblError;
+        protected DateTimePicker dtpickerFechaNacimiento;
+        protected Label ldlFechaNacimiento;
     }
 }

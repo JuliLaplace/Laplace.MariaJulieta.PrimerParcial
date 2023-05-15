@@ -15,7 +15,7 @@ namespace Vista
     {
         ETipoViaje tipoDeViaje;
         bool ofreceWifi;
-        bool servicioDeComida;
+        bool ofreceComida;
         List<Vuelo> listaDeVuelosDisponibles;
         public FrmBusquedaVuelo()
         {
@@ -68,7 +68,7 @@ namespace Vista
             }
             else
             {
-                listaDeVuelosDisponibles = Empresa.FiltrarVuelosPorBusqueda(origen, destino, fecha, servicioDeComida,ofreceWifi);
+                listaDeVuelosDisponibles = Empresa.FiltrarVuelosPorBusqueda(origen, destino, fecha, ofreceComida, ofreceWifi);
                 this.dtgListaVuelosFiltrados.DataSource = listaDeVuelosDisponibles;
                 //FrmVentaPasaje formularioVentaPasaje = new FrmVentaPasaje();
                 //formularioVentaPasaje.ShowDialog();
@@ -77,14 +77,30 @@ namespace Vista
 
             }
         }
-        private void rdbServicioDeWifi_CheckedChanged(object sender, EventArgs e)
+
+
+        private void chkbOfreceComida_CheckedChanged(object sender, EventArgs e)
         {
-            ofreceWifi = this.rdbServicioDeWifi.Checked;
+            if (this.chkbOfreceComida.Checked)
+            {
+                this.ofreceComida = true;
+            }
+            else
+            {
+                this.ofreceComida = false;
+            }
         }
 
-        private void rdbSeleccionServicioComida_CheckedChanged(object sender, EventArgs e)
+        private void chkbOfreceWifi_CheckedChanged(object sender, EventArgs e)
         {
-            servicioDeComida = this.rdbSeleccionServicioComida.Checked;
+            if (this.chkbOfreceWifi.Checked)
+            {
+                this.ofreceWifi = true;
+            }
+            else
+            {
+                this.ofreceWifi = false;
+            }
         }
     }
 }

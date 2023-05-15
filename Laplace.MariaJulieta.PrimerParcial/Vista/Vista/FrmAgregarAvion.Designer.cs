@@ -44,7 +44,7 @@
             panel1 = new Panel();
             domUpDownCapacidadMaxima = new DomainUpDown();
             lblCapacidadBodega = new Label();
-            btnAgregarAvion = new Button();
+            btnBoton1 = new Button();
             btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelAvion.SuspendLayout();
@@ -66,6 +66,7 @@
             // 
             // cboAviones
             // 
+            cboAviones.DropDownStyle = ComboBoxStyle.DropDownList;
             cboAviones.FormattingEnabled = true;
             cboAviones.Location = new Point(130, 29);
             cboAviones.Name = "cboAviones";
@@ -192,16 +193,16 @@
             lblCapacidadBodega.TabIndex = 0;
             lblCapacidadBodega.Text = "Capacidad máxima bodega";
             // 
-            // btnAgregarAvion
+            // btnBoton1
             // 
-            btnAgregarAvion.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAgregarAvion.Location = new Point(579, 370);
-            btnAgregarAvion.Name = "btnAgregarAvion";
-            btnAgregarAvion.Size = new Size(75, 23);
-            btnAgregarAvion.TabIndex = 9;
-            btnAgregarAvion.Text = "Agregar";
-            btnAgregarAvion.UseVisualStyleBackColor = true;
-            btnAgregarAvion.Click += btnAgregarAvion_Click;
+            btnBoton1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBoton1.Location = new Point(579, 370);
+            btnBoton1.Name = "btnBoton1";
+            btnBoton1.Size = new Size(75, 23);
+            btnBoton1.TabIndex = 9;
+            btnBoton1.Text = "Boton1";
+            btnBoton1.UseVisualStyleBackColor = true;
+            btnBoton1.Click += btnBoton1_Click;
             // 
             // btnCancelar
             // 
@@ -219,16 +220,17 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            ControlBox = false;
             Controls.Add(btnCancelar);
-            Controls.Add(btnAgregarAvion);
+            Controls.Add(btnBoton1);
             Controls.Add(panel1);
             Controls.Add(panelBanios);
             Controls.Add(PanelMatricula);
             Controls.Add(panelAvion);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimizeBox = false;
             Name = "FrmAgregarAvion";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar avion";
             Load += FormAgregarAvion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -246,21 +248,21 @@
         #endregion
 
         private Label lblAvion;
-        private ComboBox cboAviones;
         private PictureBox pictureBox1;
         private Label lblMatricula;
-        private TextBox txtMatriculaAvion;
-        private Panel panelAvion;
         private Panel PanelMatricula;
         private Panel panelBanios;
-        private DomainUpDown domUpDownAsientos;
         private Label lblCantidadAsientos;
         private Label lblCantidadBanios;
         private Panel panel1;
         private Label lblCapacidadBodega;
-        private Button btnAgregarAvion;
-        private Button btnCancelar;
-        private DomainUpDown domUpDownCapacidadMaxima;
-        private DomainUpDown domUpDownCantidadBanios;
+        protected Panel panelAvion;
+        protected ComboBox cboAviones;
+        protected TextBox txtMatriculaAvion;
+        protected DomainUpDown domUpDownAsientos;
+        protected Button btnBoton1;
+        protected Button btnCancelar;
+        protected DomainUpDown domUpDownCapacidadMaxima;
+        protected DomainUpDown domUpDownCantidadBanios;
     }
 }

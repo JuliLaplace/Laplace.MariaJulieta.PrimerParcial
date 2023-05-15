@@ -12,7 +12,13 @@ namespace Entidades
         private ESexo sexo;
         private int edad;
 
-        public Cliente(string nombre, string apellido, int dni, ESexo sexo, int edad):base(nombre, apellido)
+        public Cliente():base()
+        {
+            this.dni = 0;
+            this.sexo = ESexo.Masculino;
+            this.edad = 0;
+        }
+        public Cliente(string nombre, string apellido, int dni, ESexo sexo, int edad):base(nombre,apellido)
         {
             this.dni = dni;
             this.sexo = sexo;
@@ -38,6 +44,7 @@ namespace Entidades
         public ESexo Sexo
         {
             get { return sexo; }
+            set { this.sexo = value; }
         }
         public int Edad
         {
@@ -76,5 +83,7 @@ namespace Entidades
         {
             return (dni).GetHashCode();
         }
+
+        
     }
 }

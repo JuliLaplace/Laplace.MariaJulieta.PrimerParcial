@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Persona // abstracta porque jamas voy a instancias una persona, si voy a instanciar a sus derivadas (cliente - usuario)
+    public abstract class Persona // abstracta porque jamas voy a instanciar una persona, si voy a instanciar a sus derivadas (cliente - usuario)
     {
         protected string apellido;
         protected string nombre;
 
-
-        public Persona(string nombre, string apellido)
+        public Persona()
+        {
+            this.apellido = "";
+            this.nombre = "";
+        }
+        public Persona(string nombre, string apellido):this()
         {
             this.nombre = nombre;
             this.apellido = apellido;

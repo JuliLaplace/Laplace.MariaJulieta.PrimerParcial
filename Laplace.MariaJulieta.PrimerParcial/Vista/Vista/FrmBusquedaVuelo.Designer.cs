@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             gpbDatosFiltroViaje = new GroupBox();
-            rdbSeleccionServicioComida = new RadioButton();
-            rdbServicioDeWifi = new RadioButton();
+            chkbOfreceWifi = new CheckBox();
+            chkbOfreceComida = new CheckBox();
             lblSeleccionWifi = new Label();
             lblServicioDeComida = new Label();
             calendarSeleccionFechaDeViaje = new MonthCalendar();
@@ -50,8 +50,8 @@
             // 
             // gpbDatosFiltroViaje
             // 
-            gpbDatosFiltroViaje.Controls.Add(rdbSeleccionServicioComida);
-            gpbDatosFiltroViaje.Controls.Add(rdbServicioDeWifi);
+            gpbDatosFiltroViaje.Controls.Add(chkbOfreceWifi);
+            gpbDatosFiltroViaje.Controls.Add(chkbOfreceComida);
             gpbDatosFiltroViaje.Controls.Add(lblSeleccionWifi);
             gpbDatosFiltroViaje.Controls.Add(lblServicioDeComida);
             gpbDatosFiltroViaje.Controls.Add(calendarSeleccionFechaDeViaje);
@@ -69,30 +69,27 @@
             gpbDatosFiltroViaje.TabStop = false;
             gpbDatosFiltroViaje.Text = "Datos de viaje a buscar";
             // 
-            // rdbSeleccionServicioComida
+            // chkbOfreceWifi
             // 
-            rdbSeleccionServicioComida.Anchor = AnchorStyles.None;
-            rdbSeleccionServicioComida.AutoSize = true;
-            rdbSeleccionServicioComida.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rdbSeleccionServicioComida.Location = new Point(881, 79);
-            rdbSeleccionServicioComida.Name = "rdbSeleccionServicioComida";
-            rdbSeleccionServicioComida.Size = new Size(175, 21);
-            rdbSeleccionServicioComida.TabIndex = 17;
-            rdbSeleccionServicioComida.TabStop = true;
-            rdbSeleccionServicioComida.Text = "Tiene servicio de comida";
-            rdbSeleccionServicioComida.UseVisualStyleBackColor = true;
+            chkbOfreceWifi.AutoSize = true;
+            chkbOfreceWifi.Location = new Point(929, 151);
+            chkbOfreceWifi.Name = "chkbOfreceWifi";
+            chkbOfreceWifi.Size = new Size(69, 19);
+            chkbOfreceWifi.TabIndex = 17;
+            chkbOfreceWifi.Text = "Incluido";
+            chkbOfreceWifi.UseVisualStyleBackColor = true;
+            chkbOfreceWifi.CheckedChanged += chkbOfreceWifi_CheckedChanged;
             // 
-            // rdbServicioDeWifi
+            // chkbOfreceComida
             // 
-            rdbServicioDeWifi.Anchor = AnchorStyles.None;
-            rdbServicioDeWifi.AutoSize = true;
-            rdbServicioDeWifi.Location = new Point(881, 151);
-            rdbServicioDeWifi.Name = "rdbServicioDeWifi";
-            rdbServicioDeWifi.Size = new Size(136, 19);
-            rdbServicioDeWifi.TabIndex = 16;
-            rdbServicioDeWifi.TabStop = true;
-            rdbServicioDeWifi.Text = "Tiene servicio de Wifi";
-            rdbServicioDeWifi.UseVisualStyleBackColor = true;
+            chkbOfreceComida.AutoSize = true;
+            chkbOfreceComida.Location = new Point(929, 79);
+            chkbOfreceComida.Name = "chkbOfreceComida";
+            chkbOfreceComida.Size = new Size(69, 19);
+            chkbOfreceComida.TabIndex = 16;
+            chkbOfreceComida.Text = "Incluido";
+            chkbOfreceComida.UseVisualStyleBackColor = true;
+            chkbOfreceComida.CheckedChanged += chkbOfreceComida_CheckedChanged;
             // 
             // lblSeleccionWifi
             // 
@@ -110,7 +107,7 @@
             lblServicioDeComida.Anchor = AnchorStyles.None;
             lblServicioDeComida.AutoSize = true;
             lblServicioDeComida.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblServicioDeComida.Location = new Point(737, 79);
+            lblServicioDeComida.Location = new Point(737, 81);
             lblServicioDeComida.Name = "lblServicioDeComida";
             lblServicioDeComida.Size = new Size(125, 17);
             lblServicioDeComida.TabIndex = 13;
@@ -141,13 +138,13 @@
             // cboSeleccionDestino
             // 
             cboSeleccionDestino.Anchor = AnchorStyles.None;
+            cboSeleccionDestino.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSeleccionDestino.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionDestino.FormattingEnabled = true;
             cboSeleccionDestino.Location = new Point(145, 179);
             cboSeleccionDestino.Name = "cboSeleccionDestino";
             cboSeleccionDestino.Size = new Size(228, 25);
             cboSeleccionDestino.TabIndex = 10;
-            cboSeleccionDestino.Text = "Seleccione destino";
             // 
             // lblDestino
             // 
@@ -162,13 +159,13 @@
             // cboSeleccionOrigen
             // 
             cboSeleccionOrigen.Anchor = AnchorStyles.None;
+            cboSeleccionOrigen.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSeleccionOrigen.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionOrigen.FormattingEnabled = true;
             cboSeleccionOrigen.Location = new Point(145, 109);
             cboSeleccionOrigen.Name = "cboSeleccionOrigen";
             cboSeleccionOrigen.Size = new Size(228, 25);
             cboSeleccionOrigen.TabIndex = 9;
-            cboSeleccionOrigen.Text = "Seleccione origen";
             // 
             // lblOrigen
             // 
@@ -184,6 +181,7 @@
             // cboSeleccionTipoDeViaje
             // 
             cboSeleccionTipoDeViaje.Anchor = AnchorStyles.None;
+            cboSeleccionTipoDeViaje.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSeleccionTipoDeViaje.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboSeleccionTipoDeViaje.FormattingEnabled = true;
             cboSeleccionTipoDeViaje.Location = new Point(145, 42);
@@ -262,10 +260,10 @@
         private MonthCalendar calendarSeleccionFechaDeViaje;
         private Label lblServicioDeComida;
         private Label lblSeleccionWifi;
-        private RadioButton rdbServicioDeWifi;
         private DataGridView dtgListaVuelosFiltrados;
         private Button btnBuscarVuelo;
         private Label lblMensajeError;
-        private RadioButton rdbSeleccionServicioComida;
+        private CheckBox chkbOfreceWifi;
+        private CheckBox chkbOfreceComida;
     }
 }

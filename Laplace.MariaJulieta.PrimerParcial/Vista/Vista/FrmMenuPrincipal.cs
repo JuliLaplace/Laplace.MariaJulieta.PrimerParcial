@@ -17,6 +17,9 @@ namespace Vista
         Usuario usuarioLogueado;
         FrmLogin formularioLogin;
         string categoriaSeleccionada;
+        Cliente cliente;
+        Avion avion;
+        Vuelo vuelo;
 
 
 
@@ -25,17 +28,19 @@ namespace Vista
             InitializeComponent();
             this.usuarioLogueado = usuario;
             this.formularioLogin = login;
-            this.lblBienvenidaUser.Visible = false; //?????????????????
             this.dtgListar.Visible = false;
             this.lblTitulo.Visible = false;
             this.categoriaSeleccionada = "Inicio";
-
-
+            this.cliente = new Cliente();
+            this.avion = new Avion();
+            this.vuelo = new Vuelo();
+            this.dtgListar.ReadOnly = true;
         }
 
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
+            this.IsMdiContainer = true;
             this.MostrarControles(categoriaSeleccionada);
             this.lblFechaActual.Text = DateTime.Now.ToShortDateString();
             this.lblBienvenidaUser.Visible = true;
@@ -53,15 +58,15 @@ namespace Vista
                 this.ventaDePasajesToolStripMenuItem.Enabled = false;
                 this.vuelosToolStripMenuItem.Enabled = false;
                 this.avionesToolStripMenuItem.Enabled = false;
-                //si las puede listar. Hacer boton aparte para Listar cosas? va a ser mejor manejado
+
             }
             else if (usuarioLogueado.Perfil == "administrador")
             {
-                this.btnListar.Enabled = false;
-                this.ventaDePasajesToolStripMenuItem.Enabled = false;
-                this.estadisticasHistoricasToolStripMenuItem.Enabled = false;
-                this.clientesToolStripMenuItem.Enabled = false;
-
+                //this.btnListar.Enabled = false;
+                //this.ventaDePasajesToolStripMenuItem.Enabled = false;
+                //this.estadisticasHistoricasToolStripMenuItem.Enabled = false;
+                //this.clientesToolStripMenuItem.Enabled = false;
+                //VOLVER A PONER CUANDO FUNCIONE TODO
 
             }
 
@@ -72,46 +77,48 @@ namespace Vista
         {
             categoriaSeleccionada = "Inicio";
             this.MostrarControles(categoriaSeleccionada);
-            this.dtgListar.Visible = false;
+            this.dtgListar.Visible = false; //preguntar si se tienen que ver vuelos
             this.lblTitulo.Visible = false;
-
         }
 
         private void avionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            this.dtgListar.Visible = false;
+            this.LimpiarDatagrid();
+            this.dtgListar.Visible = true;
+            this.dtgListar.DataSource = Empresa.ListarAviones();
+            this.DatosColumnaDataGridAviones();
+            this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.lblTitulo.Text = "Categoría: Aviones";
             this.categoriaSeleccionada = "Avion";
-            this.pctBxImagenPAraMostrar.Visible = true;
             this.MostrarControles(categoriaSeleccionada);
-            //string rutaImagen = Path.Combine(Application.StartupPath, "Iconos", "ImagenClientes.png\\..\\..\\..\\..\\..");
-            //pctBxImagenPAraMostrar.Image = Image.FromFile(rutaImagen);
+
         }
 
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.LimpiarDatagrid();
-            this.dtgListar.Visible = false; //que es mejor?
+            this.LimpiarDatagrid();
+            this.dtgListar.Visible = true; //que es mejor?
+            this.dtgListar.DataSource = Empresa.ListarClientes();
             this.lblTitulo.Text = "Categoría: Clientes";
             this.categoriaSeleccionada = "Cliente";
             this.pctBxImagenPAraMostrar.Visible = true;
             this.MostrarControles(categoriaSeleccionada);
-            //string rutaImagen = Path.Combine(Application.StartupPath, "Iconos", "ImagenClientes.png\\..\\..\\..\\..\\..");
-            //pctBxImagenPAraMostrar.Image = Image.FromFile(rutaImagen);
+
         }
 
         private void vuelosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.LimpiarDatagrid();
-            this.dtgListar.Visible = false;
+            this.LimpiarDatagrid();
+            this.dtgListar.Visible = true;
+            this.dtgListar.ClearSelection();
+            this.dtgListar.DataSource = Empresa.ListarVuelos();
+            this.DatosColumnaDataGridVuelo();
+            this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.lblTitulo.Text = "Categoría: Vuelos";
             this.categoriaSeleccionada = "Vuelo";
             this.pctBxImagenPAraMostrar.Visible = true;
             this.MostrarControles(categoriaSeleccionada);
-            //string rutaImagen = Path.Combine(Application.StartupPath, "Iconos", "ImagenClientes.png\\..\\..\\..\\..\\..");
-            //pctBxImagenPAraMostrar.Image = Image.FromFile(rutaImagen);
 
         }
 
@@ -123,7 +130,11 @@ namespace Vista
                 case "Cliente":
 
                     FrmAgregarCliente agregarClienteForm = new FrmAgregarCliente();
-                    agregarClienteForm.ShowDialog();
+                    if(agregarClienteForm.ShowDialog()== DialogResult.OK)
+                    {
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarClientes();
+                    }
                     break;
                 case "Vuelo":
 
@@ -133,7 +144,11 @@ namespace Vista
                 case "Avion":
 
                     FrmAgregarAvion agregarAvionForm = new FrmAgregarAvion();
-                    agregarAvionForm.ShowDialog();
+                    if (agregarAvionForm.ShowDialog() == DialogResult.OK)
+                    {
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarAviones();
+                    }
                     break;
 
             }
@@ -145,8 +160,12 @@ namespace Vista
             {
                 case "Cliente":
 
-                    FrmAgregarCliente agregarClienteForm = new FrmAgregarCliente();
-                    agregarClienteForm.ShowDialog();
+                    FrmModificarCliente modificarClienteForm = new FrmModificarCliente(cliente);
+                    if (modificarClienteForm.ShowDialog() == DialogResult.OK)
+                    {
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarClientes();
+                    }
                     break;
                 case "Vuelo":
 
@@ -156,7 +175,11 @@ namespace Vista
                 case "Avion":
 
                     FrmAgregarAvion agregarAvionForm = new FrmAgregarAvion();
-                    agregarAvionForm.ShowDialog();
+                    if(agregarAvionForm.ShowDialog()==DialogResult.OK)
+                    {
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarClientes();
+                    }
                     break;
 
             }
@@ -168,61 +191,41 @@ namespace Vista
             {
                 case "Cliente":
 
-                    FrmAgregarCliente agregarClienteForm = new FrmAgregarCliente();
-                    agregarClienteForm.ShowDialog();
+                    FrmEliminarCliente eliminarClienteForm = new FrmEliminarCliente(cliente);
+                    if (eliminarClienteForm.ShowDialog() == DialogResult.OK)
+                    {
+                        Empresa.EliminarCliente(cliente);
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarClientes();
+                    }
+
                     break;
                 case "Vuelo":
 
                     FrmAgregarVuelo agregarVueloForm = new FrmAgregarVuelo();
-                    agregarVueloForm.ShowDialog();
+                    if(agregarVueloForm.ShowDialog() != DialogResult.OK)
+                    {
+                        Empresa.EliminarCliente(cliente);
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarVuelos();
+                    }
                     break;
                 case "Avion":
 
-                    FrmAgregarAvion agregarAvionForm = new FrmAgregarAvion();
-                    agregarAvionForm.ShowDialog();
+                    FrmEliminarAvion agregarAvionForm = new FrmEliminarAvion(avion);
+                    if (agregarAvionForm.ShowDialog() == DialogResult.OK)
+                    {
+                        Empresa.EliminarAvion(avion);
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarAviones();
+                    }
                     break;
 
             }
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
-        {
-            switch (categoriaSeleccionada)
-            {
-                case "Cliente":
-                    this.LimpiarDatagrid();
-                    this.dtgListar.Visible = true;
-                    this.dtgListar.ClearSelection();
-                    this.dtgListar.DataSource = Empresa.ListarClientes();
 
-                    break;
-                case "Vuelo":
 
-                    this.dtgListar.Visible = true;
-                    this.dtgListar.ClearSelection();
-                    this.dtgListar.DataSource = Empresa.ListarVuelos();
-                    this.DatosColumnaDataGridVuelo();
-                    this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-                    break;
-                case "Avion":
-                    this.LimpiarDatagrid();
-                    this.dtgListar.Visible = true;
-
-                    this.dtgListar.DataSource = Empresa.ListarAviones();
-                    this.DatosColumnaDataGridAviones();
-                    this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-                    break;
-
-            }
-        }
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            formularioLogin.Show();
-            formularioLogin.LimpiarPantalla();
-            this.Close();
-        }
         private void DatosColumnaDataGridVuelo()
         {
             this.dtgListar.Columns[0].HeaderText = "Origen";
@@ -250,6 +253,7 @@ namespace Vista
         {
             if (categoriaSeleccionada == "Cliente" || categoriaSeleccionada == "Avion" || categoriaSeleccionada == "Vuelo")
             {
+
                 this.btnModificar.Visible = true;
                 this.btnEliminar.Visible = true;
                 this.btnAgregar.Visible = true;
@@ -276,7 +280,65 @@ namespace Vista
         private void ventaDePasajesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmBusquedaVuelo formularioBuscarVuelo = new FrmBusquedaVuelo();
-            formularioBuscarVuelo.Show();
+            formularioBuscarVuelo.ShowDialog();
+        }
+
+        private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rta = MessageBox.Show("¿Desea salir de la aplicación?", "Cierre de sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            if (rta == DialogResult.Yes)
+            {
+                e.Cancel = false;
+                this.formularioLogin.Show();
+                this.formularioLogin.LimpiarPantalla();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void dtgListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (categoriaSeleccionada)
+            {
+                case "Cliente":
+                    // Verificar si se hizo clic en una fila válida
+                    if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
+                    {
+                        // Obtener el cliente seleccionado
+                        cliente = dtgListar.Rows[e.RowIndex].DataBoundItem as Cliente;
+
+                        // Realizar la acción deseada con el cliente seleccionado
+                        //if (clienteSeleccionado != null)
+                        //{
+                        //    // Por ejemplo, eliminar el cliente de la lista
+                        //    listaClientes.Remove(clienteSeleccionado);
+
+                        //}
+                    }
+
+                    break;
+                case "Vuelo":
+
+                    if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
+                    {
+                        // Obtener el avion seleccionado
+                        vuelo = dtgListar.Rows[e.RowIndex].DataBoundItem as Vuelo;
+                    }
+
+                    break;
+                case "Avion":
+                    if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
+                    {
+                        // Obtener el avion seleccionado
+                        avion = dtgListar.Rows[e.RowIndex].DataBoundItem as Avion;
+                    }
+
+                    break;
+
+            }
         }
     }
 }

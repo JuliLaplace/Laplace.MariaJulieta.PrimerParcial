@@ -22,5 +22,10 @@ namespace Entidades
             }
             return listaDeUsuariosEnJson;
         }
+        public static void SeriaLizarVuelos()
+        {
+
+        }
     }
+    
 }

@@ -10,6 +10,12 @@
     <Compile Update="FrmAgregarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmEliminarAvion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmEliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +23,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmBusquedaVuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmModificarAvion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmModificarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmVentaPasaje.cs">

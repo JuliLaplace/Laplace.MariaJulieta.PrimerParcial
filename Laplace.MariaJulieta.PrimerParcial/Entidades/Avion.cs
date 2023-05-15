@@ -34,24 +34,38 @@ namespace Entidades
         public EAvion     Nombre
         {
             get { return nombre; } 
+            set { nombre = value; }
         }
         public string Matricula
         {
             get { return matricula; }
+            set { matricula = value; }
         }
         public int CantidadDeAsientos
         {
             get { return cantidadDeAsientos; }
+            set
+            {
+                cantidadDeAsientos = value;
+            }
         }
 
         public int CantidadDeBanios
         {
             get { return cantidadDeBanios; }
+            set
+            {
+                cantidadDeBanios = value;
+            }
         }
 
         public float CapacidadBodega
         {
             get { return capacidadBodega; }
+            set
+            {
+                capacidadBodega = value;
+            }
         }
         
        

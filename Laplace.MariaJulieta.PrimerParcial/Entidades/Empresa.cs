@@ -28,7 +28,7 @@ namespace Entidades
             clientes = new List<Cliente>();
             destinoMasElegido = new Dictionary<string, int>();
             pasajerosFrecuentes = new Dictionary<Cliente, int>();
-            destinosInternacionales = new string[5];
+            destinosInternacionales = new string[4];
             destinosNacionales = new string[15];
             HarcodearUsuarios();
             HarcodearDestinosNacionales();
@@ -63,13 +63,13 @@ namespace Entidades
             vuelos.Add(new Vuelo(destinosNacionales[2], destinosNacionales[6], ETipoViaje.Nacional, aviones[3], DateTime.Now, false, false));
             vuelos.Add(new Vuelo(destinosNacionales[5], destinosNacionales[1], ETipoViaje.Nacional, aviones[0], DateTime.Now, false, true));
             vuelos.Add(new Vuelo(destinosInternacionales[1], destinosInternacionales[0], ETipoViaje.Internacional, aviones[5], DateTime.Now, false, true));
-            vuelos.Add(new Vuelo(destinosInternacionales[0], destinosInternacionales[4], ETipoViaje.Internacional, aviones[6], DateTime.Today,true, true));
+            vuelos.Add(new Vuelo(destinosInternacionales[0], destinosInternacionales[3], ETipoViaje.Internacional, aviones[6], DateTime.Today,true, true));
             vuelos.Add(new Vuelo(destinosNacionales[1], destinosNacionales[3], ETipoViaje.Nacional, aviones[4], new DateTime(2022, 10, 5, 12, 30, 0), false, false));
             vuelos.Add(new Vuelo(destinosInternacionales[2], destinosInternacionales[1], ETipoViaje.Internacional, aviones[0], new DateTime(2022, 10, 5, 12, 30, 0), false, true));
             vuelos.Add(new Vuelo(destinosInternacionales[0], destinosInternacionales[1], ETipoViaje.Internacional, aviones[1], new DateTime(2022, 10, 6, 10, 00, 0), true, false));
-            vuelos.Add(new Vuelo(destinosInternacionales[4], destinosInternacionales[0], ETipoViaje.Internacional, aviones[4], new DateTime(2022, 10, 6, 10, 00, 0), false, true));
+            vuelos.Add(new Vuelo(destinosInternacionales[1], destinosInternacionales[0], ETipoViaje.Internacional, aviones[4], new DateTime(2022, 10, 6, 10, 00, 0), false, true));
             vuelos.Add(new Vuelo(destinosInternacionales[0], destinosInternacionales[2], ETipoViaje.Internacional, aviones[4], new DateTime(2022, 10, 7, 15, 30, 0), false, true));
-            vuelos.Add(new Vuelo(destinosInternacionales[4], destinosInternacionales[1], ETipoViaje.Internacional, aviones[4], new DateTime(2022, 10, 7, 15, 30, 0), true, false));
+            vuelos.Add(new Vuelo(destinosInternacionales[3], destinosInternacionales[1], ETipoViaje.Internacional, aviones[4], new DateTime(2022, 10, 7, 15, 30, 0), true, false));
             vuelos.Add(new Vuelo(destinosNacionales[2], destinosNacionales[0], ETipoViaje.Nacional, aviones[2], new DateTime(2022, 10, 8, 22, 15, 0), false, true));
             vuelos.Add(new Vuelo(destinosNacionales[3], destinosNacionales[5], ETipoViaje.Nacional, aviones[2], new DateTime(2022, 10, 8, 22, 15, 0), true, true));
             vuelos.Add(new Vuelo(destinosInternacionales[3], destinosInternacionales[0], ETipoViaje.Internacional, aviones[4], new DateTime(2022, 10, 9, 17, 30, 0), true, false));
@@ -93,13 +93,13 @@ namespace Entidades
         }
         private static void HarcodearDestinosInternacionales() 
         {
-            destinosNacionales = new string[] { "Santa Rosa", "Bariloche", "Corrientes", "Córdoba", "Jujuy", "Mendoza", "Neuquén", "Posadas", "Iguazú", "Salta", "Santiago del Estero", "Trelew", "Tucumán", "Puerto Madryn", "Ushuaia" };
-
+            
+            destinosInternacionales = new string[] { "Recife (Brasil)", "Roma (Italia)", "Acapulco (México)", "Miami (EE.UU.)" };
         }
         private static void HarcodearDestinosNacionales()
         {
-            destinosInternacionales = new string[] { "Buenos Aires (Argentina)", "Recife (Brasil)", "Roma (Italia)", "Acapulco (México)", "Miami (EE.UU.)" };
-
+            
+            destinosNacionales = new string[] { "Santa Rosa", "Bariloche", "Corrientes", "Córdoba", "Jujuy", "Mendoza", "Neuquén", "Posadas", "Iguazú", "Salta", "Santiago del Estero", "Trelew", "Tucumán", "Puerto Madryn", "Ushuaia" };
         }
 
 
@@ -221,11 +221,106 @@ namespace Entidades
             }
             return mostrarVuelos;
         }
+        public static Cliente BuscarClientePorDni(int dni)
+        {
+
+            Cliente clienteEncontrado = new Cliente();
+
+            foreach (Cliente cliente in clientes)
+            {
+                if (cliente.Dni == dni)
+                {
+                    clienteEncontrado = cliente;
+                    break; // Si se encuentra el cliente, se termina el bucle
+                }
+            }
+            return clienteEncontrado;
+
+        }
+
+        public static void EliminarCliente(Cliente cliente)
+        {
+            foreach (Cliente item in clientes)
+            {
+                if (cliente == item)
+                {
+                    clientes.Remove(cliente);
+                    break; 
+                }
+            }
+        }
+
+
+        public static void ModificarCliente(Cliente cliente, string nombre, string apellido, ESexo sexo)
+        {
+            foreach (Cliente item in clientes)
+            {
+                if (cliente == item)
+                {
+                    item.Nombre = nombre;
+                    item.Apellido = apellido;
+                    item.Sexo = sexo;
+                    break;
+                }
+            }
+        }
+
+        public static void EliminarAvion(Avion avion)
+        {
+            foreach (Avion item in aviones)
+            {
+                if (avion == item)
+                {
+                    aviones.Remove(avion);
+                    break;
+                }
+            }
+        }
+
+
+        public static bool EstaAvionEnVuelo(Avion avion, List<Vuelo> lista)
+        {
+            Vuelo vueloEncontrado = null;
+            bool estaEnVuelo = false;
+
+            foreach (Vuelo item in lista)
+            {
+                if (item.UnAvion == avion)
+                {
+                    vueloEncontrado = item;
+                    
+                    break; // Se encontró el avión en un vuelo, se sale del bucle
+                }
+            }
+
+            if (vueloEncontrado != null)
+            {
+                estaEnVuelo = true;
+            }
+            else
+            {
+                // El avión no se encuentra en ningún vuelo de la lista
+                // Realiza las acciones necesarias
+            }
+            return estaEnVuelo;
+           
+        }
+        public static void ModificarAvion(Avion avion)
+        {
+            
+
+
+
+
+
+
+        }
+
 
         //public static bool EstaAvionEnViaje(string matricula)
         //{
         //    Avion auxAvion = BuscarAvionPorMatricula(matricula);
-        //    if(auxAvion is not null)
+        //    if (auxAvion is not null)
         //    {
         //        foreach (Avion item in aviones)
         //        {
@@ -253,28 +348,28 @@ namespace Entidades
         //    return avion;
         //}
 
-        //public static List<Cliente> operator -(List<Cliente> lista, Cliente cliente)
-        //{
-        //    //for (int i = 0; i < lista.Count; i++)
-        //    //{
-        //    //    if (lista[i] == cliente)
-        //    //    {
-        //    //        lista.RemoveAt(i);
-        //    //        break;
-        //    //    }
+        //    public static List<Cliente> operator -(List<Cliente> lista, Cliente cliente)
+        //    {
+        //        //for (int i = 0; i < lista.Count; i++)
+        //        //{
+        //        //    if (lista[i] == cliente)
+        //        //    {
+        //        //        lista.RemoveAt(i);
+        //        //        break;
+        //        //    }
 
-        //    //}
+        //        //}
         //        foreach (Cliente item in clientes)
         //        {
-        //            if(item == cliente)
+        //            if (item == cliente)
         //            {
-        //                lista.Remove(cliente); 
+        //                lista.Remove(cliente);
         //                break;
         //            }
         //        }
 
 
-        //    return lista;
-        //}
+        //        return lista;
+        //    }
     }
 }

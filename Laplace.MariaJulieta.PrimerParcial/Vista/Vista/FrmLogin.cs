@@ -17,7 +17,6 @@ namespace Vista
         }
 
 
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,6 +32,7 @@ namespace Vista
         {
             string usuarioIngresado = this.txtUsuario.Text;
             string contraseñaIngresada = this.txtContraseña.Text;
+            this.lblMensajeError.Visible=false;
 
             if (ValidarDatosIngresados(usuarioIngresado, contraseñaIngresada))
             {
@@ -46,11 +46,12 @@ namespace Vista
                 else
                 {
                     this.lblMensajeError.Visible = true;
+                    LimpiarPantalla();
                 }
             }
             else
             {
-                lblMensajeError.Visible = true;
+                this.lblMensajeError.Visible = true;
                 LimpiarPantalla();
             }
         }

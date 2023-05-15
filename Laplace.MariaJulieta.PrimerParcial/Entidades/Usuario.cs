@@ -17,20 +17,20 @@ namespace Entidades
         private string perfil;
 
 
-        public Usuario(string nombre, string apellido, string correo, string clave, int legajo, string perfil):base (nombre, apellido){
+        public Usuario(string nombre, string apellido, string correo, string clave, int legajo, string perfil) : base(nombre, apellido) {
 
-            
-            this.correo = correo;   
-            this.clave = clave; 
+
+            this.correo = correo;
+            this.clave = clave;
             this.legajo = legajo;
-            this.perfil = perfil;   
+            this.perfil = perfil;
 
-        
+
         }
         [JsonProperty("clave")]
         public string Clave
         {
-            
+            get { return this.clave; }
             set { this.clave = value; }
         }
         [JsonProperty("correo")]
@@ -68,5 +68,25 @@ namespace Entidades
             cadena.AppendLine($"Usuario: {this.perfil}");
             return cadena.ToString();
         }
+
+        //public static bool operator ==(Usuario usuario1, Usuario usuario2)
+        //{
+        //    return ((usuario1.Correo == usuario2.Correo) && (usuario1.clave == usuario2.clave));
+        //}
+        //public static bool operator !=(Usuario usuario1, Usuario usuario2) //uso el operador == de arriba
+        //{
+        //    return !(usuario1 == usuario2);
+        //}
+
+        //public override bool Equals(object? obj) //esta bien??
+        //{
+        //    bool retorno = false;
+
+        //    if (obj is Usuario)
+        //    {
+        //        retorno = this == ((Usuario)obj);
+        //    }
+        //    return retorno;
+        //}
     }
 }

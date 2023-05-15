@@ -22,15 +22,16 @@ namespace Vista
         }
         private void FormAgregarCliente_Load(object sender, EventArgs e)
         {
+ 
             this.cmbGenero.DataSource = Enum.GetValues(typeof(ESexo));
             this.cmbGenero.SelectedIndex = 0;
             this.lblError.Visible = false;
             this.dtpickerFechaNacimiento.MaxDate = DateTime.Today;
+            this.btnBoton1.Text = "Agregar";
         }
 
-        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        protected virtual void btnBoton1_Click(object sender, EventArgs e)
         {
-            
             DateTime fechaNacimiento = this.dtpickerFechaNacimiento.Value;
             int edadIngresada = (int)((DateTime.Now - fechaNacimiento).TotalDays / 365);
             string nombreIngresado = this.txtNombreCliente.Text;
@@ -44,8 +45,8 @@ namespace Vista
                 Empresa.AgregarUnCliente(apellidoIngresado, nombreIngresado, sexoSeleccionado, edadIngresada, dniIngresado);
                 MessageBox.Show("Cliente agregado con exito");
                 this.DialogResult = DialogResult.OK;
-                
-                
+
+
             }
             else
             {
@@ -54,12 +55,11 @@ namespace Vista
                 LimpiarPantalla();
 
             }
-
-
-
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+     
+
+        protected virtual void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
@@ -76,12 +76,11 @@ namespace Vista
             int edad = (int)((DateTime.Now - fechaNacimiento).TotalDays / 365.25);
         }
 
-        private void LimpiarPantalla()
+        protected virtual void LimpiarPantalla()
         {
             this.txtApellidoCliente.Text = string.Empty;
             this.txtDniCliente.Text = string.Empty;
             this.txtNombreCliente.Text = string.Empty;
-
         }
     }
 }

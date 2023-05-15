@@ -47,7 +47,6 @@
             btnEliminar = new Button();
             panelBotones = new Panel();
             pctBxImagenPAraMostrar = new PictureBox();
-            btnListar = new Button();
             panelData.SuspendLayout();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListar).BeginInit();
@@ -73,7 +72,6 @@
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
             // 
             // lblFechaActual
             // 
@@ -152,6 +150,7 @@
             dtgListar.RowTemplate.Height = 25;
             dtgListar.Size = new Size(814, 525);
             dtgListar.TabIndex = 2;
+            dtgListar.CellContentClick += dtgListar_CellContentClick;
             // 
             // lblTitulo
             // 
@@ -197,7 +196,6 @@
             // 
             panelBotones.BackColor = SystemColors.ControlDark;
             panelBotones.Controls.Add(pctBxImagenPAraMostrar);
-            panelBotones.Controls.Add(btnListar);
             panelBotones.Controls.Add(btnAgregar);
             panelBotones.Controls.Add(btnEliminar);
             panelBotones.Controls.Add(btnModificar);
@@ -214,22 +212,11 @@
             pctBxImagenPAraMostrar.TabIndex = 8;
             pctBxImagenPAraMostrar.TabStop = false;
             // 
-            // btnListar
-            // 
-            btnListar.Location = new Point(45, 332);
-            btnListar.Name = "btnListar";
-            btnListar.Size = new Size(75, 23);
-            btnListar.TabIndex = 7;
-            btnListar.Text = "Listar";
-            btnListar.UseVisualStyleBackColor = true;
-            btnListar.Click += btnListar_Click;
-            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1070, 722);
-            ControlBox = false;
             Controls.Add(lblTitulo);
             Controls.Add(dtgListar);
             Controls.Add(panelData);
@@ -238,11 +225,10 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            MaximizeBox = false;
-            MinimizeBox = false;
             Name = "FrmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menú - Fly Airlines";
+            FormClosing += FrmMenuPrincipal_FormClosing;
             Load += FormMenuPrincipal_Load;
             panelData.ResumeLayout(false);
             panelData.PerformLayout();
@@ -275,6 +261,5 @@
         private Button btnEliminar;
         private Panel panelBotones;
         private PictureBox pctBxImagenPAraMostrar;
-        private Button btnListar;
     }
 }

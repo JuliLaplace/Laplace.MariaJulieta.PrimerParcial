@@ -26,3 +26,7 @@ C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmMenuPrincipal.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmBusquedaVuelo.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmVentaPasaje.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmModificarCliente.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmEliminarCliente.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmEliminarAvion.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmModificarAvion.resources

@@ -36,23 +36,7 @@ namespace Vista
             this.domUpDownCantidadBanios.SelectedItem = 2;
         }
 
-        private void btnAgregarAvion_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(this.txtMatriculaAvion.Text))
-            {
-                MessageBox.Show("Debe ingresar una matrícula para el avión.");
-                return; //cancela el agregarAvion
-            }
-            int cantidadAsientos = Convert.ToInt32(this.domUpDownAsientos.SelectedItem); //devuelve tipo objetc
-            int cantidadBanios = Convert.ToInt32(this.domUpDownCantidadBanios.SelectedItem);//devuelve tipo object
-            float capacidadMaximaBodega = Convert.ToSingle(this.domUpDownCapacidadMaxima.SelectedItem);
-            string matricula = this.txtMatriculaAvion.Text;
-            EAvion avionSeleccionado = (EAvion)this.cboAviones.SelectedValue;
-           
-            Empresa.AgregarAvion(avionSeleccionado, matricula, cantidadAsientos, cantidadBanios, capacidadMaximaBodega);
-            MessageBox.Show("Avion agregado con exito.");
-            this.Close();
-        }
+       
 
         private void txtMatriculaAvion_TextChanged(object sender, EventArgs e)
         {
@@ -64,8 +48,26 @@ namespace Vista
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        protected virtual void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        protected virtual void btnBoton1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.txtMatriculaAvion.Text))
+            {
+                MessageBox.Show("Debe ingresar una matrícula para el avión.");
+                return; //cancela el agregarAvion
+            }
+            int cantidadAsientos = Convert.ToInt32(this.domUpDownAsientos.SelectedItem); //devuelve tipo objetc
+            int cantidadBanios = Convert.ToInt32(this.domUpDownCantidadBanios.SelectedItem);//devuelve tipo object
+            float capacidadMaximaBodega = Convert.ToSingle(this.domUpDownCapacidadMaxima.SelectedItem);
+            string matricula = this.txtMatriculaAvion.Text;
+            EAvion avionSeleccionado = (EAvion)this.cboAviones.SelectedValue;
+
+            Empresa.AgregarAvion(avionSeleccionado, matricula, cantidadAsientos, cantidadBanios, capacidadMaximaBodega);
+            MessageBox.Show("Avion agregado con exito.");
             this.Close();
         }
     }
