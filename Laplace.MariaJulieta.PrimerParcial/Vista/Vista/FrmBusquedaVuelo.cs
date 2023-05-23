@@ -16,10 +16,14 @@ namespace Vista
         ETipoViaje tipoDeViaje;
         bool ofreceWifi;
         bool ofreceComida;
+        Vuelo vuelo;
         List<Vuelo> listaDeVuelosDisponibles;
+        
+        public Vuelo VueloSeleccionado { get; private set; }
         public FrmBusquedaVuelo()
         {
             InitializeComponent();
+            vuelo = new Vuelo();
             this.calendarSeleccionFechaDeViaje.MinDate = DateTime.Now;
             this.cboSeleccionTipoDeViaje.DataSource = Enum.GetValues(typeof(ETipoViaje));
             this.cboSeleccionTipoDeViaje.SelectedItem = 0;
@@ -27,6 +31,7 @@ namespace Vista
             tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
             this.listaDeVuelosDisponibles = new List<Vuelo>();
             this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
+            this.DatosColumnaDataGridVuelo();
         }
 
         private void cboSeleccionTipoDeViaje_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,6 +105,61 @@ namespace Vista
             else
             {
                 this.ofreceWifi = false;
+            }
+        }
+
+        private void btnCargarVueloSeleccionado_Click(object sender, EventArgs e)
+        {
+            if (vuelo != null)
+            {
+                VueloSeleccionado = vuelo;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usted no selecciono un vuelo");
+            }
+            
+            
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.LimpiarDatagrid();
+
+            this.dtgListaVuelosFiltrados.Visible = true;
+            this.dtgListaVuelosFiltrados.ClearSelection();
+            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
+
+        }
+
+        private void LimpiarDatagrid()
+        {
+            dtgListaVuelosFiltrados.DataSource = null;
+            dtgListaVuelosFiltrados.Rows.Clear();
+        }
+
+        private void DatosColumnaDataGridVuelo()
+        {
+            this.dtgListaVuelosFiltrados.Columns[0].HeaderText = "Origen";
+            this.dtgListaVuelosFiltrados.Columns[1].HeaderText = "Destino";
+            this.dtgListaVuelosFiltrados.Columns[2].HeaderText = "Tipo de viaje";
+            this.dtgListaVuelosFiltrados.Columns[3].HeaderText = "Servicio Comida";
+            this.dtgListaVuelosFiltrados.Columns[4].HeaderText = "Avion";
+            this.dtgListaVuelosFiltrados.Columns[5].HeaderText = "Fecha de partida";
+            this.dtgListaVuelosFiltrados.Columns[6].HeaderText = "Horas de Viaje";
+            this.dtgListaVuelosFiltrados.Columns[7].HeaderText = "Servicio Wifi";
+            //this.dtgListar.Columns[7].HeaderText = "Asientos Turista";
+            //this.dtgListar.Columns[8].HeaderText = "Asientos Premium";
+        }
+
+        private void dtgListaVuelosFiltrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dtgListaVuelosFiltrados.Rows.Count)
+            {
+                // Obtener el cliente seleccionado
+                vuelo = dtgListaVuelosFiltrados.Rows[e.RowIndex].DataBoundItem as Vuelo;
             }
         }
     }

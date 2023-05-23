@@ -44,6 +44,8 @@
             dtgListaVuelosFiltrados = new DataGridView();
             btnBuscarVuelo = new Button();
             lblMensajeError = new Label();
+            btnCargarVueloSeleccionado = new Button();
+            btnLimpiar = new Button();
             gpbDatosFiltroViaje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListaVuelosFiltrados).BeginInit();
             SuspendLayout();
@@ -209,10 +211,11 @@
             dtgListaVuelosFiltrados.RowTemplate.Height = 25;
             dtgListaVuelosFiltrados.Size = new Size(1117, 211);
             dtgListaVuelosFiltrados.TabIndex = 1;
+            dtgListaVuelosFiltrados.CellContentClick += dtgListaVuelosFiltrados_CellContentClick;
             // 
             // btnBuscarVuelo
             // 
-            btnBuscarVuelo.Location = new Point(571, 270);
+            btnBuscarVuelo.Location = new Point(599, 287);
             btnBuscarVuelo.Name = "btnBuscarVuelo";
             btnBuscarVuelo.Size = new Size(75, 23);
             btnBuscarVuelo.TabIndex = 17;
@@ -229,11 +232,33 @@
             lblMensajeError.TabIndex = 18;
             lblMensajeError.Text = "Mensaje Error";
             // 
+            // btnCargarVueloSeleccionado
+            // 
+            btnCargarVueloSeleccionado.Location = new Point(477, 571);
+            btnCargarVueloSeleccionado.Name = "btnCargarVueloSeleccionado";
+            btnCargarVueloSeleccionado.Size = new Size(169, 23);
+            btnCargarVueloSeleccionado.TabIndex = 19;
+            btnCargarVueloSeleccionado.Text = "Cargar Vuelo Seleccionado";
+            btnCargarVueloSeleccionado.UseVisualStyleBackColor = true;
+            btnCargarVueloSeleccionado.Click += btnCargarVueloSeleccionado_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(440, 287);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(75, 23);
+            btnLimpiar.TabIndex = 20;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // FrmBusquedaVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1223, 617);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnCargarVueloSeleccionado);
             Controls.Add(lblMensajeError);
             Controls.Add(btnBuscarVuelo);
             Controls.Add(dtgListaVuelosFiltrados);
@@ -265,5 +290,7 @@
         private Label lblMensajeError;
         private CheckBox chkbOfreceWifi;
         private CheckBox chkbOfreceComida;
+        private Button btnCargarVueloSeleccionado;
+        private Button btnLimpiar;
     }
 }

@@ -11,7 +11,12 @@ namespace Entidades
         private int codigoPasaje;
         private ETipoPasaje tipoDePasaje;
         private double precio;
-
+        public Pasaje()
+        {
+            this.codigoPasaje = 0;
+            this.precio = 0;
+            this.tipoDePasaje = ETipoPasaje.Turista;
+        }
         public Pasaje(int codigoPasaje, double precio, ETipoPasaje tipoDePasaje)
         {
             this.codigoPasaje = codigoPasaje;
@@ -32,10 +37,18 @@ namespace Entidades
         public double Precio
         {
             get { return precio; }
+            set
+            {
+                this.precio = value;
+            }
         }
         public ETipoPasaje TipoDePasaje
         {
             get { return tipoDePasaje; }
+            set
+            {
+                this.tipoDePasaje = value;
+            }
         }
     }
 }

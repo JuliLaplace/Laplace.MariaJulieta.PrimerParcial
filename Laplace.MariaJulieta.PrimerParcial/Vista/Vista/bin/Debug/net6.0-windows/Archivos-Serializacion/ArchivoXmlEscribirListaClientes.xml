@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPasajero xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pasajero>
+    <Apellido>Papana</Apellido>
+    <Nombre>Andrea</Nombre>
+    <Dni>35454676</Dni>
+    <Sexo>Femenino</Sexo>
+    <Edad>34</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Lorez</Apellido>
+    <Nombre>Martin</Nombre>
+    <Dni>20343562</Dni>
+    <Sexo>Masculino</Sexo>
+    <Edad>24</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Zeia</Apellido>
+    <Nombre>Juan</Nombre>
+    <Dni>25674273</Dni>
+    <Sexo>NoBinario</Sexo>
+    <Edad>50</Edad>
+  </Pasajero>
+</ArrayOfPasajero>

@@ -90,6 +90,27 @@ namespace Entidades
         {
             get { return tieneWifi; }
         }
+        public int CantidadPasajesVendidos(ETipoPasaje tipoDePasaje)
+        {
+            int cantidad = 0;
+            foreach (Pasajero item in pasajeros)
+            {
+                if (item.UnPasaje.TipoDePasaje == tipoDePasaje)
+                {
+                    cantidad++;
+                }
+            }
+            return cantidad;
+        }
+        public int CantidadDeAsientosDisponiblesTurista()
+        {
+            return unAvion.CantidadAsientosTurista() - CantidadPasajesVendidos(ETipoPasaje.Turista);
+        }
+
+        public int CantidadDeAsientosDisponiblesPremium()
+        {
+            return unAvion.CantidadAsientosPremium() - CantidadPasajesVendidos(ETipoPasaje.Premium);
+        }
 
 
 

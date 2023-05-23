@@ -130,12 +130,12 @@
             btnAutoCompletar.UseVisualStyleBackColor = false;
             btnAutoCompletar.Click += btnAutoCompletar_Click;
             // 
-            // FormLogin
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(698, 441);
+            ClientSize = new Size(698, 447);
             Controls.Add(btnAutoCompletar);
             Controls.Add(lblMensajeError);
             Controls.Add(btnSalir);
@@ -145,7 +145,7 @@
             Controls.Add(lblTituloLogin);
             Controls.Add(pboxPanelImagen);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormLogin";
+            Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += frmLogin_Load;

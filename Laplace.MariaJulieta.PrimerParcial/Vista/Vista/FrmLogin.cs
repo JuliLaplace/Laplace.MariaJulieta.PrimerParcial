@@ -32,7 +32,7 @@ namespace Vista
         {
             string usuarioIngresado = this.txtUsuario.Text;
             string contraseñaIngresada = this.txtContraseña.Text;
-            this.lblMensajeError.Visible=false;
+            this.lblMensajeError.Visible = false;
 
             if (ValidarDatosIngresados(usuarioIngresado, contraseñaIngresada))
             {

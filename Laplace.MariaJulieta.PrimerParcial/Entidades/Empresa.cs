@@ -11,7 +11,7 @@ namespace Entidades
         private static List<Usuario>? usuarios; // DEJO EL ? ?????
         private static List <Avion> aviones;
         private static List<Vuelo> vuelos;
-        private static List<Cliente> clientes;
+        private static List<Pasajero> pasajeros;
         private static Dictionary<string, int> destinoMasElegido;
         private static Dictionary<Cliente, int> pasajerosFrecuentes;
         private static double gananciaTotalCabojate;
@@ -25,7 +25,7 @@ namespace Entidades
             usuarios = new List<Usuario>();
             aviones = new List<Avion>();
             vuelos = new List<Vuelo>();
-            clientes = new List<Cliente>();
+            pasajeros = new List<Pasajero>();
             destinoMasElegido = new Dictionary<string, int>();
             pasajerosFrecuentes = new Dictionary<Cliente, int>();
             destinosInternacionales = new string[4];
@@ -33,8 +33,9 @@ namespace Entidades
             HarcodearUsuarios();
             HarcodearDestinosNacionales();
             HarcodearDestinosInternacionales();
-            HarcodearClientes();
+            HarcodearPasajeros();
             HarcodearAviones();
+            
             HarcodearVuelos();
 
 
@@ -48,13 +49,15 @@ namespace Entidades
 
         private static void HarcodearAviones()
         {
-            aviones.Add(new Avion(EAvion.Boeing, "B7772001", 100, 2, 100));
-            aviones.Add(new Avion(EAvion.Boeing, "B7772002", 100, 2, 100)); 
-            aviones.Add(new Avion(EAvion.Boeing, "B7772003", 100, 2, 100));
-            aviones.Add(new Avion(EAvion.Airbus,"A5551001", 200, 4, 200));
-            aviones.Add(new Avion(EAvion.Airbus,"A5551002", 200, 4, 200));
-            aviones.Add(new Avion(EAvion.Airbus, "A5551003", 200, 4, 200));
-            aviones.Add(new Avion(EAvion.Airbus, "A5551004", 200, 4, 200));
+            //aviones.Add(new Avion(EAvion.Boeing, "B7772001", 100, 2, 100));
+            //aviones.Add(new Avion(EAvion.Boeing, "B7772002", 100, 2, 100));
+            //aviones.Add(new Avion(EAvion.Boeing, "B7772003", 100, 2, 100));
+            //aviones.Add(new Avion(EAvion.Airbus, "A5551001", 200, 4, 200));
+            //aviones.Add(new Avion(EAvion.Airbus, "A5551002", 200, 4, 200));
+            //aviones.Add(new Avion(EAvion.Airbus, "A5551003", 200, 4, 200));
+            //aviones.Add(new Avion(EAvion.Airbus, "A5551004", 200, 4, 200));
+            //Archivo.EscribirLista(aviones);
+            aviones = Archivo.LeerLista();
 
         }
         private static void HarcodearVuelos()
@@ -76,11 +79,11 @@ namespace Entidades
             vuelos.Add(new Vuelo(destinosNacionales[0], destinosNacionales[3], ETipoViaje.Nacional, aviones[1], new DateTime(2022, 10, 9, 17, 30, 0), true, true));
 
         }
-        private static void HarcodearClientes()
+        private static void HarcodearPasajeros()
         {
-            clientes.Add(new Cliente("Andrea", "Papana", 35454676, ESexo.Femenino, 34));
-            clientes.Add(new Cliente("Martin", "Lorez", 20343562, ESexo.Masculino, 24));
-            clientes.Add(new Cliente(  "Juan", "Zeia", 25674273, ESexo.NoBinario, 50));
+            pasajeros.Add(new Pasajero("Andrea", "Papana", 35454676, ESexo.Femenino, 34));
+            pasajeros.Add(new Pasajero("Martin", "Lorez", 20343562, ESexo.Masculino, 24));
+            pasajeros.Add(new Pasajero("Juan", "Zeia", 25674273, ESexo.NoBinario, 50));
             //clientes.Add(new Cliente(37289384, "Perez", "Federico", ESexo.Masculino, 34));
             //clientes.Add(new Cliente(47362983, "Manzo", "Ludmila", ESexo.Femenino, 24));
             //clientes.Add(new Cliente(35627839, "Firma", "Tristan", ESexo.Masculino, 61));
@@ -90,6 +93,10 @@ namespace Entidades
             //clientes.Add(new Cliente(37289384, "Zanco", "Damian", ESexo.Masculino, 18));
             //clientes.Add(new Cliente(47362983, "Juarez", "Sabrina", ESexo.Femenino, 20));
             //clientes.Add(new Cliente(35627839, "Nilo", "Helena", ESexo.Femenino, 31));
+            Archivo.EscribirLista(pasajeros);
+            pasajeros = Archivo.LeerListaPasajeros();
+            
+            
         }
         private static void HarcodearDestinosInternacionales() 
         {
@@ -126,14 +133,14 @@ namespace Entidades
             }
             return mostrarAviones;
         }
-        public static List<Cliente> ListarClientes()
+        public static List<Pasajero> ListarPasajeros()
         {
-            List<Cliente> mostrarClientes = new List<Cliente>();
-            foreach(Cliente item in clientes)
+            List<Pasajero> mostrarPasajeros = new List<Pasajero>();
+            foreach(Pasajero item in pasajeros)
             {
-                mostrarClientes.Add(item);
+                mostrarPasajeros.Add(item);
             }
-            return mostrarClientes;
+            return mostrarPasajeros;
         }
 
 
@@ -147,10 +154,10 @@ namespace Entidades
             }
             return mostrarVuelos;
         }
-        public static void AgregarUnCliente(string apellido, string nombre, ESexo sexo, int edad, string dni)
+        public static void AgregarUnPasajero(string apellido, string nombre, ESexo sexo, int edad, string dni)
         {
 
-            clientes.Add(new Cliente(nombre,apellido, Validador.CadenaStringAInt(dni), sexo, edad));
+            pasajeros.Add(new Pasajero(nombre, apellido, Validador.CadenaStringAInt(dni), sexo, edad));
 
         }
 
@@ -221,41 +228,41 @@ namespace Entidades
             }
             return mostrarVuelos;
         }
-        public static Cliente BuscarClientePorDni(int dni)
+        public static Pasajero BuscarPasajeroPorDni(int dni)
         {
 
-            Cliente clienteEncontrado = new Cliente();
+            Pasajero pasajeroEncontrado = new Pasajero();
 
-            foreach (Cliente cliente in clientes)
+            foreach (Pasajero pasajero in pasajeros)
             {
-                if (cliente.Dni == dni)
+                if (pasajero.Dni == dni)
                 {
-                    clienteEncontrado = cliente;
+                    pasajeroEncontrado = pasajero;
                     break; // Si se encuentra el cliente, se termina el bucle
                 }
             }
-            return clienteEncontrado;
+            return pasajeroEncontrado;
 
         }
 
-        public static void EliminarCliente(Cliente cliente)
+        public static void EliminarPasajero(Pasajero pasajero)
         {
-            foreach (Cliente item in clientes)
+            foreach (Pasajero item in pasajeros)
             {
-                if (cliente == item)
+                if (pasajero == item)
                 {
-                    clientes.Remove(cliente);
+                    pasajeros.Remove(pasajero);
                     break; 
                 }
             }
         }
 
 
-        public static void ModificarCliente(Cliente cliente, string nombre, string apellido, ESexo sexo)
+        public static void ModificarPasajero(Pasajero pasajero, string nombre, string apellido, ESexo sexo)
         {
-            foreach (Cliente item in clientes)
+            foreach (Pasajero item in pasajeros)
             {
-                if (cliente == item)
+                if (pasajero == item)
                 {
                     item.Nombre = nombre;
                     item.Apellido = apellido;

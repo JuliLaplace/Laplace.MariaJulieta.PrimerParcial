@@ -1,0 +1,50 @@
+﻿using Entidades;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Vista
+{
+    public partial class FrmModificarPasajero : FrmPasajero
+    {
+        public Pasajero pasajeroRecibido;
+        public FrmModificarPasajero(Pasajero pasajero) : base()
+        {
+            InitializeComponent();
+            base.btnBoton1.Text = "Modificar";
+            this.pasajeroRecibido = pasajero;
+        }
+
+
+        private void FrmModificarPasajero_Load_1(object sender, EventArgs e)
+        {
+            base.btnBoton1.Text = "Modificar";
+            base.dtpickerFechaNacimiento.Enabled = false;
+            base.txtDniPasajero.Text = pasajeroRecibido.Dni.ToString();
+            base.txtDniPasajero.Enabled = false;
+            base.txtApellidoPasajero.Text = pasajeroRecibido.Apellido;
+            base.txtNombrePasajero.Text = pasajeroRecibido.Nombre;
+            base.cmbGenero.SelectedItem = pasajeroRecibido.Sexo;
+
+        }
+
+        protected override void btnBoton1_Click(object sender, EventArgs e)
+        {
+            ESexo sexo = (ESexo)base.cmbGenero.SelectedValue;
+            this.DialogResult = DialogResult.OK;
+
+        }
+
+        protected override void btnCancelar_Click(object sender, EventArgs e)
+        {
+            base.LimpiarPantalla();
+            base.DialogResult = DialogResult.Cancel;
+        }
+    }
+}

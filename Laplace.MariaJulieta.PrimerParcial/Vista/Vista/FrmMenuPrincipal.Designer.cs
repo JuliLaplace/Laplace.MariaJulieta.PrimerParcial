@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             panelData = new Panel();
-            btnSalir = new Button();
             lblFechaActual = new Label();
             lblBienvenidaUser = new Label();
             menuStrip1 = new MenuStrip();
@@ -56,22 +55,12 @@
             // 
             // panelData
             // 
-            panelData.Controls.Add(btnSalir);
             panelData.Controls.Add(lblFechaActual);
             panelData.Controls.Add(lblBienvenidaUser);
             panelData.Location = new Point(-3, 634);
             panelData.Name = "panelData";
             panelData.Size = new Size(1074, 90);
             panelData.TabIndex = 0;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(958, 15);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(88, 26);
-            btnSalir.TabIndex = 2;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
             // 
             // lblFechaActual
             // 
@@ -125,8 +114,8 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(68, 21);
-            clientesToolStripMenuItem.Text = "Clientes";
+            clientesToolStripMenuItem.Size = new Size(71, 21);
+            clientesToolStripMenuItem.Text = "Pasajero";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // avionesToolStripMenuItem
@@ -244,7 +233,6 @@
         #endregion
 
         private Panel panelData;
-        private Button btnSalir;
         private Label lblFechaActual;
         private Label lblBienvenidaUser;
         private MenuStrip menuStrip1;

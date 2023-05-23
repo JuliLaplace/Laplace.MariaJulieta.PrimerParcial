@@ -10,7 +10,11 @@ namespace Entidades
     {
         private int cantidadValijas;
         private float pesoTotalValija;
-
+        public Equipaje()
+        {
+            this.pesoTotalValija = 0;
+            this.cantidadValijas = 0;
+        }
         public Equipaje(int cantidadValijas, float pesoTotalValija)
         {
             this.cantidadValijas = cantidadValijas;
@@ -20,12 +24,14 @@ namespace Entidades
         public int CantidadValijas
         {
             get { return cantidadValijas; }
+            set { this.cantidadValijas = value;}
         }
 
 
         public float PesoTotalValija
         {
             get { return pesoTotalValija; }
+            set { this.pesoTotalValija= value; }
         }
     }
 }
