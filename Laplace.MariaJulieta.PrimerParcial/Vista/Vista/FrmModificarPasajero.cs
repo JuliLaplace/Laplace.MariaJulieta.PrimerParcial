@@ -17,7 +17,7 @@ namespace Vista
         public FrmModificarPasajero(Pasajero pasajero) : base()
         {
             InitializeComponent();
-            base.btnBoton1.Text = "Modificar";
+            
             this.pasajeroRecibido = pasajero;
         }
 

@@ -29,6 +29,7 @@ namespace Vista
             this.cboSeleccionAvion.DataSource = Empresa.ListarAviones();
             this.cboSeleccionTipoDeViaje.SelectedItem = 0;
             tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
+            this.btnAgregarVuelo.Text = "Agregar";
 
         }
 
@@ -58,7 +59,7 @@ namespace Vista
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void btnAgregarVuelo_Click(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace Vista
 
                 Empresa.AgregarVuelo(origen, destino, tipoDeViaje, avionSeleccionado, fecha, ofreceServicioComida, ofreceWifi); //COMPLETAR
                 MessageBox.Show("Vuelo agregado con exito");
-                this.Close();
+                this.DialogResult = DialogResult.OK;
 
             }
 

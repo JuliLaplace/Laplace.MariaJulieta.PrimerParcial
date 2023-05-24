@@ -49,4 +49,25 @@
     <CantidadDeBanios>4</CantidadDeBanios>
     <CapacidadBodega>200</CapacidadBodega>
   </Avion>
+  <Avion>
+    <Nombre>Airbus</Nombre>
+    <Matricula>fgstajsh</Matricula>
+    <CantidadDeAsientos>150</CantidadDeAsientos>
+    <CantidadDeBanios>4</CantidadDeBanios>
+    <CapacidadBodega>150.5</CapacidadBodega>
+  </Avion>
+  <Avion>
+    <Nombre>Airbus</Nombre>
+    <Matricula>qatagshd</Matricula>
+    <CantidadDeAsientos>150</CantidadDeAsientos>
+    <CantidadDeBanios>4</CantidadDeBanios>
+    <CapacidadBodega>100.3</CapacidadBodega>
+  </Avion>
+  <Avion>
+    <Nombre>Airbus</Nombre>
+    <Matricula>dgdgdgdg</Matricula>
+    <CantidadDeAsientos>200</CantidadDeAsientos>
+    <CantidadDeBanios>2</CantidadDeBanios>
+    <CapacidadBodega>150.5</CapacidadBodega>
+  </Avion>
 </ArrayOfAvion>

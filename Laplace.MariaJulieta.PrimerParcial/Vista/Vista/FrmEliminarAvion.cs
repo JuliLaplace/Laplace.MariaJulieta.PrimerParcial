@@ -22,6 +22,7 @@ namespace Vista
 
         private void FrmEliminarAvion_Load(object sender, EventArgs e)
         {
+            base.btnBoton1.Text = "Eliminar";
             base.cboAviones.Enabled = false;
             base.cboAviones.SelectedItem = avionRecibido.Nombre;
             base.domUpDownAsientos.Enabled = false;
@@ -35,7 +36,7 @@ namespace Vista
         }
         protected override void btnCancelar_Click(object sender, EventArgs e)
         {
-            base.Close();
+            this.DialogResult = DialogResult.Cancel;
         }
 
         protected override void btnBoton1_Click(object sender, EventArgs e)

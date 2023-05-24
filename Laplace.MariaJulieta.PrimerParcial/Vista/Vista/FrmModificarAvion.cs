@@ -19,10 +19,30 @@ namespace Vista
             InitializeComponent();
             this.avionRecibido = avion;
             base.btnBoton1.Text = "Modificar";
+
         }
 
         private void btnBoton1_Click_1(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void FrmModificarAvion_Load(object sender, EventArgs e)
+        {
+           
+            //this.cboAviones.SelectedIndex = 0;
+            //base.domUpDownAsientos.Items.Add(avionRecibido.CantidadDeAsientos);
+            //base.domUpDownCantidadBanios.Items.Add(avionRecibido.CantidadDeBanios);
+            //base.domUpDownCapacidadMaxima.Items.Add(avionRecibido.CapacidadBodega);
+
+            base.domUpDownCapacidadMaxima.SelectedItem = avionRecibido.CapacidadBodega;
+            base.domUpDownCantidadBanios.SelectedItem = avionRecibido.CantidadDeBanios;
+            base.domUpDownAsientos.SelectedItem = avionRecibido.CantidadDeAsientos;
 
         }
     }

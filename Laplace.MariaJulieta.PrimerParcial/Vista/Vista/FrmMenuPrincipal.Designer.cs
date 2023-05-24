@@ -139,7 +139,7 @@
             dtgListar.RowTemplate.Height = 25;
             dtgListar.Size = new Size(814, 525);
             dtgListar.TabIndex = 2;
-            dtgListar.CellContentClick += dtgListar_CellContentClick;
+            dtgListar.CellClick += dtgListar_CellClick;
             // 
             // lblTitulo
             // 

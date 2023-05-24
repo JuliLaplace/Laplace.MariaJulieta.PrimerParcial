@@ -31,13 +31,23 @@
             panelAvion.SuspendLayout();
             SuspendLayout();
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Click += btnCancelar_Click_1;
+            // 
             // cboAviones
             // 
-            cboAviones.DataSource = (new EAvion[] { EAvion.Airbus, EAvion.Boeing });
-            cboAviones.Items.AddRange(new object[] { EAvion.Airbus, EAvion.Boeing });
+            cboAviones.DataSource = null;/* (new EAvion[] { EAvion.Airbus, EAvion.Boeing });
+            cboAviones.Items.AddRange(new object[] { EAvion.Airbus, EAvion.Boeing });*/
             // 
             // domUpDownAsientos
             // 
+            domUpDownAsientos.Items.Add(200);
+            domUpDownAsientos.Items.Add(150);
+            domUpDownAsientos.Items.Add(100);
+            domUpDownAsientos.Items.Add(200);
+            domUpDownAsientos.Items.Add(150);
+            domUpDownAsientos.Items.Add(100);
             domUpDownAsientos.Items.Add(200);
             domUpDownAsientos.Items.Add(150);
             domUpDownAsientos.Items.Add(100);
@@ -53,11 +63,21 @@
             domUpDownCapacidadMaxima.Items.Add(200.6D);
             domUpDownCapacidadMaxima.Items.Add(150.5D);
             domUpDownCapacidadMaxima.Items.Add(100.3D);
+            domUpDownCapacidadMaxima.Items.Add(200.6D);
+            domUpDownCapacidadMaxima.Items.Add(150.5D);
+            domUpDownCapacidadMaxima.Items.Add(100.3D);
+            domUpDownCapacidadMaxima.Items.Add(200.6D);
+            domUpDownCapacidadMaxima.Items.Add(150.5D);
+            domUpDownCapacidadMaxima.Items.Add(100.3D);
             domUpDownCapacidadMaxima.SelectedIndex = 2;
             domUpDownCapacidadMaxima.Text = "100,3";
             // 
             // domUpDownCantidadBanios
             // 
+            domUpDownCantidadBanios.Items.Add(4);
+            domUpDownCantidadBanios.Items.Add(2);
+            domUpDownCantidadBanios.Items.Add(4);
+            domUpDownCantidadBanios.Items.Add(2);
             domUpDownCantidadBanios.Items.Add(4);
             domUpDownCantidadBanios.Items.Add(2);
             domUpDownCantidadBanios.SelectedIndex = 1;
@@ -70,6 +90,7 @@
             ClientSize = new Size(800, 450);
             Name = "FrmModificarAvion";
             Text = "FrmEliminarVuelo";
+            Load += FrmModificarAvion_Load;
             panelAvion.ResumeLayout(false);
             panelAvion.PerformLayout();
             ResumeLayout(false);

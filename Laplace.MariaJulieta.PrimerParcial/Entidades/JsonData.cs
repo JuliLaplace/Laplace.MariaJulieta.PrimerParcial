@@ -12,19 +12,23 @@ namespace Entidades
 {
     public static class JsonData
     {
-        static string ruta;
+        //static string ruta;
         static JsonData()
         {
-            ruta = AppDomain.CurrentDomain.BaseDirectory;
-            ruta += @"\Archivos-Serializacion";
+            //ruta = AppDomain.CurrentDomain.BaseDirectory;
+            //ruta += @"\Archivos-Serializacion";
         }
-        public static List<Usuario>? LeerUsuario() //esta bien? esto deja que la lista sea null (ELIMINA WARNING)
+        public static List<Usuario> LeerUsuario() //esta bien? esto deja que la lista sea null (ELIMINA WARNING)
         {
             List<Usuario>? listaDeUsuariosEnJson = new List<Usuario>();
             using(StreamReader read = new StreamReader("MOCK_DATA.json"))
             {
                 string archivoALeer = read.ReadToEnd();
                 listaDeUsuariosEnJson = JsonConvert.DeserializeObject<List<Usuario>>(archivoALeer);
+                if(listaDeUsuariosEnJson is null)
+                {
+                    listaDeUsuariosEnJson = new List<Usuario>();
+                }
 
             }
             return listaDeUsuariosEnJson;
@@ -32,11 +36,11 @@ namespace Entidades
        
         
 
-        public static void Escribir()
-        {
-            string rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            string harcodeoAviones = "harcodeoAviones.txt";
-        }
+        //public static void Escribir()
+        //{
+        //    string rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
+        //    string harcodeoAviones = "harcodeoAviones.txt";
+        //}
     }
     
 }

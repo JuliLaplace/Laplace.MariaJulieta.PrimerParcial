@@ -38,7 +38,7 @@ namespace Vista
             {
                 Usuario unUsuario = Empresa.ValidarUnUsuario(usuarioIngresado, contraseñaIngresada);
                 if (unUsuario is not null)
-                {
+                { // archivo log aca
                     FrmMenuPrincipal formMenu = new FrmMenuPrincipal(unUsuario, this);
                     formMenu.Show();
                     this.Hide();

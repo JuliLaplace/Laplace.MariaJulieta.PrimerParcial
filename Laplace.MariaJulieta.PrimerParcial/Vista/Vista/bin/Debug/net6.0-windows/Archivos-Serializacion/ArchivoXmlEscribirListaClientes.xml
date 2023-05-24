@@ -21,4 +21,11 @@
     <Sexo>NoBinario</Sexo>
     <Edad>50</Edad>
   </Pasajero>
+  <Pasajero>
+    <Apellido>sadasd</Apellido>
+    <Nombre>sdsad</Nombre>
+    <Dni>6535643</Dni>
+    <Sexo>Masculino</Sexo>
+    <Edad>3</Edad>
+  </Pasajero>
 </ArrayOfPasajero>

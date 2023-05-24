@@ -16,7 +16,7 @@ namespace Vista
     {
         Usuario usuarioLogueado;
         FrmLogin formularioLogin;
-        string categoriaSeleccionada;
+        string categoriaSeleccionada = "";
         Cliente cliente;
         Avion avion;
         Vuelo vuelo;
@@ -29,7 +29,6 @@ namespace Vista
             InitializeComponent();
             this.usuarioLogueado = usuario;
             this.formularioLogin = login;
-
             this.pasajero = new Pasajero();
             this.cliente = new Cliente();
             this.avion = new Avion();
@@ -50,6 +49,7 @@ namespace Vista
             this.lblFechaActual.Text = DateTime.Now.ToShortDateString();
             this.lblBienvenidaUser.Visible = true;
             this.lblBienvenidaUser.Text = "Bienvenido " + usuarioLogueado.Nombre;
+            
 
             if (usuarioLogueado.Perfil == "vendedor")
             {
@@ -95,6 +95,7 @@ namespace Vista
             this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.lblTitulo.Text = "Categoría: Aviones";
             this.categoriaSeleccionada = "Avion";
+            this.dtgListar.CurrentCell = dtgListar.Rows[0].Cells[0];//MODIFICAR
             this.MostrarControles(categoriaSeleccionada);
 
         }
@@ -134,6 +135,9 @@ namespace Vista
             this.categoriaSeleccionada = "Pasajero";
             this.pctBxImagenPAraMostrar.Visible = true;
             this.MostrarControles(categoriaSeleccionada);
+            this.dtgListar.CurrentCell = dtgListar.Rows[0].Cells[0]; //MODIFICAR
+            
+            // poner primer pasajero - forzado
 
         }
 
@@ -149,6 +153,7 @@ namespace Vista
             this.categoriaSeleccionada = "Vuelo";
             this.pctBxImagenPAraMostrar.Visible = true;
             this.MostrarControles(categoriaSeleccionada);
+            this.dtgListar.CurrentCell = dtgListar.Rows[0].Cells[0]; //MODIFICAR
 
         }
 
@@ -169,7 +174,11 @@ namespace Vista
                 case "Vuelo":
 
                     FrmAgregarVuelo agregarVueloForm = new FrmAgregarVuelo();
-                    agregarVueloForm.ShowDialog();
+                    if (agregarVueloForm.ShowDialog() == DialogResult.OK)
+                    {
+                        this.dtgListar.DataSource = null;
+                        dtgListar.DataSource = Empresa.ListarVuelos();
+                    }
                     break;
                 case "Avion":
 
@@ -199,13 +208,17 @@ namespace Vista
                     break;
                 case "Vuelo":
 
-                    FrmAgregarVuelo agregarVueloForm = new FrmAgregarVuelo();
-                    agregarVueloForm.ShowDialog();
-                    break;
+                    //FrmAgregarVuelo agregarVueloForm = new FrmAgregarVuelo();
+                    //if(agregarVueloForm.ShowDialog() == DialogResult.OK)
+                    //{
+                    //    this.dtgListar.DataSource = null;
+                    //    dtgListar.DataSource = Empresa.ListarVuelos();
+                    //}
+                    //break;
                 case "Avion":
 
-                    FrmAgregarAvion agregarAvionForm = new FrmAgregarAvion();
-                    if (agregarAvionForm.ShowDialog() == DialogResult.OK)
+                    FrmModificarAvion modificarAvionForm = new FrmModificarAvion(avion);
+                    if (modificarAvionForm.ShowDialog() == DialogResult.OK)
                     {
                         this.dtgListar.DataSource = null;
                         dtgListar.DataSource = Empresa.ListarAviones();
@@ -235,7 +248,7 @@ namespace Vista
                     FrmAgregarVuelo agregarVueloForm = new FrmAgregarVuelo();
                     if (agregarVueloForm.ShowDialog() != DialogResult.OK)
                     {
-                        //Empresa.EliminarCliente(cliente);
+                        
                         this.dtgListar.DataSource = null;
                         dtgListar.DataSource = Empresa.ListarVuelos();
                     }
@@ -280,7 +293,7 @@ namespace Vista
         }
         private void DatosCloumnaDataGridPasajeros()
         {
-            
+
             this.dtgListar.Columns[0].HeaderText = "Apellido";
             this.dtgListar.Columns[1].HeaderText = "Nombre";
             this.dtgListar.Columns[2].HeaderText = "DNI";
@@ -289,9 +302,6 @@ namespace Vista
             this.dtgListar.Columns[5].HeaderText = "Vuelo";
             this.dtgListar.Columns[6].HeaderText = "Equipaje";
             this.dtgListar.Columns[7].HeaderText = "Llava equipaje";
-            //this.dtgListar.Columns[8].HeaderText = "Llava equipaje";
-            //this.dtgListar.Columns[9].HeaderText = "Llava equipaje";
-            //this.dtgListar.Columns[10].HeaderText = "Llava equipaje";
         }
 
         private void MostrarControles(string categoriaSeleccionada)
@@ -325,11 +335,11 @@ namespace Vista
         private void ventaDePasajesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVentaPasaje formularioVentaDePasaje = new FrmVentaPasaje();
-            if(formularioVentaDePasaje.ShowDialog()== DialogResult.OK )
+            if (formularioVentaDePasaje.ShowDialog() == DialogResult.OK)
             {
                 //Vuelo vueloSeleccionado = formularioBuscarVuelo.VueloSeleccionado;
             }
-          
+
         }
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -348,7 +358,9 @@ namespace Vista
             }
         }
 
-        private void dtgListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void dtgListar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             switch (categoriaSeleccionada)
             {
@@ -356,16 +368,10 @@ namespace Vista
                     // Verificar si se hizo clic en una fila válida
                     if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
                     {
-                        // Obtener el cliente seleccionado
+                        // Obtener el pasajero seleccionado
                         pasajero = dtgListar.Rows[e.RowIndex].DataBoundItem as Pasajero;
 
-                        // Realizar la acción deseada con el cliente seleccionado
-                        //if (clienteSeleccionado != null)
-                        //{
-                        //    // Por ejemplo, eliminar el cliente de la lista
-                        //    listaClientes.Remove(clienteSeleccionado);
-
-                        //}
+                        
                     }
 
                     break;
@@ -373,7 +379,7 @@ namespace Vista
 
                     if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
                     {
-                        // Obtener el avion seleccionado
+                        // Obtener el vuelo seleccionado
                         vuelo = dtgListar.Rows[e.RowIndex].DataBoundItem as Vuelo;
                     }
 

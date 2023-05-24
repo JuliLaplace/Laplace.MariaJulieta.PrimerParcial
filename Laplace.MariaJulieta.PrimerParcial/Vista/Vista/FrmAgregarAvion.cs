@@ -50,7 +50,7 @@ namespace Vista
 
         protected virtual void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.Cancel;
         }
 
         protected virtual void btnBoton1_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Vista
 
             Empresa.AgregarAvion(avionSeleccionado, matricula, cantidadAsientos, cantidadBanios, capacidadMaximaBodega);
             MessageBox.Show("Avion agregado con exito.");
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

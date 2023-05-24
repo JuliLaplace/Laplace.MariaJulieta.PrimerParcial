@@ -30,7 +30,7 @@ namespace Entidades
             pasajerosFrecuentes = new Dictionary<Cliente, int>();
             destinosInternacionales = new string[4];
             destinosNacionales = new string[15];
-            HarcodearUsuarios();
+            LeerUsuarios();
             HarcodearDestinosNacionales();
             HarcodearDestinosInternacionales();
             HarcodearPasajeros();
@@ -42,23 +42,14 @@ namespace Entidades
         }
 
         
-        private static void HarcodearUsuarios()
+        private static void LeerUsuarios()
         {
             usuarios = JsonData.LeerUsuario();
         }
 
         private static void HarcodearAviones()
         {
-            //aviones.Add(new Avion(EAvion.Boeing, "B7772001", 100, 2, 100));
-            //aviones.Add(new Avion(EAvion.Boeing, "B7772002", 100, 2, 100));
-            //aviones.Add(new Avion(EAvion.Boeing, "B7772003", 100, 2, 100));
-            //aviones.Add(new Avion(EAvion.Airbus, "A5551001", 200, 4, 200));
-            //aviones.Add(new Avion(EAvion.Airbus, "A5551002", 200, 4, 200));
-            //aviones.Add(new Avion(EAvion.Airbus, "A5551003", 200, 4, 200));
-            //aviones.Add(new Avion(EAvion.Airbus, "A5551004", 200, 4, 200));
-            //Archivo.EscribirLista(aviones);
-            aviones = Archivo.LeerLista();
-
+            aviones = Archivo.LeerListaAviones();
         }
         private static void HarcodearVuelos()
         {
@@ -93,7 +84,7 @@ namespace Entidades
             //clientes.Add(new Cliente(37289384, "Zanco", "Damian", ESexo.Masculino, 18));
             //clientes.Add(new Cliente(47362983, "Juarez", "Sabrina", ESexo.Femenino, 20));
             //clientes.Add(new Cliente(35627839, "Nilo", "Helena", ESexo.Femenino, 31));
-            Archivo.EscribirLista(pasajeros);
+            //Archivo.EscribirLista(pasajeros);
             pasajeros = Archivo.LeerListaPasajeros();
             
             
@@ -158,17 +149,20 @@ namespace Entidades
         {
 
             pasajeros.Add(new Pasajero(nombre, apellido, Validador.CadenaStringAInt(dni), sexo, edad));
+            Archivo.EscribirListaPasajeros(pasajeros);
 
         }
 
         public static void AgregarVuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion avion, DateTime diaDeViaje, bool ofreceComida, bool ofreceWifi)
         {
             vuelos.Add(new Vuelo(origen, destino, tipoDeViaje, avion, diaDeViaje, ofreceComida, ofreceWifi));
+            
         }
         public static void AgregarAvion(EAvion avion, string matricula, int cantidadAsientos, int cantidadBanios, float capacidadBodega)
         {
           
-                aviones.Add(new Avion(avion, matricula, cantidadAsientos, cantidadBanios, capacidadBodega));
+            aviones.Add(new Avion(avion, matricula, cantidadAsientos, cantidadBanios, capacidadBodega));
+            Archivo.EscribirListaAviones(aviones);
             
         }
 
