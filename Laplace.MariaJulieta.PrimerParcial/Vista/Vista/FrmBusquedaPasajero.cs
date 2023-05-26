@@ -13,9 +13,15 @@ namespace Vista
 {
     public partial class FrmBusquedaPasajero : Form
     {
+        Pasajero pasajeroBuscado;
+        public Pasajero PasajeroSeleccionado
+        {
+           get { return pasajeroBuscado; }
+        }
         public FrmBusquedaPasajero()
         {
             InitializeComponent();
+            this.pasajeroBuscado = new Pasajero();
         }
 
         private void FrmBusquedaPasajero_Load(object sender, EventArgs e)

@@ -70,4 +70,25 @@
     <CantidadDeBanios>2</CantidadDeBanios>
     <CapacidadBodega>150.5</CapacidadBodega>
   </Avion>
+  <Avion>
+    <Nombre>Airbus</Nombre>
+    <Matricula>lalalala</Matricula>
+    <CantidadDeAsientos>200</CantidadDeAsientos>
+    <CantidadDeBanios>2</CantidadDeBanios>
+    <CapacidadBodega>100.3</CapacidadBodega>
+  </Avion>
+  <Avion>
+    <Nombre>Boeing</Nombre>
+    <Matricula>jijiji</Matricula>
+    <CantidadDeAsientos>200</CantidadDeAsientos>
+    <CantidadDeBanios>2</CantidadDeBanios>
+    <CapacidadBodega>200.6</CapacidadBodega>
+  </Avion>
+  <Avion>
+    <Nombre>Boeing</Nombre>
+    <Matricula>morty</Matricula>
+    <CantidadDeAsientos>200</CantidadDeAsientos>
+    <CantidadDeBanios>4</CantidadDeBanios>
+    <CapacidadBodega>100.3</CapacidadBodega>
+  </Avion>
 </ArrayOfAvion>

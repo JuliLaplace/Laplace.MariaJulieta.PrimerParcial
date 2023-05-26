@@ -18,32 +18,31 @@ namespace Vista
         {
             InitializeComponent();
             this.avionRecibido = avion;
-            base.btnBoton1.Text = "Modificar";
+            
 
         }
-
-        private void btnBoton1_Click_1(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
-
         private void FrmModificarAvion_Load(object sender, EventArgs e)
         {
-           
-            //this.cboAviones.SelectedIndex = 0;
-            //base.domUpDownAsientos.Items.Add(avionRecibido.CantidadDeAsientos);
-            //base.domUpDownCantidadBanios.Items.Add(avionRecibido.CantidadDeBanios);
-            //base.domUpDownCapacidadMaxima.Items.Add(avionRecibido.CapacidadBodega);
-
+            base.btnBoton1.Text = "Modificar";
+            base.txtMatriculaAvion.Text = avionRecibido.Matricula;
+            base.cboAviones.SelectedItem = avionRecibido.Nombre;
             base.domUpDownCapacidadMaxima.SelectedItem = avionRecibido.CapacidadBodega;
             base.domUpDownCantidadBanios.SelectedItem = avionRecibido.CantidadDeBanios;
             base.domUpDownAsientos.SelectedItem = avionRecibido.CantidadDeAsientos;
 
         }
+
+        protected override void btnBoton1_Click(object sender, EventArgs e)
+        {
+            Empresa.ModificarAvion(avionRecibido, (EAvion)this.cboAviones.SelectedValue, this.txtMatriculaAvion.Text, Convert.ToInt32(this.domUpDownAsientos.SelectedItem), Convert.ToInt32(this.domUpDownCantidadBanios.SelectedItem), Convert.ToSingle(this.domUpDownCapacidadMaxima.SelectedItem));
+            MessageBox.Show("Avion modificado con exito");
+            this.DialogResult = DialogResult.OK;
+        }
+
+        protected override void btnCancelar_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.Cancel;
+        }
+
     }
 }

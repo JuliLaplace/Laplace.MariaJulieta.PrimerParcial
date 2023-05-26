@@ -16,24 +16,25 @@ namespace Vista
         ETipoViaje tipoDeViaje;
         bool ofreceWifi;
         bool ofreceComida;
+        Vuelo vueloSeleccionado;
         Vuelo vuelo;
         List<Vuelo> listaDeVuelosDisponibles;
-        
-        public Vuelo VueloSeleccionado { get; private set; }
+
+
         public FrmBusquedaVuelo()
         {
             InitializeComponent();
-            vuelo = new Vuelo();
+            this.vueloSeleccionado = vuelo; //??????????????????????????????????????????????????
             this.calendarSeleccionFechaDeViaje.MinDate = DateTime.Now;
             this.cboSeleccionTipoDeViaje.DataSource = Enum.GetValues(typeof(ETipoViaje));
             this.cboSeleccionTipoDeViaje.SelectedItem = 0;
             this.lblMensajeError.Visible = false;
-            tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
+            this.tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
             this.listaDeVuelosDisponibles = new List<Vuelo>();
             this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
             this.DatosColumnaDataGridVuelo();
         }
-
+        public Vuelo Vuelo { get; }
         private void cboSeleccionTipoDeViaje_SelectedIndexChanged(object sender, EventArgs e)
         {
             ETipoViaje tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
@@ -41,7 +42,7 @@ namespace Vista
             if (tipoDeViaje == ETipoViaje.Internacional)
             {
                 this.cboSeleccionOrigen.Items.Clear();
-                this.cboSeleccionOrigen.Items.AddRange(Empresa.ListarDestinosInternacionales());
+                this.cboSeleccionOrigen.Items.Add("Buenos Aires - Argentina");
                 this.cboSeleccionOrigen.SelectedIndex = 0;
                 this.cboSeleccionDestino.Items.Clear();
                 this.cboSeleccionDestino.Items.AddRange(Empresa.ListarDestinosInternacionales());
@@ -112,7 +113,7 @@ namespace Vista
         {
             if (vuelo != null)
             {
-                VueloSeleccionado = vuelo;
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -120,8 +121,8 @@ namespace Vista
             {
                 MessageBox.Show("Usted no selecciono un vuelo");
             }
-            
-            
+
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -142,19 +143,20 @@ namespace Vista
 
         private void DatosColumnaDataGridVuelo()
         {
-            this.dtgListaVuelosFiltrados.Columns[0].HeaderText = "Origen";
-            this.dtgListaVuelosFiltrados.Columns[1].HeaderText = "Destino";
-            this.dtgListaVuelosFiltrados.Columns[2].HeaderText = "Tipo de viaje";
-            this.dtgListaVuelosFiltrados.Columns[3].HeaderText = "Servicio Comida";
-            this.dtgListaVuelosFiltrados.Columns[4].HeaderText = "Avion";
-            this.dtgListaVuelosFiltrados.Columns[5].HeaderText = "Fecha de partida";
-            this.dtgListaVuelosFiltrados.Columns[6].HeaderText = "Horas de Viaje";
-            this.dtgListaVuelosFiltrados.Columns[7].HeaderText = "Servicio Wifi";
-            //this.dtgListar.Columns[7].HeaderText = "Asientos Turista";
-            //this.dtgListar.Columns[8].HeaderText = "Asientos Premium";
+
+            this.dtgListaVuelosFiltrados.Columns[0].HeaderText = "Codigo";
+            this.dtgListaVuelosFiltrados.Columns[1].HeaderText = "Origen";
+            this.dtgListaVuelosFiltrados.Columns[2].HeaderText = "Destino";
+            this.dtgListaVuelosFiltrados.Columns[3].HeaderText = "Tipo de viaje";
+            this.dtgListaVuelosFiltrados.Columns[4].HeaderText = "Servicio Comida";
+            this.dtgListaVuelosFiltrados.Columns[5].HeaderText = "Avion";
+            this.dtgListaVuelosFiltrados.Columns[6].HeaderText = "Fecha de partida";
+            this.dtgListaVuelosFiltrados.Columns[7].HeaderText = "Horas de Viaje";
+            this.dtgListaVuelosFiltrados.Columns[8].HeaderText = "Servicio Wifi";
         }
 
-        private void dtgListaVuelosFiltrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dtgListaVuelosFiltrados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < dtgListaVuelosFiltrados.Rows.Count)
             {

@@ -32,7 +32,7 @@ namespace Vista
             base.txtApellidoPasajero.Text = pasajeroRecibido.Apellido;
             base.cmbGenero.Enabled = false;
             base.cmbGenero.SelectedItem = pasajeroRecibido.Sexo;
-            base.dtpickerFechaNacimiento.Visible = false;
+            base.dtpickerFechaNacimiento.Value = pasajeroRecibido.FechaNacimiento;
             base.dtpickerFechaNacimiento.Enabled = false;
         }
 
@@ -40,12 +40,8 @@ namespace Vista
         protected override void btnBoton1_Click(object sender, EventArgs e)
         {
             this.LimpiarPantalla();
-
-            //Empresa.EliminarCliente(clienteRecibido);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Cliente eliminado con exito");
-
-
         }
 
         protected override void btnCancelar_Click(object sender, EventArgs e)
@@ -53,13 +49,6 @@ namespace Vista
             base.LimpiarPantalla();
             base.DialogResult = DialogResult.Cancel;
         }
-        //protected override void LimpiarPantalla()
-        //{
-        //    this.txtApellidoPasajero.Text = string.Empty;
-        //    this.txtDniPasajero.Text = string.Empty;
-        //    this.txtNombrePasajero.Text = string.Empty;
-        //    this.cmbGenero.Text = string.Empty;
-
-        //}
+   
     }
 }

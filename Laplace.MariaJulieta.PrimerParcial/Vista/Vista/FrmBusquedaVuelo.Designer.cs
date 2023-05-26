@@ -211,7 +211,7 @@
             dtgListaVuelosFiltrados.RowTemplate.Height = 25;
             dtgListaVuelosFiltrados.Size = new Size(1117, 211);
             dtgListaVuelosFiltrados.TabIndex = 1;
-            dtgListaVuelosFiltrados.CellContentClick += dtgListaVuelosFiltrados_CellContentClick;
+            dtgListaVuelosFiltrados.CellClick += dtgListaVuelosFiltrados_CellClick;
             // 
             // btnBuscarVuelo
             // 

@@ -4,6 +4,7 @@
     <Apellido>Papana</Apellido>
     <Nombre>Andrea</Nombre>
     <Dni>35454676</Dni>
+    <FechaNacimiento>1991-04-09T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>34</Edad>
   </Pasajero>
@@ -11,6 +12,7 @@
     <Apellido>Lorez</Apellido>
     <Nombre>Martin</Nombre>
     <Dni>20343562</Dni>
+    <FechaNacimiento>1982-03-10T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>24</Edad>
   </Pasajero>
@@ -18,14 +20,16 @@
     <Apellido>Zeia</Apellido>
     <Nombre>Juan</Nombre>
     <Dni>25674273</Dni>
+    <FechaNacimiento>2001-11-12T00:00:00</FechaNacimiento>
     <Sexo>NoBinario</Sexo>
     <Edad>50</Edad>
   </Pasajero>
   <Pasajero>
-    <Apellido>sadasd</Apellido>
-    <Nombre>sdsad</Nombre>
-    <Dni>6535643</Dni>
-    <Sexo>Masculino</Sexo>
-    <Edad>3</Edad>
+    <Apellido>sadasdsd</Apellido>
+    <Nombre>sdasda</Nombre>
+    <Dni>35411575</Dni>
+    <FechaNacimiento>2013-06-27T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>9</Edad>
   </Pasajero>
 </ArrayOfPasajero>

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
-            panelData = new Panel();
             lblFechaActual = new Label();
             lblBienvenidaUser = new Label();
             menuStrip1 = new MenuStrip();
@@ -46,26 +45,18 @@
             btnEliminar = new Button();
             panelBotones = new Panel();
             pctBxImagenPAraMostrar = new PictureBox();
-            panelData.SuspendLayout();
+            pctbxImagenMenuPpal = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListar).BeginInit();
             panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctBxImagenPAraMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctbxImagenMenuPpal).BeginInit();
             SuspendLayout();
-            // 
-            // panelData
-            // 
-            panelData.Controls.Add(lblFechaActual);
-            panelData.Controls.Add(lblBienvenidaUser);
-            panelData.Location = new Point(-3, 634);
-            panelData.Name = "panelData";
-            panelData.Size = new Size(1074, 90);
-            panelData.TabIndex = 0;
             // 
             // lblFechaActual
             // 
             lblFechaActual.AutoSize = true;
-            lblFechaActual.Location = new Point(337, 24);
+            lblFechaActual.Location = new Point(522, 684);
             lblFechaActual.Name = "lblFechaActual";
             lblFechaActual.Size = new Size(45, 17);
             lblFechaActual.TabIndex = 1;
@@ -74,7 +65,7 @@
             // lblBienvenidaUser
             // 
             lblBienvenidaUser.AutoSize = true;
-            lblBienvenidaUser.Location = new Point(45, 24);
+            lblBienvenidaUser.Location = new Point(29, 684);
             lblBienvenidaUser.Name = "lblBienvenidaUser";
             lblBienvenidaUser.Size = new Size(103, 17);
             lblBienvenidaUser.TabIndex = 0;
@@ -86,7 +77,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, vuelosToolStripMenuItem, ventaDePasajesToolStripMenuItem, clientesToolStripMenuItem, avionesToolStripMenuItem, estadisticasHistoricasToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1070, 25);
+            menuStrip1.Size = new Size(1231, 25);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -137,7 +128,7 @@
             dtgListar.Location = new Point(204, 80);
             dtgListar.Name = "dtgListar";
             dtgListar.RowTemplate.Height = 25;
-            dtgListar.Size = new Size(814, 525);
+            dtgListar.Size = new Size(1000, 525);
             dtgListar.TabIndex = 2;
             dtgListar.CellClick += dtgListar_CellClick;
             // 
@@ -201,16 +192,27 @@
             pctBxImagenPAraMostrar.TabIndex = 8;
             pctBxImagenPAraMostrar.TabStop = false;
             // 
+            // pctbxImagenMenuPpal
+            // 
+            pctbxImagenMenuPpal.Image = (Image)resources.GetObject("pctbxImagenMenuPpal.Image");
+            pctbxImagenMenuPpal.Location = new Point(0, 25);
+            pctbxImagenMenuPpal.Name = "pctbxImagenMenuPpal";
+            pctbxImagenMenuPpal.Size = new Size(1231, 696);
+            pctbxImagenMenuPpal.TabIndex = 8;
+            pctbxImagenMenuPpal.TabStop = false;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1070, 722);
+            ClientSize = new Size(1231, 722);
+            Controls.Add(lblBienvenidaUser);
+            Controls.Add(lblFechaActual);
             Controls.Add(lblTitulo);
             Controls.Add(dtgListar);
-            Controls.Add(panelData);
             Controls.Add(menuStrip1);
             Controls.Add(panelBotones);
+            Controls.Add(pctbxImagenMenuPpal);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
@@ -219,20 +221,17 @@
             Text = "Menú - Fly Airlines";
             FormClosing += FrmMenuPrincipal_FormClosing;
             Load += FormMenuPrincipal_Load;
-            panelData.ResumeLayout(false);
-            panelData.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListar).EndInit();
             panelBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pctBxImagenPAraMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctbxImagenMenuPpal).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panelData;
         private Label lblFechaActual;
         private Label lblBienvenidaUser;
         private MenuStrip menuStrip1;
@@ -249,5 +248,6 @@
         private Button btnEliminar;
         private Panel panelBotones;
         private PictureBox pctBxImagenPAraMostrar;
+        private PictureBox pctbxImagenMenuPpal;
     }
 }

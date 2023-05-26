@@ -72,9 +72,9 @@ namespace Entidades
         }
         private static void HarcodearPasajeros()
         {
-            pasajeros.Add(new Pasajero("Andrea", "Papana", 35454676, ESexo.Femenino, 34));
-            pasajeros.Add(new Pasajero("Martin", "Lorez", 20343562, ESexo.Masculino, 24));
-            pasajeros.Add(new Pasajero("Juan", "Zeia", 25674273, ESexo.NoBinario, 50));
+            //pasajeros.Add(new Pasajero("Andrea", "Papana", 35454676, new DateTime(1991, 4, 9), ESexo.Femenino, 34));
+            //pasajeros.Add(new Pasajero("Martin", "Lorez", 20343562, new DateTime(1982, 3, 10), ESexo.Masculino, 24));
+            //pasajeros.Add(new Pasajero("Juan", "Zeia", 25674273, new DateTime(2001, 11, 12), ESexo.NoBinario, 50));
             //clientes.Add(new Cliente(37289384, "Perez", "Federico", ESexo.Masculino, 34));
             //clientes.Add(new Cliente(47362983, "Manzo", "Ludmila", ESexo.Femenino, 24));
             //clientes.Add(new Cliente(35627839, "Firma", "Tristan", ESexo.Masculino, 61));
@@ -84,22 +84,19 @@ namespace Entidades
             //clientes.Add(new Cliente(37289384, "Zanco", "Damian", ESexo.Masculino, 18));
             //clientes.Add(new Cliente(47362983, "Juarez", "Sabrina", ESexo.Femenino, 20));
             //clientes.Add(new Cliente(35627839, "Nilo", "Helena", ESexo.Femenino, 31));
-            //Archivo.EscribirLista(pasajeros);
+            //Archivo.EscribirListaPasajeros(pasajeros);
             pasajeros = Archivo.LeerListaPasajeros();
             
             
         }
         private static void HarcodearDestinosInternacionales() 
         {
-            
             destinosInternacionales = new string[] { "Recife (Brasil)", "Roma (Italia)", "Acapulco (México)", "Miami (EE.UU.)" };
         }
         private static void HarcodearDestinosNacionales()
         {
-            
             destinosNacionales = new string[] { "Santa Rosa", "Bariloche", "Corrientes", "Córdoba", "Jujuy", "Mendoza", "Neuquén", "Posadas", "Iguazú", "Salta", "Santiago del Estero", "Trelew", "Tucumán", "Puerto Madryn", "Ushuaia" };
         }
-
 
 
         public static Usuario ValidarUnUsuario(string correo, string clave)
@@ -145,10 +142,9 @@ namespace Entidades
             }
             return mostrarVuelos;
         }
-        public static void AgregarUnPasajero(string apellido, string nombre, ESexo sexo, int edad, string dni)
+        public static void AgregarUnPasajero(string apellido, string nombre, ESexo sexo, DateTime fecha,  int edad, string dni)
         {
-
-            pasajeros.Add(new Pasajero(nombre, apellido, Validador.CadenaStringAInt(dni), sexo, edad));
+            pasajeros.Add(new Pasajero(nombre, apellido, Validador.CadenaStringAInt(dni), fecha, sexo, edad));
             Archivo.EscribirListaPasajeros(pasajeros);
 
         }
@@ -156,6 +152,7 @@ namespace Entidades
         public static void AgregarVuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion avion, DateTime diaDeViaje, bool ofreceComida, bool ofreceWifi)
         {
             vuelos.Add(new Vuelo(origen, destino, tipoDeViaje, avion, diaDeViaje, ofreceComida, ofreceWifi));
+            
             
         }
         public static void AgregarAvion(EAvion avion, string matricula, int cantidadAsientos, int cantidadBanios, float capacidadBodega)
@@ -238,8 +235,8 @@ namespace Entidades
             return pasajeroEncontrado;
 
         }
-
-        public static void EliminarPasajero(Pasajero pasajero)
+        //sobrecarga
+        public static void Eliminar(Pasajero pasajero)
         {
             foreach (Pasajero item in pasajeros)
             {
@@ -266,13 +263,24 @@ namespace Entidades
             }
         }
 
-        public static void EliminarAvion(Avion avion)
+        public static void Eliminar(Avion avion)
         {
             foreach (Avion item in aviones)
             {
                 if (avion == item)
                 {
                     aviones.Remove(avion);
+                    break;
+                }
+            }
+        }
+        public static void Eliminar(Vuelo vuelo)
+        {
+            foreach (Vuelo item in vuelos)
+            {
+                if (vuelo == item)
+                {
+                    vuelos.Remove(vuelo);
                     break;
                 }
             }
@@ -300,41 +308,29 @@ namespace Entidades
             }
             else
             {
-                // El avión no se encuentra en ningún vuelo de la lista
-                // Realiza las acciones necesarias
+                
             }
             return estaEnVuelo;
            
         }
-        public static void ModificarAvion(Avion avion)
+        public static void ModificarAvion(Avion avion, EAvion nombre, string matricula, int cantidadAsientos, int cantidadBaños, float capacidad)
         {
-            
-
-
-
-
-
-
+            foreach (Avion item in aviones)
+            {
+                if (avion == item)
+                {
+                    item.Nombre = nombre;
+                    item.Matricula = matricula;
+                    item.CantidadDeBanios = cantidadBaños;
+                    item.CantidadDeAsientos = cantidadAsientos;
+                    item.CapacidadBodega = capacidad;
+                    break;
+                }
+            }
         }
 
 
-        //public static bool EstaAvionEnViaje(string matricula)
-        //{
-        //    Avion auxAvion = BuscarAvionPorMatricula(matricula);
-        //    if (auxAvion is not null)
-        //    {
-        //        foreach (Avion item in aviones)
-        //        {
-        //            if (item.Matricula == matricula)
-        //            {
-        //                auxAvion = item;
-        //            }
-        //        }
 
-        //    }
-        //    return auxAvion;
-
-        //}
 
         //public static Avion BuscarAvionPorMatricula(List<Avion> aviones, string matriculaBuscada)
         //{
@@ -349,28 +345,6 @@ namespace Entidades
         //    return avion;
         //}
 
-        //    public static List<Cliente> operator -(List<Cliente> lista, Cliente cliente)
-        //    {
-        //        //for (int i = 0; i < lista.Count; i++)
-        //        //{
-        //        //    if (lista[i] == cliente)
-        //        //    {
-        //        //        lista.RemoveAt(i);
-        //        //        break;
-        //        //    }
-
-        //        //}
-        //        foreach (Cliente item in clientes)
-        //        {
-        //            if (item == cliente)
-        //            {
-        //                lista.Remove(cliente);
-        //                break;
-        //            }
-        //        }
-
-
-        //        return lista;
-        //    }
+        
     }
 }

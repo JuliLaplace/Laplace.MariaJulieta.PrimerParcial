@@ -32,3 +32,5 @@ C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmEliminarPasajero.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmBusquedaPasajero.resources
 C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmCargarEquipaje.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmEliminarVuelo.resources
+C:\Users\Usuario\Desktop\Laplace.MariaJulieta.PrimerParcial\Laplace.MariaJulieta.PrimerParcial\Vista\Vista\obj\Debug\net6.0-windows\Vista.FrmModificarVuelo.resources

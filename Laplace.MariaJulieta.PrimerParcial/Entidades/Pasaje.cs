@@ -8,18 +8,22 @@ namespace Entidades
 {
     public class Pasaje
     {
+        private static int contadorPasajes = 1000;
         private int codigoPasaje;
         private ETipoPasaje tipoDePasaje;
         private double precio;
+
+     
+
         public Pasaje()
         {
-            this.codigoPasaje = 0;
+            this.codigoPasaje = contadorPasajes;
+            Pasaje.contadorPasajes++;
             this.precio = 0;
             this.tipoDePasaje = ETipoPasaje.Turista;
         }
-        public Pasaje(int codigoPasaje, double precio, ETipoPasaje tipoDePasaje)
+        public Pasaje( double precio, ETipoPasaje tipoDePasaje):this() //preguntar a seba si esta bien
         {
-            this.codigoPasaje = codigoPasaje;
             this.tipoDePasaje = tipoDePasaje;
             this.precio = precio;
 
@@ -28,10 +32,6 @@ namespace Entidades
         public int CodigoPasaje
         {
             get { return codigoPasaje; }
-            set
-            {
-                codigoPasaje = value;
-            }
         }
 
         public double Precio
@@ -49,6 +49,16 @@ namespace Entidades
             {
                 this.tipoDePasaje = value;
             }
+        }
+
+
+        public override string ToString()
+        {
+            return $"Codigo pasaje: {this.CodigoPasaje}";
+        }
+        public override int GetHashCode()
+        {
+            return this.CodigoPasaje;
         }
     }
 }

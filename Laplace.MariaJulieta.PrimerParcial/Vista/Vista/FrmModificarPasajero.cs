@@ -17,7 +17,7 @@ namespace Vista
         public FrmModificarPasajero(Pasajero pasajero) : base()
         {
             InitializeComponent();
-            
+
             this.pasajeroRecibido = pasajero;
         }
 
@@ -26,6 +26,7 @@ namespace Vista
         {
             base.btnBoton1.Text = "Modificar";
             base.dtpickerFechaNacimiento.Enabled = false;
+            base.dtpickerFechaNacimiento.Value =pasajeroRecibido.FechaNacimiento;
             base.txtDniPasajero.Text = pasajeroRecibido.Dni.ToString();
             base.txtDniPasajero.Enabled = false;
             base.txtApellidoPasajero.Text = pasajeroRecibido.Apellido;
@@ -36,8 +37,10 @@ namespace Vista
 
         protected override void btnBoton1_Click(object sender, EventArgs e)
         {
+            
             ESexo sexo = (ESexo)base.cmbGenero.SelectedValue;
             this.DialogResult = DialogResult.OK;
+            Empresa.ModificarPasajero(pasajeroRecibido, this.txtNombrePasajero.Text, this.txtApellidoPasajero.Text, sexo);
 
         }
 

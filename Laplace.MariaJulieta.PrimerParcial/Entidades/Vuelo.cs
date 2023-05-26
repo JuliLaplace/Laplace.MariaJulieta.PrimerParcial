@@ -8,7 +8,8 @@ namespace Entidades
 {
     public class Vuelo
     {
-
+        private int codigoVuelo;
+        private static int contadorVuelos = 1;
         private string origen;
         private string destino;
         private ETipoViaje tipoDeViaje;
@@ -22,9 +23,12 @@ namespace Entidades
         public Vuelo() //sobrecarga de constructores para poder inicializar la lista de pasajeros.
         {
             this.pasajeros = new List<Pasajero>();
-            this.origen = "";
-            this.destino = "";
+            this.origen = "Sin origen";
+            this.destino = "Sin destino";
             this.unAvion = new Avion();
+            this.codigoVuelo = contadorVuelos;
+            Vuelo.contadorVuelos++;
+            
         }
         public Vuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion unAvion, DateTime diaDePartida, bool ofreceComida, bool tieneWifi):this()
         {
@@ -47,6 +51,11 @@ namespace Entidades
             }
 
         }
+        public int CodigoVuelo
+        {
+            get { return codigoVuelo; }
+        }
+
         public string Origen
         {
             get { return origen; }
@@ -120,15 +129,45 @@ namespace Entidades
         }
 
 
-        public static bool operator ==(Vuelo vuelo, Avion avion)
-        {
-            return (vuelo.UnAvion == avion);
-            
-        }
-        public static bool operator !=(Vuelo vuelo, Avion avion)
-        {
-            return (vuelo == avion);
+        //public static bool operator ==(Vuelo vuelo, Avion avion)
+        //{
+        //    return (vuelo.UnAvion == avion);
 
+        //}
+        //public static bool operator !=(Vuelo vuelo, Avion avion)
+        //{
+        //    return (vuelo == avion);
+
+        //}
+        public static bool operator ==(Vuelo vuelo1, Vuelo vuelo2)
+        {
+            return (vuelo1.codigoVuelo == vuelo2.codigoVuelo);
+
+        }
+        public static bool operator !=(Vuelo vuelo1, Vuelo vuelo2)
+        {
+            return (vuelo1 == vuelo2);
+
+        }
+        public override bool Equals(object? obj)
+        {
+            bool retorno = false;
+
+            if (obj is Vuelo)
+            {
+                retorno = this == ((Vuelo)obj);
+            }
+            return retorno;
+        }
+
+        public override string ToString()
+        {
+            return $"Origen: {this.Origen} - Destino: {this.Destino} - Fecha: {this.DiaDePartida}"; 
+        }
+
+        public override int GetHashCode()
+        {
+            return this.codigoVuelo;
         }
     }
 

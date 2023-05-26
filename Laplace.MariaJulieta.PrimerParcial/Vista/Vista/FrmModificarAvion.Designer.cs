@@ -31,17 +31,17 @@
             panelAvion.SuspendLayout();
             SuspendLayout();
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Click += btnCancelar_Click_1;
-            // 
-            // cboAviones
-            // 
-            cboAviones.DataSource = null;/* (new EAvion[] { EAvion.Airbus, EAvion.Boeing });
-            cboAviones.Items.AddRange(new object[] { EAvion.Airbus, EAvion.Boeing });*/
-            // 
             // domUpDownAsientos
             // 
+            domUpDownAsientos.Items.Add(200);
+            domUpDownAsientos.Items.Add(150);
+            domUpDownAsientos.Items.Add(100);
+            domUpDownAsientos.Items.Add(200);
+            domUpDownAsientos.Items.Add(150);
+            domUpDownAsientos.Items.Add(100);
+            domUpDownAsientos.Items.Add(200);
+            domUpDownAsientos.Items.Add(150);
+            domUpDownAsientos.Items.Add(100);
             domUpDownAsientos.Items.Add(200);
             domUpDownAsientos.Items.Add(150);
             domUpDownAsientos.Items.Add(100);
@@ -56,10 +56,19 @@
             // 
             // btnBoton1
             // 
-            btnBoton1.Click += btnBoton1_Click_1;
+            btnBoton1.Text = "Agregar";
             // 
             // domUpDownCapacidadMaxima
             // 
+            domUpDownCapacidadMaxima.Items.Add(200.6D);
+            domUpDownCapacidadMaxima.Items.Add(150.5D);
+            domUpDownCapacidadMaxima.Items.Add(100.3D);
+            domUpDownCapacidadMaxima.Items.Add(200.6D);
+            domUpDownCapacidadMaxima.Items.Add(150.5D);
+            domUpDownCapacidadMaxima.Items.Add(100.3D);
+            domUpDownCapacidadMaxima.Items.Add(200.6D);
+            domUpDownCapacidadMaxima.Items.Add(150.5D);
+            domUpDownCapacidadMaxima.Items.Add(100.3D);
             domUpDownCapacidadMaxima.Items.Add(200.6D);
             domUpDownCapacidadMaxima.Items.Add(150.5D);
             domUpDownCapacidadMaxima.Items.Add(100.3D);
@@ -80,6 +89,12 @@
             domUpDownCantidadBanios.Items.Add(2);
             domUpDownCantidadBanios.Items.Add(4);
             domUpDownCantidadBanios.Items.Add(2);
+            domUpDownCantidadBanios.Items.Add(4);
+            domUpDownCantidadBanios.Items.Add(2);
+            domUpDownCantidadBanios.Items.Add(4);
+            domUpDownCantidadBanios.Items.Add(2);
+            domUpDownCantidadBanios.Items.Add(4);
+            domUpDownCantidadBanios.Items.Add(2);
             domUpDownCantidadBanios.SelectedIndex = 1;
             domUpDownCantidadBanios.Text = "2";
             // 
@@ -87,7 +102,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 515);
             Name = "FrmModificarAvion";
             Text = "FrmEliminarVuelo";
             Load += FrmModificarAvion_Load;

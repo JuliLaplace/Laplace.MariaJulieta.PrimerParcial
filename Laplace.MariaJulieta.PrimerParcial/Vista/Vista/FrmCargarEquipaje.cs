@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace Vista
 {
     public partial class FrmCargarEquipaje : Form
     {
+        Equipaje equipajeCargado;
+        public Equipaje EquipajeCargado
+        {
+            get { return equipajeCargado; }
+        }
         public FrmCargarEquipaje()
         {
             InitializeComponent();
+            equipajeCargado = new Equipaje();
         }
     }
 }

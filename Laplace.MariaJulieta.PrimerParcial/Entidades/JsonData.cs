@@ -18,7 +18,7 @@ namespace Entidades
             //ruta = AppDomain.CurrentDomain.BaseDirectory;
             //ruta += @"\Archivos-Serializacion";
         }
-        public static List<Usuario> LeerUsuario() //esta bien? esto deja que la lista sea null (ELIMINA WARNING)
+        public static List<Usuario> LeerUsuario() 
         {
             List<Usuario>? listaDeUsuariosEnJson = new List<Usuario>();
             using(StreamReader read = new StreamReader("MOCK_DATA.json"))
@@ -34,13 +34,7 @@ namespace Entidades
             return listaDeUsuariosEnJson;
         }
        
-        
-
-        //public static void Escribir()
-        //{
-        //    string rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
-        //    string harcodeoAviones = "harcodeoAviones.txt";
-        //}
+       
     }
     
 }

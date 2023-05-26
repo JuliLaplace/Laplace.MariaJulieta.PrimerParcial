@@ -79,7 +79,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(593, 143);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(184, 154);
+            pictureBox1.Size = new Size(184, 230);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -196,7 +196,7 @@
             // btnBoton1
             // 
             btnBoton1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBoton1.Location = new Point(579, 370);
+            btnBoton1.Location = new Point(183, 470);
             btnBoton1.Name = "btnBoton1";
             btnBoton1.Size = new Size(75, 23);
             btnBoton1.TabIndex = 9;
@@ -207,7 +207,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Location = new Point(702, 370);
+            btnCancelar.Location = new Point(460, 470);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 10;
@@ -219,7 +219,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 526);
             Controls.Add(btnCancelar);
             Controls.Add(btnBoton1);
             Controls.Add(panel1);

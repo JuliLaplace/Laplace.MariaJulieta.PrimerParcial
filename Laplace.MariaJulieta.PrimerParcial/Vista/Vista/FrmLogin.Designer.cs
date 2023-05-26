@@ -45,7 +45,7 @@
             pboxPanelImagen.Image = (Image)resources.GetObject("pboxPanelImagen.Image");
             pboxPanelImagen.Location = new Point(-1, 0);
             pboxPanelImagen.Name = "pboxPanelImagen";
-            pboxPanelImagen.Size = new Size(250, 450);
+            pboxPanelImagen.Size = new Size(250, 448);
             pboxPanelImagen.TabIndex = 0;
             pboxPanelImagen.TabStop = false;
             // 
@@ -135,7 +135,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(698, 447);
+            ClientSize = new Size(699, 447);
             Controls.Add(btnAutoCompletar);
             Controls.Add(lblMensajeError);
             Controls.Add(btnSalir);

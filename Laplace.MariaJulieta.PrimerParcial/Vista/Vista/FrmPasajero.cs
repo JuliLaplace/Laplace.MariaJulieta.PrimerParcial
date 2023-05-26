@@ -27,11 +27,9 @@ namespace Vista
             this.btnBoton1.Text = "Agregar";
         }
 
-
         private static bool ValidarDatosIngresados(string nombre, string apellido, int edad, string dni)
         {
             return (Validador.ValidarSiCadenaEsSoloLetras(nombre) && Validador.ValidarSiCadenaEsSoloLetras(apellido) && Validador.ValidarEdadCorrecta(edad) && Validador.StringEsNumerico(dni));
-
         }
 
         protected void LimpiarPantalla()
@@ -59,18 +57,14 @@ namespace Vista
             if (ValidarDatosIngresados(nombreIngresado, apellidoIngresado, edadIngresada, dniIngresado))
             {
                 this.lblError.Visible = false;
-                Empresa.AgregarUnPasajero(apellidoIngresado, nombreIngresado, sexoSeleccionado, edadIngresada, dniIngresado);
+                Empresa.AgregarUnPasajero(apellidoIngresado, nombreIngresado, sexoSeleccionado, fechaNacimiento, edadIngresada, dniIngresado);
                 MessageBox.Show("Cliente agregado con exito");
                 this.DialogResult = DialogResult.OK;
-
-
             }
             else
             {
-
                 this.lblError.Visible = true;
                 LimpiarPantalla();
-
             }
         }
 

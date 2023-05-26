@@ -12,6 +12,7 @@ namespace Entidades
         private int dni;
         private ESexo sexo;
         private int edad;
+        private DateTime fechaNacimiento;
         private Pasaje unPasaje;
         private Vuelo unVuelo;
         private Equipaje[] equipajePasajero;
@@ -22,23 +23,25 @@ namespace Entidades
             this.dni = 0;
             this.sexo = ESexo.Masculino;
             this.edad = 0;
+            this.fechaNacimiento = new DateTime(1900, 1, 1);
             this.unPasaje = new Pasaje();
             this.unVuelo = new Vuelo();
             this.equipajePasajero = new Equipaje[0];
             this.tieneEquipajeDeMano = false;
         }
-        public Pasajero(string nombre, string apellido, int dni, ESexo sexo, int edad) : base(nombre, apellido)
+        public Pasajero(string nombre, string apellido, int dni, DateTime fechaDeNacimiento, ESexo sexo, int edad) : base(nombre, apellido)
         {
             this.dni = dni;
             this.sexo = sexo;
             this.edad = edad;
+            this.fechaNacimiento = fechaDeNacimiento;
             this.unPasaje = new Pasaje();
             this.unVuelo = new Vuelo();
             this.equipajePasajero = new Equipaje[0];
             this.tieneEquipajeDeMano = false;
         }
 
-        public Pasajero(string nombre, string apellido, int dni, ESexo sexo, int edad, Pasaje unPasaje, Vuelo unVuelo, Equipaje[] equipajeACargar, bool tieneEquipajeDeMano) : this(nombre, apellido, dni, sexo, edad)
+        public Pasajero(string nombre, string apellido, int dni, DateTime fechaNacimiento, ESexo sexo, int edad, Pasaje unPasaje, Vuelo unVuelo, Equipaje[] equipajeACargar, bool tieneEquipajeDeMano) : this(nombre, apellido, dni, fechaNacimiento, sexo, edad)
         {
           
             this.unPasaje = unPasaje;
@@ -62,7 +65,11 @@ namespace Entidades
             }
 
         }
-
+        public DateTime FechaNacimiento
+        {
+            get { return this.fechaNacimiento; }
+            set { this.fechaNacimiento = value; }
+        }
         public ESexo Sexo
         {
             get { return sexo; }

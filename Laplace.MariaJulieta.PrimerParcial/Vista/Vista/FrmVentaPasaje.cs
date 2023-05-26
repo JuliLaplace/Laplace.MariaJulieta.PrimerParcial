@@ -14,28 +14,56 @@ namespace Vista
     public partial class FrmVentaPasaje : Form
     {
         Vuelo vueloSeleccionado;
+        Pasajero pasajeroSeleccionado;
+        Equipaje equipajeSeleccionado;
+       
 
         public FrmVentaPasaje()
         {
             InitializeComponent();
+            vueloSeleccionado = new Vuelo();
+            pasajeroSeleccionado = new Pasajero();
+            equipajeSeleccionado = new Equipaje();
+       
         }
 
         private void btnBuscarVuelo_Click(object sender, EventArgs e)
         {
             FrmBusquedaVuelo frmBusquedaVuelo = new FrmBusquedaVuelo();
-            frmBusquedaVuelo.ShowDialog();
+            if(frmBusquedaVuelo.ShowDialog() == DialogResult.OK) 
+            {
+                vueloSeleccionado = frmBusquedaVuelo.Vuelo;
+                this.CargarListBoxVuelo();
+            }
+            else
+            {
+                MessageBox.Show("No se selecciono un vuelo");
+            }
         }
 
         private void btnCargarPasajero_Click(object sender, EventArgs e)
         {
             FrmBusquedaPasajero frmBuscarPasajero = new FrmBusquedaPasajero();
-            frmBuscarPasajero.ShowDialog();
+            if(frmBuscarPasajero.ShowDialog()== DialogResult.OK)
+            {
+                pasajeroSeleccionado = frmBuscarPasajero.PasajeroSeleccionado;
+                this.CargarListBoxPasajero();
+            }
+            else
+            {
+                MessageBox.Show("No se selecciono un pasajero");
+            }
         }
 
         private void btnCargarEquipaje_Click(object sender, EventArgs e)
         {
             FrmCargarEquipaje frmCargarEquipaje = new FrmCargarEquipaje();
-            frmCargarEquipaje.ShowDialog();
+            if(frmCargarEquipaje.ShowDialog() == DialogResult.OK)
+            {
+                equipajeSeleccionado = frmCargarEquipaje.EquipajeCargado;
+                this.CargarListBoxEquipaje();
+            }
+            
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
@@ -48,6 +76,36 @@ namespace Vista
             this.lstDatosEquipaje.Items.Clear();
             this.lstDatosPasajero.Items.Clear();
             this.lstDatosVueloSeleccionado.Items.Clear();
+        }
+
+
+        private void CargarListBoxVuelo()
+        {
+            this.lstDatosVueloSeleccionado.Items.Clear();
+            this.lstDatosVueloSeleccionado.Items.Add(vueloSeleccionado);
+
+
+        }
+        private void CargarListBoxPasajero()
+        {
+            this.lstDatosPasajero.Items.Clear();
+            this.lstDatosPasajero.Items.Add(pasajeroSeleccionado);
+
+
+        }
+        private void CargarListBoxEquipaje()
+        {
+            this.lstDatosEquipaje.Items.Clear();
+            this.lstDatosEquipaje.Items.Add(equipajeSeleccionado);
+
+
+        }
+        private void CargarListBoxFactura()
+        {
+            this.lstFactura.Items.Clear();
+            this.lstFactura.Items.Add("Buenos Aires - Argentina");
+
+
         }
     }
 }

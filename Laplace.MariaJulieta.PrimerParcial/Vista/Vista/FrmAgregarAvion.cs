@@ -34,9 +34,10 @@ namespace Vista
             this.domUpDownAsientos.SelectedItem = 200;
             this.domUpDownCapacidadMaxima.SelectedItem = 100.3;
             this.domUpDownCantidadBanios.SelectedItem = 2;
+            this.btnBoton1.Text = "Agregar";
         }
 
-       
+
 
         private void txtMatriculaAvion_TextChanged(object sender, EventArgs e)
         {

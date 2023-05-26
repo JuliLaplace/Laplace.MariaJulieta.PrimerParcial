@@ -18,8 +18,6 @@ namespace Entidades
         public Avion()
         {
             this.matricula = string.Empty;
-             
-
         }
         public Avion(EAvion nombre, string matricula, int cantidadDeAsientos, int cantidadDeBaños, float capacidadBodega):this() 
         {
@@ -28,8 +26,7 @@ namespace Entidades
             this.cantidadDeAsientos = cantidadDeAsientos;
             this.cantidadDeBanios = cantidadDeBaños;
             this.capacidadBodega = capacidadBodega;
-            
-           
+ 
         }
         public EAvion     Nombre
         {
@@ -104,20 +101,17 @@ namespace Entidades
 
 
         }
-        public static bool operator +(List<Avion> aviones, Avion avion)
-        {
-            bool seCargoAvionNuevo = false;
-            foreach(Avion item in aviones)
-            {
-               if (item != avion)
-                {
-                    aviones.Add(avion);
-                    seCargoAvionNuevo = true;
-                    break;
-                }
-            }
 
-            return seCargoAvionNuevo;
+        public override bool Equals(object? obj)
+        {
+
+            bool retorno = false;
+            if(obj is Avion)
+            {
+                retorno = this ==((Avion)obj);
+            }
+            return retorno;
         }
+
     }
 }
