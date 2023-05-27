@@ -115,6 +115,7 @@
             dtgListarPasajeros.RowTemplate.Height = 25;
             dtgListarPasajeros.Size = new Size(652, 150);
             dtgListarPasajeros.TabIndex = 1;
+            dtgListarPasajeros.CellContentClick += dtgListarPasajeros_CellContentClick;
             // 
             // btnBuscar
             // 
@@ -124,6 +125,7 @@
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnLimpiar
             // 
@@ -133,6 +135,7 @@
             btnLimpiar.TabIndex = 3;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnAgregarPasajero
             // 
@@ -142,6 +145,7 @@
             btnAgregarPasajero.TabIndex = 4;
             btnAgregarPasajero.Text = "Agregar Pasajero";
             btnAgregarPasajero.UseVisualStyleBackColor = true;
+            btnAgregarPasajero.Click += btnAgregarPasajero_Click;
             // 
             // btnSeleccionPasajero
             // 
@@ -151,6 +155,7 @@
             btnSeleccionPasajero.TabIndex = 5;
             btnSeleccionPasajero.Text = "Seleccionar pasajero";
             btnSeleccionPasajero.UseVisualStyleBackColor = true;
+            btnSeleccionPasajero.Click += btnSeleccionPasajero_Click;
             // 
             // FrmBusquedaPasajero
             // 

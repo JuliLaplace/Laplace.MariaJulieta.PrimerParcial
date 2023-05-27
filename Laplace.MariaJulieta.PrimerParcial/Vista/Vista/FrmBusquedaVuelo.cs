@@ -16,15 +16,20 @@ namespace Vista
         ETipoViaje tipoDeViaje;
         bool ofreceWifi;
         bool ofreceComida;
-        Vuelo vueloSeleccionado;
-        Vuelo vuelo;
         List<Vuelo> listaDeVuelosDisponibles;
+        Vuelo vuelo;
+        private bool filaSeleccionada; //
 
-
+        public Vuelo Vuelo
+        {
+            get { return vuelo; }
+            set { this.vuelo = value; }
+        }
         public FrmBusquedaVuelo()
         {
             InitializeComponent();
-            this.vueloSeleccionado = vuelo; //??????????????????????????????????????????????????
+            this.filaSeleccionada = false;
+            this.vuelo = new Vuelo();
             this.calendarSeleccionFechaDeViaje.MinDate = DateTime.Now;
             this.cboSeleccionTipoDeViaje.DataSource = Enum.GetValues(typeof(ETipoViaje));
             this.cboSeleccionTipoDeViaje.SelectedItem = 0;
@@ -34,7 +39,7 @@ namespace Vista
             this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
             this.DatosColumnaDataGridVuelo();
         }
-        public Vuelo Vuelo { get; }
+
         private void cboSeleccionTipoDeViaje_SelectedIndexChanged(object sender, EventArgs e)
         {
             ETipoViaje tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
@@ -61,6 +66,7 @@ namespace Vista
 
         private void btnBuscarVuelo_Click(object sender, EventArgs e)
         {
+            this.DatosColumnaDataGridVuelo();
             string origen = this.cboSeleccionOrigen.SelectedItem.ToString();
             string destino = this.cboSeleccionDestino.SelectedItem.ToString();
             DateTime fecha = this.calendarSeleccionFechaDeViaje.SelectionStart;
@@ -76,10 +82,6 @@ namespace Vista
             {
                 listaDeVuelosDisponibles = Empresa.FiltrarVuelosPorBusqueda(origen, destino, fecha, ofreceComida, ofreceWifi);
                 this.dtgListaVuelosFiltrados.DataSource = listaDeVuelosDisponibles;
-                //FrmVentaPasaje formularioVentaPasaje = new FrmVentaPasaje();
-                //formularioVentaPasaje.ShowDialog();
-                //USAR SHOWDIALOG PARA VER SI CARGO O NO PASAJEROS
-
 
             }
         }
@@ -111,9 +113,8 @@ namespace Vista
 
         private void btnCargarVueloSeleccionado_Click(object sender, EventArgs e)
         {
-            if (vuelo != null)
+            if (filaSeleccionada)
             {
-
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -129,16 +130,17 @@ namespace Vista
         {
             this.LimpiarDatagrid();
 
-            this.dtgListaVuelosFiltrados.Visible = true;
-            this.dtgListaVuelosFiltrados.ClearSelection();
+            //this.dtgListaVuelosFiltrados.Visible = true;
+            //this.dtgListaVuelosFiltrados.ClearSelection();
             this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
 
         }
 
         private void LimpiarDatagrid()
         {
-            dtgListaVuelosFiltrados.DataSource = null;
-            dtgListaVuelosFiltrados.Rows.Clear();
+            this.DatosColumnaDataGridVuelo();
+            this.dtgListaVuelosFiltrados.DataSource = null;
+            this.dtgListaVuelosFiltrados.Rows.Clear();
         }
 
         private void DatosColumnaDataGridVuelo()
@@ -160,8 +162,9 @@ namespace Vista
         {
             if (e.RowIndex >= 0 && e.RowIndex < dtgListaVuelosFiltrados.Rows.Count)
             {
-                // Obtener el cliente seleccionado
+                this.DatosColumnaDataGridVuelo();
                 vuelo = dtgListaVuelosFiltrados.Rows[e.RowIndex].DataBoundItem as Vuelo;
+                this.filaSeleccionada = true;
             }
         }
     }

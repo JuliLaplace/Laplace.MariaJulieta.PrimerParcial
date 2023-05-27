@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBusquedaVuelo));
             gpbDatosFiltroViaje = new GroupBox();
             chkbOfreceWifi = new CheckBox();
             chkbOfreceComida = new CheckBox();
@@ -46,8 +47,10 @@
             lblMensajeError = new Label();
             btnCargarVueloSeleccionado = new Button();
             btnLimpiar = new Button();
+            pctbxImagenFondo = new PictureBox();
             gpbDatosFiltroViaje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListaVuelosFiltrados).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctbxImagenFondo).BeginInit();
             SuspendLayout();
             // 
             // gpbDatosFiltroViaje
@@ -252,6 +255,15 @@
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // pctbxImagenFondo
+            // 
+            pctbxImagenFondo.Image = (Image)resources.GetObject("pctbxImagenFondo.Image");
+            pctbxImagenFondo.Location = new Point(1, -2);
+            pctbxImagenFondo.Name = "pctbxImagenFondo";
+            pctbxImagenFondo.Size = new Size(1223, 621);
+            pctbxImagenFondo.TabIndex = 21;
+            pctbxImagenFondo.TabStop = false;
+            // 
             // FrmBusquedaVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -263,11 +275,14 @@
             Controls.Add(btnBuscarVuelo);
             Controls.Add(dtgListaVuelosFiltrados);
             Controls.Add(gpbDatosFiltroViaje);
+            Controls.Add(pctbxImagenFondo);
             Name = "FrmBusquedaVuelo";
-            Text = "FrmVentaPasaje";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Busqueda de vuelos disponibles";
             gpbDatosFiltroViaje.ResumeLayout(false);
             gpbDatosFiltroViaje.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListaVuelosFiltrados).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctbxImagenFondo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -292,5 +307,6 @@
         private CheckBox chkbOfreceComida;
         private Button btnCargarVueloSeleccionado;
         private Button btnLimpiar;
+        private PictureBox pctbxImagenFondo;
     }
 }

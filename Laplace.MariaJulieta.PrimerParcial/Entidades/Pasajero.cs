@@ -129,8 +129,13 @@ namespace Entidades
         public override int GetHashCode() //con esto se le dice que se le de hascodes a los objetos en base a su dni y no su direccion de memoria
         {
             return (dni).GetHashCode();
-        }   
-       
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Apellido}, {this.Nombre} - DNI: {this.Dni}";
+        }
+
 
     }
 }

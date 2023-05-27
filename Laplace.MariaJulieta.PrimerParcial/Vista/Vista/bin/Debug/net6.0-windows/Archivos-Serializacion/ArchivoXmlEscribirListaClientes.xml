@@ -6,7 +6,7 @@
     <Dni>35454676</Dni>
     <FechaNacimiento>1991-04-09T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
-    <Edad>34</Edad>
+    <Edad>32</Edad>
   </Pasajero>
   <Pasajero>
     <Apellido>Lorez</Apellido>
@@ -14,7 +14,7 @@
     <Dni>20343562</Dni>
     <FechaNacimiento>1982-03-10T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
-    <Edad>24</Edad>
+    <Edad>41</Edad>
   </Pasajero>
   <Pasajero>
     <Apellido>Zeia</Apellido>
@@ -22,14 +22,150 @@
     <Dni>25674273</Dni>
     <FechaNacimiento>2001-11-12T00:00:00</FechaNacimiento>
     <Sexo>NoBinario</Sexo>
-    <Edad>50</Edad>
+    <Edad>21</Edad>
   </Pasajero>
   <Pasajero>
-    <Apellido>sadasdsd</Apellido>
-    <Nombre>sdasda</Nombre>
-    <Dni>35411575</Dni>
-    <FechaNacimiento>2013-06-27T00:00:00</FechaNacimiento>
+    <Apellido>Garcia</Apellido>
+    <Nombre>Juana</Nombre>
+    <Dni>34172934</Dni>
+    <FechaNacimiento>1991-04-10T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
-    <Edad>9</Edad>
+    <Edad>32</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Pep</Apellido>
+    <Nombre>Laura</Nombre>
+    <Dni>31825374</Dni>
+    <FechaNacimiento>1990-01-09T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>33</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Lisboa</Apellido>
+    <Nombre>Ariel</Nombre>
+    <Dni>201632348</Dni>
+    <FechaNacimiento>1968-11-12T00:00:00</FechaNacimiento>
+    <Sexo>NoBinario</Sexo>
+    <Edad>54</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Perez</Apellido>
+    <Nombre>Melody</Nombre>
+    <Dni>19453826</Dni>
+    <FechaNacimiento>1962-01-04T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>61</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Gil</Apellido>
+    <Nombre>Martin</Nombre>
+    <Dni>20351827</Dni>
+    <FechaNacimiento>1964-02-05T00:00:00</FechaNacimiento>
+    <Sexo>Masculino</Sexo>
+    <Edad>59</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Perez</Apellido>
+    <Nombre>Gladys</Nombre>
+    <Dni>22373812</Dni>
+    <FechaNacimiento>1968-05-01T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>55</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Papana</Apellido>
+    <Nombre>Ludmila</Nombre>
+    <Dni>19726384</Dni>
+    <FechaNacimiento>1962-02-10T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>61</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Reinoso</Apellido>
+    <Nombre>Martin</Nombre>
+    <Dni>18263826</Dni>
+    <FechaNacimiento>1961-08-09T00:00:00</FechaNacimiento>
+    <Sexo>Masculino</Sexo>
+    <Edad>61</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Loncopan</Apellido>
+    <Nombre>Juan</Nombre>
+    <Dni>40283713</Dni>
+    <FechaNacimiento>1999-09-01T00:00:00</FechaNacimiento>
+    <Sexo>Masculino</Sexo>
+    <Edad>23</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Samiel</Apellido>
+    <Nombre>Laura</Nombre>
+    <Dni>28322929</Dni>
+    <FechaNacimiento>1989-11-03T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>33</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Saluo</Apellido>
+    <Nombre>Manuel</Nombre>
+    <Dni>35637283</Dni>
+    <FechaNacimiento>1991-10-12T00:00:00</FechaNacimiento>
+    <Sexo>Masculino</Sexo>
+    <Edad>31</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Lorez</Apellido>
+    <Nombre>Macarena</Nombre>
+    <Dni>42673849</Dni>
+    <FechaNacimiento>2001-03-12T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>22</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Gimenez</Apellido>
+    <Nombre>Andrea</Nombre>
+    <Dni>37652839</Dni>
+    <FechaNacimiento>1992-01-11T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>31</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Garcia</Apellido>
+    <Nombre>Martin</Nombre>
+    <Dni>31928361</Dni>
+    <FechaNacimiento>1990-07-07T00:00:00</FechaNacimiento>
+    <Sexo>Masculino</Sexo>
+    <Edad>32</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Gorriti</Apellido>
+    <Nombre>Abel</Nombre>
+    <Dni>25637292</Dni>
+    <FechaNacimiento>1980-05-03T00:00:00</FechaNacimiento>
+    <Sexo>NoBinario</Sexo>
+    <Edad>43</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>von Hinke</Apellido>
+    <Nombre>Maricel</Nombre>
+    <Dni>26738291</Dni>
+    <FechaNacimiento>1985-11-10T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>37</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Paez</Apellido>
+    <Nombre>Pablo</Nombre>
+    <Dni>18725392</Dni>
+    <FechaNacimiento>1960-04-11T00:00:00</FechaNacimiento>
+    <Sexo>Masculino</Sexo>
+    <Edad>63</Edad>
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Garcia</Apellido>
+    <Nombre>Leonel</Nombre>
+    <Dni>17263518</Dni>
+    <FechaNacimiento>1957-04-04T00:00:00</FechaNacimiento>
+    <Sexo>Masculino</Sexo>
+    <Edad>66</Edad>
   </Pasajero>
 </ArrayOfPasajero>

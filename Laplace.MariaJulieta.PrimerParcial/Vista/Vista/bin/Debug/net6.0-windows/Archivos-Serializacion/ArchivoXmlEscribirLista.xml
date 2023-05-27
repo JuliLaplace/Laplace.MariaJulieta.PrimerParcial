@@ -15,11 +15,11 @@
     <CapacidadBodega>100</CapacidadBodega>
   </Avion>
   <Avion>
-    <Nombre>Boeing</Nombre>
-    <Matricula>B7772003</Matricula>
-    <CantidadDeAsientos>100</CantidadDeAsientos>
-    <CantidadDeBanios>2</CantidadDeBanios>
-    <CapacidadBodega>100</CapacidadBodega>
+    <Nombre>Airbus</Nombre>
+    <Matricula>juli</Matricula>
+    <CantidadDeAsientos>200</CantidadDeAsientos>
+    <CantidadDeBanios>4</CantidadDeBanios>
+    <CapacidadBodega>150.5</CapacidadBodega>
   </Avion>
   <Avion>
     <Nombre>Airbus</Nombre>
@@ -90,5 +90,12 @@
     <CantidadDeAsientos>200</CantidadDeAsientos>
     <CantidadDeBanios>4</CantidadDeBanios>
     <CapacidadBodega>100.3</CapacidadBodega>
+  </Avion>
+  <Avion>
+    <Nombre>Airbus</Nombre>
+    <Matricula>--------</Matricula>
+    <CantidadDeAsientos>200</CantidadDeAsientos>
+    <CantidadDeBanios>4</CantidadDeBanios>
+    <CapacidadBodega>150.5</CapacidadBodega>
   </Avion>
 </ArrayOfAvion>

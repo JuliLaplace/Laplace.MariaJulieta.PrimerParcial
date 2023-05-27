@@ -68,22 +68,36 @@ namespace Entidades
             vuelos.Add(new Vuelo(destinosNacionales[3], destinosNacionales[5], ETipoViaje.Nacional, aviones[2], new DateTime(2022, 10, 8, 22, 15, 0), true, true));
             vuelos.Add(new Vuelo(destinosInternacionales[3], destinosInternacionales[0], ETipoViaje.Internacional, aviones[4], new DateTime(2022, 10, 9, 17, 30, 0), true, false));
             vuelos.Add(new Vuelo(destinosNacionales[0], destinosNacionales[3], ETipoViaje.Nacional, aviones[1], new DateTime(2022, 10, 9, 17, 30, 0), true, true));
-
+            vuelos.Add(new Vuelo(destinosInternacionales[0], destinosInternacionales[2], ETipoViaje.Internacional, aviones[4], new DateTime(2024, 11, 8, 15, 30, 0), false, true));
+            vuelos.Add(new Vuelo(destinosInternacionales[3], destinosInternacionales[1], ETipoViaje.Internacional, aviones[4], new DateTime(2023, 01, 7, 8, 30, 0), true, false));
+            vuelos.Add(new Vuelo(destinosNacionales[2], destinosNacionales[0], ETipoViaje.Nacional, aviones[2], new DateTime(2021, 10, 9, 20, 15, 0), false, true));
+            vuelos.Add(new Vuelo(destinosNacionales[3], destinosNacionales[5], ETipoViaje.Nacional, aviones[1], new DateTime(2025, 12, 3, 15, 15, 0), true, true));
+            vuelos.Add(new Vuelo(destinosInternacionales[3], destinosInternacionales[0], ETipoViaje.Internacional, aviones[2], new DateTime(2023, 6, 9, 17, 30, 0), true, false));
+            vuelos.Add(new Vuelo(destinosNacionales[0], destinosNacionales[3], ETipoViaje.Nacional, aviones[0], new DateTime(2024, 10, 9, 17, 30, 0), true, true));
         }
         private static void HarcodearPasajeros()
         {
-            //pasajeros.Add(new Pasajero("Andrea", "Papana", 35454676, new DateTime(1991, 4, 9), ESexo.Femenino, 34));
-            //pasajeros.Add(new Pasajero("Martin", "Lorez", 20343562, new DateTime(1982, 3, 10), ESexo.Masculino, 24));
-            //pasajeros.Add(new Pasajero("Juan", "Zeia", 25674273, new DateTime(2001, 11, 12), ESexo.NoBinario, 50));
-            //clientes.Add(new Cliente(37289384, "Perez", "Federico", ESexo.Masculino, 34));
-            //clientes.Add(new Cliente(47362983, "Manzo", "Ludmila", ESexo.Femenino, 24));
-            //clientes.Add(new Cliente(35627839, "Firma", "Tristan", ESexo.Masculino, 61));
-            //clientes.Add(new Cliente(35454676, "Lopez", "Maria", ESexo.Femenino, 19));
-            //clientes.Add(new Cliente(20343562, "Martinez", "Florencia", ESexo.Femenino, 33));
-            //clientes.Add(new Cliente(25674273, "Remallo", "Veronica", ESexo.NoBinario, 54));
-            //clientes.Add(new Cliente(37289384, "Zanco", "Damian", ESexo.Masculino, 18));
-            //clientes.Add(new Cliente(47362983, "Juarez", "Sabrina", ESexo.Femenino, 20));
-            //clientes.Add(new Cliente(35627839, "Nilo", "Helena", ESexo.Femenino, 31));
+            //pasajeros.Add(new Pasajero("Andrea", "Papana", 35454676, new DateTime(1991, 4, 9), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1991, 4, 9)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Martin", "Lorez", 20343562, new DateTime(1982, 3, 10), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1982, 3, 10)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Juan", "Zeia", 25674273, new DateTime(2001, 11, 12), ESexo.NoBinario, ((int)((DateTime.Now - new DateTime(2001, 11, 12)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Juana", "Garcia", 34172934, new DateTime(1991, 4, 10), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1991, 4, 10)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Laura", "Pep", 31825374, new DateTime(1990, 1, 9), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1990, 1, 9)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Ariel", "Lisboa", 201632348, new DateTime(1968, 11, 12), ESexo.NoBinario, ((int)((DateTime.Now - new DateTime(1968, 11, 12)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Melody", "Perez", 19453826, new DateTime(1962, 1, 4), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1962, 1, 4)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Martin", "Gil", 20351827, new DateTime(1964, 2, 5), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1964, 2, 5)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Gladys", "Perez", 22373812, new DateTime(1968, 5, 1), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1968, 5, 1)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Ludmila", "Papana", 19726384, new DateTime(1962, 2, 10), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1962, 2, 10)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Martin", "Reinoso", 18263826, new DateTime(1961, 8, 9), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1961, 8, 9)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Juan", "Loncopan", 40283713, new DateTime(1999, 9, 1), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1999, 9, 1)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Laura", "Samiel", 28322929, new DateTime(1989, 11, 3), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1989, 11, 3)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Manuel", "Saluo", 35637283, new DateTime(1991, 10, 12), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1991, 10, 12)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Macarena", "Lorez", 42673849, new DateTime(2001, 3, 12), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(2001, 3, 12)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Andrea", "Gimenez", 37652839, new DateTime(1992, 1, 11), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1992, 1, 11)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Martin", "Garcia", 31928361, new DateTime(1990, 7, 7), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1990, 7, 7)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Abel", "Gorriti", 25637292, new DateTime(1980, 5, 3), ESexo.NoBinario, ((int)((DateTime.Now - new DateTime(1980, 5, 3)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Maricel", "von Hinke", 26738291, new DateTime(1985, 11, 10), ESexo.Femenino, ((int)((DateTime.Now - new DateTime(1985, 11, 10)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Pablo", "Paez", 18725392, new DateTime(1960, 4, 11), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1960, 4, 11)).TotalDays / 365.25))));
+            //pasajeros.Add(new Pasajero("Leonel", "Garcia", 17263518, new DateTime(1957, 4, 4), ESexo.Masculino, ((int)((DateTime.Now - new DateTime(1957, 4, 4)).TotalDays / 365.25))));
             //Archivo.EscribirListaPasajeros(pasajeros);
             pasajeros = Archivo.LeerListaPasajeros();
             
@@ -218,6 +232,38 @@ namespace Entidades
 
             }
             return mostrarVuelos;
+        }
+
+        public static List<Pasajero> FiltrarPasajerosPorBusqueda(string nombre, string apellido, int dni)
+        {
+            List<Pasajero> mostrarPasajeros = new List<Pasajero>();
+
+            foreach (Pasajero item in pasajeros)
+            {
+                bool cumpleCondicion = true;
+
+                if (!string.IsNullOrEmpty(nombre) && item.Nombre != nombre)
+                {
+                    cumpleCondicion = false;
+                }
+
+                if (!string.IsNullOrEmpty(apellido) && item.Apellido != apellido)
+                {
+                    cumpleCondicion = false;
+                }
+
+                if (dni != 0 && item.Dni != dni)
+                {
+                    cumpleCondicion = false;
+                }
+
+                if (cumpleCondicion)
+                {
+                    mostrarPasajeros.Add(item);
+                }
+            }
+
+            return mostrarPasajeros;
         }
         public static Pasajero BuscarPasajeroPorDni(int dni)
         {

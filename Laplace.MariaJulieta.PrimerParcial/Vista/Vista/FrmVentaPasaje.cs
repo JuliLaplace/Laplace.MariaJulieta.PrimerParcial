@@ -16,23 +16,23 @@ namespace Vista
         Vuelo vueloSeleccionado;
         Pasajero pasajeroSeleccionado;
         Equipaje equipajeSeleccionado;
-       
+
 
         public FrmVentaPasaje()
         {
             InitializeComponent();
-            vueloSeleccionado = new Vuelo();
-            pasajeroSeleccionado = new Pasajero();
-            equipajeSeleccionado = new Equipaje();
-       
+            this.vueloSeleccionado = new Vuelo();
+            this.pasajeroSeleccionado = new Pasajero();
+            this.equipajeSeleccionado = new Equipaje();
+
         }
 
         private void btnBuscarVuelo_Click(object sender, EventArgs e)
         {
             FrmBusquedaVuelo frmBusquedaVuelo = new FrmBusquedaVuelo();
-            if(frmBusquedaVuelo.ShowDialog() == DialogResult.OK) 
+            if (frmBusquedaVuelo.ShowDialog() == DialogResult.OK)
             {
-                vueloSeleccionado = frmBusquedaVuelo.Vuelo;
+                this.vueloSeleccionado = frmBusquedaVuelo.Vuelo;
                 this.CargarListBoxVuelo();
             }
             else
@@ -44,9 +44,9 @@ namespace Vista
         private void btnCargarPasajero_Click(object sender, EventArgs e)
         {
             FrmBusquedaPasajero frmBuscarPasajero = new FrmBusquedaPasajero();
-            if(frmBuscarPasajero.ShowDialog()== DialogResult.OK)
+            if (frmBuscarPasajero.ShowDialog() == DialogResult.OK)
             {
-                pasajeroSeleccionado = frmBuscarPasajero.PasajeroSeleccionado;
+                this.pasajeroSeleccionado = frmBuscarPasajero.PasajeroSeleccionado;
                 this.CargarListBoxPasajero();
             }
             else
@@ -58,12 +58,12 @@ namespace Vista
         private void btnCargarEquipaje_Click(object sender, EventArgs e)
         {
             FrmCargarEquipaje frmCargarEquipaje = new FrmCargarEquipaje();
-            if(frmCargarEquipaje.ShowDialog() == DialogResult.OK)
+            if (frmCargarEquipaje.ShowDialog() == DialogResult.OK)
             {
-                equipajeSeleccionado = frmCargarEquipaje.EquipajeCargado;
+                this.equipajeSeleccionado = frmCargarEquipaje.EquipajeCargado;
                 this.CargarListBoxEquipaje();
             }
-            
+
         }
 
         private void btnFactura_Click(object sender, EventArgs e)

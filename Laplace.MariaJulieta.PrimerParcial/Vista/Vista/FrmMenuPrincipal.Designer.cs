@@ -56,70 +56,81 @@
             // lblFechaActual
             // 
             lblFechaActual.AutoSize = true;
-            lblFechaActual.Location = new Point(522, 684);
+            lblFechaActual.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFechaActual.ForeColor = SystemColors.Control;
+            lblFechaActual.Location = new Point(521, 665);
             lblFechaActual.Name = "lblFechaActual";
-            lblFechaActual.Size = new Size(45, 17);
+            lblFechaActual.Size = new Size(75, 25);
             lblFechaActual.TabIndex = 1;
             lblFechaActual.Text = "Fecha";
             // 
             // lblBienvenidaUser
             // 
             lblBienvenidaUser.AutoSize = true;
-            lblBienvenidaUser.Location = new Point(29, 684);
+            lblBienvenidaUser.BackColor = Color.White;
+            lblBienvenidaUser.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBienvenidaUser.ForeColor = SystemColors.Control;
+            lblBienvenidaUser.Location = new Point(16, 665);
             lblBienvenidaUser.Name = "lblBienvenidaUser";
-            lblBienvenidaUser.Size = new Size(103, 17);
+            lblBienvenidaUser.Size = new Size(180, 25);
             lblBienvenidaUser.TabIndex = 0;
-            lblBienvenidaUser.Text = "Bienvenido User";
+            lblBienvenidaUser.Text = "Bienvenido: User";
             // 
             // menuStrip1
             // 
-            menuStrip1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, vuelosToolStripMenuItem, ventaDePasajesToolStripMenuItem, clientesToolStripMenuItem, avionesToolStripMenuItem, estadisticasHistoricasToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1231, 25);
+            menuStrip1.Size = new Size(1231, 27);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
             // inicioToolStripMenuItem
             // 
+            inicioToolStripMenuItem.ForeColor = SystemColors.Control;
             inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            inicioToolStripMenuItem.Size = new Size(52, 21);
+            inicioToolStripMenuItem.Size = new Size(63, 23);
             inicioToolStripMenuItem.Text = "Inicio";
             inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
             // 
             // vuelosToolStripMenuItem
             // 
+            vuelosToolStripMenuItem.ForeColor = SystemColors.Control;
             vuelosToolStripMenuItem.Name = "vuelosToolStripMenuItem";
-            vuelosToolStripMenuItem.Size = new Size(60, 21);
+            vuelosToolStripMenuItem.Size = new Size(72, 23);
             vuelosToolStripMenuItem.Text = "Vuelos";
             vuelosToolStripMenuItem.Click += vuelosToolStripMenuItem_Click;
             // 
             // ventaDePasajesToolStripMenuItem
             // 
+            ventaDePasajesToolStripMenuItem.ForeColor = SystemColors.Control;
             ventaDePasajesToolStripMenuItem.Name = "ventaDePasajesToolStripMenuItem";
-            ventaDePasajesToolStripMenuItem.Size = new Size(123, 21);
+            ventaDePasajesToolStripMenuItem.Size = new Size(153, 23);
             ventaDePasajesToolStripMenuItem.Text = "Venta de Pasajes";
             ventaDePasajesToolStripMenuItem.Click += ventaDePasajesToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
+            clientesToolStripMenuItem.ForeColor = SystemColors.Control;
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(71, 21);
+            clientesToolStripMenuItem.Size = new Size(87, 23);
             clientesToolStripMenuItem.Text = "Pasajero";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // avionesToolStripMenuItem
             // 
+            avionesToolStripMenuItem.ForeColor = SystemColors.Control;
             avionesToolStripMenuItem.Name = "avionesToolStripMenuItem";
-            avionesToolStripMenuItem.Size = new Size(68, 21);
+            avionesToolStripMenuItem.Size = new Size(82, 23);
             avionesToolStripMenuItem.Text = "Aviones";
             avionesToolStripMenuItem.Click += avionesToolStripMenuItem_Click;
             // 
             // estadisticasHistoricasToolStripMenuItem
             // 
+            estadisticasHistoricasToolStripMenuItem.ForeColor = SystemColors.Control;
             estadisticasHistoricasToolStripMenuItem.Name = "estadisticasHistoricasToolStripMenuItem";
-            estadisticasHistoricasToolStripMenuItem.Size = new Size(149, 21);
+            estadisticasHistoricasToolStripMenuItem.Size = new Size(181, 23);
             estadisticasHistoricasToolStripMenuItem.Text = "Estadisticas Historicas";
             // 
             // dtgListar

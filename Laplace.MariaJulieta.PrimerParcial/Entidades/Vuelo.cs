@@ -162,7 +162,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"Origen: {this.Origen} - Destino: {this.Destino} - Fecha: {this.DiaDePartida}"; 
+            return $"Origen: {this.Origen}\nDestino: {this.Destino}\nFecha: {this.DiaDePartida}"; 
         }
 
         public override int GetHashCode()
