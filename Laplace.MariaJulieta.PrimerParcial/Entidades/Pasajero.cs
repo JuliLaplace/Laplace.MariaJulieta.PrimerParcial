@@ -15,7 +15,7 @@ namespace Entidades
         private DateTime fechaNacimiento;
         private Pasaje unPasaje;
         private Vuelo unVuelo;
-        private Equipaje[] equipajePasajero;
+        private Equipaje equipaje;
         private bool tieneEquipajeDeMano;
 
         public Pasajero() : base()
@@ -26,7 +26,7 @@ namespace Entidades
             this.fechaNacimiento = new DateTime(1900, 1, 1);
             this.unPasaje = new Pasaje();
             this.unVuelo = new Vuelo();
-            this.equipajePasajero = new Equipaje[0];
+            this.equipaje = new Equipaje();
             this.tieneEquipajeDeMano = false;
         }
         public Pasajero(string nombre, string apellido, int dni, DateTime fechaDeNacimiento, ESexo sexo, int edad) : base(nombre, apellido)
@@ -37,17 +37,18 @@ namespace Entidades
             this.fechaNacimiento = fechaDeNacimiento;
             this.unPasaje = new Pasaje();
             this.unVuelo = new Vuelo();
-            this.equipajePasajero = new Equipaje[0];
-            this.tieneEquipajeDeMano = false;
+            this.equipaje = new Equipaje();
+            this.tieneEquipajeDeMano = false ;
         }
 
-        public Pasajero(string nombre, string apellido, int dni, DateTime fechaNacimiento, ESexo sexo, int edad, Pasaje unPasaje, Vuelo unVuelo, Equipaje[] equipajeACargar, bool tieneEquipajeDeMano) : this(nombre, apellido, dni, fechaNacimiento, sexo, edad)
+        public Pasajero(string nombre, string apellido, int dni, DateTime fechaNacimiento, ESexo sexo, int edad, Equipaje equipajeACargar, bool tieneEquipajeDeMano, Pasaje unPasaje, Vuelo unVuelo) : this(nombre, apellido, dni, fechaNacimiento, sexo, edad)
         {
           
             this.unPasaje = unPasaje;
             this.unVuelo = unVuelo;
-            this.equipajePasajero = equipajeACargar;
+            this.equipaje = equipajeACargar;
             this.tieneEquipajeDeMano = tieneEquipajeDeMano;
+           
         }
 
         public int Dni
@@ -87,9 +88,9 @@ namespace Entidades
             }
         }
 
-        public Equipaje[] EquipajePasajero
+        public Equipaje Equipaje
         {
-            get { return equipajePasajero; }
+            get { return equipaje; }
         }
 
         public Vuelo UnVuelo

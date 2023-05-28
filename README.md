@@ -10,17 +10,33 @@ Mi nombre es Julieta Laplace, tengo 32 años y soy trabajadora social. Me inici�
 
 La aplicación inicia con un login en donde el usuario (puede ser vendedor, administrador o supervisor) se loguean con su correo y contraseña para acceder a la aplicación en si. Si la persona que desea loguearse coloca datos incorrectos, se mostrará un mensaje de error para dar aviso a quien utilice la aplicación. Si los datos son correctos, se abrirá el menú principal, y la ventana de login no será visible.
 DATO: La pantalla de login contiene un botón de autocompletar, donde se autollenarán los campos Usuario y Contraseña con los datos correspondientes al supervisor.
+![Imagen Menu principal](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Menu_Principal.jpg)
+Una vez dentro del menú principal, se encuentra una barra con ciertas opciones: inicio, vuelos, venta de pasajes, pasajeros, aviones y estadisticas historicas. Si se clickea en la opcion "Vuelos", se verá un panel con los botones Agregar - Modificar - Eliminar, acompañado de un datagrid el cual listará los vuelos realizados en la empresa:
+![Imagen de Opcion Vuelos](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Menu_vuelos.jpg)
+La opcion de Agregar, eliminar y modificar viajes es exclusiva del usuario administrador, es decir, estas opciones solo aparecerán disponibles para quien se loguee con el perfil de "administrador", los demas usuarios tendran bloqueada dicha accion.
+COMPLETAR CON AGREGAR - MODIFICAR - ELIMINAR
 
-Una vez dentro del menú principal, se encuentra una barra con ciertas opciones: inicio, vuelos, venta de pasajes, clientes, estadisticas historicas y aeronaves. Para la opción vuelos se encuentran cuatro opciones: Agregar, modificar y eliminar un vuelo, y listar los vuelos disponible: si se selecciona, se abre un datagrid en el mismo formulario (menu principal) con toda la info relacionada a los vuelos. Cabe destacar que la opcion de Agregar, eliminar y modificar viajes es exclusiva del usuario administrador, es decir, estas opciones solo aparecerán disponibles para quien se loguee con el perfil de "administrador", los demas usuarios tendran bloqueada dicha accion.
+![Imagen de Opcion Pasajeros](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Menu_Pasajeros.jpg)
  
-La seleccion "Venta de Pasajes" se subdivide en dos opciones: Vuelos nacionales y vuelos internacionales. Al seleccionar cualquiera de ambos se abrira un formulario nuevo con los respectivos datos de origen-destino dependiendo de la eleccion (nacional - internacional) y con la posibilidad del usuario de seleccionar la fecha de partida, y si el vuelo ofrece o no servicio de comida. A partir de dichas selecciones, se vera un datagrid con todos los vuelos filtrados por busqueda(esta seccion no funciona el filtro de busqueda de vuelos, si se busca "Salta" como origen, "Corrientes" como destino, para el mismo dia en que la app se utiliza y sin servicio de comida, se filtra el vuelo y se puede seleccionar para testear lo siguiente del programa).
+La seleccion "Venta de Pasajes" abre un nuevo formulario:
+IMAGENFORMULARIOVENTAPASAJES
+En el mismo se encontrarán cinco (5) opciones para realizar la venta de pasajes: Cargar Vuelo, Seleccionar tipo de pasaje, Cargar Pasajero, Cargar Equipaje y Generar Factura.
+Al seleccionar el boton Cargar vuelo, se abrirá un formulario el cual permitirá filtrar vuelos segun su origen-destino y con la posibilidad del usuario de seleccionar la fecha de partida. A partir de dichas selecciones, se vera un datagrid con todos los vuelos filtrados por busqueda.
+El boton "Limpiar", vuelve a mostrar en el datagrid todos los vuelos disponibles.
+No es neecsario filtrar un vuelo para poder seleccionarlo desde la lista del datagrid. Con hacer doble click en el vuelo que se requiera, y clickear sobre el boton "Cargar vuelo", se cerrará el formulario y se volverá a ver el formulario de venta de pasaje con la información del vuelo seleccionado.
+Si no se selecciona un vuelo y se clickea en el boton "Cargar vuelo", se mostrará un messagebox con el texto "Vuelo no seleccionado", y no se verá información alguna en los datos del vuelo, dentro del formulario de venta de pasajes
 (COMPLETAR)
 
-Otras de las opciones del menú principal es la referida a Clientes: agrear, modificar y eliminar clientes son las primeras opciones, seguidas de Listar clientes. Si se selecciona agregar un cliente,  se abrirá un formulario el cual pedirá todos los datos relacionados al cliente. Este formulario no permite su cierre al menos que se cargue (correctamente) un cliente o se decida cancelar la carga del mismo. Esta opcion esta disponible para los perfiles "vendedor" y "supervisor", quedando bloqueado su uso para el perfil "administrador"
-Las opciones Listar vuelos y Listar Aeronaves, comparten un mismo datagrid (en el menú principal) el cual muestra los datos de los mismos según su elección. Solo el perfil de "vendedor" es capaz de visualizar la lista de viajes disponibles (y su información) en el datagrid.
+Otras de las opciones del menú principal es la referida a Pasajeros:
+IMAGENMENUPASAJEROS
+Al igual que en la opción "Vuelos", pasajeros tambien tiene un panel de botones: Agrear, modificar y eliminar. 
+Si se selecciona agregar un cliente,  se abrirá un formulario el cual pedirá todos los datos relacionados al cliente. Este formulario no permite su cierre al menos que se cargue (correctamente) un cliente o se decida cancelar la carga del mismo. Esta opcion esta disponible para los perfiles "vendedor" y "supervisor", quedando bloqueado su uso para el perfil "administrador"
 
-El menu principal tiene un botón "Salir", el cual desloguea al usuario que estaba utilizando la aplicación, permitiendo a un nuevo usuario loguearse (se elimina el ControlBox y se crea un botón propio para el cierre del formulario).
-COMPLETAR
+
+Se puede salir del menú principal, pero al realizar dicha accion, aparecera un messagebox verificando si el usuario desea salir de la aplicación:
+ ![Imagen Opcion Salir](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Menu_salir.jpg)
+Si el usuario elige la opción "Si", se cerrará el formulario Menu Principal, y se volverá al formulario de Login, para volver a ingresar con cualquier perfil. Si se clickea "No", el messagebox se cerrará y la aplicación seguirá funcionando.
+
 
 ##### Diagrama
 COMPLETAR

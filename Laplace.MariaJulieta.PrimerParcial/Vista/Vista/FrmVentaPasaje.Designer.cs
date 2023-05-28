@@ -33,15 +33,17 @@
             btnCargarPasajero = new Button();
             btnCargarEquipaje = new Button();
             btnFactura = new Button();
-            lstDatosVueloSeleccionado = new ListBox();
-            lstDatosPasajero = new ListBox();
-            lstDatosEquipaje = new ListBox();
-            lstFactura = new ListBox();
             btnCargarOtroPasajero = new Button();
             btnVender = new Button();
             btnCancelar = new Button();
             pctbxImagenFondo = new PictureBox();
             dtgListaPasajesPorVender = new DataGridView();
+            comboBox1 = new ComboBox();
+            btnSeleccionTipoPasaje = new Button();
+            rtbDatosVuelo = new RichTextBox();
+            rtbDatosPasajero = new RichTextBox();
+            rtbDatosEquipaje = new RichTextBox();
+            rtbDatosFactura = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pctbxImagenFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgListaPasajesPorVender).BeginInit();
             SuspendLayout();
@@ -49,7 +51,7 @@
             // btnBuscarVuelo
             // 
             btnBuscarVuelo.ImageAlign = ContentAlignment.TopCenter;
-            btnBuscarVuelo.Location = new Point(85, 25);
+            btnBuscarVuelo.Location = new Point(90, 64);
             btnBuscarVuelo.Name = "btnBuscarVuelo";
             btnBuscarVuelo.Size = new Size(163, 64);
             btnBuscarVuelo.TabIndex = 0;
@@ -59,9 +61,9 @@
             // 
             // btnCargarPasajero
             // 
-            btnCargarPasajero.Location = new Point(432, 23);
+            btnCargarPasajero.Location = new Point(525, 80);
             btnCargarPasajero.Name = "btnCargarPasajero";
-            btnCargarPasajero.Size = new Size(125, 48);
+            btnCargarPasajero.Size = new Size(132, 48);
             btnCargarPasajero.TabIndex = 1;
             btnCargarPasajero.Text = "Cargar Pasajero";
             btnCargarPasajero.UseVisualStyleBackColor = true;
@@ -69,9 +71,9 @@
             // 
             // btnCargarEquipaje
             // 
-            btnCargarEquipaje.Location = new Point(711, 23);
+            btnCargarEquipaje.Location = new Point(755, 84);
             btnCargarEquipaje.Name = "btnCargarEquipaje";
-            btnCargarEquipaje.Size = new Size(118, 43);
+            btnCargarEquipaje.Size = new Size(139, 44);
             btnCargarEquipaje.TabIndex = 2;
             btnCargarEquipaje.Text = "Cargar Equipaje";
             btnCargarEquipaje.UseVisualStyleBackColor = true;
@@ -79,49 +81,13 @@
             // 
             // btnFactura
             // 
-            btnFactura.Location = new Point(999, 25);
+            btnFactura.Location = new Point(1025, 84);
             btnFactura.Name = "btnFactura";
             btnFactura.Size = new Size(127, 44);
             btnFactura.TabIndex = 3;
             btnFactura.Text = "Realizar Factura";
             btnFactura.UseVisualStyleBackColor = true;
             btnFactura.Click += btnFactura_Click;
-            // 
-            // lstDatosVueloSeleccionado
-            // 
-            lstDatosVueloSeleccionado.FormattingEnabled = true;
-            lstDatosVueloSeleccionado.ItemHeight = 17;
-            lstDatosVueloSeleccionado.Location = new Point(85, 108);
-            lstDatosVueloSeleccionado.Name = "lstDatosVueloSeleccionado";
-            lstDatosVueloSeleccionado.Size = new Size(207, 310);
-            lstDatosVueloSeleccionado.TabIndex = 4;
-            // 
-            // lstDatosPasajero
-            // 
-            lstDatosPasajero.FormattingEnabled = true;
-            lstDatosPasajero.ItemHeight = 17;
-            lstDatosPasajero.Location = new Point(395, 108);
-            lstDatosPasajero.Name = "lstDatosPasajero";
-            lstDatosPasajero.Size = new Size(205, 310);
-            lstDatosPasajero.TabIndex = 5;
-            // 
-            // lstDatosEquipaje
-            // 
-            lstDatosEquipaje.FormattingEnabled = true;
-            lstDatosEquipaje.ItemHeight = 17;
-            lstDatosEquipaje.Location = new Point(677, 108);
-            lstDatosEquipaje.Name = "lstDatosEquipaje";
-            lstDatosEquipaje.Size = new Size(192, 310);
-            lstDatosEquipaje.TabIndex = 6;
-            // 
-            // lstFactura
-            // 
-            lstFactura.FormattingEnabled = true;
-            lstFactura.ItemHeight = 17;
-            lstFactura.Location = new Point(974, 108);
-            lstFactura.Name = "lstFactura";
-            lstFactura.Size = new Size(179, 310);
-            lstFactura.TabIndex = 7;
             // 
             // btnCargarOtroPasajero
             // 
@@ -141,6 +107,7 @@
             btnVender.TabIndex = 9;
             btnVender.Text = "Realizar Venta";
             btnVender.UseVisualStyleBackColor = true;
+            btnVender.Click += btnVender_Click;
             // 
             // btnCancelar
             // 
@@ -150,13 +117,14 @@
             btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar venta";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // pctbxImagenFondo
             // 
             pctbxImagenFondo.Image = (Image)resources.GetObject("pctbxImagenFondo.Image");
-            pctbxImagenFondo.Location = new Point(1, -2);
+            pctbxImagenFondo.Location = new Point(1, 0);
             pctbxImagenFondo.Name = "pctbxImagenFondo";
-            pctbxImagenFondo.Size = new Size(1232, 693);
+            pctbxImagenFondo.Size = new Size(1239, 644);
             pctbxImagenFondo.TabIndex = 11;
             pctbxImagenFondo.TabStop = false;
             // 
@@ -169,19 +137,70 @@
             dtgListaPasajesPorVender.Size = new Size(1154, 143);
             dtgListaPasajesPorVender.TabIndex = 12;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(300, 206);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 25);
+            comboBox1.TabIndex = 17;
+            // 
+            // btnSeleccionTipoPasaje
+            // 
+            btnSeleccionTipoPasaje.Location = new Point(309, 78);
+            btnSeleccionTipoPasaje.Name = "btnSeleccionTipoPasaje";
+            btnSeleccionTipoPasaje.Size = new Size(103, 52);
+            btnSeleccionTipoPasaje.TabIndex = 18;
+            btnSeleccionTipoPasaje.Text = "Cargar Tipo de pasaje";
+            btnSeleccionTipoPasaje.UseVisualStyleBackColor = true;
+            // 
+            // rtbDatosVuelo
+            // 
+            rtbDatosVuelo.Location = new Point(76, 206);
+            rtbDatosVuelo.Name = "rtbDatosVuelo";
+            rtbDatosVuelo.Size = new Size(201, 198);
+            rtbDatosVuelo.TabIndex = 19;
+            rtbDatosVuelo.Text = "";
+            // 
+            // rtbDatosPasajero
+            // 
+            rtbDatosPasajero.Location = new Point(487, 206);
+            rtbDatosPasajero.Name = "rtbDatosPasajero";
+            rtbDatosPasajero.Size = new Size(199, 198);
+            rtbDatosPasajero.TabIndex = 20;
+            rtbDatosPasajero.Text = "";
+            // 
+            // rtbDatosEquipaje
+            // 
+            rtbDatosEquipaje.Location = new Point(733, 206);
+            rtbDatosEquipaje.Name = "rtbDatosEquipaje";
+            rtbDatosEquipaje.Size = new Size(194, 198);
+            rtbDatosEquipaje.TabIndex = 21;
+            rtbDatosEquipaje.Text = "";
+            // 
+            // rtbDatosFactura
+            // 
+            rtbDatosFactura.Location = new Point(989, 206);
+            rtbDatosFactura.Name = "rtbDatosFactura";
+            rtbDatosFactura.Size = new Size(214, 198);
+            rtbDatosFactura.TabIndex = 22;
+            rtbDatosFactura.Text = "";
+            // 
             // FrmVentaPasaje
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1234, 692);
+            Controls.Add(rtbDatosFactura);
+            Controls.Add(rtbDatosEquipaje);
+            Controls.Add(rtbDatosPasajero);
+            Controls.Add(rtbDatosVuelo);
+            Controls.Add(btnSeleccionTipoPasaje);
+            Controls.Add(comboBox1);
             Controls.Add(dtgListaPasajesPorVender);
             Controls.Add(btnCancelar);
             Controls.Add(btnVender);
             Controls.Add(btnCargarOtroPasajero);
-            Controls.Add(lstFactura);
-            Controls.Add(lstDatosEquipaje);
-            Controls.Add(lstDatosPasajero);
-            Controls.Add(lstDatosVueloSeleccionado);
             Controls.Add(btnFactura);
             Controls.Add(btnCargarEquipaje);
             Controls.Add(btnCargarPasajero);
@@ -203,14 +222,16 @@
         private Button btnCargarPasajero;
         private Button btnCargarEquipaje;
         private Button btnFactura;
-        private ListBox lstDatosVueloSeleccionado;
-        private ListBox lstDatosPasajero;
-        private ListBox lstDatosEquipaje;
-        private ListBox lstFactura;
         private Button btnCargarOtroPasajero;
         private Button btnVender;
         private Button btnCancelar;
         private PictureBox pctbxImagenFondo;
         private DataGridView dtgListaPasajesPorVender;
+        private ComboBox comboBox1;
+        private Button btnSeleccionTipoPasaje;
+        private RichTextBox rtbDatosVuelo;
+        private RichTextBox rtbDatosPasajero;
+        private RichTextBox rtbDatosEquipaje;
+        private RichTextBox rtbDatosFactura;
     }
 }

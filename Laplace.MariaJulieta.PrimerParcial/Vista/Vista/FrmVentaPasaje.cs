@@ -16,6 +16,8 @@ namespace Vista
         Vuelo vueloSeleccionado;
         Pasajero pasajeroSeleccionado;
         Equipaje equipajeSeleccionado;
+        Pasaje pasajeVendido;
+        ETipoPasaje tipoDePasaje;
 
 
         public FrmVentaPasaje()
@@ -24,7 +26,17 @@ namespace Vista
             this.vueloSeleccionado = new Vuelo();
             this.pasajeroSeleccionado = new Pasajero();
             this.equipajeSeleccionado = new Equipaje();
+            this.pasajeVendido = new Pasaje();
 
+        }
+        public Vuelo VueloSeleccionado
+        {
+            get { return this.vueloSeleccionado;}
+        }
+
+        public Pasajero PasajeroSeleccionado
+        {
+            get { return this.pasajeroSeleccionado; }
         }
 
         private void btnBuscarVuelo_Click(object sender, EventArgs e)
@@ -33,7 +45,7 @@ namespace Vista
             if (frmBusquedaVuelo.ShowDialog() == DialogResult.OK)
             {
                 this.vueloSeleccionado = frmBusquedaVuelo.Vuelo;
-                this.CargarListBoxVuelo();
+                this.rtbDatosVuelo.Text = vueloSeleccionado.ToString();
             }
             else
             {
@@ -47,7 +59,7 @@ namespace Vista
             if (frmBuscarPasajero.ShowDialog() == DialogResult.OK)
             {
                 this.pasajeroSeleccionado = frmBuscarPasajero.PasajeroSeleccionado;
-                this.CargarListBoxPasajero();
+                this.rtbDatosPasajero.Text = pasajeroSeleccionado.ToString();
             }
             else
             {
@@ -61,51 +73,29 @@ namespace Vista
             if (frmCargarEquipaje.ShowDialog() == DialogResult.OK)
             {
                 this.equipajeSeleccionado = frmCargarEquipaje.EquipajeCargado;
-                this.CargarListBoxEquipaje();
+                this.rtbDatosEquipaje.Text = equipajeSeleccionado.ToString();
             }
 
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            //mostrar cuanto se factura en listbox
+            //Mostrar datos factruracion
         }
 
         private void btnCargarOtroPasajero_Click(object sender, EventArgs e)
         {
-            this.lstDatosEquipaje.Items.Clear();
-            this.lstDatosPasajero.Items.Clear();
-            this.lstDatosVueloSeleccionado.Items.Clear();
+            //hablilitar para cargar otro pasajero a vuelo
         }
 
-
-        private void CargarListBoxVuelo()
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.lstDatosVueloSeleccionado.Items.Clear();
-            this.lstDatosVueloSeleccionado.Items.Add(vueloSeleccionado);
-
-
+            this.DialogResult = DialogResult.Cancel;
         }
-        private void CargarListBoxPasajero()
+
+        private void btnVender_Click(object sender, EventArgs e)
         {
-            this.lstDatosPasajero.Items.Clear();
-            this.lstDatosPasajero.Items.Add(pasajeroSeleccionado);
-
-
-        }
-        private void CargarListBoxEquipaje()
-        {
-            this.lstDatosEquipaje.Items.Clear();
-            this.lstDatosEquipaje.Items.Add(equipajeSeleccionado);
-
-
-        }
-        private void CargarListBoxFactura()
-        {
-            this.lstFactura.Items.Clear();
-            this.lstFactura.Items.Add("Buenos Aires - Argentina");
-
-
+           this.DialogResult= DialogResult.OK;
         }
     }
 }

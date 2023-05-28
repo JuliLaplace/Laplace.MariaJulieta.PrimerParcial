@@ -13,6 +13,7 @@ namespace Entidades
         private int cantidadDeAsientos;
         private int cantidadDeBanios;
         private float capacidadBodega;
+
         
         
         public Avion()
@@ -26,6 +27,7 @@ namespace Entidades
             this.cantidadDeAsientos = cantidadDeAsientos;
             this.cantidadDeBanios = cantidadDeBaños;
             this.capacidadBodega = capacidadBodega;
+            
  
         }
         public EAvion     Nombre
@@ -64,9 +66,7 @@ namespace Entidades
                 capacidadBodega = value;
             }
         }
-        
        
-    
         public int CantidadAsientosPremium()
         {
             return (int)Math.Floor(cantidadDeAsientos * 0.2);

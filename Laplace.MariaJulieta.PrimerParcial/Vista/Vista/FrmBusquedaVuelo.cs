@@ -128,19 +128,18 @@ namespace Vista
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.LimpiarDatagrid();
-
-            //this.dtgListaVuelosFiltrados.Visible = true;
-            //this.dtgListaVuelosFiltrados.ClearSelection();
-            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
+            this.LimpiarDatagrid();           
 
         }
 
         private void LimpiarDatagrid()
         {
-            this.DatosColumnaDataGridVuelo();
+            
             this.dtgListaVuelosFiltrados.DataSource = null;
             this.dtgListaVuelosFiltrados.Rows.Clear();
+            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
+            this.DatosColumnaDataGridVuelo();
+            
         }
 
         private void DatosColumnaDataGridVuelo()
@@ -155,6 +154,8 @@ namespace Vista
             this.dtgListaVuelosFiltrados.Columns[6].HeaderText = "Fecha de partida";
             this.dtgListaVuelosFiltrados.Columns[7].HeaderText = "Horas de Viaje";
             this.dtgListaVuelosFiltrados.Columns[8].HeaderText = "Servicio Wifi";
+            this.dtgListaVuelosFiltrados.Columns[9].HeaderText = "Asientos turista";
+            this.dtgListaVuelosFiltrados.Columns[10].HeaderText = "Asientos Premium";
         }
 
 

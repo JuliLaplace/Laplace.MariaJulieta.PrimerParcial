@@ -58,6 +58,7 @@
             grpDatosPersonalesPasajero.Controls.Add(lblGenero);
             grpDatosPersonalesPasajero.Controls.Add(lblApellido);
             grpDatosPersonalesPasajero.Controls.Add(lblNombreCliente);
+            grpDatosPersonalesPasajero.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             grpDatosPersonalesPasajero.Location = new Point(12, 23);
             grpDatosPersonalesPasajero.Name = "grpDatosPersonalesPasajero";
             grpDatosPersonalesPasajero.Size = new Size(465, 357);
@@ -71,7 +72,7 @@
             lblError.ForeColor = Color.Red;
             lblError.Location = new Point(8, 327);
             lblError.Name = "lblError";
-            lblError.Size = new Size(262, 15);
+            lblError.Size = new Size(302, 17);
             lblError.TabIndex = 15;
             lblError.Text = "Datos personales incorrectos. Vuelva a intentarlo";
             // 
@@ -80,7 +81,7 @@
             ldlFechaNacimiento.AutoSize = true;
             ldlFechaNacimiento.Location = new Point(6, 223);
             ldlFechaNacimiento.Name = "ldlFechaNacimiento";
-            ldlFechaNacimiento.Size = new Size(117, 15);
+            ldlFechaNacimiento.Size = new Size(135, 17);
             ldlFechaNacimiento.TabIndex = 24;
             ldlFechaNacimiento.Text = "Fecha de nacimiento";
             // 
@@ -88,7 +89,7 @@
             // 
             dtpickerFechaNacimiento.Location = new Point(159, 217);
             dtpickerFechaNacimiento.Name = "dtpickerFechaNacimiento";
-            dtpickerFechaNacimiento.Size = new Size(249, 23);
+            dtpickerFechaNacimiento.Size = new Size(249, 22);
             dtpickerFechaNacimiento.TabIndex = 23;
             dtpickerFechaNacimiento.ValueChanged += dtpickerFechaNacimiento_ValueChanged;
             // 
@@ -98,28 +99,28 @@
             cmbGenero.FormattingEnabled = true;
             cmbGenero.Location = new Point(159, 273);
             cmbGenero.Name = "cmbGenero";
-            cmbGenero.Size = new Size(121, 23);
+            cmbGenero.Size = new Size(121, 25);
             cmbGenero.TabIndex = 22;
             // 
             // txtDniPasajero
             // 
             txtDniPasajero.Location = new Point(161, 36);
             txtDniPasajero.Name = "txtDniPasajero";
-            txtDniPasajero.Size = new Size(198, 23);
+            txtDniPasajero.Size = new Size(198, 22);
             txtDniPasajero.TabIndex = 21;
             // 
             // txtApellidoPasajero
             // 
             txtApellidoPasajero.Location = new Point(159, 160);
             txtApellidoPasajero.Name = "txtApellidoPasajero";
-            txtApellidoPasajero.Size = new Size(198, 23);
+            txtApellidoPasajero.Size = new Size(198, 22);
             txtApellidoPasajero.TabIndex = 20;
             // 
             // txtNombrePasajero
             // 
             txtNombrePasajero.Location = new Point(159, 100);
             txtNombrePasajero.Name = "txtNombrePasajero";
-            txtNombrePasajero.Size = new Size(198, 23);
+            txtNombrePasajero.Size = new Size(198, 22);
             txtNombrePasajero.TabIndex = 19;
             // 
             // lblDni
@@ -127,7 +128,7 @@
             lblDni.AutoSize = true;
             lblDni.Location = new Point(8, 41);
             lblDni.Name = "lblDni";
-            lblDni.Size = new Size(25, 15);
+            lblDni.Size = new Size(27, 17);
             lblDni.TabIndex = 18;
             lblDni.Text = "Dni";
             // 
@@ -136,7 +137,7 @@
             lblGenero.AutoSize = true;
             lblGenero.Location = new Point(6, 276);
             lblGenero.Name = "lblGenero";
-            lblGenero.Size = new Size(45, 15);
+            lblGenero.Size = new Size(53, 17);
             lblGenero.TabIndex = 17;
             lblGenero.Text = "Género";
             // 
@@ -145,7 +146,7 @@
             lblApellido.AutoSize = true;
             lblApellido.Location = new Point(6, 163);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(51, 15);
+            lblApellido.Size = new Size(58, 17);
             lblApellido.TabIndex = 16;
             lblApellido.Text = "Apellido";
             // 
@@ -154,13 +155,14 @@
             lblNombreCliente.AutoSize = true;
             lblNombreCliente.Location = new Point(8, 100);
             lblNombreCliente.Name = "lblNombreCliente";
-            lblNombreCliente.Size = new Size(51, 15);
+            lblNombreCliente.Size = new Size(56, 17);
             lblNombreCliente.TabIndex = 15;
             lblNombreCliente.Text = "Nombre";
             // 
             // btnBoton1
             // 
-            btnBoton1.Location = new Point(92, 403);
+            btnBoton1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBoton1.Location = new Point(78, 403);
             btnBoton1.Name = "btnBoton1";
             btnBoton1.Size = new Size(75, 26);
             btnBoton1.TabIndex = 13;
@@ -170,7 +172,8 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(321, 403);
+            btnCancelar.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(337, 403);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 26);
             btnCancelar.TabIndex = 18;
@@ -182,7 +185,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(489, 450);
+            ClientSize = new Size(485, 450);
             Controls.Add(btnCancelar);
             Controls.Add(btnBoton1);
             Controls.Add(grpDatosPersonalesPasajero);
@@ -210,5 +213,6 @@
         protected Label lblError;
         protected Button btnBoton1;
         protected Button btnCancelar;
+
     }
 }

@@ -23,16 +23,22 @@ namespace Entidades
 
         public int CantidadValijas
         {
-            get { return cantidadValijas; }
+            get { return this.cantidadValijas; }
             set { this.cantidadValijas = value;}
         }
 
 
         public float PesoTotalValija
         {
-            get { return pesoTotalValija; }
+            get { return this.pesoTotalValija; }
             set { this.pesoTotalValija= value; }
         }
+
+        public override string ToString()
+        {
+            return $"Cantidad de valijas: {this.CantidadValijas} - Peso total: {this.PesoTotalValija}";
+        }
+
     }
 }
 

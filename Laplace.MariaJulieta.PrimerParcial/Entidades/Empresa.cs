@@ -115,7 +115,7 @@ namespace Entidades
 
         public static Usuario ValidarUnUsuario(string correo, string clave)
         {
-                                        
+                               
             foreach (Usuario item in usuarios)
             {
                 if (item.Correo == correo && item.EsContraseñaCorrecta(clave))
@@ -165,8 +165,7 @@ namespace Entidades
 
         public static void AgregarVuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion avion, DateTime diaDeViaje, bool ofreceComida, bool ofreceWifi)
         {
-            vuelos.Add(new Vuelo(origen, destino, tipoDeViaje, avion, diaDeViaje, ofreceComida, ofreceWifi));
-            
+            vuelos.Add(new Vuelo(origen, destino, tipoDeViaje, avion, diaDeViaje, ofreceComida, ofreceWifi));            
             
         }
         public static void AgregarAvion(EAvion avion, string matricula, int cantidadAsientos, int cantidadBanios, float capacidadBodega)
@@ -373,6 +372,11 @@ namespace Entidades
                     break;
                 }
             }
+        }
+
+        public static void CargarPasajeroVuelo(Vuelo vuelo, Pasajero pasajero)
+        {
+            vuelo.AgregarPasajero(pasajero);
         }
 
 

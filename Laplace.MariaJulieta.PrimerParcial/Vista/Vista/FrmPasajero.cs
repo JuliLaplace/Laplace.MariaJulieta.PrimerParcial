@@ -13,9 +13,12 @@ namespace Vista
 {
     public partial class FrmPasajero : Form
     {
+
+
         public FrmPasajero()
         {
             InitializeComponent();
+
         }
 
         private void FrmPasajero_Load(object sender, EventArgs e)
@@ -25,6 +28,7 @@ namespace Vista
             this.lblError.Visible = false;
             this.dtpickerFechaNacimiento.MaxDate = DateTime.Today;
             this.btnBoton1.Text = "Agregar";
+
         }
 
         private static bool ValidarDatosIngresados(string nombre, string apellido, int edad, string dni)
@@ -54,6 +58,10 @@ namespace Vista
             string dniIngresado = this.txtDniPasajero.Text;
             ESexo sexoSeleccionado = (ESexo)this.cmbGenero.SelectedValue;
 
+
+
+
+
             if (ValidarDatosIngresados(nombreIngresado, apellidoIngresado, edadIngresada, dniIngresado))
             {
                 this.lblError.Visible = false;
@@ -72,5 +80,10 @@ namespace Vista
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+
+
+
+
     }
 }

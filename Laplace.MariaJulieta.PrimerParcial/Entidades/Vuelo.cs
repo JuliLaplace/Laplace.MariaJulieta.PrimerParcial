@@ -9,7 +9,7 @@ namespace Entidades
     public class Vuelo
     {
         private int codigoVuelo;
-        private static int contadorVuelos = 1;
+        private static int contadorVuelos = 0;
         private string origen;
         private string destino;
         private ETipoViaje tipoDeViaje;
@@ -84,6 +84,7 @@ namespace Entidades
         public List<Pasajero> Pasajeros
         {
             get { return pasajeros; }
+            set { pasajeros = value; }
         }
 
         public DateTime DiaDePartida
@@ -111,6 +112,21 @@ namespace Entidades
             }
             return cantidad;
         }
+        public string CantidadDeAsientosTurista
+        {
+            get
+            {
+                return CantidadDeAsientosDisponiblesTurista().ToString();
+            }
+        }
+        public string CantidadDeAsientosPremium
+        {
+            get
+            {
+                return CantidadDeAsientosDisponiblesPremium().ToString();
+            }
+        }
+
         public int CantidadDeAsientosDisponiblesTurista()
         {
             return unAvion.CantidadAsientosTurista() - CantidadPasajesVendidos(ETipoPasaje.Turista);
