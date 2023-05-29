@@ -205,7 +205,7 @@
             // 
             // pctbxImagenMenuPpal
             // 
-            pctbxImagenMenuPpal.Image = (Image)resources.GetObject("pctbxImagenMenuPpal.Image");
+            pctbxImagenMenuPpal.Image = Properties.Resources.Fondo;
             pctbxImagenMenuPpal.Location = new Point(0, 25);
             pctbxImagenMenuPpal.Name = "pctbxImagenMenuPpal";
             pctbxImagenMenuPpal.Size = new Size(1231, 696);

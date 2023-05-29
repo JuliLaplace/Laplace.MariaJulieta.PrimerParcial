@@ -332,7 +332,8 @@
             Controls.Add(btnModificar);
             Controls.Add(tableLayoutPanel1);
             Name = "FrmModificarVuelo";
-            Text = "FrmModificarVuelo";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Modificar vuelo";
             Load += FrmModificarVuelo_Load;
             panelContenedor.ResumeLayout(false);
             panelContenedor.PerformLayout();

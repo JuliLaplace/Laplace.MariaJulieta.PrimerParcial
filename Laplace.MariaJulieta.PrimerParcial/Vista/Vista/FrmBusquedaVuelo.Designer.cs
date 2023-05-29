@@ -211,6 +211,7 @@
             dtgListaVuelosFiltrados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgListaVuelosFiltrados.Location = new Point(54, 343);
             dtgListaVuelosFiltrados.Name = "dtgListaVuelosFiltrados";
+            dtgListaVuelosFiltrados.ReadOnly = true;
             dtgListaVuelosFiltrados.RowTemplate.Height = 25;
             dtgListaVuelosFiltrados.Size = new Size(1117, 211);
             dtgListaVuelosFiltrados.TabIndex = 1;
@@ -276,6 +277,7 @@
             Controls.Add(dtgListaVuelosFiltrados);
             Controls.Add(gpbDatosFiltroViaje);
             Controls.Add(pctbxImagenFondo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmBusquedaVuelo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Busqueda de vuelos disponibles";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPasajero));
             grpDatosPersonalesPasajero = new GroupBox();
             lblError = new Label();
             ldlFechaNacimiento = new Label();
@@ -42,7 +43,9 @@
             lblNombreCliente = new Label();
             btnBoton1 = new Button();
             btnCancelar = new Button();
+            pictureBox1 = new PictureBox();
             grpDatosPersonalesPasajero.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // grpDatosPersonalesPasajero
@@ -181,19 +184,31 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.gifPasajero;
+            pictureBox1.Location = new Point(521, 91);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(259, 251);
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            // 
             // FrmPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(485, 450);
+            ClientSize = new Size(813, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(btnCancelar);
             Controls.Add(btnBoton1);
             Controls.Add(grpDatosPersonalesPasajero);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPasajero";
             Text = "Agregar Pasajero";
             Load += FrmPasajero_Load;
             grpDatosPersonalesPasajero.ResumeLayout(false);
             grpDatosPersonalesPasajero.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -213,6 +228,6 @@
         protected Label lblError;
         protected Button btnBoton1;
         protected Button btnCancelar;
-
+        private PictureBox pictureBox1;
     }
 }

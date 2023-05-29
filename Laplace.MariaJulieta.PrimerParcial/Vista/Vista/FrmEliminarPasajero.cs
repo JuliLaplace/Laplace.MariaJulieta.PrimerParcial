@@ -36,7 +36,7 @@ namespace Vista
             base.dtpickerFechaNacimiento.Enabled = false;
         }
 
- 
+
         protected override void btnBoton1_Click(object sender, EventArgs e)
         {
             this.LimpiarPantalla();
@@ -49,6 +49,6 @@ namespace Vista
             base.LimpiarPantalla();
             base.DialogResult = DialogResult.Cancel;
         }
-   
+
     }
 }

@@ -18,7 +18,7 @@ namespace Vista
         {
             InitializeComponent();
             this.avionRecibido = avion;
-            
+
 
         }
         private void FrmModificarAvion_Load(object sender, EventArgs e)

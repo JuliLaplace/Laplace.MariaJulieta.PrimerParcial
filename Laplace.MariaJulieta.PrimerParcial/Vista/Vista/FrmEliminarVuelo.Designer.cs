@@ -261,7 +261,8 @@
             Controls.Add(btnEliminarVuelo);
             Controls.Add(panelContenedor);
             Name = "FrmEliminarVuelo";
-            Text = "FrmEliminarVuelo";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Eliminar vuelo";
             Load += FrmEliminarVuelo_Load;
             panelContenedor.ResumeLayout(false);
             panelContenedor.PerformLayout();

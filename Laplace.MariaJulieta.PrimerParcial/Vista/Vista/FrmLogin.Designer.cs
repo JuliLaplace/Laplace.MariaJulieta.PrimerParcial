@@ -145,6 +145,7 @@
             Controls.Add(lblTituloLogin);
             Controls.Add(pboxPanelImagen);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

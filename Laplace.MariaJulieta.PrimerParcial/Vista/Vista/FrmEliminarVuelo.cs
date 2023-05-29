@@ -22,7 +22,7 @@ namespace Vista
 
         private void FrmEliminarVuelo_Load(object sender, EventArgs e)
         {
-         
+
 
             this.cboSeleccionTipoDeViaje.Enabled = false;
             this.cboSeleccionTipoDeViaje.DisplayMember = "TipoDeViaje";
@@ -59,7 +59,7 @@ namespace Vista
             {
                 MessageBox.Show("No se puede eliminar un vuelo que está en viaje");
             }
-            else if(vueloRecibido.DiaDePartida < DateTime.Today)
+            else if (vueloRecibido.DiaDePartida < DateTime.Today)
             {
                 MessageBox.Show("No se puede eliminar un vuelo ya realizado");
             }

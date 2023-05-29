@@ -91,11 +91,13 @@ namespace Entidades
         public Equipaje Equipaje
         {
             get { return equipaje; }
+            set { this .equipaje = value; }
         }
 
         public Vuelo UnVuelo
         {
             get { return unVuelo; }
+            //set { this.UnVuelo = value; }
         }
 
         public Pasaje UnPasaje

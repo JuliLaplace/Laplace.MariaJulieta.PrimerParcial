@@ -46,6 +46,7 @@ namespace Vista
             this.lblTitulo.Visible = false;
             this.dtgListar.ReadOnly = true;
             Color colorPersonalizado = ColorTranslator.FromHtml("#275248");
+            this.panelBotones.BackColor = colorPersonalizado;
             this.menuStrip1.BackColor = colorPersonalizado;
             this.lblBienvenidaUser.BackColor = colorPersonalizado;
             this.lblFechaActual.BackColor = colorPersonalizado;
@@ -121,7 +122,7 @@ namespace Vista
                     if (agregarVueloForm.ShowDialog() == DialogResult.OK)
                     {
                         this.dtgListar.DataSource = null;
-                        this.dtgListar.DataSource = Empresa.ListarVuelos();
+                        this.dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
                     }
                     break;
                 case "Avion":
@@ -163,7 +164,7 @@ namespace Vista
                         if (modificarVueloForm.ShowDialog() == DialogResult.OK)
                         {
                             this.dtgListar.DataSource = null;
-                            this.dtgListar.DataSource = Empresa.ListarVuelos();
+                            this.dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
                         }
                         break;
                     case "Avion":
@@ -210,7 +211,7 @@ namespace Vista
                         {
                             Empresa.Eliminar(vuelo);
                             this.dtgListar.DataSource = null;
-                            dtgListar.DataSource = Empresa.ListarVuelos();
+                            dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
                         }
                         break;
                     case "Avion":
@@ -242,8 +243,8 @@ namespace Vista
             this.dtgListar.Columns[6].HeaderText = "Fecha de partida";
             this.dtgListar.Columns[7].HeaderText = "Horas de Viaje";
             this.dtgListar.Columns[8].HeaderText = "Servicio Wifi";
-            //this.dtgListar.Columns[7].HeaderText = "Asientos Turista";
-            //this.dtgListar.Columns[8].HeaderText = "Asientos Premium";
+            this.dtgListar.Columns[9].HeaderText = "Asientos Turista";
+            this.dtgListar.Columns[10].HeaderText = "Asientos Premium";
         }
         private void DatosColumnaDataGridAviones()
         {
@@ -388,7 +389,7 @@ namespace Vista
         private void MostrarDatosVuelos()
         {
             this.LimpiarDatagrid();
-            this.dtgListar.DataSource = Empresa.ListarVuelos();
+            this.dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
             this.DatosColumnaDataGridVuelo();
             this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.lblTitulo.Visible = true;

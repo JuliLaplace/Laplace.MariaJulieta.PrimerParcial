@@ -35,10 +35,6 @@
             dtpickerFechaNacimiento.MaxDate = new DateTime(2023, 5, 22, 0, 0, 0, 0);
             dtpickerFechaNacimiento.Value = new DateTime(2023, 5, 22, 0, 0, 0, 0);
             // 
-            // cmbGenero
-            // 
-            cmbGenero.DataSource = null;
-            // 
             // btnBoton1
             // 
             btnBoton1.Text = "Modificar";
@@ -49,6 +45,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(532, 450);
             Name = "FrmModificarPasajero";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Modificar Pasajero";
             Load += FrmModificarPasajero_Load_1;
             ResumeLayout(false);

@@ -76,10 +76,10 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(593, 143);
+            pictureBox1.Image = Properties.Resources.gifAvion;
+            pictureBox1.Location = new Point(569, 107);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(184, 230);
+            pictureBox1.Size = new Size(270, 230);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -219,7 +219,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 526);
+            ClientSize = new Size(851, 526);
             Controls.Add(btnCancelar);
             Controls.Add(btnBoton1);
             Controls.Add(panel1);

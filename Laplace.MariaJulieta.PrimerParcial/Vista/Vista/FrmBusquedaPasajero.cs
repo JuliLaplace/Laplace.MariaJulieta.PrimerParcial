@@ -67,7 +67,8 @@ namespace Vista
             FrmPasajero formularioPasajero = new FrmPasajero();
             if (formularioPasajero.ShowDialog() == DialogResult.OK)
             {
-
+                this.LimpiarDatagrid();
+                this.dtgListarPasajeros.DataSource = Empresa.ListarPasajeros();
             }
         }
         private void btnSeleccionPasajero_Click(object sender, EventArgs e)

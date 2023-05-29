@@ -156,6 +156,21 @@ namespace Entidades
             }
             return mostrarVuelos;
         }
+        public static List<Vuelo> ListarVuelosDisponibles()
+        {
+            List<Vuelo> mostrarVuelos = new List<Vuelo>();
+            foreach (Vuelo item in vuelos)
+            {
+                if(item.DiaDePartida >= DateTime.Today)
+                {
+                    mostrarVuelos.Add(item);
+                }
+                
+
+            }
+            return mostrarVuelos;
+        }
+
         public static void AgregarUnPasajero(string apellido, string nombre, ESexo sexo, DateTime fecha,  int edad, string dni)
         {
             pasajeros.Add(new Pasajero(nombre, apellido, Validador.CadenaStringAInt(dni), fecha, sexo, edad));

@@ -38,12 +38,12 @@
             btnCancelar = new Button();
             pctbxImagenFondo = new PictureBox();
             dtgListaPasajesPorVender = new DataGridView();
-            comboBox1 = new ComboBox();
-            btnSeleccionTipoPasaje = new Button();
             rtbDatosVuelo = new RichTextBox();
             rtbDatosPasajero = new RichTextBox();
             rtbDatosEquipaje = new RichTextBox();
             rtbDatosFactura = new RichTextBox();
+            btnAgregarPasajero = new Button();
+            btnEliminarPasajero = new Button();
             ((System.ComponentModel.ISupportInitialize)pctbxImagenFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgListaPasajesPorVender).BeginInit();
             SuspendLayout();
@@ -51,7 +51,7 @@
             // btnBuscarVuelo
             // 
             btnBuscarVuelo.ImageAlign = ContentAlignment.TopCenter;
-            btnBuscarVuelo.Location = new Point(90, 64);
+            btnBuscarVuelo.Location = new Point(109, 88);
             btnBuscarVuelo.Name = "btnBuscarVuelo";
             btnBuscarVuelo.Size = new Size(163, 64);
             btnBuscarVuelo.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             // btnCargarPasajero
             // 
-            btnCargarPasajero.Location = new Point(525, 80);
+            btnCargarPasajero.Location = new Point(416, 88);
             btnCargarPasajero.Name = "btnCargarPasajero";
             btnCargarPasajero.Size = new Size(132, 48);
             btnCargarPasajero.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             // btnCargarEquipaje
             // 
-            btnCargarEquipaje.Location = new Point(755, 84);
+            btnCargarEquipaje.Location = new Point(695, 98);
             btnCargarEquipaje.Name = "btnCargarEquipaje";
             btnCargarEquipaje.Size = new Size(139, 44);
             btnCargarEquipaje.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             // btnFactura
             // 
-            btnFactura.Location = new Point(1025, 84);
+            btnFactura.Location = new Point(967, 98);
             btnFactura.Name = "btnFactura";
             btnFactura.Size = new Size(127, 44);
             btnFactura.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             // btnCargarOtroPasajero
             // 
-            btnCargarOtroPasajero.Location = new Point(28, 634);
+            btnCargarOtroPasajero.Location = new Point(285, 623);
             btnCargarOtroPasajero.Name = "btnCargarOtroPasajero";
             btnCargarOtroPasajero.Size = new Size(138, 57);
             btnCargarOtroPasajero.TabIndex = 8;
@@ -101,7 +101,7 @@
             // 
             // btnVender
             // 
-            btnVender.Location = new Point(836, 634);
+            btnVender.Location = new Point(833, 623);
             btnVender.Name = "btnVender";
             btnVender.Size = new Size(128, 53);
             btnVender.TabIndex = 9;
@@ -111,7 +111,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(1079, 636);
+            btnCancelar.Location = new Point(1065, 625);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(124, 53);
             btnCancelar.TabIndex = 10;
@@ -122,9 +122,9 @@
             // pctbxImagenFondo
             // 
             pctbxImagenFondo.Image = (Image)resources.GetObject("pctbxImagenFondo.Image");
-            pctbxImagenFondo.Location = new Point(1, 0);
+            pctbxImagenFondo.Location = new Point(1, -1);
             pctbxImagenFondo.Name = "pctbxImagenFondo";
-            pctbxImagenFondo.Size = new Size(1239, 644);
+            pctbxImagenFondo.Size = new Size(1238, 692);
             pctbxImagenFondo.TabIndex = 11;
             pctbxImagenFondo.TabStop = false;
             // 
@@ -133,30 +133,15 @@
             dtgListaPasajesPorVender.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgListaPasajesPorVender.Location = new Point(35, 453);
             dtgListaPasajesPorVender.Name = "dtgListaPasajesPorVender";
+            dtgListaPasajesPorVender.ReadOnly = true;
             dtgListaPasajesPorVender.RowTemplate.Height = 25;
             dtgListaPasajesPorVender.Size = new Size(1154, 143);
             dtgListaPasajesPorVender.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(300, 206);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 25);
-            comboBox1.TabIndex = 17;
-            // 
-            // btnSeleccionTipoPasaje
-            // 
-            btnSeleccionTipoPasaje.Location = new Point(309, 78);
-            btnSeleccionTipoPasaje.Name = "btnSeleccionTipoPasaje";
-            btnSeleccionTipoPasaje.Size = new Size(103, 52);
-            btnSeleccionTipoPasaje.TabIndex = 18;
-            btnSeleccionTipoPasaje.Text = "Cargar Tipo de pasaje";
-            btnSeleccionTipoPasaje.UseVisualStyleBackColor = true;
+            dtgListaPasajesPorVender.CellClick += dtgListaPasajesPorVender_CellClick;
             // 
             // rtbDatosVuelo
             // 
-            rtbDatosVuelo.Location = new Point(76, 206);
+            rtbDatosVuelo.Location = new Point(92, 206);
             rtbDatosVuelo.Name = "rtbDatosVuelo";
             rtbDatosVuelo.Size = new Size(201, 198);
             rtbDatosVuelo.TabIndex = 19;
@@ -164,7 +149,7 @@
             // 
             // rtbDatosPasajero
             // 
-            rtbDatosPasajero.Location = new Point(487, 206);
+            rtbDatosPasajero.Location = new Point(383, 206);
             rtbDatosPasajero.Name = "rtbDatosPasajero";
             rtbDatosPasajero.Size = new Size(199, 198);
             rtbDatosPasajero.TabIndex = 20;
@@ -172,7 +157,7 @@
             // 
             // rtbDatosEquipaje
             // 
-            rtbDatosEquipaje.Location = new Point(733, 206);
+            rtbDatosEquipaje.Location = new Point(669, 206);
             rtbDatosEquipaje.Name = "rtbDatosEquipaje";
             rtbDatosEquipaje.Size = new Size(194, 198);
             rtbDatosEquipaje.TabIndex = 21;
@@ -180,23 +165,43 @@
             // 
             // rtbDatosFactura
             // 
-            rtbDatosFactura.Location = new Point(989, 206);
+            rtbDatosFactura.Location = new Point(925, 206);
             rtbDatosFactura.Name = "rtbDatosFactura";
             rtbDatosFactura.Size = new Size(214, 198);
             rtbDatosFactura.TabIndex = 22;
             rtbDatosFactura.Text = "";
+            // 
+            // btnAgregarPasajero
+            // 
+            btnAgregarPasajero.Location = new Point(35, 619);
+            btnAgregarPasajero.Name = "btnAgregarPasajero";
+            btnAgregarPasajero.Size = new Size(138, 57);
+            btnAgregarPasajero.TabIndex = 23;
+            btnAgregarPasajero.Text = "Agregar Pasajero";
+            btnAgregarPasajero.UseVisualStyleBackColor = true;
+            btnAgregarPasajero.Click += btnAgregarPasajero_Click;
+            // 
+            // btnEliminarPasajero
+            // 
+            btnEliminarPasajero.Location = new Point(549, 621);
+            btnEliminarPasajero.Name = "btnEliminarPasajero";
+            btnEliminarPasajero.Size = new Size(146, 59);
+            btnEliminarPasajero.TabIndex = 24;
+            btnEliminarPasajero.Text = "Eliminar Pasajero";
+            btnEliminarPasajero.UseVisualStyleBackColor = true;
+            btnEliminarPasajero.Click += btnEliminarPasajero_Click;
             // 
             // FrmVentaPasaje
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1234, 692);
+            Controls.Add(btnEliminarPasajero);
+            Controls.Add(btnAgregarPasajero);
             Controls.Add(rtbDatosFactura);
             Controls.Add(rtbDatosEquipaje);
             Controls.Add(rtbDatosPasajero);
             Controls.Add(rtbDatosVuelo);
-            Controls.Add(btnSeleccionTipoPasaje);
-            Controls.Add(comboBox1);
             Controls.Add(dtgListaPasajesPorVender);
             Controls.Add(btnCancelar);
             Controls.Add(btnVender);
@@ -211,6 +216,7 @@
             Name = "FrmVentaPasaje";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Venta pasaje";
+            Load += FrmVentaPasaje_Load;
             ((System.ComponentModel.ISupportInitialize)pctbxImagenFondo).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtgListaPasajesPorVender).EndInit();
             ResumeLayout(false);
@@ -227,11 +233,11 @@
         private Button btnCancelar;
         private PictureBox pctbxImagenFondo;
         private DataGridView dtgListaPasajesPorVender;
-        private ComboBox comboBox1;
-        private Button btnSeleccionTipoPasaje;
         private RichTextBox rtbDatosVuelo;
         private RichTextBox rtbDatosPasajero;
         private RichTextBox rtbDatosEquipaje;
         private RichTextBox rtbDatosFactura;
+        private Button btnAgregarPasajero;
+        private Button btnEliminarPasajero;
     }
 }

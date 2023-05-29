@@ -36,12 +36,6 @@ namespace Vista
             return (Validador.ValidarSiCadenaEsSoloLetras(nombre) && Validador.ValidarSiCadenaEsSoloLetras(apellido) && Validador.ValidarEdadCorrecta(edad) && Validador.StringEsNumerico(dni));
         }
 
-        protected void LimpiarPantalla()
-        {
-            this.txtApellidoPasajero.Text = string.Empty;
-            this.txtDniPasajero.Text = string.Empty;
-            this.txtNombrePasajero.Text = string.Empty;
-        }
 
         private void dtpickerFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
@@ -57,9 +51,6 @@ namespace Vista
             string apellidoIngresado = this.txtApellidoPasajero.Text;
             string dniIngresado = this.txtDniPasajero.Text;
             ESexo sexoSeleccionado = (ESexo)this.cmbGenero.SelectedValue;
-
-
-
 
 
             if (ValidarDatosIngresados(nombreIngresado, apellidoIngresado, edadIngresada, dniIngresado))
@@ -81,6 +72,12 @@ namespace Vista
             this.DialogResult = DialogResult.Cancel;
         }
 
+        protected void LimpiarPantalla()
+        {
+            this.txtApellidoPasajero.Text = string.Empty;
+            this.txtDniPasajero.Text = string.Empty;
+            this.txtNombrePasajero.Text = string.Empty;
+        }
 
 
 

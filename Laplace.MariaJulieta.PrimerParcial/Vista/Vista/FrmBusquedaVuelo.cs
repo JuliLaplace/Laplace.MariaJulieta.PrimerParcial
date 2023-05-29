@@ -36,7 +36,7 @@ namespace Vista
             this.lblMensajeError.Visible = false;
             this.tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
             this.listaDeVuelosDisponibles = new List<Vuelo>();
-            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
+            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelosDisponibles();
             this.DatosColumnaDataGridVuelo();
         }
 
@@ -128,18 +128,18 @@ namespace Vista
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.LimpiarDatagrid();           
+            this.LimpiarDatagrid();
 
         }
 
         private void LimpiarDatagrid()
         {
-            
+
             this.dtgListaVuelosFiltrados.DataSource = null;
             this.dtgListaVuelosFiltrados.Rows.Clear();
-            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelos();
+            this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelosDisponibles();
             this.DatosColumnaDataGridVuelo();
-            
+
         }
 
         private void DatosColumnaDataGridVuelo()

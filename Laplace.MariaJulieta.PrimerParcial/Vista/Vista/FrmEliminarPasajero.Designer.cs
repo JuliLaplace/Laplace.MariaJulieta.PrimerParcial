@@ -35,11 +35,6 @@
             dtpickerFechaNacimiento.MaxDate = new DateTime(2023, 5, 22, 0, 0, 0, 0);
             dtpickerFechaNacimiento.Value = new DateTime(2023, 5, 22, 0, 0, 0, 0);
             // 
-            // cmbGenero
-            // 
-            cmbGenero.DataSource = null; /* (new ESexo[] { ESexo.Femenino, ESexo.Masculino, ESexo.NoBinario });
-            cmbGenero.Items.AddRange(new object[] { ESexo.Femenino, ESexo.Masculino, ESexo.NoBinario });*/
-            // 
             // btnBoton1
             // 
             btnBoton1.Text = "Agregar";
@@ -50,7 +45,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Name = "FrmEliminarPasajero";
-            Text = "FrmEliminarPasajero";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Eliminar Pasajero";
             Load += FrmEliminarPasajero_Load;
             ResumeLayout(false);
         }

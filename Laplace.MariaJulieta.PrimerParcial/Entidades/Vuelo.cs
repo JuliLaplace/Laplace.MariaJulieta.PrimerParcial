@@ -145,16 +145,7 @@ namespace Entidades
         }
 
 
-        //public static bool operator ==(Vuelo vuelo, Avion avion)
-        //{
-        //    return (vuelo.UnAvion == avion);
-
-        //}
-        //public static bool operator !=(Vuelo vuelo, Avion avion)
-        //{
-        //    return (vuelo == avion);
-
-        //}
+        
         public static bool operator ==(Vuelo vuelo1, Vuelo vuelo2)
         {
             return (vuelo1.codigoVuelo == vuelo2.codigoVuelo);
@@ -185,6 +176,8 @@ namespace Entidades
         {
             return this.codigoVuelo;
         }
+
+        
     }
 
 

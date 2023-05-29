@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBusquedaPasajero));
             grpDatosPasajero = new GroupBox();
             txtBusquedaPorDni = new TextBox();
             txtBusquedaPorApellido = new TextBox();
@@ -40,8 +41,10 @@
             btnLimpiar = new Button();
             btnAgregarPasajero = new Button();
             btnSeleccionPasajero = new Button();
+            pictureBox1 = new PictureBox();
             grpDatosPasajero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListarPasajeros).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // grpDatosPasajero
@@ -112,8 +115,9 @@
             dtgListarPasajeros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgListarPasajeros.Location = new Point(59, 279);
             dtgListarPasajeros.Name = "dtgListarPasajeros";
+            dtgListarPasajeros.ReadOnly = true;
             dtgListarPasajeros.RowTemplate.Height = 25;
-            dtgListarPasajeros.Size = new Size(652, 150);
+            dtgListarPasajeros.Size = new Size(951, 150);
             dtgListarPasajeros.TabIndex = 1;
             dtgListarPasajeros.CellContentClick += dtgListarPasajeros_CellContentClick;
             // 
@@ -149,7 +153,7 @@
             // 
             // btnSeleccionPasajero
             // 
-            btnSeleccionPasajero.Location = new Point(336, 448);
+            btnSeleccionPasajero.Location = new Point(465, 447);
             btnSeleccionPasajero.Name = "btnSeleccionPasajero";
             btnSeleccionPasajero.Size = new Size(138, 23);
             btnSeleccionPasajero.TabIndex = 5;
@@ -157,23 +161,36 @@
             btnSeleccionPasajero.UseVisualStyleBackColor = true;
             btnSeleccionPasajero.Click += btnSeleccionPasajero_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.gifBusquedaCliente;
+            pictureBox1.Location = new Point(761, 45);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 200);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
             // FrmBusquedaPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 492);
+            ClientSize = new Size(1098, 492);
+            Controls.Add(pictureBox1);
             Controls.Add(btnSeleccionPasajero);
             Controls.Add(btnAgregarPasajero);
             Controls.Add(btnLimpiar);
             Controls.Add(btnBuscar);
             Controls.Add(dtgListarPasajeros);
             Controls.Add(grpDatosPasajero);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmBusquedaPasajero";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Carga de pasajero";
             Load += FrmBusquedaPasajero_Load;
             grpDatosPasajero.ResumeLayout(false);
             grpDatosPasajero.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListarPasajeros).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -191,5 +208,6 @@
         private Button btnLimpiar;
         private Button btnAgregarPasajero;
         private Button btnSeleccionPasajero;
+        private PictureBox pictureBox1;
     }
 }

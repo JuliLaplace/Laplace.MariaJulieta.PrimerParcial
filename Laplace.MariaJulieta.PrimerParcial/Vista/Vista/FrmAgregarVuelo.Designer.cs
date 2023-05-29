@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarVuelo));
             panelContenedor = new TableLayoutPanel();
             lblTipoDeVuelo = new Label();
             lblOrigen = new Label();
@@ -276,6 +277,7 @@
             Controls.Add(btnAgregarVuelo);
             Controls.Add(lblMensajeError);
             Controls.Add(panelContenedor);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmAgregarVuelo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Vuelo";
