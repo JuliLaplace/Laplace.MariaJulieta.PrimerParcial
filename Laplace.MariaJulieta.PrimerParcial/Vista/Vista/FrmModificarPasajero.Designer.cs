@@ -34,7 +34,8 @@
             // 
             dtpickerFechaNacimiento.MaxDate = new DateTime(2023, 5, 22, 0, 0, 0, 0);
             dtpickerFechaNacimiento.Value = new DateTime(2023, 5, 22, 0, 0, 0, 0);
-            // 
+            //// 
+            //    
             // btnBoton1
             // 
             btnBoton1.Text = "Modificar";
@@ -43,7 +44,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(532, 450);
+            ClientSize = new Size(813, 450);
             Name = "FrmModificarPasajero";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Modificar Pasajero";

@@ -30,10 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentaPasaje));
             btnBuscarVuelo = new Button();
-            btnCargarPasajero = new Button();
-            btnCargarEquipaje = new Button();
+            btnBuscarPasajero = new Button();
+            btnEmitirPasaje = new Button();
             btnFactura = new Button();
-            btnCargarOtroPasajero = new Button();
             btnVender = new Button();
             btnCancelar = new Button();
             pctbxImagenFondo = new PictureBox();
@@ -59,25 +58,25 @@
             btnBuscarVuelo.UseVisualStyleBackColor = true;
             btnBuscarVuelo.Click += btnBuscarVuelo_Click;
             // 
-            // btnCargarPasajero
+            // btnBuscarPasajero
             // 
-            btnCargarPasajero.Location = new Point(416, 88);
-            btnCargarPasajero.Name = "btnCargarPasajero";
-            btnCargarPasajero.Size = new Size(132, 48);
-            btnCargarPasajero.TabIndex = 1;
-            btnCargarPasajero.Text = "Cargar Pasajero";
-            btnCargarPasajero.UseVisualStyleBackColor = true;
-            btnCargarPasajero.Click += btnCargarPasajero_Click;
+            btnBuscarPasajero.Location = new Point(416, 88);
+            btnBuscarPasajero.Name = "btnBuscarPasajero";
+            btnBuscarPasajero.Size = new Size(132, 48);
+            btnBuscarPasajero.TabIndex = 1;
+            btnBuscarPasajero.Text = "Buscar Pasajero";
+            btnBuscarPasajero.UseVisualStyleBackColor = true;
+            btnBuscarPasajero.Click += btnBuscarPasajero_Click;
             // 
-            // btnCargarEquipaje
+            // btnEmitirPasaje
             // 
-            btnCargarEquipaje.Location = new Point(695, 98);
-            btnCargarEquipaje.Name = "btnCargarEquipaje";
-            btnCargarEquipaje.Size = new Size(139, 44);
-            btnCargarEquipaje.TabIndex = 2;
-            btnCargarEquipaje.Text = "Cargar Equipaje";
-            btnCargarEquipaje.UseVisualStyleBackColor = true;
-            btnCargarEquipaje.Click += btnCargarEquipaje_Click;
+            btnEmitirPasaje.Location = new Point(695, 98);
+            btnEmitirPasaje.Name = "btnEmitirPasaje";
+            btnEmitirPasaje.Size = new Size(139, 44);
+            btnEmitirPasaje.TabIndex = 2;
+            btnEmitirPasaje.Text = "Emitir Pasaje";
+            btnEmitirPasaje.UseVisualStyleBackColor = true;
+            btnEmitirPasaje.Click += btnEmitirPasaje_Click;
             // 
             // btnFactura
             // 
@@ -88,16 +87,6 @@
             btnFactura.Text = "Realizar Factura";
             btnFactura.UseVisualStyleBackColor = true;
             btnFactura.Click += btnFactura_Click;
-            // 
-            // btnCargarOtroPasajero
-            // 
-            btnCargarOtroPasajero.Location = new Point(285, 623);
-            btnCargarOtroPasajero.Name = "btnCargarOtroPasajero";
-            btnCargarOtroPasajero.Size = new Size(138, 57);
-            btnCargarOtroPasajero.TabIndex = 8;
-            btnCargarOtroPasajero.Text = "Cargar Otro Pasajero";
-            btnCargarOtroPasajero.UseVisualStyleBackColor = true;
-            btnCargarOtroPasajero.Click += btnCargarOtroPasajero_Click;
             // 
             // btnVender
             // 
@@ -205,10 +194,9 @@
             Controls.Add(dtgListaPasajesPorVender);
             Controls.Add(btnCancelar);
             Controls.Add(btnVender);
-            Controls.Add(btnCargarOtroPasajero);
             Controls.Add(btnFactura);
-            Controls.Add(btnCargarEquipaje);
-            Controls.Add(btnCargarPasajero);
+            Controls.Add(btnEmitirPasaje);
+            Controls.Add(btnBuscarPasajero);
             Controls.Add(btnBuscarVuelo);
             Controls.Add(pctbxImagenFondo);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -225,10 +213,9 @@
         #endregion
 
         private Button btnBuscarVuelo;
-        private Button btnCargarPasajero;
-        private Button btnCargarEquipaje;
+        private Button btnBuscarPasajero;
+        private Button btnEmitirPasaje;
         private Button btnFactura;
-        private Button btnCargarOtroPasajero;
         private Button btnVender;
         private Button btnCancelar;
         private PictureBox pctbxImagenFondo;

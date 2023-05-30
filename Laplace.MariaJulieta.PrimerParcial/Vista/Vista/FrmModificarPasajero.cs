@@ -32,22 +32,41 @@ namespace Vista
             base.txtApellidoPasajero.Text = pasajeroRecibido.Apellido;
             base.txtNombrePasajero.Text = pasajeroRecibido.Nombre;
             base.cmbGenero.SelectedItem = pasajeroRecibido.Sexo;
+            
 
         }
 
         protected override void btnBoton1_Click(object sender, EventArgs e)
         {
-
             ESexo sexo = (ESexo)base.cmbGenero.SelectedValue;
-            this.DialogResult = DialogResult.OK;
-            Empresa.ModificarPasajero(pasajeroRecibido, this.txtNombrePasajero.Text, this.txtApellidoPasajero.Text, sexo);
-
+           
+            
+            if(ValidarDatosIngresados(base.txtNombrePasajero.Text, base.txtApellidoPasajero.Text))
+            {
+                Empresa.ModificarPasajero(pasajeroRecibido, this.txtNombrePasajero.Text, this.txtApellidoPasajero.Text, sexo);
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                base.lblError.Visible = true;
+                this.LimpiarPantalla();
+            }
+            
         }
 
         protected override void btnCancelar_Click(object sender, EventArgs e)
         {
             base.LimpiarPantalla();
             base.DialogResult = DialogResult.Cancel;
+        }
+        protected override void LimpiarPantalla()
+        {
+            this.txtApellidoPasajero.Text = string.Empty;
+            this.txtNombrePasajero.Text = string.Empty;
+        }
+        public bool ValidarDatosIngresados(string nombre, string apellido)
+        {
+            return (Validador.ValidarSiCadenaEsSoloLetras(nombre) && Validador.ValidarSiCadenaEsSoloLetras(apellido) && (nombre != string.Empty) && (apellido != string.Empty));
         }
     }
 }

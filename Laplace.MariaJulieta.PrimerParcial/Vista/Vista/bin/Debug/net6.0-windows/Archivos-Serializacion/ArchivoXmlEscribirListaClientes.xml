@@ -7,10 +7,7 @@
     <FechaNacimiento>1991-04-09T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>32</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Lorez</Apellido>
@@ -19,10 +16,7 @@
     <FechaNacimiento>1982-03-10T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>41</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Zeia</Apellido>
@@ -31,10 +25,7 @@
     <FechaNacimiento>2001-11-12T00:00:00</FechaNacimiento>
     <Sexo>NoBinario</Sexo>
     <Edad>21</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Garcia</Apellido>
@@ -43,10 +34,7 @@
     <FechaNacimiento>1991-04-10T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>32</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Pep</Apellido>
@@ -55,10 +43,7 @@
     <FechaNacimiento>1990-01-09T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>33</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Lisboa</Apellido>
@@ -67,10 +52,7 @@
     <FechaNacimiento>1968-11-12T00:00:00</FechaNacimiento>
     <Sexo>NoBinario</Sexo>
     <Edad>54</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Perez</Apellido>
@@ -79,10 +61,7 @@
     <FechaNacimiento>1962-01-04T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>61</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Gil</Apellido>
@@ -91,10 +70,7 @@
     <FechaNacimiento>1964-02-05T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>59</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Perez</Apellido>
@@ -103,10 +79,7 @@
     <FechaNacimiento>1968-05-01T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>55</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Papana</Apellido>
@@ -115,10 +88,7 @@
     <FechaNacimiento>1962-02-10T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>61</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Reinoso</Apellido>
@@ -127,10 +97,7 @@
     <FechaNacimiento>1961-08-09T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>61</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Loncopan</Apellido>
@@ -139,10 +106,7 @@
     <FechaNacimiento>1999-09-01T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>23</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Samiel</Apellido>
@@ -151,10 +115,7 @@
     <FechaNacimiento>1989-11-03T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>33</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Saluo</Apellido>
@@ -163,10 +124,7 @@
     <FechaNacimiento>1991-10-12T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>31</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Lorez</Apellido>
@@ -175,10 +133,7 @@
     <FechaNacimiento>2001-03-12T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>22</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Gimenez</Apellido>
@@ -187,10 +142,7 @@
     <FechaNacimiento>1992-01-11T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>31</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Garcia</Apellido>
@@ -199,10 +151,7 @@
     <FechaNacimiento>1990-07-07T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>32</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Gorriti</Apellido>
@@ -211,10 +160,7 @@
     <FechaNacimiento>1980-05-03T00:00:00</FechaNacimiento>
     <Sexo>NoBinario</Sexo>
     <Edad>43</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>von Hinke</Apellido>
@@ -223,10 +169,7 @@
     <FechaNacimiento>1985-11-10T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>37</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Paez</Apellido>
@@ -235,10 +178,7 @@
     <FechaNacimiento>1960-04-11T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>63</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Garcia</Apellido>
@@ -247,10 +187,7 @@
     <FechaNacimiento>1957-04-04T00:00:00</FechaNacimiento>
     <Sexo>Masculino</Sexo>
     <Edad>66</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
   </Pasajero>
   <Pasajero>
     <Apellido>Martinez</Apellido>
@@ -259,9 +196,15 @@
     <FechaNacimiento>1991-07-18T00:00:00</FechaNacimiento>
     <Sexo>Femenino</Sexo>
     <Edad>31</Edad>
-    <Equipaje>
-      <CantidadValijas>0</CantidadValijas>
-      <PesoTotalValija>0</PesoTotalValija>
-    </Equipaje>
+    <ListaDeViajes />
+  </Pasajero>
+  <Pasajero>
+    <Apellido>Laplace</Apellido>
+    <Nombre>juli</Nombre>
+    <Dni>35411575</Dni>
+    <FechaNacimiento>1991-04-09T00:00:00</FechaNacimiento>
+    <Sexo>Femenino</Sexo>
+    <Edad>32</Edad>
+    <ListaDeViajes />
   </Pasajero>
 </ArrayOfPasajero>

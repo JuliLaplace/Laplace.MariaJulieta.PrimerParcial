@@ -76,6 +76,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.gifAvion;
             pictureBox1.Location = new Point(569, 107);
             pictureBox1.Name = "pictureBox1";

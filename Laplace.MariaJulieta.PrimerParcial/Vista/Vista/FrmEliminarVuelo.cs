@@ -22,8 +22,6 @@ namespace Vista
 
         private void FrmEliminarVuelo_Load(object sender, EventArgs e)
         {
-
-
             this.cboSeleccionTipoDeViaje.Enabled = false;
             this.cboSeleccionTipoDeViaje.DisplayMember = "TipoDeViaje";
             this.cboSeleccionTipoDeViaje.Items.Add(vueloRecibido.TipoDeViaje);
@@ -50,21 +48,19 @@ namespace Vista
             this.chkbOfreceWifi.Enabled = false;
             this.chkbOfreceWifi.Checked = vueloRecibido.TieneWifi;
 
-
         }
 
         private void btnEliminarVuelo_Click(object sender, EventArgs e)
         {
-            if (vueloRecibido.DiaDePartida == DateTime.Today)
+            DateTime fechaActual = DateTime.Now.Date;
+
+            if (vueloRecibido.DiaDePartida.Date <= fechaActual)
             {
-                MessageBox.Show("No se puede eliminar un vuelo que está en viaje");
-            }
-            else if (vueloRecibido.DiaDePartida < DateTime.Today)
-            {
-                MessageBox.Show("No se puede eliminar un vuelo ya realizado");
+                MessageBox.Show("No se puede eliminar un vuelo en viaje o que vuela del mismo día");
             }
             else
             {
+                MessageBox.Show("Vuelo eliminado con éxito");
                 this.DialogResult = DialogResult.OK;
             }
         }

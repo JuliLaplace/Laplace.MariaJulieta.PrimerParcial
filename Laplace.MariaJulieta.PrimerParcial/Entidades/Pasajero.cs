@@ -13,10 +13,7 @@ namespace Entidades
         private ESexo sexo;
         private int edad;
         private DateTime fechaNacimiento;
-        private Pasaje unPasaje;
-        private Vuelo unVuelo;
-        private Equipaje equipaje;
-        private bool tieneEquipajeDeMano;
+        private List<Viaje> listaDeViajes;
 
         public Pasajero() : base()
         {
@@ -24,31 +21,16 @@ namespace Entidades
             this.sexo = ESexo.Masculino;
             this.edad = 0;
             this.fechaNacimiento = new DateTime(1900, 1, 1);
-            this.unPasaje = new Pasaje();
-            this.unVuelo = new Vuelo();
-            this.equipaje = new Equipaje();
-            this.tieneEquipajeDeMano = false;
+            this.listaDeViajes = new List<Viaje>();
         }
+
         public Pasajero(string nombre, string apellido, int dni, DateTime fechaDeNacimiento, ESexo sexo, int edad) : base(nombre, apellido)
         {
             this.dni = dni;
             this.sexo = sexo;
             this.edad = edad;
             this.fechaNacimiento = fechaDeNacimiento;
-            this.unPasaje = new Pasaje();
-            this.unVuelo = new Vuelo();
-            this.equipaje = new Equipaje();
-            this.tieneEquipajeDeMano = false ;
-        }
-
-        public Pasajero(string nombre, string apellido, int dni, DateTime fechaNacimiento, ESexo sexo, int edad, Equipaje equipajeACargar, bool tieneEquipajeDeMano, Pasaje unPasaje, Vuelo unVuelo) : this(nombre, apellido, dni, fechaNacimiento, sexo, edad)
-        {
-          
-            this.unPasaje = unPasaje;
-            this.unVuelo = unVuelo;
-            this.equipaje = equipajeACargar;
-            this.tieneEquipajeDeMano = tieneEquipajeDeMano;
-           
+            this.listaDeViajes = new List<Viaje>();
         }
 
         public int Dni
@@ -88,26 +70,12 @@ namespace Entidades
             }
         }
 
-        public Equipaje Equipaje
-        {
-            get { return equipaje; }
-            set { this .equipaje = value; }
+        public List<Viaje> ListaDeViajes {
+            get { return this.listaDeViajes; }
+            set {this.listaDeViajes = value; } 
         }
 
-        public Vuelo UnVuelo
-        {
-            get { return unVuelo; }
-            //set { this.UnVuelo = value; }
-        }
 
-        public Pasaje UnPasaje
-        {
-            get { return unPasaje; }
-        }
-        public bool TieneEquipajeDeMano
-        {
-            get { return tieneEquipajeDeMano; }
-        }
         //Para comparar pasajeros por dni
         public static bool operator ==(Pasajero pasajero1, Pasajero pasajero2)
         {
@@ -137,6 +105,11 @@ namespace Entidades
         public override string ToString()
         {
             return $"{this.Apellido}, {this.Nombre} - DNI: {this.Dni}";
+        }
+
+        public void AgregarViaje(Viaje viaje)
+        {
+            this.listaDeViajes.Add(viaje);  
         }
 
 

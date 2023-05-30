@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Entidades
 {
@@ -11,22 +12,17 @@ namespace Entidades
         private static int contadorPasajes = 1000;
         private int codigoPasaje;
         private ETipoPasaje tipoDePasaje;
-        private double precio;
+        private Vuelo vuelo;
+
 
      
 
-        public Pasaje()
+        public Pasaje( ETipoPasaje tipoDePasaje, Vuelo vuelo)
         {
             this.codigoPasaje = contadorPasajes;
             Pasaje.contadorPasajes++;
-            this.precio = 0;
-            this.tipoDePasaje = ETipoPasaje.Turista;
-        }
-        public Pasaje( double precio, ETipoPasaje tipoDePasaje):this() //preguntar a seba si esta bien
-        {
             this.tipoDePasaje = tipoDePasaje;
-            this.precio = precio;
-
+            this.vuelo = vuelo;
         }
 
         public int CodigoPasaje
@@ -34,14 +30,6 @@ namespace Entidades
             get { return codigoPasaje; }
         }
 
-        public double Precio
-        {
-            get { return precio; }
-            set
-            {
-                this.precio = value;
-            }
-        }
         public ETipoPasaje TipoDePasaje
         {
             get { return tipoDePasaje; }
@@ -50,7 +38,10 @@ namespace Entidades
                 this.tipoDePasaje = value;
             }
         }
-
+        public Vuelo Vuelo {
+            get { return this.vuelo; }
+            set {this.vuelo = value; } 
+        }
 
         public override string ToString()
         {
@@ -59,6 +50,27 @@ namespace Entidades
         public override int GetHashCode()
         {
             return this.CodigoPasaje;
+        }
+
+        public double PrecioPasaje()
+        {
+            double precio=0;
+
+            if (this.vuelo.TipoDeViaje == ETipoViaje.Nacional)
+            {
+                precio = 50 * vuelo.HorasDeViaje;
+            }
+            else
+            {
+                precio = 100 * vuelo.HorasDeViaje;
+            }
+
+            if (this.tipoDePasaje == ETipoPasaje.Premium)
+            {
+                precio *= 1.35;
+            }
+
+            return precio;
         }
     }
 }

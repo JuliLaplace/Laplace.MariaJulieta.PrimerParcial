@@ -35,10 +35,7 @@ namespace Entidades
             HarcodearDestinosInternacionales();
             HarcodearPasajeros();
             HarcodearAviones();
-            
             HarcodearVuelos();
-
-
         }
 
         
@@ -49,7 +46,11 @@ namespace Entidades
 
         private static void HarcodearAviones()
         {
+            //aviones.Add(new Avion(EAvion.Airbus, "asjskau8", 200, 4, 200));
+            //JsonData.EscribirListaAviones(aviones);
+            //aviones = JsonData.LeerAviones();
             aviones = Archivo.LeerListaAviones();
+            
         }
         private static void HarcodearVuelos()
         {
@@ -74,6 +75,8 @@ namespace Entidades
             vuelos.Add(new Vuelo(destinosNacionales[3], destinosNacionales[5], ETipoViaje.Nacional, aviones[1], new DateTime(2025, 12, 3, 15, 15, 0), true, true));
             vuelos.Add(new Vuelo(destinosInternacionales[3], destinosInternacionales[0], ETipoViaje.Internacional, aviones[2], new DateTime(2023, 6, 9, 17, 30, 0), true, false));
             vuelos.Add(new Vuelo(destinosNacionales[0], destinosNacionales[3], ETipoViaje.Nacional, aviones[0], new DateTime(2024, 10, 9, 17, 30, 0), true, true));
+            //Archivo.EscribirListaVuelos(vuelos);
+            //vuelos = Archivo.LeerListaVuelos();
         }
         private static void HarcodearPasajeros()
         {
@@ -125,7 +128,10 @@ namespace Entidades
             }
             return null;
         }
-
+        /// <summary>
+        ///   Metodos que muestras Listas segun lo pedido por el usuario
+        /// </summary>
+        /// <returns>Retorna una lista de un tipo de objeto determinado segun la necesidad del usuario</returns>
         public static List<Avion> ListarAviones()
         {
             List<Avion> mostrarAviones = new List<Avion>();
@@ -170,7 +176,15 @@ namespace Entidades
             }
             return mostrarVuelos;
         }
-
+        /// <summary>
+        /// Metodos que Agregan objetos a un listado especifico
+        /// </summary>
+        /// <param name="apellido"></param>
+        /// <param name="nombre"></param>
+        /// <param name="sexo"></param>
+        /// <param name="fecha"></param>
+        /// <param name="edad"></param>
+        /// <param name="dni"></param>
         public static void AgregarUnPasajero(string apellido, string nombre, ESexo sexo, DateTime fecha,  int edad, string dni)
         {
             pasajeros.Add(new Pasajero(nombre, apellido, Validador.CadenaStringAInt(dni), fecha, sexo, edad));
@@ -181,14 +195,15 @@ namespace Entidades
         public static void AgregarVuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion avion, DateTime diaDeViaje, bool ofreceComida, bool ofreceWifi)
         {
             vuelos.Add(new Vuelo(origen, destino, tipoDeViaje, avion, diaDeViaje, ofreceComida, ofreceWifi));            
-            
+            Archivo.EscribirListaVuelos(vuelos);
         }
         public static void AgregarAvion(EAvion avion, string matricula, int cantidadAsientos, int cantidadBanios, float capacidadBodega)
         {
           
             aviones.Add(new Avion(avion, matricula, cantidadAsientos, cantidadBanios, capacidadBodega));
             Archivo.EscribirListaAviones(aviones);
-            
+            //JsonData.EscribirListaAviones(aviones);
+
         }
 
         public static string[] ListarDestinosNacionales()
@@ -289,13 +304,17 @@ namespace Entidades
                 if (pasajero.Dni == dni)
                 {
                     pasajeroEncontrado = pasajero;
-                    break; // Si se encuentra el cliente, se termina el bucle
+                    break; // Si se encuentra el cliente, sale
                 }
             }
             return pasajeroEncontrado;
 
         }
-        //sobrecarga
+        /// <summary>
+        /// Metodo que elimina un objeto (ya sea pasajero, avion o vuelo) de una lista segun que se le indique por parametro.
+        /// Metodo con sobrecarga para PASAJER - VUELO - AVION
+        /// </summary>
+        /// <param name="pasajero"></param>
         public static void Eliminar(Pasajero pasajero)
         {
             foreach (Pasajero item in pasajeros)
@@ -307,22 +326,6 @@ namespace Entidades
                 }
             }
         }
-
-
-        public static void ModificarPasajero(Pasajero pasajero, string nombre, string apellido, ESexo sexo)
-        {
-            foreach (Pasajero item in pasajeros)
-            {
-                if (pasajero == item)
-                {
-                    item.Nombre = nombre;
-                    item.Apellido = apellido;
-                    item.Sexo = sexo;
-                    break;
-                }
-            }
-        }
-
         public static void Eliminar(Avion avion)
         {
             foreach (Avion item in aviones)
@@ -345,6 +348,42 @@ namespace Entidades
                 }
             }
         }
+
+        /// <summary>
+        /// Metodos que modifican un objeto especifico dentro de una lista especifica. Si se quiere eliminar un Pasajero, se lo busca en la lista "pasajeros" segun su dni, y se modifican sus atributos
+        /// </summary>
+        /// <param name="pasajero"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="sexo"></param>
+        public static void ModificarPasajero(Pasajero pasajero, string nombre, string apellido, ESexo sexo)
+        {
+            foreach (Pasajero item in pasajeros)
+            {
+                if (pasajero == item)
+                {
+                    item.Nombre = nombre;
+                    item.Apellido = apellido;
+                    item.Sexo = sexo;
+                    break;
+                }
+            }
+        }
+        public static void ModificarAvion(Avion avion, EAvion nombre, int cantidadAsientos, int cantidadBaños, float capacidad)
+        {
+            foreach (Avion item in aviones)
+            {
+                if (avion == item)
+                {
+                    item.Nombre = nombre;
+                    item.CantidadDeBanios = cantidadBaños;
+                    item.CantidadDeAsientos = cantidadAsientos;
+                    item.CapacidadBodega = capacidad;
+                    break;
+                }
+            }
+        }
+
 
 
         public static bool EstaAvionEnVuelo(Avion avion, List<Vuelo> lista)
@@ -373,43 +412,11 @@ namespace Entidades
             return estaEnVuelo;
            
         }
-        public static void ModificarAvion(Avion avion, EAvion nombre, string matricula, int cantidadAsientos, int cantidadBaños, float capacidad)
-        {
-            foreach (Avion item in aviones)
-            {
-                if (avion == item)
-                {
-                    item.Nombre = nombre;
-                    item.Matricula = matricula;
-                    item.CantidadDeBanios = cantidadBaños;
-                    item.CantidadDeAsientos = cantidadAsientos;
-                    item.CapacidadBodega = capacidad;
-                    break;
-                }
-            }
-        }
 
         public static void CargarPasajeroVuelo(Vuelo vuelo, Pasajero pasajero)
         {
             vuelo.AgregarPasajero(pasajero);
         }
 
-
-
-
-        //public static Avion BuscarAvionPorMatricula(List<Avion> aviones, string matriculaBuscada)
-        //{
-        //    Avion avion = new Avion();
-        //    foreach (Avion item in aviones)
-        //    {
-        //        if(matriculaBuscada == item.Matricula)
-        //        {
-        //            avion = item;
-        //        }
-        //    }
-        //    return avion;
-        //}
-
-        
     }
 }

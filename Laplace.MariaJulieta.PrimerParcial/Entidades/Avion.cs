@@ -84,7 +84,7 @@ namespace Entidades
             return cadena.ToString();
         }
 
-        public override string ToString() //sobreescribi el tostring asi cuando listo los vuelos, en el marco de Avion, se muestra sun nombre y matricula
+        public override string ToString()
         {
             return this.MostrarAvion();
         }

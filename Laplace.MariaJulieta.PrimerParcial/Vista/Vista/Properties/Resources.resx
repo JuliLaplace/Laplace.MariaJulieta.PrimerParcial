@@ -127,14 +127,29 @@
   <data name="gifAvion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gifAvion.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gifAvion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gifAvion2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gifBusquedaCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gifBusquedaCliente.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gifCalendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gifCalendario.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gifMaleta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gifMaleta.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gifPasajero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gifPasajero.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gifPasajeros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gifPasajeros.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gifUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gifUsuario.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gifVuelo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gifVuelo.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImagenVuelo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImagenVuelo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

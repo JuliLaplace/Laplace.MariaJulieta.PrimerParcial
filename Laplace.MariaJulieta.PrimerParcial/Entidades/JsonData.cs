@@ -12,11 +12,11 @@ namespace Entidades
 {
     public static class JsonData
     {
-        //static string ruta;
+        static string ruta;
         static JsonData()
         {
-            //ruta = AppDomain.CurrentDomain.BaseDirectory;
-            //ruta += @"\Archivos-Serializacion";
+            ruta = AppDomain.CurrentDomain.BaseDirectory;
+            ruta += @"\Archivos-Serializacion";
         }
         public static List<Usuario> LeerUsuario() 
         {
@@ -33,8 +33,37 @@ namespace Entidades
             }
             return listaDeUsuariosEnJson;
         }
-       
-       
+
+        public static List<Avion> LeerAviones()
+        {
+            string rutaCompleta = ruta + @"\ArchivoJsonEscribirListaAviones.json";
+            List<Avion>? listaDeAvionesEnJson = new List<Avion>();
+            using (StreamReader read = new StreamReader(rutaCompleta))
+            {
+                string archivoALeer = read.ReadToEnd();
+                listaDeAvionesEnJson = JsonConvert.DeserializeObject<List<Avion>>(archivoALeer);
+                if (listaDeAvionesEnJson is null)
+                {
+                    listaDeAvionesEnJson = new List<Avion>();
+                }
+
+            }
+            return listaDeAvionesEnJson;
+        }
+
+        public static void EscribirListaAviones(List<Avion> listaAviones)
+        {
+            string rutaCompleta = ruta + @"\ArchivoJsonEscribirListaAviones.json";
+            if (!Directory.Exists(ruta))
+            {
+                Directory.CreateDirectory(ruta);
+            }
+            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            {
+                string archivo = JsonConvert.SerializeObject(listaAviones);
+                sw.WriteLine(archivo);
+            }
+        }   
     }
     
 }

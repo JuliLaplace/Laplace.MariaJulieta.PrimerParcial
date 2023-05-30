@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
@@ -20,6 +21,8 @@ namespace Entidades
         private bool ofreceComida;
         private bool tieneWifi;
 
+
+       
         public Vuelo() //sobrecarga de constructores para poder inicializar la lista de pasajeros.
         {
             this.pasajeros = new List<Pasajero>();
@@ -30,6 +33,7 @@ namespace Entidades
             Vuelo.contadorVuelos++;
             
         }
+        
         public Vuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion unAvion, DateTime diaDePartida, bool ofreceComida, bool tieneWifi):this()
         {
             this.origen = origen;
@@ -104,11 +108,16 @@ namespace Entidades
         {
             int cantidad = 0;
             foreach (Pasajero item in pasajeros)
+
             {
-                if (item.UnPasaje.TipoDePasaje == tipoDePasaje)
+                foreach(Viaje viaje in item.ListaDeViajes)
                 {
-                    cantidad++;
+                    if (viaje.Pasaje.TipoDePasaje == tipoDePasaje)
+                    {
+                        cantidad++;
+                    }
                 }
+               
             }
             return cantidad;
         }

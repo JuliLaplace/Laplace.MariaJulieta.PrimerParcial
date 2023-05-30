@@ -15,30 +15,31 @@ namespace Vista
     public partial class FrmCargarEquipaje : Form
     {
         Equipaje equipajeCargado;
+        Pasaje pasajeAVender;
+        Vuelo vueloSeleccionado;
         int cantidadValijas;
         float pesoValija1;
         float pesoValija2;
         bool equipajeMano;
         double precio;
-        Vuelo vueloSeleccionado;
-        ETipoPasaje tipoPasaje;
-        double precioTotal;
-        
+
 
         public FrmCargarEquipaje(Vuelo vueloRecibido)
         {
             InitializeComponent();
             this.equipajeCargado = new Equipaje();
             this.vueloSeleccionado = vueloRecibido;
+            this.pasajeAVender = new Pasaje(ETipoPasaje.Turista, this.vueloSeleccionado);
         }
         public Equipaje EquipajeCargado
         {
             get { return equipajeCargado; }
         }
-        public double PrecioTotal
+        public Pasaje PasajeAVender
         {
-            get { return this.precioTotal; }
+            get { return this.pasajeAVender; }
         }
+        public bool EquipajeMano { get { return this.equipajeMano; } }
 
         private void FrmCargarEquipaje_Load(object sender, EventArgs e)
         {
@@ -51,13 +52,13 @@ namespace Vista
         }
         private void cmbEnumTipoPasajes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.tipoPasaje = (ETipoPasaje)this.cmbEnumTipoPasajes.SelectedValue;
+            this.pasajeAVender = new Pasaje((ETipoPasaje)this.cmbEnumTipoPasajes.SelectedValue, this.vueloSeleccionado);
             this.cmbCantidadValijas.Items.Clear();
             this.cmbCantidadValijas.Items.Add(1);
             ActualizarPrecio();
             MostrarPrecioNetoYPercioBruto();
 
-            if (tipoPasaje == ETipoPasaje.Premium)
+            if (this.pasajeAVender.TipoDePasaje == ETipoPasaje.Premium)
             {
                 this.cmbCantidadValijas.Items.Add(2);
                 this.txtPesoValija2.Visible = true;
@@ -66,13 +67,10 @@ namespace Vista
             {
 
                 this.txtPesoValija2.Visible = false;
-               
+
             }
 
             this.cmbCantidadValijas.SelectedIndex = 0;
-
-            
-        
 
         }
 
@@ -95,42 +93,21 @@ namespace Vista
         {
             this.equipajeMano = false;
         }
-
-
-        private void btnCargaEquipaje_Click(object sender, EventArgs e)
+        private void btnCargar_Click(object sender, EventArgs e)
         {
 
-          
-            if (this.tipoPasaje == ETipoPasaje.Turista)
-            {
-                if (float.Parse(this.txtPesoValija1.Text) <= 25 && float.Parse(this.txtPesoValija1.Text) > 0)
+         
+            
+                if (this.pasajeAVender.TipoDePasaje == ETipoPasaje.Turista)
                 {
-                    this.pesoValija1 = float.Parse(this.txtPesoValija1.Text);
-                    this.pesoValija2 = 0;
-                }
-                else
-                {
-                    MessageBox.Show("Peso erroneo, la valija debe pesar menos de 25kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.txtPesoValija1.Text = "0";
-                    this.txtPesoValija2.Text = "0";
-                    return;
-                    
-                }
-            }
-            else
-            {
-                if (this.cantidadValijas == 1)
-                {
-                    if (float.Parse(this.txtPesoValija1.Text) <= 21 && float.Parse(this.txtPesoValija1.Text) > 0)
+                    if (float.Parse(this.txtPesoValija1.Text) <= 25 && float.Parse(this.txtPesoValija1.Text) > 0)
                     {
-                        pesoValija1 = float.Parse(txtPesoValija1.Text);
-                        pesoValija2 = 0;
-
+                        this.pesoValija1 = float.Parse(this.txtPesoValija1.Text);
+                        this.pesoValija2 = 0;
                     }
                     else
                     {
-                       
-                        MessageBox.Show("Peso erroneo, la valija debe pesar menos de 21kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Peso erroneo, la valija debe pesar menos de 25kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.txtPesoValija1.Text = "0";
                         this.txtPesoValija2.Text = "0";
                         return;
@@ -139,41 +116,64 @@ namespace Vista
                 }
                 else
                 {
-
-                    if (float.Parse(this.txtPesoValija1.Text) <= 21 && float.Parse(this.txtPesoValija1.Text) > 0)
+                    if (this.cantidadValijas == 1)
                     {
-                        pesoValija1 = float.Parse(this.txtPesoValija1.Text);
+                        if (float.Parse(this.txtPesoValija1.Text) <= 21 && float.Parse(this.txtPesoValija1.Text) > 0)
+                        {
+                            pesoValija1 = float.Parse(txtPesoValija1.Text);
+                            pesoValija2 = 0;
 
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Peso erroneo, la valija debe pesar menos de 21kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.txtPesoValija1.Text = "0";
+                            this.txtPesoValija2.Text = "0";
+                            return;
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Peso erroneo, la valija debe pesar menos de 21kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.txtPesoValija1.Text = "0";
-                        this.txtPesoValija2.Text = "0";
-                        return;
 
-                    }
+                        if (float.Parse(this.txtPesoValija1.Text) <= 21 && float.Parse(this.txtPesoValija1.Text) > 0)
+                        {
+                            pesoValija1 = float.Parse(this.txtPesoValija1.Text);
 
-                    if (float.Parse(this.txtPesoValija2.Text) <= 21 && float.Parse(this.txtPesoValija2.Text) > 0)
-                    {
-                        this.pesoValija2 = float.Parse(this.txtPesoValija2.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Peso erroneo, la valija debe pesar menos de 21kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.txtPesoValija1.Text = "0";
+                            this.txtPesoValija2.Text = "0";
+                            return;
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Peso erroneo, la valija debe pesar menos de 21kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.txtPesoValija1.Text = "0";
-                        this.txtPesoValija2.Text = "0";
-                        return;
+                        }
 
+                        if (float.Parse(this.txtPesoValija2.Text) <= 21 && float.Parse(this.txtPesoValija2.Text) > 0)
+                        {
+                            this.pesoValija2 = float.Parse(this.txtPesoValija2.Text);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Peso erroneo, la valija debe pesar menos de 21kg", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.txtPesoValija1.Text = "0";
+                            this.txtPesoValija2.Text = "0";
+                            return;
+
+                        }
                     }
                 }
-            }
 
-            this.equipajeCargado.PesoTotalValija = this.pesoValija1 +  this.pesoValija2;
-            this.equipajeCargado.CantidadValijas = this.cantidadValijas;
-            this.DialogResult = DialogResult.OK;
+                this.equipajeCargado.PesoTotalValija = this.pesoValija1 + this.pesoValija2;
+                this.equipajeCargado.CantidadValijas = this.cantidadValijas;
+                this.DialogResult = DialogResult.OK;
+            
+           
         }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -184,26 +184,12 @@ namespace Vista
         {
             this.txtPrecioBruto.Text = this.precio.ToString("C2");
             this.txtPrecioNeto.Text = (this.precio + (this.precio * 0.21)).ToString("C2");
-            this.precioTotal = (this.precio + (this.precio * 0.21));
-
         }
         private void ActualizarPrecio()
         {
-
-            if (this.tipoPasaje == ETipoPasaje.Turista)
-            {
-                this.precio = 1 * 50 * this.vueloSeleccionado.HorasDeViaje;
-            }
-            else
-            {
-                this.precio = 1 * 100 * this.vueloSeleccionado.HorasDeViaje;
-            }
-
-            if (this.tipoPasaje == ETipoPasaje.Premium)
-            {
-                this.precio *= 1.15;
-            }
+            this.precio = this.pasajeAVender.PrecioPasaje();
 
         }
+
     }
 }

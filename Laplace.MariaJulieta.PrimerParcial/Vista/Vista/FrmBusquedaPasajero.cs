@@ -33,6 +33,7 @@ namespace Vista
         private void FrmBusquedaPasajero_Load(object sender, EventArgs e)
         {
             this.dtgListarPasajeros.DataSource = Empresa.ListarPasajeros();
+            this.dtgListarPasajeros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -54,11 +55,8 @@ namespace Vista
             this.dtgListarPasajeros.Columns[1].HeaderText = "Fecha de Nacimiento";
             this.dtgListarPasajeros.Columns[2].HeaderText = "Sexo";
             this.dtgListarPasajeros.Columns[3].HeaderText = "Edad";
-            this.dtgListarPasajeros.Columns[4].HeaderText = "Vuelo";
-            this.dtgListarPasajeros.Columns[5].HeaderText = "Pasaje";
-            this.dtgListarPasajeros.Columns[6].HeaderText = "Lleva equipaje";
-            this.dtgListarPasajeros.Columns[7].HeaderText = "Apellido";
-            this.dtgListarPasajeros.Columns[8].HeaderText = "Nombre";
+            this.dtgListarPasajeros.Columns[4].HeaderText = "Apellido";
+            this.dtgListarPasajeros.Columns[5].HeaderText = "Nombre";
 
         }
 

@@ -31,10 +31,6 @@
             panelAvion.SuspendLayout();
             SuspendLayout();
             // 
-            // cboAviones
-            // 
-            cboAviones.DataSource = (new EAvion[] { EAvion.Airbus, EAvion.Boeing });
-            cboAviones.Items.AddRange(new object[] { EAvion.Airbus, EAvion.Boeing });
             // 
             // domUpDownAsientos
             // 

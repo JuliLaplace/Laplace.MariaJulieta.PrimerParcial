@@ -18,7 +18,7 @@ namespace Vista
         public FrmModificarVuelo(Vuelo vuelo)
         {
             InitializeComponent();
-            vueloRecibido = vuelo;
+            this.vueloRecibido = vuelo;
         }
 
         private void FrmModificarVuelo_Load(object sender, EventArgs e)

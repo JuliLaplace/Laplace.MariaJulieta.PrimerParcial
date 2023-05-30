@@ -42,5 +42,17 @@ namespace Entidades
         {
             return (edad >= 0 && edad < 110);
         }
+        public static bool ValidarAlfanumerico(string cadena)
+        {
+            foreach (char c in cadena)
+            {
+                if (!char.IsLetterOrDigit(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

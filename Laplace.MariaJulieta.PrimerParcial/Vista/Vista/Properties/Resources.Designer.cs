@@ -93,9 +93,29 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gifAvion2 {
+            get {
+                object obj = ResourceManager.GetObject("gifAvion2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gifBusquedaCliente {
             get {
                 object obj = ResourceManager.GetObject("gifBusquedaCliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gifCalendario {
+            get {
+                object obj = ResourceManager.GetObject("gifCalendario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +136,36 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap gifPasajero {
             get {
                 object obj = ResourceManager.GetObject("gifPasajero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gifPasajeros {
+            get {
+                object obj = ResourceManager.GetObject("gifPasajeros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gifUsuario {
+            get {
+                object obj = ResourceManager.GetObject("gifUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gifVuelo {
+            get {
+                object obj = ResourceManager.GetObject("gifVuelo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -13,12 +13,9 @@ namespace Vista
 {
     public partial class FrmPasajero : Form
     {
-
-
         public FrmPasajero()
         {
             InitializeComponent();
-
         }
 
         private void FrmPasajero_Load(object sender, EventArgs e)
@@ -28,14 +25,7 @@ namespace Vista
             this.lblError.Visible = false;
             this.dtpickerFechaNacimiento.MaxDate = DateTime.Today;
             this.btnBoton1.Text = "Agregar";
-
         }
-
-        private static bool ValidarDatosIngresados(string nombre, string apellido, int edad, string dni)
-        {
-            return (Validador.ValidarSiCadenaEsSoloLetras(nombre) && Validador.ValidarSiCadenaEsSoloLetras(apellido) && Validador.ValidarEdadCorrecta(edad) && Validador.StringEsNumerico(dni));
-        }
-
 
         private void dtpickerFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
@@ -72,11 +62,24 @@ namespace Vista
             this.DialogResult = DialogResult.Cancel;
         }
 
-        protected void LimpiarPantalla()
+        protected virtual void LimpiarPantalla()
         {
             this.txtApellidoPasajero.Text = string.Empty;
             this.txtDniPasajero.Text = string.Empty;
             this.txtNombrePasajero.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Metodo que valida que datos que ingresa usuario para agregar un pasajero sean validos
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="edad"></param>
+        /// <param name="dni"></param>
+        /// <returns>retorna un true si los datos son correctos, o false si existe algun error en los mismos</returns>
+        public bool ValidarDatosIngresados(string nombre, string apellido, int edad, string dni)
+        {
+            return (Validador.ValidarSiCadenaEsSoloLetras(nombre) && Validador.ValidarSiCadenaEsSoloLetras(apellido) && Validador.ValidarEdadCorrecta(edad) && Validador.StringEsNumerico(dni) && (nombre != string.Empty) && (apellido != string.Empty) && (dni != string.Empty));
         }
 
 

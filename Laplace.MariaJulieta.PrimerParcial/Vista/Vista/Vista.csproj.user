@@ -22,9 +22,6 @@
     <Compile Update="FrmEliminarVuelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmListaPasajeros.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

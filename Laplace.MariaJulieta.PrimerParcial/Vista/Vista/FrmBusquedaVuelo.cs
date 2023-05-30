@@ -37,6 +37,7 @@ namespace Vista
             this.tipoDeViaje = (ETipoViaje)cboSeleccionTipoDeViaje.SelectedValue;
             this.listaDeVuelosDisponibles = new List<Vuelo>();
             this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelosDisponibles();
+            this.dtgListaVuelosFiltrados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.DatosColumnaDataGridVuelo();
         }
 

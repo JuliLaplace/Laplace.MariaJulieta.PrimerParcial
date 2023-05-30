@@ -17,7 +17,6 @@ namespace Vista
         Usuario usuarioLogueado;
         FrmLogin formularioLogin;
         string categoriaSeleccionada;
-        Cliente cliente;
         Avion avion;
         Vuelo vuelo;
         Pasajero pasajero;
@@ -32,7 +31,6 @@ namespace Vista
             this.usuarioLogueado = usuario;
             this.formularioLogin = login;
             this.pasajero = new Pasajero();
-            this.cliente = new Cliente();
             this.avion = new Avion();
             this.vuelo = new Vuelo();
             this.categoriaSeleccionada = "Inicio";
@@ -45,7 +43,11 @@ namespace Vista
             this.dtgListar.Visible = false;
             this.lblTitulo.Visible = false;
             this.dtgListar.ReadOnly = true;
+            this.dtgListar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Color colorPersonalizado = ColorTranslator.FromHtml("#275248");
+            this.btnAgregar.BackColor = colorPersonalizado;
+            this.btnEliminar.BackColor = colorPersonalizado;
+            this.btnModificar.BackColor = colorPersonalizado;
             this.panelBotones.BackColor = colorPersonalizado;
             this.menuStrip1.BackColor = colorPersonalizado;
             this.lblBienvenidaUser.BackColor = colorPersonalizado;
@@ -54,7 +56,7 @@ namespace Vista
             this.MostrarControles(categoriaSeleccionada);
             this.lblFechaActual.Text = "Fecha: " + DateTime.Now.ToShortDateString();
             this.lblBienvenidaUser.Visible = true;
-            this.lblBienvenidaUser.Text = "Bienvenido: " + usuarioLogueado.Nombre + usuarioLogueado.Apellido;
+            this.lblBienvenidaUser.Text = "Bienvenido: " + usuarioLogueado.Nombre + " " + usuarioLogueado.Apellido;
 
 
 
@@ -94,7 +96,7 @@ namespace Vista
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.MostrarDatosClientes();
+            this.MostrarDatosPasajeros();
         }
 
         private void vuelosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,8 +114,7 @@ namespace Vista
                     FrmPasajero agregarPasajeroForm = new FrmPasajero();
                     if (agregarPasajeroForm.ShowDialog() == DialogResult.OK)
                     {
-                        this.dtgListar.DataSource = null;
-                        this.dtgListar.DataSource = Empresa.ListarPasajeros();
+                        MostrarDatosPasajeros();
                     }
                     break;
                 case "Vuelo":
@@ -121,8 +122,7 @@ namespace Vista
                     FrmAgregarVuelo agregarVueloForm = new FrmAgregarVuelo();
                     if (agregarVueloForm.ShowDialog() == DialogResult.OK)
                     {
-                        this.dtgListar.DataSource = null;
-                        this.dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
+                        MostrarDatosVuelos();
                     }
                     break;
                 case "Avion":
@@ -130,8 +130,7 @@ namespace Vista
                     FrmAgregarAvion agregarAvionForm = new FrmAgregarAvion();
                     if (agregarAvionForm.ShowDialog() == DialogResult.OK)
                     {
-                        this.dtgListar.DataSource = null;
-                        this.dtgListar.DataSource = Empresa.ListarAviones();
+                        MostrarDatosAviones();
                     }
                     break;
 
@@ -143,7 +142,7 @@ namespace Vista
             if (!filaSeleccionada)
             {
                 MessageBox.Show("Por favor, seleccione una fila antes de continuar.");
-                return; // Salir del método sin realizar ninguna otra acción
+                return; // Sale del método sin realizar ninguna otra acción
             }
             else
             {
@@ -154,8 +153,7 @@ namespace Vista
                         FrmModificarPasajero modificarPasajeroForm = new FrmModificarPasajero(pasajero);
                         if (modificarPasajeroForm.ShowDialog() == DialogResult.OK)
                         {
-                            this.dtgListar.DataSource = null;
-                            this.dtgListar.DataSource = Empresa.ListarPasajeros();
+                            MostrarDatosPasajeros();
                         }
                         break;
                     case "Vuelo":
@@ -163,8 +161,7 @@ namespace Vista
                         FrmModificarVuelo modificarVueloForm = new FrmModificarVuelo(vuelo);
                         if (modificarVueloForm.ShowDialog() == DialogResult.OK)
                         {
-                            this.dtgListar.DataSource = null;
-                            this.dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
+                            MostrarDatosVuelos();
                         }
                         break;
                     case "Avion":
@@ -172,8 +169,7 @@ namespace Vista
                         FrmModificarAvion modificarAvionForm = new FrmModificarAvion(avion);
                         if (modificarAvionForm.ShowDialog() == DialogResult.OK)
                         {
-                            this.dtgListar.DataSource = null;
-                            this.dtgListar.DataSource = Empresa.ListarAviones();
+                            MostrarDatosAviones();
                         }
                         break;
 
@@ -195,12 +191,11 @@ namespace Vista
                 {
                     case "Pasajero":
 
-                        FrmEliminarPasajero eliminarPasajeroForm = new FrmEliminarPasajero(pasajero); //tengonque pasarle el pasajero por parametro
+                        FrmEliminarPasajero eliminarPasajeroForm = new FrmEliminarPasajero(pasajero);
                         if (eliminarPasajeroForm.ShowDialog() == DialogResult.OK)
                         {
                             Empresa.Eliminar(pasajero);
-                            this.dtgListar.DataSource = null;
-                            dtgListar.DataSource = Empresa.ListarPasajeros();
+                            MostrarDatosPasajeros();
                         }
 
                         break;
@@ -210,8 +205,7 @@ namespace Vista
                         if (eliminarVueloForm.ShowDialog() == DialogResult.OK)
                         {
                             Empresa.Eliminar(vuelo);
-                            this.dtgListar.DataSource = null;
-                            dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
+                            MostrarDatosVuelos();
                         }
                         break;
                     case "Avion":
@@ -220,12 +214,22 @@ namespace Vista
                         if (agregarAvionForm.ShowDialog() == DialogResult.OK)
                         {
                             Empresa.Eliminar(avion);
-                            this.dtgListar.DataSource = null;
-                            dtgListar.DataSource = Empresa.ListarAviones();
+                            MostrarDatosAviones();
                         }
                         break;
 
                 }
+            }
+
+        }
+        private void ventaDePasajesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVentaPasaje formularioVentaDePasaje = new FrmVentaPasaje();
+            if (formularioVentaDePasaje.ShowDialog() == DialogResult.OK)
+            {
+                //Vuelo vueloSeleccionado = formularioVentaDePasaje.VueloSeleccionado;
+                //Pasajero pasajero = formularioVentaDePasaje.PasajeroSeleccionado;
+                //Empresa.CargarPasajeroVuelo(vueloSeleccionado, pasajero);
             }
 
         }
@@ -261,11 +265,9 @@ namespace Vista
             this.dtgListar.Columns[1].HeaderText = "Fecha de Nacimiento";
             this.dtgListar.Columns[2].HeaderText = "Sexo";
             this.dtgListar.Columns[3].HeaderText = "Edad";
-            this.dtgListar.Columns[4].HeaderText = "Vuelo";
-            this.dtgListar.Columns[5].HeaderText = "Pasaje";
-            this.dtgListar.Columns[6].HeaderText = "Lleva equipaje";
-            this.dtgListar.Columns[7].HeaderText = "Apellido";
-            this.dtgListar.Columns[8].HeaderText = "Nombre";
+            //this.dtgListar.Columns[4].HeaderText = "Viaje";
+            this.dtgListar.Columns[4].HeaderText = "Apellido";
+            this.dtgListar.Columns[5].HeaderText = "Nombre";
 
         }
 
@@ -279,12 +281,12 @@ namespace Vista
                 case "Vuelo":
                     this.panelBotones.Visible = true;
                     this.dtgListar.Visible = true;
-                    this.pctBxImagenPAraMostrar.Visible = true;
+                    this.pctBxImagenParaMostrar.Visible = true;
                     break;
                 case "Inicio":
                 case "Listados":
                     this.panelBotones.Visible = false;
-                    this.pctBxImagenPAraMostrar.Visible = false;
+                    this.pctBxImagenParaMostrar.Visible = false;
                     break;
             }
 
@@ -295,17 +297,6 @@ namespace Vista
             dtgListar.DataSource = null;
             dtgListar.Rows.Clear();
         }
-
-        private void ventaDePasajesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmVentaPasaje formularioVentaDePasaje = new FrmVentaPasaje();
-            if (formularioVentaDePasaje.ShowDialog() == DialogResult.OK)
-            {
-                //Vuelo vueloSeleccionado = formularioBuscarVuelo.Vuelo;
-            }
-
-        }
-
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult rta = MessageBox.Show("¿Desea salir de la aplicación?", "Cierre de sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -374,8 +365,9 @@ namespace Vista
             this.lblTitulo.Text = "Categoría: Aviones";
             this.categoriaSeleccionada = "Avion";
             this.MostrarControles(categoriaSeleccionada);
+            this.pctBxImagenParaMostrar.Image = Properties.Resources.gifAvion2;
         }
-        private void MostrarDatosClientes()
+        private void MostrarDatosPasajeros()
         {
             this.LimpiarDatagrid();
             this.dtgListar.DataSource = Empresa.ListarPasajeros();
@@ -384,6 +376,7 @@ namespace Vista
             this.categoriaSeleccionada = "Pasajero";
             this.MostrarControles(categoriaSeleccionada);
             this.DatosCloumnaDataGridPasajeros();
+            this.pctBxImagenParaMostrar.Image = Properties.Resources.gifPasajeros;
         }
 
         private void MostrarDatosVuelos()
@@ -394,14 +387,14 @@ namespace Vista
             this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.lblTitulo.Visible = true;
             this.lblTitulo.Text = "Categoría: Vuelos";
-
             this.categoriaSeleccionada = "Vuelo";
             this.MostrarControles(categoriaSeleccionada);
+            this.pctBxImagenParaMostrar.Image = Properties.Resources.gifVuelo;
         }
         private void MostrarDatosInicio()
         {
             this.categoriaSeleccionada = "Inicio";
-            this.dtgListar.Visible = false; //preguntar si se tienen que ver vuelos
+            this.dtgListar.Visible = false;
             this.lblTitulo.Visible = false;
             this.MostrarControles(categoriaSeleccionada);
         }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargarEquipaje));
             pctboxImagen = new PictureBox();
             btnCancelar = new Button();
-            btnCargaEquipaje = new Button();
+            btnCargar = new Button();
             grpEquipajeDeMano = new GroupBox();
             radEquipajeManoNo = new RadioButton();
             radEquipajeManoSi = new RadioButton();
@@ -78,15 +78,15 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // btnCargaEquipaje
+            // btnCargar
             // 
-            btnCargaEquipaje.Location = new Point(251, 566);
-            btnCargaEquipaje.Name = "btnCargaEquipaje";
-            btnCargaEquipaje.Size = new Size(75, 23);
-            btnCargaEquipaje.TabIndex = 6;
-            btnCargaEquipaje.Text = "Cargar Equipaje";
-            btnCargaEquipaje.UseVisualStyleBackColor = true;
-            btnCargaEquipaje.Click += btnCargaEquipaje_Click;
+            btnCargar.Location = new Point(251, 566);
+            btnCargar.Name = "btnCargar";
+            btnCargar.Size = new Size(75, 23);
+            btnCargar.TabIndex = 6;
+            btnCargar.Text = "Cargar Equipaje";
+            btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargar_Click;
             // 
             // grpEquipajeDeMano
             // 
@@ -296,7 +296,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(grpDatosPasaje);
             Controls.Add(btnCancelar);
-            Controls.Add(btnCargaEquipaje);
+            Controls.Add(btnCargar);
             Controls.Add(grpEquipajeDeMano);
             Controls.Add(grpValijas);
             Controls.Add(pctboxImagen);
@@ -320,7 +320,7 @@
 
         private PictureBox pctboxImagen;
         private Button btnCancelar;
-        private Button btnCargaEquipaje;
+        private Button btnCargar;
         private GroupBox grpEquipajeDeMano;
         private RadioButton radEquipajeManoNo;
         private RadioButton radEquipajeManoSi;

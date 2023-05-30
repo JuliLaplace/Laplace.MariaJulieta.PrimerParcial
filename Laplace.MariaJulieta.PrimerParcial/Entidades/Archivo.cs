@@ -18,9 +18,6 @@ namespace Entidades
         public static void EscribirListaAviones(List<Avion> listaDeAviones)
         {
             string rutaCompleta = ruta + @"\ArchivoXmlEscribirLista.xml";
-
-            try
-            {
                 if (!Directory.Exists(ruta))
                 {
                     Directory.CreateDirectory(ruta);
@@ -30,20 +27,25 @@ namespace Entidades
                     XmlSerializer xmlSer = new XmlSerializer(typeof(List<Avion>));
                     xmlSer.Serialize(sw, listaDeAviones);
                 }
-            }
-
-            catch (Exception)
+           
+        }
+        public static void EscribirListaVuelos(List<Vuelo> listaDeVuelos)
+        {
+            string rutaCompleta = ruta + @"\ArchivoXmlEscribirListaVuelos.xml";
+            if (!Directory.Exists(ruta))
             {
-
-                throw new Exception($"Error en el archivo {rutaCompleta}");
+                Directory.CreateDirectory(ruta);
             }
+            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            {
+                XmlSerializer xmlSer = new XmlSerializer(typeof(List<Vuelo>));
+                xmlSer.Serialize(sw, listaDeVuelos);
+            }
+
         }
         public static void EscribirListaPasajeros(List<Pasajero> listaDePasajeros)
         {
             string rutaCompleta = ruta + @"\ArchivoXmlEscribirListaClientes.xml";
-
-            try
-            {
                 if (!Directory.Exists(ruta))
                 {
                     Directory.CreateDirectory(ruta);
@@ -53,13 +55,6 @@ namespace Entidades
                     XmlSerializer xmlSer = new XmlSerializer(typeof(List<Pasajero>));
                     xmlSer.Serialize(sw, listaDePasajeros);
                 }
-            }
-
-            catch (Exception)
-            {
-
-                throw new Exception($"Error en el archivo {rutaCompleta}");
-            }
         }
       
         public static List<Avion> LeerListaAviones()
@@ -77,6 +72,27 @@ namespace Entidades
                     if(listaAux is null)
                     {
                         listaAux= new List<Avion>();
+                    }
+                }
+            }
+
+            return listaAux;
+        }
+        public static List<Vuelo> LeerListaVuelos()
+        {
+            List<Vuelo>? listaAux = new List<Vuelo>();
+
+            string rutaCompleta = ruta + @"\ArchivoXmlEscribirListaVuelos.xml";
+            string datos = string.Empty;
+            if (Directory.Exists(ruta))
+            {
+                using (StreamReader sr = new StreamReader(rutaCompleta))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vuelo>));
+                    listaAux = (List<Vuelo>?)xmlSerializer.Deserialize(sr);
+                    if (listaAux is null)
+                    {
+                        listaAux = new List<Vuelo>();
                     }
                 }
             }
@@ -106,33 +122,5 @@ namespace Entidades
             }
             return listaAux;
         }
-
-
-
-        //PREGUNTAR A FACUNDO
-
-        //public static void EscribirLista(List<Object> listaDePasajeros, string ruta)
-        //{
-        //    string rutaCompleta = ruta + @"\ArchivoXmlEscribirLista.xml";
-
-        //    try
-        //    {
-        //        if (!Directory.Exists(ruta))
-        //        {
-        //            Directory.CreateDirectory(ruta);
-        //        }
-        //        using (StreamWriter sw = new StreamWriter(rutaCompleta))
-        //        {
-        //            XmlSerializer xmlSer = new XmlSerializer(typeof(List<Object>));
-        //            xmlSer.Serialize(sw, listaDePasajeros);
-        //        }
-        //    }
-
-        //    catch (Exception)
-        //    {
-
-        //        throw new Exception($"Error en el archivo {rutaCompleta}");
-        //    }
-        //}
     }
 }
