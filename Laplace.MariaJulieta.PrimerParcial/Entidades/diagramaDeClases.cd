@@ -3,7 +3,7 @@
   <Class Name="Entidades.XmlData">
     <Position X="8.75" Y="2.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAACAAAAQAAIAAAAAAACAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAACAAAAQAAIAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>XmlData.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,7 +17,7 @@
   <Class Name="Entidades.Empresa">
     <Position X="14.5" Y="2.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAARACQIARARBIAWACgAIJogAAAAwEEAEgDAAAIAIA=</HashCode>
+      <HashCode>AAAARACQIARARBIAWACgAIJIgAAAAgEEAEACAAAIAIA=</HashCode>
       <FileName>Empresa.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -84,13 +84,6 @@
       <FileName>Vuelo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="EUsuarios">
-    <Position X="10.75" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABAAA=</HashCode>
-      <FileName>Enumerados.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Enum Name="ESexo">
     <Position X="10.75" Y="5" Width="1.5" />
     <TypeIdentifier>
@@ -105,15 +98,8 @@
       <FileName>Enumerados.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ETipoEquipaje">
-    <Position X="12.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>Enumerados.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Enum Name="ETipoPasaje">
-    <Position X="12.75" Y="6.5" Width="1.5" />
+    <Position X="10.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enumerados.cs</FileName>

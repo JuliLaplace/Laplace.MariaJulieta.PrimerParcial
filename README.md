@@ -6,7 +6,8 @@
 Mi nombre es Julieta Laplace, tengo 32 años y soy trabajadora social. Me inicié en el camino de la programación en 2019 con cursos dictados por la ciudad de Buenos Aires (codo a codo) por simple curiosidad, y termine encontrando un "mundo nuevo" el cual disfrutaba de estudiar y aprender. Desde ahí decidi ampliar mi conocimiento a un grado educativo mayor como lo es la UTN. Antes de esto jamás habia programado, ya que vengo de estudiar una carrera correspodiente a la ciencias sociales, lo cual implica "dejar de lado" materias que contengan lógica,álgebra, matemática; en secundario o en mi vida en general no tuve aproximación a la programación, por ello a mis 32 años recien estoy adentrandome en el mundo IT.
 Con respecto al trabajo/evaluación, debo decir que me costó bastante y no llegue a realizar ciertas acciones (tales como calcular cuanto espacio en bodega queda por cada equipaje cargado, o las mismas estadisticas). La falta de organización fue crucial a la hora de escribir código y generar la aplicación. Este trabajo fue un gran parametro para comprender que temas pude absorber bien y en cuales todavia me falta un poco de comprensión o implementación. También, fue un disparador de algo que no habia vivido todavía: la frustración. Esta evaluación me puso a prueba con mi propia frustración. Hubo días donde festejaba que salieran ciertas cosas (y que las entendiera), y hubo días donde la frustración fue mayor y tuve que aprender a controlarla. En resumen, este trabajo fue un desafío (y lo sigue siendo ya que podría mejorarlo) y fue un gran parámetro para saber que temas tengo afianzados y que temas debo reforzar.
 
-#### Resumen
+#### Funcionamiento
+
 ![Imagen de login](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Login.jpg)
 
 La aplicación inicia con un login en donde el usuario (puede ser vendedor, administrador o supervisor) se loguean con su correo y contraseña para acceder a la aplicación en si. Si la persona que desea loguearse coloca datos incorrectos, se mostrará un mensaje de error para dar aviso a quien utilice la aplicación. Si los datos son correctos, se abrirá el menú principal, y la ventana de login no será visible.
@@ -20,23 +21,33 @@ Una vez dentro del menú principal, se encuentra una barra con ciertas opciones:
 
 La opcion de Agregar, eliminar y modificar viajes es exclusiva del usuario administrador, es decir, estas opciones solo aparecerán disponibles para quien se loguee con el perfil de "administrador", los demas usuarios tendran bloqueada dicha accion.
 
+Se encuentra la opcion Pasajero, la cual nos muestra la siguiente pantalla: 
+
 ![Imagen de Opcion Pasajeros](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Menu_Pasajeros.jpg)
  
 La seleccion "Venta de Pasajes" abre un nuevo formulario:
 
 ![Imagen de Venta de Pasajes](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/venderPasaje.jpg)
 
-En el mismo se encontrarán cuatro(4) opciones para realizar la venta de pasajes: Cargar Vuelo, Cargar Pasajero, Cargar Equipaje y Generar Factura.
-Al seleccionar el boton Cargar vuelo, se abrirá un formulario el cual permitirá filtrar vuelos segun su origen-destino y con la posibilidad del usuario de seleccionar la fecha de partida. A partir de dichas selecciones, se vera un datagrid con todos los vuelos filtrados por busqueda.
+En el mismo se encontrarán cuatro(4) opciones para realizar la venta de pasajes: Buscar Vuelo, Buscar Pasajero, Emitir Pasaje y Realizar Factura.
+Al seleccionar el boton Buscar vuelo, se abrirá un formulario el cual permitirá filtrar vuelos segun su origen-destino y con la posibilidad del usuario de seleccionar la fecha de partida. A partir de dichas selecciones, se vera un datagrid con todos los vuelos filtrados por busqueda.
 El boton "Limpiar", vuelve a mostrar en el datagrid todos los vuelos disponibles.
-No es neecsario filtrar un vuelo para poder seleccionarlo desde la lista del datagrid. Con hacer doble click en el vuelo que se requiera, y clickear sobre el boton "Cargar vuelo", se cerrará el formulario y se volverá a ver el formulario de venta de pasaje con la información del vuelo seleccionado.
+No es necesario filtrar un vuelo para poder seleccionarlo desde la lista del datagrid. Con hacer doble click en el vuelo que se requiera, y clickear sobre el boton "Cargar vuelo", se cerrará el formulario y se volverá a ver el formulario de venta de pasaje con la información del vuelo seleccionado.
 Si no se selecciona un vuelo y se clickea en el boton "Cargar vuelo", se mostrará un messagebox con el texto "Vuelo no seleccionado", y no se verá información alguna en los datos del vuelo, dentro del formulario de venta de pasajes
 
+![Imagen de Venta de Pasajes](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Busqueda_VuelosDisponibles.jpg)
+
+Las opcion de buscar pasajero es simil a la anterior: abre un formulario y filtra los pasajeros segun dni, nombre y/o apellido. Al seleccionar el boton "Cargar", nos muestra cual fue el pasajero cargado.
+
+![Imagen de Venta de Pasajes](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Busqueda_Pasajeros.jpg)
+
+
+
+(Falta completar funcionalidad e imagenes)
 
 Otras de las opciones del menú principal es la referida a Pasajeros:
 
 ![Imagen de Opcion Pasajeros](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Menu_Pasajeros.jpg)
-
 Al igual que en la opción "Vuelos", pasajeros tambien tiene un panel de botones: Agrear, modificar y eliminar. 
 Si se selecciona agregar un cliente,  se abrirá un formulario el cual pedirá todos los datos relacionados al cliente. Este formulario no permite su cierre al menos que se cargue (correctamente) un cliente o se decida cancelar la carga del mismo. Esta opcion esta disponible para los perfiles "vendedor" y "supervisor", quedando bloqueado su uso para el perfil "administrador"
 
@@ -49,7 +60,7 @@ Si el usuario elige la opción "Si", se cerrará el formulario Menu Principal, y
 
 
 ##### Diagrama
- ![Imagen Diagrama](Laplace.MariaJulieta.PrimerParcial/Entidades/diagramaDeClases.cd)
+ ![Imagen Diagrama](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/diagramaClases.jpg)
 
 
 #### Justificación técnica
