@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModificarVuelo));
             btnCancelar = new Button();
             btnEliminarVuelo = new Button();
             panelContenedor = new TableLayoutPanel();
             lblTipoDeVuelo = new Label();
             lblOrigen = new Label();
-            btnCancel = new Button();
             btnModificar = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
@@ -51,6 +51,7 @@
             chkbOfreceComida = new CheckBox();
             chkbOfreceWifi = new CheckBox();
             lblMensajeError = new Label();
+            btnCancel = new Button();
             panelContenedor.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -109,15 +110,6 @@
             lblOrigen.TabIndex = 1;
             lblOrigen.Text = "Origen";
             // 
-            // btnCancel
-            // 
-            btnCancel.Location = new Point(525, 488);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 23);
-            btnCancel.TabIndex = 10;
-            btnCancel.Text = "Cancelar";
-            btnCancel.UseVisualStyleBackColor = true;
-            // 
             // btnModificar
             // 
             btnModificar.Location = new Point(294, 488);
@@ -126,6 +118,7 @@
             btnModificar.TabIndex = 9;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -233,6 +226,7 @@
             cboSeleccionTipoDeViaje.Name = "cboSeleccionTipoDeViaje";
             cboSeleccionTipoDeViaje.Size = new Size(228, 25);
             cboSeleccionTipoDeViaje.TabIndex = 6;
+            cboSeleccionTipoDeViaje.SelectedIndexChanged += cboSeleccionTipoDeViaje_SelectedIndexChanged;
             // 
             // cboSeleccionOrigen
             // 
@@ -299,6 +293,7 @@
             chkbOfreceComida.TabIndex = 14;
             chkbOfreceComida.Text = "Incluido";
             chkbOfreceComida.UseVisualStyleBackColor = true;
+            chkbOfreceComida.CheckedChanged += chkbOfreceComida_CheckedChanged;
             // 
             // chkbOfreceWifi
             // 
@@ -310,6 +305,7 @@
             chkbOfreceWifi.TabIndex = 15;
             chkbOfreceWifi.Text = "Incluido";
             chkbOfreceWifi.UseVisualStyleBackColor = true;
+            chkbOfreceWifi.CheckedChanged += chkbOfreceWifi_CheckedChanged;
             // 
             // lblMensajeError
             // 
@@ -322,6 +318,16 @@
             lblMensajeError.TabIndex = 11;
             lblMensajeError.Text = "Mensaje Error";
             // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(525, 488);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 10;
+            btnCancel.Text = "Cancelar";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // FrmModificarVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -331,6 +337,9 @@
             Controls.Add(btnCancel);
             Controls.Add(btnModificar);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmModificarVuelo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Modificar vuelo";
@@ -350,7 +359,6 @@
         private TableLayoutPanel panelContenedor;
         private Label lblTipoDeVuelo;
         private Label lblOrigen;
-        private Button btnCancel;
         private Button btnModificar;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
@@ -368,5 +376,6 @@
         private CheckBox chkbOfreceComida;
         private CheckBox chkbOfreceWifi;
         private Label lblMensajeError;
+        private Button btnCancel;
     }
 }

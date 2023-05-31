@@ -55,6 +55,8 @@
             grpDatosPasajero.Controls.Add(lblDni);
             grpDatosPasajero.Controls.Add(lblApellido);
             grpDatosPasajero.Controls.Add(lblNombre);
+            grpDatosPasajero.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grpDatosPasajero.ForeColor = SystemColors.ButtonFace;
             grpDatosPasajero.Location = new Point(59, 45);
             grpDatosPasajero.Name = "grpDatosPasajero";
             grpDatosPasajero.Size = new Size(642, 166);
@@ -88,7 +90,7 @@
             lblDni.AutoSize = true;
             lblDni.Location = new Point(36, 110);
             lblDni.Name = "lblDni";
-            lblDni.Size = new Size(86, 15);
+            lblDni.Size = new Size(88, 15);
             lblDni.TabIndex = 2;
             lblDni.Text = "Buscar por DNI";
             // 
@@ -119,7 +121,7 @@
             dtgListarPasajeros.RowTemplate.Height = 25;
             dtgListarPasajeros.Size = new Size(951, 150);
             dtgListarPasajeros.TabIndex = 1;
-            dtgListarPasajeros.CellContentClick += dtgListarPasajeros_CellContentClick;
+            dtgListarPasajeros.CellClick += dtgListarPasajeros_CellClick;
             // 
             // btnBuscar
             // 
@@ -163,6 +165,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.gifBusquedaCliente;
             pictureBox1.Location = new Point(761, 45);
             pictureBox1.Name = "pictureBox1";
@@ -182,7 +185,10 @@
             Controls.Add(btnBuscar);
             Controls.Add(dtgListarPasajeros);
             Controls.Add(grpDatosPasajero);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmBusquedaPasajero";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Carga de pasajero";

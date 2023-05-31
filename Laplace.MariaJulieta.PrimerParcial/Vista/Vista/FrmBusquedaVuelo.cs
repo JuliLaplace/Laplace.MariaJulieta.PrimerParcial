@@ -39,6 +39,8 @@ namespace Vista
             this.dtgListaVuelosFiltrados.DataSource = Empresa.ListarVuelosDisponibles();
             this.dtgListaVuelosFiltrados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.DatosColumnaDataGridVuelo();
+            Color colorPersonalizado = ColorTranslator.FromHtml("#275248");
+            this.BackColor = colorPersonalizado;
         }
 
         private void cboSeleccionTipoDeViaje_SelectedIndexChanged(object sender, EventArgs e)

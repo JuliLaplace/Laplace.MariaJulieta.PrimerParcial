@@ -1,66 +1,795 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfVuelo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Vuelo>
+    <CodigoVuelo>0</CodigoVuelo>
+    <Origen>Córdoba</Origen>
+    <Destino>Santa Rosa</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2023-05-31T02:24:12.0159614-03:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>1</CodigoVuelo>
+    <Origen>Corrientes</Origen>
+    <Destino>Neuquén</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>js739sk3</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2023-05-31T02:24:12.0170339-03:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>2</CodigoVuelo>
+    <Origen>Mendoza</Origen>
+    <Destino>Bariloche</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>m352ha73</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2023-05-31T02:24:12.0170358-03:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>3</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Recife (Brasil)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>ajsnr5a2</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2023-05-31T02:24:12.0170361-03:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>4</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Miami (EE.UU.)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>m203ht6a</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2023-05-31T00:00:00-03:00</DiaDePartida>
+    <HorasDeViaje>8</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>5</CodigoVuelo>
+    <Origen>Bariloche</Origen>
+    <Destino>Córdoba</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>9sj35dbt</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-05T12:30:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>6</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1md74hsd</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-05T12:30:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>7</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>ya6391nd</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-06T10:00:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>8</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Recife (Brasil)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>83n472md</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-06T10:00:00</DiaDePartida>
+    <HorasDeViaje>11</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>9</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Acapulco (México)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>a98v14xd</Matricula>
+      <CantidadDeAsientos>150</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-04-08T15:30:00</DiaDePartida>
+    <HorasDeViaje>8</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>10</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>ajsnr5a2</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-09-01T01:30:00</DiaDePartida>
+    <HorasDeViaje>10</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>11</CodigoVuelo>
+    <Origen>Corrientes</Origen>
+    <Destino>Santa Rosa</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-08T22:15:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>12</CodigoVuelo>
+    <Origen>Córdoba</Origen>
+    <Destino>Mendoza</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-08T22:15:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>13</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Recife (Brasil)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>9sj35dbt</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-09T17:30:00</DiaDePartida>
+    <HorasDeViaje>8</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>14</CodigoVuelo>
+    <Origen>Santa Rosa</Origen>
+    <Destino>Córdoba</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>ya6391nd</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2022-10-09T17:30:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>15</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Acapulco (México)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>9sj35dbt</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2024-11-08T15:30:00</DiaDePartida>
+    <HorasDeViaje>10</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>16</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>9sj35dbt</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2023-01-07T08:30:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>17</CodigoVuelo>
+    <Origen>Corrientes</Origen>
+    <Destino>Santa Rosa</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2021-10-09T20:15:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>18</CodigoVuelo>
+    <Origen>Córdoba</Origen>
+    <Destino>Mendoza</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>ya6391nd</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2025-12-03T15:15:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>19</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Recife (Brasil)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2023-06-09T17:30:00</DiaDePartida>
+    <HorasDeViaje>10</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
   <Vuelo>
+    <CodigoVuelo>20</CodigoVuelo>
+    <Origen>Santa Rosa</Origen>
+    <Destino>Córdoba</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>m352ha73</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
     <Pasajeros />
+    <DiaDePartida>2024-10-09T17:30:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>21</CodigoVuelo>
+    <Origen>Córdoba</Origen>
+    <Destino>Santa Rosa</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-01T10:00:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>22</CodigoVuelo>
+    <Origen>Corrientes</Origen>
+    <Destino>Neuquén</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>js739sk3</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-02T12:00:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>23</CodigoVuelo>
+    <Origen>Mendoza</Origen>
+    <Destino>Bariloche</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>m352ha73</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-03T14:00:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>24</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Recife (Brasil)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>ajsnr5a2</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-04T16:00:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>25</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Miami (EE.UU.)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>m203ht6a</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-05T18:00:00</DiaDePartida>
+    <HorasDeViaje>10</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>26</CodigoVuelo>
+    <Origen>Bariloche</Origen>
+    <Destino>Córdoba</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>9sj35dbt</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-06T20:00:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>27</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1md74hsd</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-07T22:00:00</DiaDePartida>
+    <HorasDeViaje>11</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>28</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>ya6391nd</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-08T10:00:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>29</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Recife (Brasil)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>83n472md</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-09T12:00:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>30</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Acapulco (México)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>a98v14xd</Matricula>
+      <CantidadDeAsientos>150</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-10T14:00:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>31</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>ajsnr5a2</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-11T16:00:00</DiaDePartida>
+    <HorasDeViaje>8</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>32</CodigoVuelo>
+    <Origen>Corrientes</Origen>
+    <Destino>Santa Rosa</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2023-06-12T18:00:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>33</CodigoVuelo>
+    <Origen>Santa Rosa</Origen>
+    <Destino>Bariloche</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>m352ha73</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-01T10:00:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>34</CodigoVuelo>
+    <Origen>Corrientes</Origen>
+    <Destino>Córdoba</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>ya6391nd</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-02T12:00:00</DiaDePartida>
+    <HorasDeViaje>2</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>35</CodigoVuelo>
+    <Origen>Jujuy</Origen>
+    <Destino>Mendoza</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>1g23jd7s</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-03T14:00:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>36</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>js739sk3</Matricula>
+      <CantidadDeAsientos>100</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-04T16:00:00</DiaDePartida>
+    <HorasDeViaje>11</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>37</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Miami (EE.UU.)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>9sj35dbt</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-05T18:00:00</DiaDePartida>
+    <HorasDeViaje>10</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>38</CodigoVuelo>
+    <Origen>Neuquén</Origen>
+    <Destino>Posadas</Destino>
+    <TipoDeViaje>Nacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>ajsnr5a2</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>400</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-06T20:00:00</DiaDePartida>
+    <HorasDeViaje>3</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>39</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Acapulco (México)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>m203ht6a</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-07T22:00:00</DiaDePartida>
+    <HorasDeViaje>10</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>40</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Acapulco (México)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>av4snh7a</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-08T10:00:00</DiaDePartida>
+    <HorasDeViaje>9</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>41</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Recife (Brasil)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>a98v14xd</Matricula>
+      <CantidadDeAsientos>150</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-09T12:00:00</DiaDePartida>
+    <HorasDeViaje>8</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>42</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Roma (Italia)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>false</OfreceComida>
+    <UnAvion>
+      <Nombre>Airbus</Nombre>
+      <Matricula>83n472md</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>2</CantidadDeBanios>
+      <CapacidadBodega>200</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-10T14:00:00</DiaDePartida>
+    <HorasDeViaje>10</HorasDeViaje>
+    <TieneWifi>true</TieneWifi>
+  </Vuelo>
+  <Vuelo>
+    <CodigoVuelo>43</CodigoVuelo>
+    <Origen>Buenos Aires (Argentina)</Origen>
+    <Destino>Miami (EE.UU.)</Destino>
+    <TipoDeViaje>Internacional</TipoDeViaje>
+    <OfreceComida>true</OfreceComida>
+    <UnAvion>
+      <Nombre>Boeing</Nombre>
+      <Matricula>6hn37ags</Matricula>
+      <CantidadDeAsientos>200</CantidadDeAsientos>
+      <CantidadDeBanios>4</CantidadDeBanios>
+      <CapacidadBodega>250</CapacidadBodega>
+    </UnAvion>
+    <Pasajeros />
+    <DiaDePartida>2022-01-11T16:00:00</DiaDePartida>
+    <HorasDeViaje>11</HorasDeViaje>
+    <TieneWifi>false</TieneWifi>
   </Vuelo>
 </ArrayOfVuelo>

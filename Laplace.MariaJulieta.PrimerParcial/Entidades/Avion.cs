@@ -14,8 +14,6 @@ namespace Entidades
         private int cantidadDeBanios;
         private float capacidadBodega;
 
-        
-        
         public Avion()
         {
             this.matricula = string.Empty;
@@ -32,38 +30,38 @@ namespace Entidades
         }
         public EAvion     Nombre
         {
-            get { return nombre; } 
-            set { nombre = value; }
+            get { return this.nombre; } 
+            set { this.nombre = value; }
         }
         public string Matricula
         {
-            get { return matricula; }
-            set { matricula = value; }
+            get { return this.matricula; }
+            set { this.matricula = value; }
         }
         public int CantidadDeAsientos
         {
-            get { return cantidadDeAsientos; }
+            get { return this.cantidadDeAsientos; }
             set
             {
-                cantidadDeAsientos = value;
+                this.cantidadDeAsientos = value;
             }
         }
 
         public int CantidadDeBanios
         {
-            get { return cantidadDeBanios; }
+            get { return this.cantidadDeBanios; }
             set
             {
-                cantidadDeBanios = value;
+                this.cantidadDeBanios = value;
             }
         }
 
         public float CapacidadBodega
         {
-            get { return capacidadBodega; }
+            get { return this.capacidadBodega; }
             set
             {
-                capacidadBodega = value;
+                this.capacidadBodega = value;
             }
         }
        
@@ -76,7 +74,6 @@ namespace Entidades
         {
             return cantidadDeAsientos - CantidadAsientosPremium();
         }
-
         public string MostrarAvion()
         {
             StringBuilder cadena = new StringBuilder();

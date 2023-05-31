@@ -57,17 +57,13 @@ namespace Vista
                 this.cboSeleccionDestino.SelectedIndex = 0;
             }
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
 
         private void btnAgregarVuelo_Click(object sender, EventArgs e)
         {
 
             string origen = this.cboSeleccionOrigen.SelectedItem.ToString();
             string destino = this.cboSeleccionDestino.SelectedItem.ToString();
-            Avion avionSeleccionado = (Avion)cboSeleccionAvion.SelectedItem;//VER
+            Avion avionSeleccionado = (Avion)cboSeleccionAvion.SelectedItem;
             string matriculaAvionSeleccionado = avionSeleccionado.Matricula;
             DateTime fecha = this.calendarSeleccionFechaDeViaje.SelectionStart;
 
@@ -111,6 +107,10 @@ namespace Vista
             {
                 this.ofreceWifi = false;
             }
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

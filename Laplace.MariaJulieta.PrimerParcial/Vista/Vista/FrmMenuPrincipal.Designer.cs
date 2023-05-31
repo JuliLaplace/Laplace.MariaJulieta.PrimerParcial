@@ -136,6 +136,7 @@
             estadisticasHistoricasToolStripMenuItem.Name = "estadisticasHistoricasToolStripMenuItem";
             estadisticasHistoricasToolStripMenuItem.Size = new Size(181, 23);
             estadisticasHistoricasToolStripMenuItem.Text = "Estadisticas Historicas";
+            estadisticasHistoricasToolStripMenuItem.Click += estadisticasHistoricasToolStripMenuItem_Click;
             // 
             // dtgListar
             // 
@@ -267,6 +268,8 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menú - Fly Airlines";

@@ -14,16 +14,15 @@ namespace Vista
     public partial class FrmVentaPasaje : Form
     {
         Vuelo vueloSeleccionado;
-        Vuelo vuelo;
+        Pasajero clienteSeleccionado;
         Pasajero pasajeroSeleccionado;
-        Pasajero pasajero;
         Equipaje equipajeSeleccionado;
         Pasaje? pasajeVendido;
         ETipoPasaje tipoDePasaje;
         double montoTotal;
         bool filaSeleccionada;
         List<Pasajero> listaDePasajerosEnVuelo;
-  
+
 
 
 
@@ -31,10 +30,10 @@ namespace Vista
         {
             InitializeComponent();
             this.vueloSeleccionado = new Vuelo();
-            this.pasajeroSeleccionado = new Pasajero();
+            this.clienteSeleccionado = new Pasajero();
             this.equipajeSeleccionado = new Equipaje();
             this.listaDePasajerosEnVuelo = new List<Pasajero>();
-            this.pasajero = new Pasajero();
+            this.pasajeroSeleccionado = new Pasajero();
 
         }
         private void FrmVentaPasaje_Load(object sender, EventArgs e)
@@ -47,21 +46,12 @@ namespace Vista
             this.btnFactura.Enabled = false;
             this.btnEliminarPasajero.Enabled = false;
             this.filaSeleccionada = false;
-        }
-        public Vuelo VueloSeleccionado
-        {
-            get { return this.vueloSeleccionado; }
-        }
-
-        public Pasajero PasajeroSeleccionado
-        {
-            get { return this.pasajeroSeleccionado; }
+            Color colorPersonalizado = ColorTranslator.FromHtml("#275248");
+            this.BackColor = colorPersonalizado;
+            this.montoTotal = 0;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-        public List<Pasajero> ListaDePasajerosEnVuelo
-        {
-            get { return this.listaDePasajerosEnVuelo; }
-        }
 
         private void btnBuscarVuelo_Click(object sender, EventArgs e)
         {
@@ -74,7 +64,6 @@ namespace Vista
             }
             else
             {
-
                 MessageBox.Show("No se selecciono un vuelo");
             }
         }
@@ -83,13 +72,12 @@ namespace Vista
             FrmBusquedaPasajero frmBuscarPasajero = new FrmBusquedaPasajero();
             if (frmBuscarPasajero.ShowDialog() == DialogResult.OK)
             {
-                this.pasajeroSeleccionado = frmBuscarPasajero.PasajeroSeleccionado;
-                this.rtbDatosPasajero.Text = pasajeroSeleccionado.ToString();
+                this.clienteSeleccionado = frmBuscarPasajero.PasajeroSeleccionado;
+                this.rtbDatosPasajero.Text = clienteSeleccionado.ToString();
                 this.btnEmitirPasaje.Enabled = true;
             }
             else
             {
-
                 MessageBox.Show("No se selecciono un pasajero");
             }
         }
@@ -100,24 +88,21 @@ namespace Vista
             if (frmCargarEquipaje.ShowDialog() == DialogResult.OK)
             {
                 Viaje viaje = new Viaje(frmCargarEquipaje.PasajeAVender, frmCargarEquipaje.EquipajeCargado, frmCargarEquipaje.EquipajeMano);
-                this.pasajeroSeleccionado.ListaDeViajes.Add(viaje);
-                //this.montoTotal += frmCargarEquipaje.PrecioTotal;
-                this.rtbDatosEquipaje.Text = equipajeSeleccionado.ToString();
+                this.clienteSeleccionado.ListaDeViajes.Add(viaje);
+                this.montoTotal += frmCargarEquipaje.PasajeAVender.PrecioPasajeNeto();
+                this.rtbDatosEquipaje.Text = viaje.ToString();
                 this.btnFactura.Enabled = true;
             }
         }
-     
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-
             StringBuilder cadena = new StringBuilder();
             cadena.AppendLine("************************");
             cadena.AppendLine("Monto total a facturar:");
             cadena.AppendLine("************************");
             cadena.AppendLine($"Precio: ${this.montoTotal}");
             this.rtbDatosFactura.Text = cadena.ToString();
-
         }
 
 
@@ -130,7 +115,7 @@ namespace Vista
             {
                 foreach (Pasajero item in listaDePasajerosEnVuelo)
                 {
-                    if (item == pasajeroSeleccionado)
+                    if (item == clienteSeleccionado)
                     {
                         MessageBox.Show("El pasajero ya esta agregado");
                         this.rtbDatosPasajero.Text = string.Empty;
@@ -147,6 +132,7 @@ namespace Vista
             if (sePuedeAgregar)
             {
                 AgregarPasajeroAListado();
+                DatosCloumnaDataGridPasajeros();
             }
 
 
@@ -154,9 +140,9 @@ namespace Vista
 
         private void AgregarPasajeroAListado()
         {
-           this.dtgListaPasajesPorVender.Visible = true;
+            this.dtgListaPasajesPorVender.Visible = true;
             this.dtgListaPasajesPorVender.DataSource = null;
-            this.listaDePasajerosEnVuelo.Add(this.pasajeroSeleccionado);
+            this.listaDePasajerosEnVuelo.Add(this.clienteSeleccionado);
             this.dtgListaPasajesPorVender.DataSource = listaDePasajerosEnVuelo;
             limpiarFormulario();
 
@@ -172,15 +158,23 @@ namespace Vista
         private void btnVender_Click(object sender, EventArgs e)
         {
 
-            // borrar equipaje y pasaje de pasajero - crear clase viaje con equipoaje y pasaje
-            // aca agrego un viaje a la lista de viajes del pasajero
+            int asientosDisponiblesTurista = vueloSeleccionado.CantidadDeAsientosDisponiblesTurista();
+            int asientosDisponiblesPremium = vueloSeleccionado.CantidadDeAsientosDisponiblesPremium();
 
-            foreach (Pasajero item in listaDePasajerosEnVuelo)
+            if (vueloSeleccionado.CantidadDeAsientosDisponiblesTurista() <= asientosDisponiblesTurista && vueloSeleccionado.CantidadDeAsientosDisponiblesPremium() <= asientosDisponiblesPremium)
             {
-                Empresa.CargarPasajeroVuelo(this.vueloSeleccionado, item);
-            }
+                foreach (Pasajero item in listaDePasajerosEnVuelo)
+                {
+                    Empresa.CargarPasajeroVuelo(this.vueloSeleccionado, item);
+                }
+                MessageBox.Show("Pasajes vendidos exitosamente.");
+                this.DialogResult = DialogResult.OK;
 
-            this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("No hay suficientes asientos disponibles.");
+            }
         }
 
         private void dtgListaPasajesPorVender_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -188,7 +182,7 @@ namespace Vista
             if (e.RowIndex >= 0 && e.RowIndex < dtgListaPasajesPorVender.Rows.Count)
             {
                 this.DatosCloumnaDataGridPasajeros();
-                this.pasajero = dtgListaPasajesPorVender.Rows[e.RowIndex].DataBoundItem as Pasajero;
+                this.pasajeroSeleccionado = dtgListaPasajesPorVender.Rows[e.RowIndex].DataBoundItem as Pasajero;
                 this.filaSeleccionada = true;
                 this.btnEliminarPasajero.Enabled = true;
 
@@ -199,8 +193,26 @@ namespace Vista
         {
             if (filaSeleccionada)
             {
-                this.pasajeroSeleccionado.ListaDeViajes.RemoveAt(this.pasajeroSeleccionado.ListaDeViajes.Count -1);
-                this.listaDePasajerosEnVuelo.Remove(pasajero);
+                Viaje? viajeAEliminar = null;
+
+                foreach (Viaje viaje in pasajeroSeleccionado.ListaDeViajes)
+                {
+                    if (viaje.Pasaje.Vuelo == vueloSeleccionado)
+                    {
+                        viajeAEliminar = viaje;
+                        break;
+                    }
+                }
+                if (viajeAEliminar is not null)
+                {
+                    montoTotal -= viajeAEliminar.Pasaje.PrecioPasajeNeto();
+                    this.pasajeroSeleccionado.ListaDeViajes.Remove(viajeAEliminar);
+                }
+
+                this.DatosCloumnaDataGridPasajeros();
+
+                this.listaDePasajerosEnVuelo.Remove(pasajeroSeleccionado);
+
             }
             this.dtgListaPasajesPorVender.DataSource = null;
             this.dtgListaPasajesPorVender.DataSource = listaDePasajerosEnVuelo;
@@ -222,7 +234,6 @@ namespace Vista
             this.dtgListaPasajesPorVender.Columns[3].HeaderText = "Edad";
             this.dtgListaPasajesPorVender.Columns[4].HeaderText = "Apellido";
             this.dtgListaPasajesPorVender.Columns[5].HeaderText = "Nombre";
-
         }
 
     }

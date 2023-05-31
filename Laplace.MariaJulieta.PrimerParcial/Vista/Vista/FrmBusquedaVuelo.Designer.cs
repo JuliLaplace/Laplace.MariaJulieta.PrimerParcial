@@ -47,10 +47,8 @@
             lblMensajeError = new Label();
             btnCargarVueloSeleccionado = new Button();
             btnLimpiar = new Button();
-            pctbxImagenFondo = new PictureBox();
             gpbDatosFiltroViaje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListaVuelosFiltrados).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pctbxImagenFondo).BeginInit();
             SuspendLayout();
             // 
             // gpbDatosFiltroViaje
@@ -67,6 +65,8 @@
             gpbDatosFiltroViaje.Controls.Add(lblOrigen);
             gpbDatosFiltroViaje.Controls.Add(cboSeleccionTipoDeViaje);
             gpbDatosFiltroViaje.Controls.Add(lblTipoDeVuelo);
+            gpbDatosFiltroViaje.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            gpbDatosFiltroViaje.ForeColor = SystemColors.ButtonFace;
             gpbDatosFiltroViaje.Location = new Point(54, 36);
             gpbDatosFiltroViaje.Name = "gpbDatosFiltroViaje";
             gpbDatosFiltroViaje.Size = new Size(1117, 228);
@@ -79,7 +79,7 @@
             chkbOfreceWifi.AutoSize = true;
             chkbOfreceWifi.Location = new Point(929, 151);
             chkbOfreceWifi.Name = "chkbOfreceWifi";
-            chkbOfreceWifi.Size = new Size(69, 19);
+            chkbOfreceWifi.Size = new Size(70, 19);
             chkbOfreceWifi.TabIndex = 17;
             chkbOfreceWifi.Text = "Incluido";
             chkbOfreceWifi.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             chkbOfreceComida.AutoSize = true;
             chkbOfreceComida.Location = new Point(929, 79);
             chkbOfreceComida.Name = "chkbOfreceComida";
-            chkbOfreceComida.Size = new Size(69, 19);
+            chkbOfreceComida.Size = new Size(70, 19);
             chkbOfreceComida.TabIndex = 16;
             chkbOfreceComida.Text = "Incluido";
             chkbOfreceComida.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             lblDestino.AutoSize = true;
             lblDestino.Location = new Point(28, 183);
             lblDestino.Name = "lblDestino";
-            lblDestino.Size = new Size(47, 15);
+            lblDestino.Size = new Size(48, 15);
             lblDestino.TabIndex = 3;
             lblDestino.Text = "Destino";
             // 
@@ -256,15 +256,6 @@
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // pctbxImagenFondo
-            // 
-            pctbxImagenFondo.Image = (Image)resources.GetObject("pctbxImagenFondo.Image");
-            pctbxImagenFondo.Location = new Point(1, -2);
-            pctbxImagenFondo.Name = "pctbxImagenFondo";
-            pctbxImagenFondo.Size = new Size(1223, 621);
-            pctbxImagenFondo.TabIndex = 21;
-            pctbxImagenFondo.TabStop = false;
-            // 
             // FrmBusquedaVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -276,15 +267,16 @@
             Controls.Add(btnBuscarVuelo);
             Controls.Add(dtgListaVuelosFiltrados);
             Controls.Add(gpbDatosFiltroViaje);
-            Controls.Add(pctbxImagenFondo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmBusquedaVuelo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Busqueda de vuelos disponibles";
             gpbDatosFiltroViaje.ResumeLayout(false);
             gpbDatosFiltroViaje.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtgListaVuelosFiltrados).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pctbxImagenFondo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -309,6 +301,5 @@
         private CheckBox chkbOfreceComida;
         private Button btnCargarVueloSeleccionado;
         private Button btnLimpiar;
-        private PictureBox pctbxImagenFondo;
     }
 }

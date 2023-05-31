@@ -15,8 +15,11 @@ namespace Entidades
         private Vuelo vuelo;
 
 
-     
 
+        public Pasaje() 
+        {       
+            this.vuelo = new Vuelo();
+        }
         public Pasaje( ETipoPasaje tipoDePasaje, Vuelo vuelo)
         {
             this.codigoPasaje = contadorPasajes;
@@ -43,16 +46,17 @@ namespace Entidades
             set {this.vuelo = value; } 
         }
 
+
         public override string ToString()
         {
-            return $"Codigo pasaje: {this.CodigoPasaje}";
+            return $"Codigo pasaje: {this.CodigoPasaje} - Precio {PrecioPasajeBruto()}";
         }
         public override int GetHashCode()
         {
             return this.CodigoPasaje;
         }
 
-        public double PrecioPasaje()
+        public double PrecioPasajeBruto()
         {
             double precio=0;
 
@@ -72,5 +76,12 @@ namespace Entidades
 
             return precio;
         }
+
+        public double PrecioPasajeNeto()
+        {
+            return this.PrecioPasajeBruto()* 1.21;
+        }
+
+
     }
 }

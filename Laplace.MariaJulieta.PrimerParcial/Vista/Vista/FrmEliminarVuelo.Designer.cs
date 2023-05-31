@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEliminarVuelo));
             btnCancelar = new Button();
             btnEliminarVuelo = new Button();
             panelContenedor = new TableLayoutPanel();
@@ -260,6 +261,10 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnEliminarVuelo);
             Controls.Add(panelContenedor);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmEliminarVuelo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Eliminar vuelo";

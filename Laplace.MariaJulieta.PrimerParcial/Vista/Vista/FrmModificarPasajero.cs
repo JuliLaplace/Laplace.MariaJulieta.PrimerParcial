@@ -32,18 +32,18 @@ namespace Vista
             base.txtApellidoPasajero.Text = pasajeroRecibido.Apellido;
             base.txtNombrePasajero.Text = pasajeroRecibido.Nombre;
             base.cmbGenero.SelectedItem = pasajeroRecibido.Sexo;
-            
+
 
         }
 
         protected override void btnBoton1_Click(object sender, EventArgs e)
         {
             ESexo sexo = (ESexo)base.cmbGenero.SelectedValue;
-           
-            
-            if(ValidarDatosIngresados(base.txtNombrePasajero.Text, base.txtApellidoPasajero.Text))
+
+
+            if (ValidarDatosIngresados(base.txtNombrePasajero.Text, base.txtApellidoPasajero.Text))
             {
-                Empresa.ModificarPasajero(pasajeroRecibido, this.txtNombrePasajero.Text, this.txtApellidoPasajero.Text, sexo);
+                Empresa.Modificar(pasajeroRecibido, this.txtNombrePasajero.Text, this.txtApellidoPasajero.Text, sexo);
                 this.DialogResult = DialogResult.OK;
             }
             else
@@ -51,7 +51,7 @@ namespace Vista
                 base.lblError.Visible = true;
                 this.LimpiarPantalla();
             }
-            
+
         }
 
         protected override void btnCancelar_Click(object sender, EventArgs e)

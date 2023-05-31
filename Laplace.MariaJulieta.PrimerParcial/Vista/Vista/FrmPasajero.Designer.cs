@@ -202,8 +202,12 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnBoton1);
             Controls.Add(grpDatosPersonalesPasajero);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmPasajero";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Pasajero";
             Load += FrmPasajero_Load;
             grpDatosPersonalesPasajero.ResumeLayout(false);

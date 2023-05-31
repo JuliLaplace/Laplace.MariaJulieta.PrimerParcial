@@ -197,7 +197,7 @@
             calendarSeleccionFechaDeViaje.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             calendarSeleccionFechaDeViaje.Location = new Point(539, 113);
             calendarSeleccionFechaDeViaje.MaxDate = new DateTime(2040, 12, 31, 0, 0, 0, 0);
-            calendarSeleccionFechaDeViaje.MinDate = new DateTime(2023, 5, 4, 0, 0, 0, 0);
+            calendarSeleccionFechaDeViaje.MinDate = new DateTime(2023, 5, 30, 0, 0, 0, 0);
             calendarSeleccionFechaDeViaje.Name = "calendarSeleccionFechaDeViaje";
             calendarSeleccionFechaDeViaje.ShowTodayCircle = false;
             calendarSeleccionFechaDeViaje.TabIndex = 11;
@@ -277,7 +277,10 @@
             Controls.Add(btnAgregarVuelo);
             Controls.Add(lblMensajeError);
             Controls.Add(panelContenedor);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmAgregarVuelo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Vuelo";

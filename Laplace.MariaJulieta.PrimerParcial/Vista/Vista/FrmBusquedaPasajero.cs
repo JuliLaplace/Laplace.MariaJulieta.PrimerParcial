@@ -34,6 +34,8 @@ namespace Vista
         {
             this.dtgListarPasajeros.DataSource = Empresa.ListarPasajeros();
             this.dtgListarPasajeros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Color colorPersonalizado = ColorTranslator.FromHtml("#275248");
+            this.BackColor = colorPersonalizado;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -101,7 +103,7 @@ namespace Vista
 
         }
 
-        private void dtgListarPasajeros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgListarPasajeros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < dtgListarPasajeros.Rows.Count)
             {

@@ -18,16 +18,29 @@ namespace Entidades
             this.equipaje = equipaje;
             this.llevaEquipajeDeMano = llevaEquipajeDeMano;
         }
-        public Pasaje Pasaje { get {return this.pasaje; } 
+        public Pasaje Pasaje { get {return this.pasaje;}
+            set
+            {
+                this.pasaje = value;
+            }
         }
-        public Equipaje Equipaje { get { return this.equipaje; } }
+        public Equipaje Equipaje { get { return this.equipaje; } set { this.equipaje = value; } }
 
-        public bool LlevaEquipajeDeMano { get { return this.llevaEquipajeDeMano; } }
+        public bool LlevaEquipajeDeMano { get { return this.llevaEquipajeDeMano; } set { this.llevaEquipajeDeMano = value; } }
 
+        public string EquipajeMano()
+        {
+            string cadenaEquipajeMano = "No lleva equipaje de mano";
+            if (llevaEquipajeDeMano)
+            {
+                cadenaEquipajeMano = "Lleva equipaje de mano";
+            }
+            return cadenaEquipajeMano;
+        }
         public override string ToString()
         {
-            // mostrar viajes 
-            return $"Codigo pasaje: {this.pasaje.CodigoPasaje} - Valijas que lleva: {this.equipaje.CantidadValijas}";
+        
+            return $"Codigo pasaje: {this.pasaje.CodigoPasaje} - Valijas que lleva: {this.equipaje.CantidadValijas} -  {EquipajeMano()} ";
         }
     }
 }

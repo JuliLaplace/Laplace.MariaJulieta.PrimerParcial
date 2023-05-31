@@ -1,9 +1,4 @@
-﻿public enum EUsuarios
-{
-    Vendedor,
-    Supervisor,
-    Administrador
-}
+﻿
 public enum ESexo
 {
     Femenino,
@@ -17,11 +12,7 @@ public enum EAvion
     Airbus,
     Boeing
 }
-public enum ETipoEquipaje
-{
-    DeMano,
-    Valija
-}
+
 public enum ETipoPasaje
 {
     Turista,

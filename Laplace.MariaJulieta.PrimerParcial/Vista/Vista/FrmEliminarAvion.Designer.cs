@@ -31,8 +31,16 @@
             panelAvion.SuspendLayout();
             SuspendLayout();
             // 
+            // cboAviones
+            // 
+            cboAviones.DataSource = (new EAvion[] { EAvion.Airbus, EAvion.Boeing });
+            cboAviones.Items.AddRange(new object[] { EAvion.Airbus, EAvion.Boeing });
+            // 
             // domUpDownAsientos
             // 
+            domUpDownAsientos.Items.Add(200);
+            domUpDownAsientos.Items.Add(150);
+            domUpDownAsientos.Items.Add(100);
             domUpDownAsientos.Items.Add(200);
             domUpDownAsientos.Items.Add(150);
             domUpDownAsientos.Items.Add(100);
@@ -48,17 +56,21 @@
             // 
             // domUpDownCapacidadMaxima
             // 
+            domUpDownCapacidadMaxima.Items.Add(400);
+            domUpDownCapacidadMaxima.Items.Add(250);
+            domUpDownCapacidadMaxima.Items.Add(200);
             domUpDownCapacidadMaxima.Items.Add(200.6D);
             domUpDownCapacidadMaxima.Items.Add(150.5D);
             domUpDownCapacidadMaxima.Items.Add(100.3D);
             domUpDownCapacidadMaxima.Items.Add(200.6D);
             domUpDownCapacidadMaxima.Items.Add(150.5D);
             domUpDownCapacidadMaxima.Items.Add(100.3D);
-            domUpDownCapacidadMaxima.SelectedIndex = 2;
             domUpDownCapacidadMaxima.Text = "100,3";
             // 
             // domUpDownCantidadBanios
             // 
+            domUpDownCantidadBanios.Items.Add(4);
+            domUpDownCantidadBanios.Items.Add(2);
             domUpDownCantidadBanios.Items.Add(4);
             domUpDownCantidadBanios.Items.Add(2);
             domUpDownCantidadBanios.Items.Add(4);
@@ -71,6 +83,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(855, 520);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmEliminarAvion";
             Text = "FrmEliminarAvion";
             Load += FrmEliminarAvion_Load;

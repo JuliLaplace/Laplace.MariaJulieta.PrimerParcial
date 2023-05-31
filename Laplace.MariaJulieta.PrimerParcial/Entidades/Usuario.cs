@@ -69,24 +69,9 @@ namespace Entidades
             return cadena.ToString();
         }
 
-        //public static bool operator ==(Usuario usuario1, Usuario usuario2)
-        //{
-        //    return ((usuario1.Correo == usuario2.Correo) && (usuario1.clave == usuario2.clave));
-        //}
-        //public static bool operator !=(Usuario usuario1, Usuario usuario2) //uso el operador == de arriba
-        //{
-        //    return !(usuario1 == usuario2);
-        //}
-
-        //public override bool Equals(object? obj) //esta bien??
-        //{
-        //    bool retorno = false;
-
-        //    if (obj is Usuario)
-        //    {
-        //        retorno = this == ((Usuario)obj);
-        //    }
-        //    return retorno;
-        //}
+        public override string ToString()
+        {
+            return $"{this.Nombre}, {this.Apellido}";
+        }
     }
 }

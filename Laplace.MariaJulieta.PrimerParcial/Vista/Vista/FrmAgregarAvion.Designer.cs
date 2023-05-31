@@ -228,7 +228,9 @@
             Controls.Add(PanelMatricula);
             Controls.Add(panelAvion);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmAgregarAvion";
             StartPosition = FormStartPosition.CenterScreen;

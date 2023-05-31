@@ -23,7 +23,7 @@ namespace Entidades
 
 
        
-        public Vuelo() //sobrecarga de constructores para poder inicializar la lista de pasajeros.
+        public Vuelo() 
         {
             this.pasajeros = new List<Pasajero>();
             this.origen = "Sin origen";
@@ -31,7 +31,7 @@ namespace Entidades
             this.unAvion = new Avion();
             this.codigoVuelo = contadorVuelos;
             Vuelo.contadorVuelos++;
-            
+
         }
         
         public Vuelo(string origen, string destino, ETipoViaje tipoDeViaje, Avion unAvion, DateTime diaDePartida, bool ofreceComida, bool tieneWifi):this()
@@ -57,52 +57,82 @@ namespace Entidades
         }
         public int CodigoVuelo
         {
-            get { return codigoVuelo; }
+            get { return this.codigoVuelo; }
+            set { this.codigoVuelo = value; }
         }
 
         public string Origen
         {
-            get { return origen; }
+            get { return this.origen; }
+            set { this.origen = value; }
         }
         public string Destino
         {
-            get { return destino; }
+            get { return this.destino; }
+            set
+            {
+                this.destino = value;
+            }
         }
 
         public ETipoViaje TipoDeViaje
         {
-            get { return tipoDeViaje; }
+            get { return this.tipoDeViaje; }
+            set
+            {
+                this.tipoDeViaje = value;
+            }
         }
 
         public bool OfreceComida
         {
-            get { return ofreceComida; }
+            get { return this.ofreceComida; }
+            set
+            {
+                this.ofreceComida = value;
+            }
         }
 
 
         public Avion UnAvion
         {
-            get { return unAvion; }
+            get { return this.unAvion; }
+            set
+            {
+                this.unAvion = value;
+            }
         }
 
         public List<Pasajero> Pasajeros
         {
-            get { return pasajeros; }
-            set { pasajeros = value; }
+            get { return this.pasajeros; }
+            set { this.pasajeros = value; }
         }
 
         public DateTime DiaDePartida
         {
-            get { return diaDePartida; }
+            get { return this.diaDePartida; }
+            set
+            {
+                this.diaDePartida = value;
+            }
         }
 
         public int HorasDeViaje
         {
-            get { return horasDeViaje; }
+            get { return this.horasDeViaje; }
+            set
+            {
+                this.horasDeViaje = value;
+            }
         }
         public bool TieneWifi
         {
-            get { return tieneWifi; }
+            get { return this.tieneWifi; }
+            set
+            {
+                this.tieneWifi = value;
+            }
         }
         public int CantidadPasajesVendidos(ETipoPasaje tipoDePasaje)
         {
@@ -110,29 +140,29 @@ namespace Entidades
             foreach (Pasajero item in pasajeros)
 
             {
-                foreach(Viaje viaje in item.ListaDeViajes)
+                foreach (Viaje viaje in item.ListaDeViajes)
                 {
                     if (viaje.Pasaje.TipoDePasaje == tipoDePasaje)
                     {
                         cantidad++;
                     }
                 }
-               
+
             }
             return cantidad;
         }
-        public string CantidadDeAsientosTurista
+        public int CantidadDeAsientosTurista
         {
             get
             {
-                return CantidadDeAsientosDisponiblesTurista().ToString();
+                return CantidadDeAsientosDisponiblesTurista();
             }
         }
-        public string CantidadDeAsientosPremium
+        public int CantidadDeAsientosPremium
         {
             get
             {
-                return CantidadDeAsientosDisponiblesPremium().ToString();
+                return CantidadDeAsientosDisponiblesPremium();
             }
         }
 
@@ -145,8 +175,6 @@ namespace Entidades
         {
             return unAvion.CantidadAsientosPremium() - CantidadPasajesVendidos(ETipoPasaje.Premium);
         }
-
-
 
         public void AgregarPasajero(Pasajero pasajero)
         {

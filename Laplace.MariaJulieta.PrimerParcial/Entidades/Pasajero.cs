@@ -76,17 +76,17 @@ namespace Entidades
         }
 
 
-        //Para comparar pasajeros por dni
+  
         public static bool operator ==(Pasajero pasajero1, Pasajero pasajero2)
         {
             return pasajero1.dni == pasajero2.dni;
         }
-        public static bool operator !=(Pasajero pasajero1, Pasajero pasajero2) //uso el operador == de arriba
+        public static bool operator !=(Pasajero pasajero1, Pasajero pasajero2) 
         {
             return !(pasajero1 == pasajero2);
         }
 
-        public override bool Equals(object? obj) //esta bien??
+        public override bool Equals(object? obj) 
         {
             bool retorno = false;
 
@@ -97,7 +97,7 @@ namespace Entidades
             return retorno;
         }
 
-        public override int GetHashCode() //con esto se le dice que se le de hascodes a los objetos en base a su dni y no su direccion de memoria
+        public override int GetHashCode() 
         {
             return (dni).GetHashCode();
         }

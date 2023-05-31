@@ -56,7 +56,8 @@ namespace Vista
             this.MostrarControles(categoriaSeleccionada);
             this.lblFechaActual.Text = "Fecha: " + DateTime.Now.ToShortDateString();
             this.lblBienvenidaUser.Visible = true;
-            this.lblBienvenidaUser.Text = "Bienvenido: " + usuarioLogueado.Nombre + " " + usuarioLogueado.Apellido;
+            this.lblBienvenidaUser.Text = "Bienvenido: " + usuarioLogueado;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
 
 
@@ -72,12 +73,9 @@ namespace Vista
                     this.avionesToolStripMenuItem.Enabled = false;
                     break;
                 case "administrador":
-                    // Deshabilitar elementos de menú según el perfil de administrador
-                    // this.btnListar.Enabled = false;
-                    // this.ventaDePasajesToolStripMenuItem.Enabled = false;
-                    // this.estadisticasHistoricasToolStripMenuItem.Enabled = false;
-                    // this.clientesToolStripMenuItem.Enabled = false;
-                    // VOLVER A PONER CUANDO FUNCIONE TODO
+                    this.ventaDePasajesToolStripMenuItem.Enabled = false;
+                    this.estadisticasHistoricasToolStripMenuItem.Enabled = false;
+                    this.clientesToolStripMenuItem.Enabled = false;
                     break;
             }
         }
@@ -102,6 +100,10 @@ namespace Vista
         private void vuelosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.MostrarDatosVuelos();
+        }
+        private void estadisticasHistoricasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.MostrarDatosEstadisticas();
         }
 
 
@@ -142,7 +144,7 @@ namespace Vista
             if (!filaSeleccionada)
             {
                 MessageBox.Show("Por favor, seleccione una fila antes de continuar.");
-                return; // Sale del método sin realizar ninguna otra acción
+                return;
             }
             else
             {
@@ -227,9 +229,11 @@ namespace Vista
             FrmVentaPasaje formularioVentaDePasaje = new FrmVentaPasaje();
             if (formularioVentaDePasaje.ShowDialog() == DialogResult.OK)
             {
-                //Vuelo vueloSeleccionado = formularioVentaDePasaje.VueloSeleccionado;
-                //Pasajero pasajero = formularioVentaDePasaje.PasajeroSeleccionado;
-                //Empresa.CargarPasajeroVuelo(vueloSeleccionado, pasajero);
+                MostrarDatosVuelos();
+            }
+            else
+            {
+                MessageBox.Show("Se cancelo la venta de Pasajes");
             }
 
         }
@@ -265,7 +269,6 @@ namespace Vista
             this.dtgListar.Columns[1].HeaderText = "Fecha de Nacimiento";
             this.dtgListar.Columns[2].HeaderText = "Sexo";
             this.dtgListar.Columns[3].HeaderText = "Edad";
-            //this.dtgListar.Columns[4].HeaderText = "Viaje";
             this.dtgListar.Columns[4].HeaderText = "Apellido";
             this.dtgListar.Columns[5].HeaderText = "Nombre";
 
@@ -321,13 +324,10 @@ namespace Vista
             switch (categoriaSeleccionada)
             {
                 case "Pasajero":
-                    // Verificar si se hizo clic en una fila válida
+
                     if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
                     {
-                        // Obtener el objeto seleccionado en el datagrid
                         this.pasajero = dtgListar.Rows[e.RowIndex].DataBoundItem as Pasajero;
-
-                        // Actualizo la variable fila
                         this.filaSeleccionada = true;
                     }
                     break;
@@ -335,10 +335,7 @@ namespace Vista
                 case "Vuelo":
                     if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
                     {
-
                         this.vuelo = dtgListar.Rows[e.RowIndex].DataBoundItem as Vuelo;
-
-
                         this.filaSeleccionada = true;
                     }
                     break;
@@ -346,13 +343,11 @@ namespace Vista
                 case "Avion":
                     if (e.RowIndex >= 0 && e.RowIndex < dtgListar.Rows.Count)
                     {
-
                         this.avion = dtgListar.Rows[e.RowIndex].DataBoundItem as Avion;
-
-
                         this.filaSeleccionada = true;
                     }
                     break;
+
             }
 
         }
@@ -384,11 +379,23 @@ namespace Vista
             this.LimpiarDatagrid();
             this.dtgListar.DataSource = Empresa.ListarVuelosDisponibles();
             this.DatosColumnaDataGridVuelo();
-            this.dtgListar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             this.lblTitulo.Visible = true;
             this.lblTitulo.Text = "Categoría: Vuelos";
             this.categoriaSeleccionada = "Vuelo";
             this.MostrarControles(categoriaSeleccionada);
+            this.pctBxImagenParaMostrar.Image = Properties.Resources.gifVuelo;
+        }
+        private void MostrarDatosEstadisticas()
+        {
+            this.categoriaSeleccionada = "Estadistica";
+            this.LimpiarDatagrid();
+            this.dtgListar.DataSource = Empresa.ListarVuelos();
+            this.DatosColumnaDataGridVuelo();
+            this.lblTitulo.Visible = true;
+            this.lblTitulo.Text = "Categoría: Estadisticas";
+            this.panelBotones.Visible = false;
+            this.dtgListar.Visible = true;
+            this.pctBxImagenParaMostrar.Visible = true;
             this.pctBxImagenParaMostrar.Image = Properties.Resources.gifVuelo;
         }
         private void MostrarDatosInicio()
@@ -398,5 +405,6 @@ namespace Vista
             this.lblTitulo.Visible = false;
             this.MostrarControles(categoriaSeleccionada);
         }
+
     }
 }

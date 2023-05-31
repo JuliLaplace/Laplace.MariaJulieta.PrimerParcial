@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Persona // abstracta porque jamas voy a instanciar una persona, si voy a instanciar a sus derivadas (cliente - usuario)
+    public abstract class Persona 
     {
         protected string apellido;
         protected string nombre;

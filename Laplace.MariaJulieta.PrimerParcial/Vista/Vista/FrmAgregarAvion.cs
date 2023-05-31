@@ -27,11 +27,11 @@ namespace Vista
             this.domUpDownAsientos.Items.Add(100);
             this.domUpDownCantidadBanios.Items.Add(4);
             this.domUpDownCantidadBanios.Items.Add(2);
-            this.domUpDownCapacidadMaxima.Items.Add(200.6);
-            this.domUpDownCapacidadMaxima.Items.Add(150.5);
-            this.domUpDownCapacidadMaxima.Items.Add(100.3);
+            this.domUpDownCapacidadMaxima.Items.Add(400);
+            this.domUpDownCapacidadMaxima.Items.Add(250);
+            this.domUpDownCapacidadMaxima.Items.Add(200);
             this.domUpDownAsientos.SelectedItem = 200;
-            this.domUpDownCapacidadMaxima.SelectedItem = 100.3;
+            this.domUpDownCapacidadMaxima.SelectedItem = 250;
             this.domUpDownCantidadBanios.SelectedItem = 2;
             this.btnBoton1.Text = "Agregar";
         }
@@ -41,7 +41,7 @@ namespace Vista
         private void txtMatriculaAvion_TextChanged(object sender, EventArgs e)
         {
 
-            if (this.txtMatriculaAvion.Text.Length > 8 )
+            if (this.txtMatriculaAvion.Text.Length > 8)
             {
                 MessageBox.Show("La matrícula no puede tener más de 8 caracteres.");
                 this.txtMatriculaAvion.Clear();
@@ -56,7 +56,7 @@ namespace Vista
 
         protected virtual void btnBoton1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.txtMatriculaAvion.Text) )
+            if (string.IsNullOrEmpty(this.txtMatriculaAvion.Text))
             {
                 MessageBox.Show("Debe ingresar una matrícula para el avión.");
                 return; //cancela el agregarAvion
@@ -72,13 +72,14 @@ namespace Vista
                 MessageBox.Show("Ya existe un avión con la misma matrícula.");
                 this.txtMatriculaAvion.Clear();
                 return; //cancela el agregarAvion
-            }else
+            }
+            else
             {
                 Empresa.AgregarAvion(avionSeleccionado, matricula, cantidadAsientos, cantidadBanios, capacidadMaximaBodega);
                 MessageBox.Show("Avion agregado con exito.");
                 this.DialogResult = DialogResult.OK;
             }
-           
+
         }
         protected virtual void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -90,10 +91,10 @@ namespace Vista
             bool existe = false;
             foreach (Avion item in Empresa.ListarAviones())
             {
-                if (item.Matricula== matricula)
+                if (item.Matricula == matricula)
                 {
                     existe = true;
-                    
+
                 }
             }
             return existe;

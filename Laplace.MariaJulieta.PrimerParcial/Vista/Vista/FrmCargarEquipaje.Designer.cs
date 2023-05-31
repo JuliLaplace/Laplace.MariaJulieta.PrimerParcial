@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargarEquipaje));
-            pctboxImagen = new PictureBox();
             btnCancelar = new Button();
             btnCargar = new Button();
             grpEquipajeDeMano = new GroupBox();
@@ -52,21 +51,11 @@
             lblPrecio = new Label();
             lblTipoPasaje = new Label();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pctboxImagen).BeginInit();
             grpEquipajeDeMano.SuspendLayout();
             grpValijas.SuspendLayout();
             grpDatosPasaje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pctboxImagen
-            // 
-            pctboxImagen.Image = (Image)resources.GetObject("pctboxImagen.Image");
-            pctboxImagen.Location = new Point(-78, -4);
-            pctboxImagen.Name = "pctboxImagen";
-            pctboxImagen.Size = new Size(1226, 618);
-            pctboxImagen.TabIndex = 0;
-            pctboxImagen.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -93,6 +82,8 @@
             grpEquipajeDeMano.Controls.Add(radEquipajeManoNo);
             grpEquipajeDeMano.Controls.Add(radEquipajeManoSi);
             grpEquipajeDeMano.Controls.Add(lblLlevaEquipajeMano);
+            grpEquipajeDeMano.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grpEquipajeDeMano.ForeColor = SystemColors.ButtonFace;
             grpEquipajeDeMano.Location = new Point(89, 404);
             grpEquipajeDeMano.Name = "grpEquipajeDeMano";
             grpEquipajeDeMano.Size = new Size(488, 84);
@@ -117,7 +108,7 @@
             radEquipajeManoSi.AutoSize = true;
             radEquipajeManoSi.Location = new Point(233, 45);
             radEquipajeManoSi.Name = "radEquipajeManoSi";
-            radEquipajeManoSi.Size = new Size(34, 19);
+            radEquipajeManoSi.Size = new Size(35, 19);
             radEquipajeManoSi.TabIndex = 1;
             radEquipajeManoSi.TabStop = true;
             radEquipajeManoSi.Text = "Si";
@@ -141,6 +132,8 @@
             grpValijas.Controls.Add(txtPesoValija1);
             grpValijas.Controls.Add(lblPesoValija1);
             grpValijas.Controls.Add(lblCantidadValijas);
+            grpValijas.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grpValijas.ForeColor = SystemColors.ButtonFace;
             grpValijas.Location = new Point(89, 228);
             grpValijas.Name = "grpValijas";
             grpValijas.Size = new Size(488, 170);
@@ -196,7 +189,7 @@
             lblCantidadValijas.AutoSize = true;
             lblCantidadValijas.Location = new Point(6, 28);
             lblCantidadValijas.Name = "lblCantidadValijas";
-            lblCantidadValijas.Size = new Size(184, 15);
+            lblCantidadValijas.Size = new Size(183, 15);
             lblCantidadValijas.TabIndex = 0;
             lblCantidadValijas.Text = "Cantidad de valijas por despachar";
             // 
@@ -209,7 +202,8 @@
             grpDatosPasaje.Controls.Add(lblMensajeError);
             grpDatosPasaje.Controls.Add(lblPrecio);
             grpDatosPasaje.Controls.Add(lblTipoPasaje);
-            grpDatosPasaje.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            grpDatosPasaje.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grpDatosPasaje.ForeColor = SystemColors.ButtonFace;
             grpDatosPasaje.Location = new Point(89, 43);
             grpDatosPasaje.Name = "grpDatosPasaje";
             grpDatosPasaje.Size = new Size(842, 170);
@@ -222,7 +216,7 @@
             cmbEnumTipoPasajes.FormattingEnabled = true;
             cmbEnumTipoPasajes.Location = new Point(131, 54);
             cmbEnumTipoPasajes.Name = "cmbEnumTipoPasajes";
-            cmbEnumTipoPasajes.Size = new Size(121, 25);
+            cmbEnumTipoPasajes.Size = new Size(121, 24);
             cmbEnumTipoPasajes.TabIndex = 33;
             cmbEnumTipoPasajes.SelectedIndexChanged += cmbEnumTipoPasajes_SelectedIndexChanged;
             // 
@@ -239,7 +233,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(530, 111);
             label1.Name = "label1";
-            label1.Size = new Size(79, 17);
+            label1.Size = new Size(76, 16);
             label1.TabIndex = 31;
             label1.Text = "Precio Neto";
             // 
@@ -256,7 +250,7 @@
             lblMensajeError.AutoSize = true;
             lblMensajeError.Location = new Point(6, 116);
             lblMensajeError.Name = "lblMensajeError";
-            lblMensajeError.Size = new Size(360, 17);
+            lblMensajeError.Size = new Size(354, 16);
             lblMensajeError.TabIndex = 24;
             lblMensajeError.Text = "La cantidad de pasajes seleccionados no estan disponibles";
             // 
@@ -265,7 +259,7 @@
             lblPrecio.AutoSize = true;
             lblPrecio.Location = new Point(530, 54);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(83, 17);
+            lblPrecio.Size = new Size(80, 16);
             lblPrecio.TabIndex = 23;
             lblPrecio.Text = "Precio Bruto ";
             // 
@@ -275,12 +269,13 @@
             lblTipoPasaje.ImeMode = ImeMode.NoControl;
             lblTipoPasaje.Location = new Point(6, 54);
             lblTipoPasaje.Name = "lblTipoPasaje";
-            lblTipoPasaje.Size = new Size(106, 17);
+            lblTipoPasaje.Size = new Size(105, 16);
             lblTipoPasaje.TabIndex = 18;
             lblTipoPasaje.Text = "Clase del pasaje";
             // 
             // pictureBox1
             // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.gifMaleta;
             pictureBox1.Location = new Point(638, 228);
             pictureBox1.Name = "pictureBox1";
@@ -299,13 +294,14 @@
             Controls.Add(btnCargar);
             Controls.Add(grpEquipajeDeMano);
             Controls.Add(grpValijas);
-            Controls.Add(pctboxImagen);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmCargarEquipaje";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cargar Equipaje";
             Load += FrmCargarEquipaje_Load;
-            ((System.ComponentModel.ISupportInitialize)pctboxImagen).EndInit();
             grpEquipajeDeMano.ResumeLayout(false);
             grpEquipajeDeMano.PerformLayout();
             grpValijas.ResumeLayout(false);
@@ -317,8 +313,6 @@
         }
 
         #endregion
-
-        private PictureBox pctboxImagen;
         private Button btnCancelar;
         private Button btnCargar;
         private GroupBox grpEquipajeDeMano;
