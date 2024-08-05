@@ -43,8 +43,6 @@ Las opcion de buscar pasajero es simil a la anterior: abre un formulario y filtr
 
 
 
-(Falta completar funcionalidad e imagenes)
-
 Otras de las opciones del menú principal es la referida a Pasajeros:
 
 ![Imagen de Opcion Pasajeros](Laplace.MariaJulieta.PrimerParcial/Imagenes/FuncionamientoApp/Menu_Pasajeros.jpg)
@@ -177,7 +175,8 @@ Para entender la Programación orientada a objetos, citamos:
 En este trabajo, se aplica el paradigma de la programación orientada a objetos, ya que creo que todos los elementos propios de una empresa, la cual se encarga de vender tickets de vuelo a diversas personas (entre otras cosas), púede ser modelada (crear objetos con sus atributos, caracteristicas etc) para ser representada en código C#.
 El ejemplo claro de ello es pensar a los pasajeros, vuelos, pasaje, aviones como objetos que podemos modelar, que tienen sus caracteristicas particulares (atributos), sus funciones (métodos) y demás.
 Un ejemplo dentro del código es la clase Equipaje:
-`public class Equipaje
+`
+public class Equipaje
     {
         private int cantidadValijas;
         private float pesoTotalValija;
@@ -500,5 +499,4 @@ boton1 sobreescrito en el formulario derivado que modifica un avion:
 
         }
 `
-POLIMORFISMO (COMPLETAR)
 
